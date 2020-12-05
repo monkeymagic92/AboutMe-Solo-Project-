@@ -14,4 +14,10 @@ public class MainController {
 		return "/main/test";
 	}
 	
+	@RequestMapping("/jy")
+	public String jy(Model model) {
+		
+		return "/main/jy";
+	}
+	
 }

@@ -11,5 +11,18 @@
 	<br>
 	<h1>재용월드 온것을 환영한다 반갑다</h1>
 	<div>${hi}</div>
+	
+	<button onclick="move()">메인</button>
+	<button onclick="move2()">jy 다른곳으로</button>	
+	
+<script>
+	function move() {
+		location.href="/"
+	}
+	
+	function move2() {
+		location.href="/jy"
+	}
+</script>
 </body>
 </html>
