@@ -11,7 +11,7 @@ public class MainController {
 	@RequestMapping("/")
 	public String main(Model model) {
 		model.addAttribute("hi", "반갑다 하이");
-		return "/main/test";
+		return "/main/entrance";
 	}
 	
 	@RequestMapping("/jy")
