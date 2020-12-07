@@ -6,18 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/")
-public class MainController {
+public class IndexController {
 
 	@RequestMapping("/")
-	public String main(Model model) {
-		model.addAttribute("hi", "반갑다 하이");
+	public String index(Model model) {
 		return "/main/entrance";
-	}
-	
-	@RequestMapping("/jy")
-	public String jy(Model model) {
-		
-		return "/main/jy";
 	}
 	
 }

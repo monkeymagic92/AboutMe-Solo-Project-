@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="/res/css/animate.css">
+</head>
+<body>
+    <div class="container">
+        <div id="monkeyId"></div>
+        <div id="developerId"></div>
+        <div id="siteId"></div>
+    </div>
+    
+
+<script>
+
+    setTimeout(function() {
+		var monkey = document.createElement('img')
+        monkey.setAttribute('src','/img/monkey.png')
+		monkey.setAttribute('class', 'animate__rubberBand animate__animated fas fa-check')
+		monkeyId.append(monkey)
+		
+	},500)
+
+    setTimeout(function() {
+		var developer = document.createElement('img')
+        developer.setAttribute('src', 'C:\Users\이재용\OneDrive\바탕 화면\aboutMe_IMG\developer.png')
+		developer.setAttribute('class', 'animate__rubberBand animate__animated fas fa-check')
+		developerId.append(developer)
+		
+	},1500)
+
+    setTimeout(function() {
+		var site = document.createElement('div')
+		site.setAttribute('class', 'animate__rubberBand animate__animated fas fa-check')
+		site.append('사이트 바로가기')
+		siteId.append(site)
+		
+	},2000)
+</script>
+</body>
+</html>
