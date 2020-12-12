@@ -1,0 +1,11 @@
+.indexContainer {
+    width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.videoTest {
+    border: 1px solid black;
+    
+    border-radius: 10px;
+}
