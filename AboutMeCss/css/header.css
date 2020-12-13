@@ -1,0 +1,45 @@
+.container {
+    margin: 0 auto;
+    margin-left: 340px;
+    margin-top: 30px;
+}
+
+header {
+    width: 1200px;
+}
+
+.headerDiv {
+    border: 2px solid grey;        
+    border-radius: 4px;
+}
+
+.headerUl {
+    display: flex;
+    list-style-type: none;
+}
+
+/*   header 첫번째 a태그 margin 값주기  */
+.headerLi1 {
+    margin-left: 500px;
+    line-height: 40px;
+}
+
+.headerLi {
+    margin-left: 10px;
+    line-height: 40px;
+}
+
+.headerA {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3em;
+}
+
+.indexDiv {
+    margin-top: 30px;
+}
+
+
+
+
+
