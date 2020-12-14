@@ -14,11 +14,11 @@
     <header>
         <div class="headerDiv1">
             <br><br>
-            <div class="headerDiv2">Monkey Developer</div>
+            <div class="headerDiv2"><a id="mainA" href="/">Monkey Developer</a></div>
             <div class="headerDiv3">Daily coding</div>
             <ul class="headerUl">
                 <li class="headerLi1"><a href="#" class="headerA">개발자 소개</a></li>
-                <li class="headerLi"><a href="#" class="headerA">프로젝트 소개</a></li>
+                <li class="headerLi"><a href="/pj/pjList" class="headerA">프로젝트 소개</a></li>
                 <li class="headerLi"><a href="#" class="headerA">개발자 1:1 문의</a></li>
                 <li class="headerLi"><a href="#" class="headerA">일기</a></li>
                 <li class="headerLi"><a href="#" class="headerA">응원메세지</a></li>

@@ -48,9 +48,12 @@
                 <a onclick="moveToHiBaby()"><img class="infoImg" src="/res/img/HiBaby.jpg" alt=""></a>
             </div>
         </div>
+        
+        
         <div class="footerDiv">
-	
+			<!--  공백용   -->
     	</div>
+        
     </div>
     
     

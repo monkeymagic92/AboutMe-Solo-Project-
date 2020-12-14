@@ -1,9 +1,9 @@
-@charset "UTF-8";
 
 /* Header */
 a:hover {
     cursor: pointer;
 }
+
 
 header {
     width: 100%;
@@ -13,6 +13,7 @@ header {
 
 }
 
+
 .headerDiv1 {
     text-align: center;
     
@@ -20,10 +21,6 @@ header {
 
 .headerDiv2 {
     font-size: 2.4em;
-}
-
-.headerDiv2:hover {
-    cursor:pointer;
 }
 
 .headerDiv3 {
@@ -46,15 +43,9 @@ header {
     margin-left: 70px;
 }
 
-#mainA {
-	text-decoration: none;
-	color: black;
-}
-
 .headerA {
     color: grey;
     text-decoration: none;
-    
 }
 
 .headerA:hover {
@@ -76,10 +67,6 @@ audio {
 }
 
 
-#showListBtn {
-    margin-top: 30px;
-}
-
 #homeMsg {
     margin-left: -50px;
     margin-right: 580px;
@@ -98,5 +85,73 @@ footer {
 }
 
 .footerDiv {
+    height: 200px;
+}
+
+/* header End */
+
+.container {
+    width: 1200px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 90px;
+}
+
+.pjList {
+    display: flex;
+    
+    margin-left: 90px;
+}
+
+#pjH1 {
+    width: 266px;
+    height: 50px;
+    margin-left: 90px;
+    border-bottom: 1px solid grey;
+}
+
+.pjUl {
+    list-style-type: none;
+}
+
+.pjLi {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 17px;
+    
+}
+
+.imgItem {
+    display: flex;
+    height: 200px;
+}
+
+.logoImg {
+    border-radius: 6px;
+}
+
+#pjBtn {
+    margin-left: 880px;
+    width: 130px;
+    height: 40px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 4px;
+    outline-style: none;
+    font-size: 1em;
+    font-weight: bold;
+
+    border: 2px solid grey;
+    background-color: white;
+}
+
+#pjBtn:hover {
+    cursor: pointer;
+    outline-style: none;
+    color: #9b9a9c;
+    box-shadow: 0 7px 14px -5px grey;
+}
+
+.space {
     height: 200px;
 }
