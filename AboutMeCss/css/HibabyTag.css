@@ -29,9 +29,45 @@
     margin-left: 30px;
 }
 
+pre {
+    margin-top: 40px;
+    font-size: 1.5em;
+}
+
+.movieInfo {
+    display: flex;
+    
+}
+
+video {
+    width: 420px;
+    height: 360px;
+    outline-style:none;
+}
+
+.titleDiv {
+    width: 600px;
+    margin-top: 75px;
+    margin-left: 30px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    
+}
+
+#infoH1 {
+    color: #8a8a88;
+    text-align:center;
+}
+
+.infoUl {
+
+}
+
+.infoLi {
+    font-size: 1.1em;
+}
 
 
-
-.b {
-    height: 400px;
+.height {
+    height: 1000px;
 }
