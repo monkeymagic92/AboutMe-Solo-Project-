@@ -25,15 +25,16 @@
     </header>
 
     <div class="headerBottomDiv">
-        <audio class="audioMp" controls autoplay loop>
+        <audio class="audioMp" controls loop>
             <source src="sound/음악테스트01.mp3" type="audio/mp3">
         </audio>
         <div class="dateDiv">
-            2020.12.14
+            2020.12.14　이재용
         </div>
     </div>
     <!-- Header End -->
 
+    <!-- Index -->
     <div class="container">
         <div class="indexSpeak">
             <p class="speak">
@@ -43,16 +44,57 @@
                 하지만 지금와서 그말의 참뜻을 깨닳았습니다<br>
                 기본적인 반복문조차 어려워하던 제가 지금은 제가 원하는 작은 프로그램을 만들기까지<br>
                 그리고 앞으로 더 성장할 제자신을 기약하며<br>
-                저의 성장과정을 지켜봐 주십시오.<br>
+                여러분들께서 저의 성장과정을 지켜봐 주십시오.<br>
                 - 2020. 12. 14 -<br>
-
-                
             </p>
         </div>
+
+        <div class="infoURLDiv">
+            <div class="infoImgDiv">
+                <h1 id="infoH1">개발자 <span id="spanBlog">블로그</span></h1>
+                <h3 id="infoH3">　<a class="infoA" href="https://blog.naver.com/ddw0099" target="_blank">바로가기</a></h3>
+                <a href="https://blog.naver.com/ddw0099" target="_blank"><img class="infoImg" src="img/naver.png" alt=""></a>
+            </div>
+
+            <div class="infoImgDiv">
+                <h1 id="infoH1">개발자 <span id="spanGithub">깃허브</span></h1>
+                <h3 id="infoH3">　<a class="infoA" href="https://github.com/monkeymagic92" target="_blank">바로가기</a></h3>
+                <a href="https://github.com/monkeymagic92" target="_blank"><img class="infoImg" src="img/github.png" alt=""></a>
+            </div>
+
+            <div class="infoImgDiv">
+                <h1 id="infoH1">팀 프로젝트　</h1>
+                <h3 id="infoH3">　<a class="infoA" onclick="moveToDDmarket()">바로가기</a></h3>
+                <a onclick="moveToDDmarket()"><img class="infoImg" src="img/DDmarket.jpg" alt=""></a>
+            </div>
+
+            <div class="infoImgDiv">
+                <h1 id="infoH1">개인 프로젝트</h1>
+                <h3 id="infoH3">　<a class="infoA" onclick="moveToHiBaby()">바로가기</a></h3>
+                <a onclick="moveToHiBaby()"><img class="infoImg" src="img/HiBaby.jpg" alt=""></a>
+            </div>
+            
+        </div>
+       
+        <div class="footerDiv">
+
+        </div>
+        
     </div>
 
+    <!-- Index End -->
+   
+    
 <script>
+    /* DDmarket 연결 */
+    function moveToDDmarket() {
+        location.href="DDmarket"
+    }
 
+    /* HiBaby 연결*/
+    function moveToHiBaby() {
+        location.href="HiBaby"
+    }
 </script>
 </body>
 </html>
