@@ -10,7 +10,9 @@ public class IndexController {
 
 	@RequestMapping("/")
 	public String index(Model model) {
-		return "/main/entrance";
+		
+		model.addAttribute("view", ViewRef.INDEX_MAIN);
+		return ViewRef.DEFAULT_TEMP;
 	}
 	
 }

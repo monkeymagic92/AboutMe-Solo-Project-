@@ -1,9 +1,9 @@
+@charset "UTF-8";
 
 /* Header */
 a:hover {
     cursor: pointer;
 }
-
 
 header {
     width: 100%;
@@ -12,7 +12,6 @@ header {
     border-radius: 2px;
 
 }
-
 
 .headerDiv1 {
     text-align: center;
@@ -91,69 +90,3 @@ footer {
 .footerDiv {
     height: 200px;
 }
-/* Header End */
-
-
-
-/* index */
-.container {
-    width: 1200px;
-    height: 400px;
-    margin: 0 auto;
-    margin-top: 50px;
-    
-}
-
-.indexSpeak {
-    text-align: center;
-}
-
-.speak {
-    color: #333333;
-    font-size: 1.2em;
-    line-height: 38px;
-}
-
-.infoURLDiv {
-    margin-top: 110px;
-    text-align: center;
-  
-}
-
-.infoImgDiv {
-    display: flex;
-    margin: 0 auto;
-    margin-top: 55px;
-    justify-content: center;
-}
-
-#infoH1 {
-    margin-top: 45px;
-}
-
-#infoH3 {
-    color: grey;
-    margin-top: 58px;
-}
-
-#spanBlog {
-    color: green;
-}
-
-#spanGithub {   /* 깃허브 색변경하기 */
-    color: grey;
-}
-
-.infoA {
-    text-decoration: none;
-    color: grey;    
-}
-
-
-.infoImg {
-    width: 230px;
-    height: 140px;
-    margin-left: 37px;
-    border-radius: 10px;
-}
-
