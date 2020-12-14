@@ -53,6 +53,7 @@
 
     border: 2px solid grey;
     background-color: white;
+    transition: 0.4s;
 }
 
 #pjBtn:hover {
@@ -60,6 +61,8 @@
     outline-style: none;
     color: #9b9a9c;
     box-shadow: 0 7px 14px -5px grey;
+    border-radius: 10px;
+    transition: 0.2s;
 }
 
 .space {

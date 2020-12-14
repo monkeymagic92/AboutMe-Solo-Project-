@@ -4,22 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HiBabyTag</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hibabyTag.css">
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="headerDiv1">
+            <br><br>
+            <div class="headerDiv2" onclick="moveToIndex()">Monkey Developer</div>
+            <div class="headerDiv3">Daily coding</div>
+            <ul class="headerUl">
+                <li class="headerLi1"><a href="#" class="headerA">개발자 소개</a></li>
+                <li class="headerLi"><a href="#" class="headerA">프로젝트 소개</a></li>
+                <li class="headerLi"><a href="#" class="headerA">개발자 1:1 문의</a></li>
+                <li class="headerLi"><a href="#" class="headerA">일기</a></li>
+                <li class="headerLi"><a href="#" class="headerA">응원메세지</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="headerBottomDiv">
+        <audio class="audioMp" controls loop>
+            <source src="sound/음악테스트01.mp3" autoplay muted type="audio/mp3">
+        </audio>
+        <div class="dateDiv">
+            <span id="homeMsg">크롬(Chrome) 기준으로 작성된 홈페이지 입니다</span> 2020.12.14　이재용
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <div class="container">
+        <div class="alert">본 영상들에는 BGM이 깔려있습니다<br>
+            조용한곳에서 영상을 보시는분들은 음소거를 하시고 영상을 시청해주시기 바랍니다
+            <br>
+            영상화질이 흐릿할경우 전체화면으로 시청해 주세요
+            <br>
+        </div>
+        <div class="hibabyContainer">
+            <div id="hibabyFont">HiBaby</div>
+            <img class="hibabyImg" src="img/HiBaby.jpg">
+        </div>
+        <div>
+            <p>
+                저의 첫 개인플젝
+            </p>
+        </div>
+        <br><br>
+        <div>
+            ㅎㅎ
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!--
     <div class="indexContainer">
         본 영상들에는 BGM이 깔려있습니다.<br>
         조용한곳에서 영상을 보시는분들은 음소거를 하시고 영상을 시청해주시기 바랍니다.
         <br>
         영상화질이 흐릿할경우 전체화면으로 시청해 주세요!
         <br>
-        <!--
+    
         <video class="videoTest" src="av/HiBaby/join.mp4" width="350px" height="40px" controls poster="img/chall.png"></video>
-        -->
+    
         <video class="videoTest" src="av/HiBaby/loginBGM.mp4" width="430px" autoplay height="340px" controls></video>
     
     </div>
 
-
+    -->
 
 <script>
 

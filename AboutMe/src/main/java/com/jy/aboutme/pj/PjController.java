@@ -17,15 +17,17 @@ public class PjController {
 		return ViewRef.DEFAULT_TEMP;
 	}
 	
-	@RequestMapping("/HiBaby")
-	public String hiBaby( ) {
-		return "";
+	@RequestMapping("/hibabyTag")
+	public String hiBaby(Model model) {
+		model.addAttribute("view", "/pj/hibabyTag");
+		return ViewRef.DEFAULT_TEMP;
 	}
 	
 	
 	
 	@RequestMapping("/DDmarket")
-	public String ddMarket( ) {
-		return "";
+	public String ddMarket(Model model) {
+		model.addAttribute("view", "/pj/ddmarketTag");
+		return ViewRef.DEFAULT_TEMP;
 	}
 }
