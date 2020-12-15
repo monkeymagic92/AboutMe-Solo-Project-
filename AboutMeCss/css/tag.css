@@ -1,0 +1,107 @@
+.container {
+    width: 1200px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.alert {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: red;
+    line-height: 40px;
+    margin-bottom: 100px;
+    margin-top: 60px;
+}
+
+.hibabyContainer {
+    margin-top: 60px;
+    display: flex;   
+}
+
+#hibabyFont {
+    font-size: 5.5em;
+    color: skyblue;
+    font-weight: bold;
+}
+
+.hibabyImg {
+    width: 170px;
+    height: 117px;
+    margin-left: 30px;
+}
+
+.urlDiv {
+    font-size: 1.9em;
+    color: grey;
+}
+
+#urlA {
+    text-decoration: none;
+    color: grey;
+    transition: 0.2s;
+}
+
+#urlA:hover {
+    color:#4a4a4a;
+    font-weight: bold;
+    transition: 0.3s;
+    
+    
+}
+
+.infoP {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    font-size: 1.2em;
+    color: #4d4d4d;
+    font-weight: bold;
+}
+
+.movieInfo {
+    display: flex;
+}
+
+video {
+    width: 420px;
+    height: 360px;
+    outline-style:none;
+    padding-top: -200px;
+}
+
+.titleDiv {
+    width: 750px;
+    margin-top: 75px;
+    margin-left: 40px;
+    border: 2px solid grey;
+    border-radius: 6px;
+    
+}
+
+#infoH1 {
+    color: #8a8a88;
+    text-align:center;
+}
+
+.infoUl {
+    line-height: 30px;
+}
+
+.infoLi {
+    color:#7a6161;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+
+.height {
+    height: 300px;
+}
+
+#end {
+    font-size: 2.0em;
+    text-align: center;
+    margin-top: 100px;
+    font-weight: bold;
+}
