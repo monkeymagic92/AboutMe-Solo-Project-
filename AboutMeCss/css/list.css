@@ -42,7 +42,8 @@
 
 #searchBtn:hover {
     cursor: pointer;
-    
+    color: grey;
+    font-weight: bold;
 }
 
 
@@ -66,6 +67,7 @@ label {
 
 #writeBtn:hover {
     cursor: pointer;
+    color: grey;
     
 }
 

@@ -54,9 +54,9 @@
 	</div>
 	
 <script>
-
-	
-
+	if(${loginErr != null}) {
+		frm.user_id.focus()
+	}
 	
 	function logOut(i_user) {
 		location.href="/logOut?i_user="+i_user
