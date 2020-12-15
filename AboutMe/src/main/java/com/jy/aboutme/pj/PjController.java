@@ -25,7 +25,7 @@ public class PjController {
 	
 	
 	
-	@RequestMapping("/DDmarket")
+	@RequestMapping("/ddmarketTag")
 	public String ddMarket(Model model) {
 		model.addAttribute("view", "/pj/ddmarketTag");
 		return ViewRef.DEFAULT_TEMP;
