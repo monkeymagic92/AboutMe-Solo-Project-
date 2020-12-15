@@ -2,7 +2,15 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-	
+		<!-- board -->
+		<typeAlias type="com.jy.aboutme.board.model.BoardVO" alias="BoardVO" />
+		<typeAlias type="com.jy.aboutme.board.model.BoardPARAM" alias="BoardPARAM" />
+		<typeAlias type="com.jy.aboutme.board.model.BoardDMI" alias="BoardDMI" />
+		
+		<!-- admin -->
+		<typeAlias type="com.jy.aboutme.admin.model.AdminVO" alias="AdminVO" />
+		<typeAlias type="com.jy.aboutme.admin.model.AdminPARAM" alias="AdminPARAM" />
+		<typeAlias type="com.jy.aboutme.admin.model.AdminDMI" alias="AdminDMI" />
 		
 	</typeAliases>
 </configuration>

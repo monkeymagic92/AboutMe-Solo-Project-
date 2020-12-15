@@ -40,6 +40,11 @@
     height: 40px;
 }
 
+#searchBtn:hover {
+    cursor: pointer;
+    
+}
+
 
 label {
     font-size: 1em;
