@@ -19,8 +19,7 @@
             <ul class="headerUl">
                 <li class="headerLi1"><a href="#" class="headerA">개발자 소개</a></li>
                 <li class="headerLi"><a href="/pj/pjList" class="headerA">프로젝트 소개</a></li>
-                <li class="headerLi"><a href="#" class="headerA">개발자 1:1 문의</a></li>
-                <li class="headerLi"><a href="#" class="headerA">일기</a></li>
+                <li class="headerLi"><a href="#" class="headerA">개발자 문의</a></li>
                 <li class="headerLi"><a href="#" class="headerA">응원메세지</a></li>
             </ul>
         </div>

@@ -36,7 +36,7 @@
         <div class="movieInfo">
             <video src="/res/av/HiBaby/join.mp4" controls></video>
             <div class="titleDiv">
-                <h1 id="infoH1">1. 회원 가입 (정규화)</h1>
+                <h2 id="infoH1">1. 회원 가입 (정규화)</h2>
                 <ul class="infoUl">
                     <li class="infoLi">중복확인은 Ajax통신을 이용하였으며, 중복확인후 내용이 변경된경우 다시 체크를 하도록 구성</li>
                     <br>
@@ -49,7 +49,7 @@
         <div class="movieInfo">
             <video src="/res/av/HiBaby/join.mp4" controls></video>
             <div class="titleDiv">
-                <h1 id="infoH1">2. 비밀번호 찾기 (실제 이메일 발송)</h1>
+                <h2 id="infoH1">2. 비밀번호 찾기 (실제 이메일 발송)</h2>
                 <ul class="infoUl">
                     <li class="infoLi"></li>
                     <br>
@@ -63,7 +63,7 @@
         <div class="movieInfo">
             <video src="/res/av/HiBaby/join.mp4" controls></video>
             <div class="titleDiv">
-                <h1 id="infoH1">2. 비밀번호 찾기 (실제 이메일 발송)</h1>
+                <h2 id="infoH1">2. 비밀번호 찾기 (실제 이메일 발송)</h2>
                 <ul class="infoUl">
                     <li class="infoLi"></li>
                     <br>
@@ -77,7 +77,7 @@
         <div class="movieInfo">
             <video src="/res/av/HiBaby/join.mp4" controls></video>
             <div class="titleDiv">
-                <h1 id="infoH1">2. 비밀번호 찾기 (실제 이메일 발송)</h1>
+                <h2 id="infoH1">2. 비밀번호 찾기 (실제 이메일 발송)</h2>
                 <ul class="infoUl">
                     <li class="infoLi"></li>
                     <br>
@@ -91,7 +91,7 @@
         <div class="movieInfo">
             <video src="/res/av/HiBaby/join.mp4" controls></video>
             <div class="titleDiv">
-                <h1 id="infoH1">2. 비밀번호 찾기 (실제 이메일 발송)</h1>
+                <h2 id="infoH1">2. 비밀번호 찾기 (실제 이메일 발송)</h2>
                 <ul class="infoUl">
                     <li class="infoLi"></li>
                     <br>
