@@ -1,1 +1,130 @@
 @charset "UTF-8";
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+
+.topMsg {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 60px;
+    color: red;
+}
+
+.topContainer {
+
+    display: flex;
+}
+
+.searchBtn {
+    background-color: white;
+    border: 0px;
+    margin-top: 20px;
+    
+}
+
+.searchBtn:hover {
+    cursor:pointer;
+}
+
+
+#frm {
+    margin-bottom: 10px;
+    width: 500px;
+    
+}
+
+#searchIn {
+    border: 2px solid grey;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#searchBtn {
+    background-color: white;
+    border: 2px solid grey;
+    border-radius: 3px;
+    width: 50px;
+    height: 40px;
+}
+
+#searchBtn:hover {
+    cursor: pointer;
+    color: grey;
+    font-weight: bold;
+}
+
+
+label {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#writeBtn {
+    margin-left: 610px;
+    
+    width: 80px;
+    height: 35px;
+    border: 1px solid #5ca8ff;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: white;
+    
+}
+
+#writeBtn:hover {
+    cursor: pointer;
+    color: grey;
+    outline-style: none;
+    
+}
+
+table {
+    margin-top: 5px;
+    width: 100%;
+    border: 10px double #f5e6e6;
+    
+    border-radius: 15px;
+    
+}
+
+.height {
+    height: 300px;
+}
+
+
+thead tr th {
+    font-size: 1.2em;
+    color: grey;
+}
+
+tbody tr th {
+    color:#7a6161;
+}
+
+tbody tr:nth-child(2n) {
+    border-right: 2px double black;
+    background:#f5e6e6;
+  
+}
+
+tbody tr:hover {
+    cursor: pointer;
+    background-color: #ebebeb;
+}
+
+.pageDiv {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#pageSpan {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: grey;
+    
+}

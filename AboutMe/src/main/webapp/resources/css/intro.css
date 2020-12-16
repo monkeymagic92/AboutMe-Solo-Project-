@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+.container {
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.introTopDiv {
+    margin: 0 auto;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.introBtns {
+    font-size: 1em;
+    width: 150px;
+    height: 35px;
+    border: 2px solid grey;
+    border-radius: 100px;
+    background-color: white;
+    outline-style: none;
+    transition: 0.3s;
+}
+
+.introBtns:hover {
+    color: grey;
+    cursor: pointer;
+    box-shadow: 0 7px 14px -5px grey;
+    transition: 0.3s;
+    
+}
+
+#ib2 {
+    margin-left: 150px;
+}
+
+#ib3 {
+    margin-left: 150px;
+}
+
+.downloadIntro {
+    margin-top: 30px;
+}
+
+.introContainer {
+    margin-top: 100px;
+}
+
+.introH2 {
+    margin-right: 515px;
+}
+
+.intro {
+    margin: 0 auto;
+    width: 900px;
+    height: 300px;
+    text-align: start;
+    border: 2px solid grey;
+    border-radius: 12px;
+}
+.height {
+    margin-top: 1000px;
+    height: 1000px;
+}
+
+#TopBtn { display: none; }
+#TopBtn.on:focus {outline: none;}
+#TopBtn.on { 
+    border-radius: 70%;
+    text-transform: uppercase;
+    position: fixed;
+    right: 20px; bottom: 20px;
+    line-height: 60px; display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+    align-items: center;
+    width: 90px; height: 90px; background: #FFFFFF;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.TOP {
+    position: absolute;
+    bottom: 20px;
+    color: #3B3B3D;
+    font-weight: bold;
+    font-size: 20px;
+    height: 20px;
+    margin-bottom: 12px;
+} 
+#TopBtn.on:hover { 
+    border-radius: 70%;
+    text-transform: uppercase;
+    position: fixed;
+    right: 20px; bottom: 20px;
+    line-height: 60px; display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+    align-items: center;
+    width: 90px; height: 90px; background: grey;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#TopBtn.on:hover .TOP {
+    position: absolute;
+    bottom: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    height: 20px;
+    margin-bottom: 12px;
+} 
+.icon-TopBtn{
+    color: #3B3B3D;
+    font-size: 60px;
+} 
+#TopBtn.on:hover .icon-TopBtn{
+    color: white;
+    font-size: 60px;
+} 
