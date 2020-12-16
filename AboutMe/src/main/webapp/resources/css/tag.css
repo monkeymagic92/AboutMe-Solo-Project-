@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 .container {
     width: 1200px;
     height: 400px;
@@ -31,6 +32,7 @@
     width: 170px;
     height: 117px;
     margin-left: 30px;
+    border-radius: 10px;
 }
 
 .urlDiv {
@@ -38,7 +40,9 @@
     color: grey;
 }
 
-
+.infoP {
+    line-height: 40px;
+}
 
 #urlA {
     text-decoration: none;
@@ -50,8 +54,9 @@
     color:#4a4a4a;
     font-weight: bold;
     transition: 0.3s;
-    
-    
+}
+#span1 {
+    color: black;
 }
 
 .infoP {
@@ -60,7 +65,6 @@
     font-size: 1.2em;
     color: #4d4d4d;
     font-weight: bold;
-    line-height: 40px;
 }
 
 .movieInfo {

@@ -30,6 +30,7 @@
     width: 170px;
     height: 117px;
     margin-left: 30px;
+    border-radius: 10px;
 }
 
 .urlDiv {
@@ -51,8 +52,9 @@
     color:#4a4a4a;
     font-weight: bold;
     transition: 0.3s;
-    
-    
+}
+#span1 {
+    color: black;
 }
 
 .infoP {
