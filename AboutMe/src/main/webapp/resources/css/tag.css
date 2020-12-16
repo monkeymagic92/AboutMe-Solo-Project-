@@ -38,9 +38,11 @@
     color: grey;
 }
 
+
+
 #urlA {
     text-decoration: none;
-    color: grey;
+    color: black;
     transition: 0.2s;
 }
 
@@ -58,6 +60,7 @@
     font-size: 1.2em;
     color: #4d4d4d;
     font-weight: bold;
+    line-height: 40px;
 }
 
 .movieInfo {

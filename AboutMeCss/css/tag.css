@@ -37,9 +37,13 @@
     color: grey;
 }
 
+.infoP {
+    line-height: 40px;
+}
+
 #urlA {
     text-decoration: none;
-    color: grey;
+    color: black;
     transition: 0.2s;
 }
 

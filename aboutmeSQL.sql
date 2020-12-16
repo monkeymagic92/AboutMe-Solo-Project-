@@ -12,6 +12,7 @@ INSERT INTO t_user
 VALUES
 ('admin', 'admin', '관리자');
 
+USE aboutme;
 
 
 
