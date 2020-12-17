@@ -13,6 +13,7 @@ public class IntroController {
 	@RequestMapping("/intro")
 	public String intro(Model model) {
 		
+		model.addAttribute("cssResult", "1");
 		model.addAttribute("view", ViewRef.INTRO);
 		return ViewRef.DEFAULT_TEMP;
 	}

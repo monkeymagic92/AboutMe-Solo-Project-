@@ -19,7 +19,7 @@
                 <li class="pjLi">프로젝트 명 : DDmarket (단디마켓) (2020.10.08 ~ 2020.11.20)</li>
                 <li class="pjLi">개발 도구 : Maria DB, Spring Tool Suite, Apache Tomcat9, Eclips IDE</li>
                 <li class="pjLi">프로젝트 주제 : <br>
-                    주소API활용으로 지역별 판매자,구매자 1:1 대화방식으로 중고물품 거래 
+                    각 지역별 판매자 구매자 1:1방식 중고거래 
                 </li>
                 <li class="pjLi">담당 분야 : Back-End</li>
             </ul>

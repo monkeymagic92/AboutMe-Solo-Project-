@@ -1,3 +1,9 @@
+body {
+    
+    background-color: #111;
+    color: #b3b3b3;
+}
+
 .container {
     margin: 0 auto;
     margin-top: 40px;
@@ -17,17 +23,20 @@
     height: 35px;
     border: 2px solid grey;
     border-radius: 100px;
-    background-color: white;
+    
+    font-weight: bold;
+    color: grey;
     outline-style: none;
     transition: 0.3s;
+    background-color: #111;
 }
 
 .introBtns:hover {
-    color: grey;
+    color: white;
     cursor: pointer;
+    background-color: #ababab;
     box-shadow: 0 7px 14px -5px grey;
-    transition: 0.3s;
-    
+    transition: 0.6s;
 }
 
 #ib2 {
@@ -38,11 +47,55 @@
     margin-left: 150px;
 }
 
-.downloadIntro {
+.introContainer {
+    margin-top: 90px;
+}
+
+#introDiv1 {
+    line-height: 40px;
+    font-size: 1.2em;
+}
+
+.introSpace1 {
+    height: 400px;
+}
+
+.infoImg {
+    border-radius: 6px;
+}
+
+.kakaoImg1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.kimg {
+    height: 820px;
+    border-radius: 6px;
+    margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.resumeContainer {
+    margin-top: 700px;
+    margin-bottom: 700px;
+}
+
+.downloadresume {
     margin-top: 30px;
 }
 
-.introContainer {
+.selfintroContainer {
     margin-top: 100px;
 }
 
@@ -62,6 +115,23 @@
     margin-top: 1000px;
     height: 1000px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #TopBtn { display: none; }
 #TopBtn.on:focus {outline: none;}
