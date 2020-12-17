@@ -51,6 +51,21 @@ body {
     margin-top: 90px;
 }
 
+.introVideo {
+    display:flex;
+    justify-content: center;
+}
+
+.introV {
+    width: 650px;
+    height: 550px;
+    margin-left: 20px;
+}
+
+.introV:hover {
+    cursor :pointer;
+}
+
 #introDiv1 {
     line-height: 40px;
     font-size: 1.2em;
@@ -76,6 +91,9 @@ body {
     margin-left: 5px;
 }
 
+.introSpace2 {
+    height: 250px;
+}
 
 
 
