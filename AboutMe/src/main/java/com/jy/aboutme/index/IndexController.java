@@ -1,4 +1,6 @@
-package com.jy.aboutme.intro;
+package com.jy.aboutme.index;
+
+import java.net.InetAddress;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -10,28 +12,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jy.aboutme.ViewRef;
 import com.jy.aboutme.admin.model.AdminPARAM;
-import com.jy.aboutme.index.IndexService;
 import com.jy.aboutme.index.model.HistoryVO;
 
 @Controller
 @RequestMapping("/")
-public class IntroController {
+public class IndexController {
 
 	@Autowired
-	private IndexService indexService;
-	
-	
-	@RequestMapping("/intro")
-	public String intro(Model model, HttpServletRequest request,
-			HttpSession hs, AdminPARAM param, HistoryVO vo) {
-		
+	private IndexService service;
+
+	@RequestMapping("/")
+	public String index(Model model, HistoryVO vo, HttpServletRequest request,
+			HttpSession hs, AdminPARAM param) {
+		String ipSession = request.getRemoteAddr();
 		param = (AdminPARAM)hs.getAttribute("loginUser");
-		
+		hs.setAttribute("ipSession", ipSession);
 		
 		if(param == null) {
-			System.out.println("if문 걸림");
-			
-			
+			System.out.println("null 실행");
 			String agent = request.getHeader("User-Agent");
 			String os = getOs(agent);
 			String browser = getBrowser(agent);
@@ -46,13 +44,16 @@ public class IntroController {
 			System.out.println("os : " + vo.getOs());
 			System.out.println("ip : " + vo.getIp_addr());
 			
-			int insResult = indexService.insIpIntro(vo);
+			int insResult = service.insIpIndex(vo);
 		} 
-		model.addAttribute("cssResult", "1");
-		model.addAttribute("view", ViewRef.INTRO);
+
+		model.addAttribute("view", ViewRef.INDEX_MAIN);
 		return ViewRef.DEFAULT_TEMP;
+
 	}
 	
+	
+
 	private String getBrowser(String agent) {
 		if (agent.toLowerCase().contains("msie")) {
 			return "ie";

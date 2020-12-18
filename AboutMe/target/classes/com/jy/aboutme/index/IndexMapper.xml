@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jy.aboutme.index.IndexMapper">
+	
+	<!-- select 만들기 -->
+	<select id="selIp" resultType="HistoryDMI" parameterType="HistoryVO">
+		SELECT myIp FROM t_ipIndex
+		WHERE myIp = #{myIp}
+	</select>
+	
+	<!-- insert 만들기 -->
+	<insert id="insIpIndex" parameterType="HistoryVO">
+		INSERT INTO t_ipIndex
+		(ip_addr, os, browser, agent)
+		VALUES
+		(#{ip_addr}, #{os}, #{browser}, #{agent})
+	</insert> 
+	
+	<!-- insert 만들기 -->
+	<insert id="insIpIntro" parameterType="HistoryVO">
+		INSERT INTO t_ipIntro
+		(ip_addr, os, browser, agent)
+		VALUES
+		(#{ip_addr}, #{os}, #{browser}, #{agent})
+	</insert> 
+</mapper>

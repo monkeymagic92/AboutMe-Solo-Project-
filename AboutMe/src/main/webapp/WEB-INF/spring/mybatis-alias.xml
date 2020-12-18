@@ -12,5 +12,9 @@
 		<typeAlias type="com.jy.aboutme.admin.model.AdminPARAM" alias="AdminPARAM" />
 		<typeAlias type="com.jy.aboutme.admin.model.AdminDMI" alias="AdminDMI" />
 		
+		<!-- History  -->
+		<typeAlias type="com.jy.aboutme.index.model.HistoryVO" alias="HistoryVO" />
+		<typeAlias type="com.jy.aboutme.index.model.HistoryDMI" alias="HistoryDMI" />
+		
 	</typeAliases>
 </configuration>
