@@ -1,41 +1,40 @@
 @charset "UTF-8";
 
 /* Header */
-a:hover {
-    cursor: pointer;
-}
-
 header {
     width: 100%;
     height: 210px;    
-    background-color: #f5e6e6;
+    background-color:#171414;
     border-radius: 2px;
+    margin: 0 auto;
+    color: #b8a9a9
 
 }
+
 
 .headerDiv1 {
     text-align: center;
     
 }
 
-.headerDiv2 {
-    font-size: 2.4em;
-}
+ .headerDiv2 {
+     font-size: 2.4em;
+ }
+ 
+ #mainA {
+ 	text-decoration: none;
+ 	color: #b8a9a9;
+ }
 
-.headerDiv2:hover {
-    cursor:pointer;
-}
-
-.headerDiv3 {
+ .headerDiv3 {
     font-size: 1.1em;
-}
+ }
 .headerUl {
     display: flex;
     list-style-type: none;
     margin-bottom: 40px;
     font-size: 1.2em;
     margin-top: 40px;
-    
     
 }
 .headerLi1 {
@@ -46,57 +45,39 @@ header {
     margin-left: 70px;
 }
 
-#mainA {
-	text-decoration: none;
-	color: black;
-}
-
 .headerA {
     color: grey;
     text-decoration: none;
-    
+    transition: 0.3s;
 }
 
 .headerA:hover {
-    color: #ff6363;
+    color:#9e8b86;
+    font-size: 1.12em;
     font-weight: bold;
+    transition: 0.4s;
+    
 }
 
 .headerBottomDiv {
     display: flex;
     width: 100%;
     height: 55px;
-    background-color: #111;
+    background-color: #4f4b4b;
     
 }
 
-audio {
-    margin-left: 10px;
-    outline-style:none;
-}
-
-
-#showListBtn {
-    margin-top: 30px;
-}
 
 #homeMsg {
-    margin-left: -50px;
+    margin-left: 270px;
     margin-right: 580px;
-
+    
 }
 
 .dateDiv {
     color: grey;
     margin-left: 520px;
     margin-top: 17px;
+    
 }
-
-footer {
-    margin-top: 200px;
-    margin-bottom: 200px;
-}
-
-.footerDiv {
-    height: 200px;
-}
+/* Header End */

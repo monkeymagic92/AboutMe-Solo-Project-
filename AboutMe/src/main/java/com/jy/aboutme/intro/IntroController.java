@@ -47,11 +47,16 @@ public class IntroController {
 			System.out.println("ip : " + vo.getIp_addr());
 			
 			int insResult = indexService.insIpIntro(vo);
-		} 
+		}
+		
 		model.addAttribute("cssResult", "1");
 		model.addAttribute("view", ViewRef.INTRO);
 		return ViewRef.DEFAULT_TEMP;
 	}
+	
+	
+	
+	
 	
 	private String getBrowser(String agent) {
 		if (agent.toLowerCase().contains("msie")) {
