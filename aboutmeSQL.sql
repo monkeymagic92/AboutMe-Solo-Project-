@@ -48,18 +48,7 @@ CREATE TABLE t_ipIndex(
 SELECT * FROM t_ipIndex;
 DROP TABLE t_ipIndex;
 
-CREATE TABLE t_ipIntro(
-	i_ip INT UNSIGNED AUTO_INCREMENT,
-	myIp VARCHAR(100),
-	ip_addr VARCHAR(100),
-	os VARCHAR(20),
-	browser VARCHAR(20),
-	agent VARCHAR(500),
-	r_dt DATETIME DEFAULT NOW(),
-	PRIMARY KEY(i_ip)
-);
-SELECT * FROM t_ipIntro;
-DROP TABLE t_ipIntro;
+
 
 
 CREATE TABLE t_ipIntro(

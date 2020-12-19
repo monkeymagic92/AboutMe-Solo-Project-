@@ -43,11 +43,7 @@
 		<beans:property name="username" value="root" />
 		<beans:property name="password" value="orcl" />
 		 
-		<!--  
-		<beans:property name="jdbcUrl" value="jdbc:mysql://118.67.132.252:3306/aboutme?characterEncoding=UTF-8&amp;serverTimezone=UTC "/>
-		<beans:property name="username" value="root" />
-		<beans:property name="password" value="tkfkd121!@!" />
-		 -->
+		
 		<!-- 배포할시 !!!!!!!!   위에꺼 지우고 내 배포자료 메모장에있는거 그대로 복붙하기 -->
 		
 	</beans:bean>

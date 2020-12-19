@@ -1,7 +1,5 @@
 package com.jy.aboutme.index;
 
-import java.net.InetAddress;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
