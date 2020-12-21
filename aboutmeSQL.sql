@@ -21,18 +21,17 @@ USE aboutme;
 
 CREATE TABLE t_board(
 	i_board INT UNSIGNED AUTO_INCREMENT,
-	i_user INT UNSIGNED,
-	nm VARCHAR(10) NOT NULL,
+	nm VARCHAR(10),
 	title VARCHAR(50) NOT NULL,
-	ctnt VARCHAR(2000) NOT NULL,
+	ctnt VARCHAR(3000) NOT NULL,
 	r_dt DATETIME DEFAULT NOW(),
-	scr INT(2),
-	pw VARCHAR(40),
-	PRIMARY KEY(i_board),
-   FOREIGN key(i_user) REFERENCES t_user(i_user) ON DELETE CASCADE
+	scr INT(2) DEFAULT 1,
+	pw VARCHAR(20),
+	PRIMARY KEY(i_board)
 );
 
 SELECT * FROM t_board;
+DROP TABLE t_board;
 
 
 CREATE TABLE t_ipIndex(

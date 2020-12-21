@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jy.aboutme.board.BoardMapper">
+
+	<!--  테스트 -->
+	<select id="test" resultType="BoardPARAM" parameterType="BoardPARAM">
+		SELECT ctnt FROM t_board
+		WHERE i_board = #{i_board}
+	</select>
+
 	<select id="boardList" resultType="BoardPARAM">
 		SELECT * FROM t_board
 	</select>
+	
+	<insert id="insReg" parameterType="BoardPARAM">
+		INSERT INTO t_board
+		(nm, title, ctnt, scr, pw)
+		VALUES
+		(#{nm}, #{title}, #{ctnt}, #{scr}, #{pw})
+	</insert>
+	
+	
 	
 </mapper>

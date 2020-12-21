@@ -24,7 +24,7 @@
                 <!--<span id="searchIcon" class="material-icons">search</span>-->
                 <input id="searchBtn" type="submit" value="검색">
             </form>
-            <button id="writeBtn" type="button">글작성</button>
+            <button id="writeBtn" type="button" onclick="moveToReg()">글작성</button>
         </div>
         <table cellpadding="10" cellspacing="0">
             <thead>
@@ -122,5 +122,11 @@
         </div>
 
     </div>
+    
+<script>
+	function moveToReg() {
+		location.href="/board/reg"
+	}
+</script>
 </body>
 </html>

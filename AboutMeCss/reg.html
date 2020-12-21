@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>
+    <link rel="stylesheet" href="css/reg.css">
+</head>
+<body>
+    <div class="regContainer">
+
+        <form id="frm" action="/board/reg" method="post" onsubmit="return chk()">
+            <input id="insTitle" type="text" name="title" placeholder="제목 입력">
+            <table>
+                <tr>
+                    <textarea name="ctnt" id="smartEditor" cols="1000" rows="1000" placeholder="ㅎㅎ"></textarea>
+                </tr>
+                
+            </table>
+            <button id="subBtn" type="submit">전송</button>
+        </form>
+    </div>
+
+<script>
+ClassicEditor 
+
+.create( document.querySelector( '#smartEditor' ) ) 
+
+.then( editor => { 
+
+    console.log( editor ); 
+
+} ) 
+
+.catch( error => { 
+
+    console.error( error ); 
+
+} );
+
+</script>
+</body>
+</html>

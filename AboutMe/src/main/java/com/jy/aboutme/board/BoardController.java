@@ -26,7 +26,6 @@ public class BoardController {
 		return ViewRef.DEFAULT_TEMP;
 	}
 	
-	
 	// list 검색 관련 
 	@RequestMapping(value="/list", method = RequestMethod.POST)
 	public String list(Model model, BoardPARAM param) {
@@ -34,4 +33,35 @@ public class BoardController {
 		
 		return "redirect:/" + ViewRef.BOARD_LIST;
 	}
+	
+	
+	// 게시글 등록 / 수정
+	@RequestMapping(value="/reg", method = RequestMethod.GET)
+	public String boardReg(Model model, BoardPARAM param) {
+		model.addAttribute("view", ViewRef.BOARD_REG);
+		return ViewRef.DEFAULT_TEMP;
+	}
+	
+	@RequestMapping(value="/reg", method = RequestMethod.POST)
+	public String boardReg(BoardPARAM param) {
+		int result = service.insReg(param);
+		
+		return "redirect:/" + ViewRef.BOARD_REG;
+	}
+	
+	
+	// 테스트 안되면 지우기
+	@RequestMapping(value="/test", method = RequestMethod.GET)
+	public String test(Model model, BoardPARAM param) {
+		param.setI_board(3);
+		param = service.test(param);
+		model.addAttribute("ctnt", param);
+		
+		
+		return "board/test";
+	}
+	
+	
+	
+	
 }

@@ -11,4 +11,7 @@ public interface BoardMapper {
 
 	List<BoardPARAM> boardList();
 	
+	int insReg(BoardPARAM param);
+	
+	BoardPARAM test(BoardPARAM param);
 }
