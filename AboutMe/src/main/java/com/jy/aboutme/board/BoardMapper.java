@@ -11,6 +11,8 @@ public interface BoardMapper {
 
 	List<BoardPARAM> boardList();
 	
+	BoardPARAM boardDetail(BoardPARAM param);
+	
 	int insReg(BoardPARAM param);
 	
 	BoardPARAM test(BoardPARAM param);	// 테스트용 board/detail 다되면 지우면됨

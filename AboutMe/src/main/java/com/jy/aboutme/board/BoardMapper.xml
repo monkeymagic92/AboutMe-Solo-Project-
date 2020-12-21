@@ -11,17 +11,22 @@
 
 
 	<select id="boardList" resultType="BoardPARAM">
-		SELECT i_board, nm, title, ctnt, pw, r_dt
+		SELECT i_board, nm, title, ctnt, pw, scr, r_dt
 		FROM t_board
 		ORDER BY r_dt DESC
 	</select>
 
+	<select id="boardDetail" parameterType="BoardPARAM" resultType="BoardPARAM">
+		SELECT i_board, nm, title, ctnt, r_dt FROM t_board
+		WHERE i_board = #{i_board} 
+	</select>
+	
 	
 	<insert id="insReg" parameterType="BoardPARAM">
 		INSERT INTO t_board
-		(nm, title, ctnt, pw)
+		(nm, title, ctnt, pw, scr)
 		VALUES
-		(#{nm}, #{title}, #{ctnt}, #{pw})
+		(#{nm}, #{title}, #{ctnt}, #{pw}, #{scr})
 	</insert>
 	
 	

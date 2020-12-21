@@ -1,5 +1,7 @@
 package com.jy.aboutme.board;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,22 +40,46 @@ public class BoardController {
 	
 	// 게시글 등록 / 수정
 	@RequestMapping(value="/reg", method = RequestMethod.GET)
-	public String boardReg(Model model, BoardPARAM param) {
+	public String boardReg(Model model, BoardPARAM param, HttpServletRequest request) {
+		
+		try {
+			int i_board = Integer.parseInt(request.getParameter("i_board"));
+			param.setI_board(i_board);
+			
+		} catch(Exception e) {
+			
+			model.addAttribute("view", ViewRef.BOARD_REG);
+			return ViewRef.DEFAULT_TEMP;
+			
+		}
+		
+		model.addAttribute("data", service.boardDetail(param));
 		model.addAttribute("view", ViewRef.BOARD_REG);
 		return ViewRef.DEFAULT_TEMP;
+		
 	}
 	
 	@RequestMapping(value="/reg", method = RequestMethod.POST)
 	public String boardReg(BoardPARAM param) {
-		
+		System.out.println("scr값 : " + param.getScr());
 		int result = service.insReg(param);
 		
 		return "redirect:/" + ViewRef.BOARD_LIST;
 	}
 	
+	
+	// 게시글 상세페이지
 	@RequestMapping(value="/detail", method = RequestMethod.GET)
+	public String boardDetail(BoardPARAM param, Model model) {
+		
+		model.addAttribute("data", service.boardDetail(param));
+		model.addAttribute("view", ViewRef.BOARD_DETAIL);
+		return ViewRef.DEFAULT_TEMP;
+	}
+	
+	@RequestMapping(value="/detail", method = RequestMethod.POST)
 	public String boardDetail(BoardPARAM param) {
-		System.out.println("jifohads" + param.getI_board());
+		
 		return "";
 	}
 	

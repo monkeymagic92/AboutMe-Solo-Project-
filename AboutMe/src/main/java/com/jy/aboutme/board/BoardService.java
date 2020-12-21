@@ -18,6 +18,11 @@ public class BoardService {
 		return mapper.boardList();
 	}
 	
+	// 게시판 상세페에지
+	public BoardPARAM boardDetail(BoardPARAM param) {
+		return mapper.boardDetail(param);
+	}
+	
 	// 글등록 / 수정
 	public int insReg(BoardPARAM param) {
 		return mapper.insReg(param);

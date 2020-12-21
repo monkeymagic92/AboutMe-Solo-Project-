@@ -22,11 +22,14 @@ CREATE TABLE t_board(
 	ctnt LONGTEXT NOT NULL,
 	r_dt DATETIME DEFAULT NOW(),
 	pw VARCHAR(20),
+	scr VARCHAR (2),
 	PRIMARY KEY(i_board)
 );
 
 SELECT * FROM t_board;
 DROP TABLE t_board;
+
+
 
 
 CREATE TABLE t_ipIndex(

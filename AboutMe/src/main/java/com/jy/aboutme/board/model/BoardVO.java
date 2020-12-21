@@ -8,8 +8,17 @@ public class BoardVO {
 	private String title;
 	private String ctnt;
 	private String r_dt;
+	private String scr;
 	private String pw;
 	
+	
+	
+	public String getScr() {
+		return scr;
+	}
+	public void setScr(String scr) {
+		this.scr = scr;
+	}
 	public int getI_board() {
 		return i_board;
 	}

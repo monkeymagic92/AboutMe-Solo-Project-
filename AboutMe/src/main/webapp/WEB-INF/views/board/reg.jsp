@@ -35,15 +35,16 @@
 	<div class="regContainer">
         <form id="frm" action="/board/reg" method="post" onsubmit="return chk()">
             <div class="nickPwChk">
-                <input id="insNick" type="text" name="nm" placeholder="작성자를 입력해 주세요">&nbsp;&nbsp;
+                <input id="insNick" type="text" name="nm" placeholder="작성자를 입력해 주세요" value="${data.nm}">&nbsp;&nbsp;
                 <input id="insScr" type="password" name="pw" placeholder="비밀번호">
-              비밀 게시글<input id="scrChk" type="checkbox" name="scr">
+                <input type="hidden" name="scr">
+              비밀 게시글<input id="scrChk" type="checkbox" name="scrCode">
             </div>
             <br>
-            <input id="insTitle" type="text" name="title" placeholder="제목 입력">
-            <textarea name="ctnt" id="description"></textarea>
+            <input id="insTitle" type="text" name="title" placeholder="제목 입력" value="${data.title}">
+            <textarea name="ctnt" id="description">${data.ctnt}</textarea>
             <div class="bottomBtns">
-                <button class="bottomBtn" type="submit">전송</button>
+                <button class="bottomBtn" type="submit">${data.i_board == null ? '글등록' : '글수정'}</button>
                 <button class="bottomBtn" type="button" onclick="moveToList()">나가기</button>
             </div>
         </form>
@@ -73,17 +74,12 @@ function moveToList() {
 }
 
 
-// 비밀 입력창은 초기에 숨김
-$('#insScr').hide();
-
 // 비밀게시글 체크시 비밀입력창 보여줌 , 미체크시 비밀입력창 hide
 $('#scrChk').click(function() {
-    if($("input:checkbox[name=scr]").is(":checked") == true) {
-        $('#insScr').show();
-        
-    } else if($("input:checkbox[name=scr]").is(":checked") == false) {
+    if($("input:checkbox[name=scrCode]").is(":checked") == true) {
+        frm.scr.value = 2
+    } else if($("input:checkbox[name=scrCode]").is(":checked") == false) {
     	
-        $('#insScr').hide();
     }
 })
 
