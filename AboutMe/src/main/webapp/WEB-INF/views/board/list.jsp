@@ -27,6 +27,12 @@
             </form>
             <button id="writeBtn" type="button" onclick="moveToReg()">글작성</button>
         </div>
+        <!-- 여기섯 지ㅏㄱ임@@@@@@@@@@@ -->
+        <!-- 여기섯 지ㅏㄱ임@@@@@@@@@@@ -->
+        <!-- 여기섯 지ㅏㄱ임@@@@@@@@@@@ -->
+        <!-- 여기섯 지ㅏㄱ임@@@@@@@@@@@ -->
+        <!-- 여기섯 지ㅏㄱ임@@@@@@@@@@@ -->
+        <!-- 여기섯 지ㅏㄱ임@@@@@@@@@@@ -->
         <table cellpadding="10" cellspacing="0">
             <thead>
                 <tr>
@@ -38,43 +44,39 @@
             <tbody>
             	<c:forEach items="${data}" var="item">
             		<c:if test="${loginUser.nm == null}">
-           			
-           				<c:if test="${item.scr == ''}">
-           					<tr onclick="moveToDetailScr(${item.i_board})">
+           				<c:if test="${item.scr == 2}">
+           					<tr onclick="moveToDetailScr(${item.i_board}, '${item.pw}')">
 	            				<th>비밀 게시글 입니다</th>
 	            				<th>비밀 게시글 입니다</th>
 	            				<th>${item.r_dt}</th>
             				</tr>
             			</c:if>
             			
-            			<c:if test="${item.scr != ''}">
+            			<c:if test="${item.scr == 1}">
             				<tr onclick="moveToDetail(${item.i_board})">
 		            			<th>${item.title}</th>
 		            			<th>${item.nm}</th>
 		            			<th>${item.r_dt}</th>
 		            		</tr>
             			</c:if>
-            			
             		</c:if>
+            		
+            		
             		<c:if test="${loginUser.nm != null}">
             			<tr onclick="moveToDetail(${item.i_board})">
-	            			<c:if test="${item.scr == ''}">
+	            			<c:if test="${item.scr == 2}">
 	            				<th>비밀 게시글 입니다</th>
 	            				<th>비밀 게시글 입니다</th>
 	            				<th>${item.r_dt}</th>
 	            			</c:if>
 	            			
-	            			<c:if test="${item.scr != ''}">
+	            			<c:if test="${item.scr == 1}">
 		            			<th>${item.title}</th>
 		            			<th>${item.nm}</th>
 		            			<th>${item.r_dt}</th>
 	            			</c:if>
 	            		</tr>
 	              	</c:if>
-	            	
-            		
-            		
-            		</tr>
             	</c:forEach>
             </tbody>
         </table>
@@ -122,6 +124,11 @@
     </div>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>    
 <script>
+	if(${scrFalse != null}) {
+		alert('${scrFalse}')
+	}
+
+
 	var userNm = `${loginUser.nm}`
 	console.log('유저값 : ' + userNm)
 	
@@ -129,8 +136,17 @@
 		location.href="/board/detail?i_board="+i_board
 	}
 	
-	function moveToDetailScr(i_board) {
-		$('#myModalCer').show();
+	function moveToDetailScr(i_board, pw) {
+		var promScr = prompt('비밀번호를 입력해 주세요')
+		
+		if(promScr == pw) {
+			location.href="/board/detail?i_board="+i_board
+					
+		} else {
+			alert('비밀번호가 틀렸습니다')
+		}
+		
+		//$('#myModalCer').show();
 	}
 
 	

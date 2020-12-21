@@ -37,7 +37,7 @@
             <div class="nickPwChk">
                 <input id="insNick" type="text" name="nm" placeholder="작성자를 입력해 주세요" value="${data.nm}">&nbsp;&nbsp;
                 <input id="insScr" type="password" name="pw" placeholder="비밀번호">
-                <input type="hidden" name="scr">
+                <input type="hidden" name="scr" value="1">
               비밀 게시글<input id="scrChk" type="checkbox" name="scrCode">
             </div>
             <br>
@@ -79,7 +79,7 @@ $('#scrChk').click(function() {
     if($("input:checkbox[name=scrCode]").is(":checked") == true) {
         frm.scr.value = 2
     } else if($("input:checkbox[name=scrCode]").is(":checked") == false) {
-    	
+    	frm.scr.value = 1
     }
 })
 

@@ -10,18 +10,28 @@
 	<!-- 테스트용@@@@@@@@@@@@@@@@@@@ -->
 
 
+	<!-- 게시글 전체 리스트 -->
 	<select id="boardList" resultType="BoardPARAM">
 		SELECT i_board, nm, title, ctnt, pw, scr, r_dt
 		FROM t_board
 		ORDER BY r_dt DESC
 	</select>
 
+	<!-- 게시글 상세페이지 -->
 	<select id="boardDetail" parameterType="BoardPARAM" resultType="BoardPARAM">
 		SELECT i_board, nm, title, ctnt, r_dt FROM t_board
 		WHERE i_board = #{i_board} 
 	</select>
 	
 	
+	<!-- 비밀번호 맞추기 (게시글) -->
+	<select id="selScr" parameterType="BoardPARAM" resultType="BoardDMI">
+		SELECT scr FROM t_board
+		WHERE i_board = #{i_board}
+	</select>
+	
+	
+	<!-- 게시글 등록 -->	
 	<insert id="insReg" parameterType="BoardPARAM">
 		INSERT INTO t_board
 		(nm, title, ctnt, pw, scr)

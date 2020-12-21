@@ -7,8 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jy.aboutme.ViewRef;
+import com.jy.aboutme.board.model.BoardDMI;
 import com.jy.aboutme.board.model.BoardPARAM;
 
 
@@ -77,11 +79,28 @@ public class BoardController {
 		return ViewRef.DEFAULT_TEMP;
 	}
 	
+	/*
 	@RequestMapping(value="/detail", method = RequestMethod.POST)
-	public String boardDetail(BoardPARAM param) {
+	public String boardDetail(BoardPARAM param, BoardDMI dmi,
+			RedirectAttributes ra) {
+		System.out.println("param : " + param.getScr());
+		System.out.println("param : " + dmi.getScr());
+		System.out.println("i_board 값 : " + param.getI_board());
 		
-		return "";
+		dmi = service.selScr(param);
+		System.out.println("1");
+		if(param.getScr().equals(dmi.getScr())) {
+			System.out.println("비번 맞춤");
+			return "redirect:/" + ViewRef.BOARD_DETAIL;
+		} else {
+			System.out.println("비번 틀림");
+			ra.addFlashAttribute("scrFalse", "비밀번호를 다시 입력해 주세요");
+			 
+		}
+		
+		return "redirect:/" + ViewRef.BOARD_LIST;
 	}
+	*/
 	
 	
 	
