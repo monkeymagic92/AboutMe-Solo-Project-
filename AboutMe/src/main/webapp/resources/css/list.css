@@ -56,7 +56,6 @@
     font-weight: bold;
 }
 
-
 label {
     font-size: 1em;
     font-weight: bold;
@@ -64,28 +63,28 @@ label {
 
 #writeBtn {
     margin-left: 610px;
-    
     width: 80px;
     height: 35px;
-    border: 1px solid #5ca8ff;
+    border: 2px solid grey;
     border-radius: 6px;
     font-weight: bold;
     font-size: 1em;
     background-color: white;
-    
+    transition: 0.3s;
 }
 
 #writeBtn:hover {
     cursor: pointer;
     color: grey;
-    outline-style: none;
+    box-shadow: 0 4px 13px -5px grey;
+    transition: 0.4s;
     
 }
 
 table {
     margin-top: 5px;
     width: 100%;
-    border: 10px double #f5e6e6;
+    border: 10px double #e6dfd3;
     
     border-radius: 15px;
     
@@ -99,6 +98,7 @@ table {
 thead tr th {
     font-size: 1.2em;
     color: grey;
+    background-color:#ebebeb;
 }
 
 tbody tr th {
@@ -107,11 +107,12 @@ tbody tr th {
 
 tbody tr:nth-child(2n) {
     border-right: 2px double black;
-    background:#f5e6e6;
+    background:#e6dfd3;
   
 }
 
 tbody tr:hover {
+    
     cursor: pointer;
     background-color: #ebebeb;
 }

@@ -1,0 +1,140 @@
+.detailContainer {
+    position: relative;
+    top: 60px;
+    left: 20%;
+    width: 1200px;
+    
+}
+
+.boardTitle {
+    width: 300px;
+    margin-left: 40%;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 3.1em;
+    color: #adaaaa;
+}
+
+.userContainer {
+    position: absolute;
+    width: 1120px;
+    height: 100px;
+    margin: -30px 0 0 -70px;
+    top:65%;
+    left: 10%;
+}
+
+
+.userInfo {
+    display: flex;
+    justify-content: start;
+}
+
+.userNm {
+    margin-top: 10px;
+    margin-left: 85px;
+    font-size: 1.9em;
+    color: #737070;
+}
+#date {
+    margin-left: 20px;
+    margin-top: 24px;
+    color: grey;
+    font-size: 0.95em;
+}
+
+.btns {
+    margin-top: 4px;
+    margin-left: 550px;
+    
+}
+
+.commonBtn {
+    width: 80px;
+    height: 46px;
+    margin-left: 25px;
+    border: 2px solid #ebefff;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #ebefff;
+    font-weight: bold;
+    outline-style: none;
+    transition: 0.3s;
+}
+
+.commonBtn:hover {
+    cursor: pointer;
+    box-shadow: 0 7px 14px -5px grey;
+    transition: 0.4s;
+    color:#b33636;
+    border-radius: 15px;
+}
+
+#divHr1 {
+    border-bottom: 2px solid grey;
+
+}
+
+.textDiv {
+    position: absolute;
+    top: 87%;
+    right: -0.8px;
+    width: 1200px;
+}
+
+.textAreaDiv {
+    width: 1080px;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-size: 1.3em;
+    border: 1px solid black;
+}
+
+.insCmt {
+    top: 300%;
+    background-color: grey;
+    width: 1000px;
+    height: 300px;
+   
+}
+
+.cmtContainerMo {
+    background-color: grey;
+    width: 1080px;
+    text-align: start;
+    margin-left: 59px;
+    margin-top: 5px;
+}
+
+.cmtContainer {
+   display: flex;
+   text-align: center;
+   width: 1080px;
+   margin-left: 59px;
+   margin-top: 5px;
+   border-radius: 2px;
+   text-align: start;
+   background-color: #dbd7d7;
+}
+
+.cmtDate {
+    margin-top: 5px;
+    margin-left: 10px;
+    color: grey;
+    font-size: 0.95em;
+}
+
+.cmtCnt {
+    margin
+}
+
+.cmtNick {
+    margin-left: 15px;
+    color: #737070;
+    font-size: 1.5em;
+}
+
+.height {
+    height: 1000px;
+}

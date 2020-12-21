@@ -1,0 +1,88 @@
+.detailContainer {
+   margin: 0 auto;
+}
+
+.boardTitle {
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.9em;
+    color: #adaaaa;
+}
+
+.userContainer {
+    
+    width: 1120px;
+    margin: 0 auto;
+}
+
+.userInfo {
+    display: flex;
+    width: 1200px;
+}
+
+#userNm {
+    margin-top: 10px;
+    margin-left: 50px;
+    font-size: 1.9em;
+    color: #737070;
+}
+
+#date {
+    margin-left: 20px;
+    margin-top: 24px;
+    color: grey;
+    font-size: 0.95em;
+}
+
+.btns {
+    margin-top: 4px;
+    margin-left: 550px;
+    
+}
+
+.commonBtn {
+    width: 80px;
+    height: 46px;
+    margin-left: 25px;
+    border: 2px solid #ebefff;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #ebefff;
+    font-weight: bold;
+    outline-style: none;
+    transition: 0.3s;
+}
+
+.commonBtn:hover {
+    cursor: pointer;
+    box-shadow: 0 7px 14px -5px grey;
+    transition: 0.4s;
+    color:#b33636;
+    border-radius: 15px;
+}
+
+.textDiv {
+    margin-left: 5px;
+}
+
+#divHr1 {
+    margin-top: 20px;
+    border-bottom: 2px solid grey;
+
+}
+
+.textAreaDiv {
+    width: 1080px;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-size: 1.3em;
+    border: 1px solid black;
+}
+
+.height {
+    height: 500px;
+}

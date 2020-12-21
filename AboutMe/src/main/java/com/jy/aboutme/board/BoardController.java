@@ -53,7 +53,7 @@ public class BoardController {
 	// 테스트 안되면 지우기
 	@RequestMapping(value="/test", method = RequestMethod.GET)
 	public String test(Model model, BoardPARAM param) {
-		param.setI_board(7);
+		param.setI_board(1);
 		param = service.test(param);
 		model.addAttribute("ctnt", param);
 		

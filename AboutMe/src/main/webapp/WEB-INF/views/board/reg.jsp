@@ -25,10 +25,11 @@
 //높이와 넓이를 설정하지 않으면 화면이 작게 나오기때문에 설정해주어야 한다.
 $(function(){
   $("#description").summernote({
-      height : 300,
+      height : 530,
       width : 800,
-      codeviewFilter: false,	// xss 방어
+      codeviewFilter: false,
       codeviewIframeFilter: true,
+      placeholder: '내용을 입력해 주세요'
   });
 });
 
@@ -36,6 +37,10 @@ function moveToList() {
     if(confirm('입력된 내용은 저장되지 않습니다 작성을 종료 하시겠습니까 ?')) {
         location.href="/board/list"
     }
+}
+
+window.onload = function() {
+	frm.title.focus();
 }
 
 </script>

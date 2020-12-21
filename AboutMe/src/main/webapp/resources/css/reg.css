@@ -4,7 +4,7 @@
     width: 100%;
     margin: 0 auto;
     margin-left: 520px;
-    margin-top: 90px;
+    margin-top: 60px;
 }
 
 #insTitle {
@@ -48,4 +48,5 @@
     box-shadow: 0 7px 14px -5px grey;
     transition: 0.4s;
     color:#b33636;
+    border-radius: 15px;
 }

@@ -53,6 +53,7 @@
 		
 	</div>
 	
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
 	if(${loginErr != null}) {
 		frm.user_id.focus()
@@ -61,6 +62,11 @@
 	function logOut(i_user) {
 		location.href="/logOut?i_user="+i_user
 	}
+	
+	window.onload = function() {
+		frm.user_id.focus();
+	}
+	
 	
 </script>
 </body>
