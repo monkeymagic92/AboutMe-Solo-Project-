@@ -8,8 +8,7 @@ public class BoardVO {
 	private String title;
 	private String ctnt;
 	private String r_dt;
-	private int scr;
-	private int pw;
+	private String pw;
 	
 	public int getI_board() {
 		return i_board;
@@ -48,16 +47,12 @@ public class BoardVO {
 	public void setR_dt(String r_dt) {
 		this.r_dt = r_dt;
 	}
-	public int getScr() {
-		return scr;
-	}
-	public void setScr(int scr) {
-		this.scr = scr;
-	}
-	public int getPw() {
+	
+	public String getPw() {
 		return pw;
 	}
-	public void setPw(int pw) {
+	public void setPw(String pw) {
 		this.pw = pw;
 	}
+	
 }

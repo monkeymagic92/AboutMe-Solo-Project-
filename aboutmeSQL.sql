@@ -21,7 +21,6 @@ CREATE TABLE t_board(
 	title VARCHAR(50) NOT NULL,
 	ctnt LONGTEXT NOT NULL,
 	r_dt DATETIME DEFAULT NOW(),
-	scr INT(2) DEFAULT 1,
 	pw VARCHAR(20),
 	PRIMARY KEY(i_board)
 );

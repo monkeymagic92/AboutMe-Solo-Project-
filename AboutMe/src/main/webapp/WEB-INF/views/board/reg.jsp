@@ -36,8 +36,8 @@
         <form id="frm" action="/board/reg" method="post" onsubmit="return chk()">
             <div class="nickPwChk">
                 <input id="insNick" type="text" name="nm" placeholder="작성자를 입력해 주세요">&nbsp;&nbsp;
-                <input id="insScr" type="password" name="scr" placeholder="비밀번호">
-                비밀 게시글<input id="scrChk" type="checkbox" name="scr" type="password">
+                <input id="insScr" type="password" name="pw" placeholder="비밀번호">
+              비밀 게시글<input id="scrChk" type="checkbox" name="scr">
             </div>
             <br>
             <input id="insTitle" type="text" name="title" placeholder="제목 입력">
@@ -77,7 +77,9 @@ $('#insScr').hide();
 $('#scrChk').click(function() {
     if($("input:checkbox[name=scr]").is(":checked") == true) {
         $('#insScr').show();
+        
     } else if($("input:checkbox[name=scr]").is(":checked") == false) {
+    	
         $('#insScr').hide();
     }
 })

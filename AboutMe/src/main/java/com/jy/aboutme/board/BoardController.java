@@ -44,9 +44,10 @@ public class BoardController {
 	
 	@RequestMapping(value="/reg", method = RequestMethod.POST)
 	public String boardReg(BoardPARAM param) {
+		
 		int result = service.insReg(param);
 		
-		return "redirect:/" + ViewRef.BOARD_REG;
+		return "redirect:/" + ViewRef.BOARD_LIST;
 	}
 	
 	

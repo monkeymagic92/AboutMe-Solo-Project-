@@ -15,9 +15,9 @@
 	
 	<insert id="insReg" parameterType="BoardPARAM">
 		INSERT INTO t_board
-		(title, ctnt)
+		(nm, title, ctnt, pw)
 		VALUES
-		(#{title}, #{ctnt})
+		(#{nm}, #{title}, #{ctnt}, #{pw})
 	</insert>
 	
 	
