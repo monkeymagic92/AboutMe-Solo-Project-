@@ -2,16 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jy.aboutme.board.BoardMapper">
 
-	<!--  테스트@@@@@@@@@@@@@@@@ -->
+	<!--  테스트@@@@@@@@@@@@@@@@ board detail 다되면 지우기-->
 	<select id="test" resultType="BoardPARAM" parameterType="BoardPARAM">
 		SELECT ctnt FROM t_board
 		WHERE i_board = #{i_board}
 	</select>
 	<!-- 테스트용@@@@@@@@@@@@@@@@@@@ -->
 
+
 	<select id="boardList" resultType="BoardPARAM">
-		SELECT * FROM t_board
+		SELECT i_board, nm, title, ctnt, pw, r_dt
+		FROM t_board
+		ORDER BY r_dt DESC
 	</select>
+
 	
 	<insert id="insReg" parameterType="BoardPARAM">
 		INSERT INTO t_board

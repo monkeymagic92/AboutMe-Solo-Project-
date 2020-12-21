@@ -22,6 +22,7 @@ public class BoardController {
 	@RequestMapping(value="/list", method = RequestMethod.GET)
 	public String list(Model model) {
 		
+		model.addAttribute("data", service.boardList());
 		model.addAttribute("view", ViewRef.BOARD_LIST);
 		return ViewRef.DEFAULT_TEMP;
 	}
@@ -49,6 +50,17 @@ public class BoardController {
 		
 		return "redirect:/" + ViewRef.BOARD_LIST;
 	}
+	
+	@RequestMapping(value="/detail", method = RequestMethod.GET)
+	public String boardDetail(BoardPARAM param) {
+		System.out.println("jifohads" + param.getI_board());
+		return "";
+	}
+	
+	
+	
+	
+	
 	
 	
 	// 테스트 안되면 지우기

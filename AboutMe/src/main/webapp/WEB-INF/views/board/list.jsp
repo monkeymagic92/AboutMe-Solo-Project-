@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,81 +36,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th>뭐지??</th>
-                    <th>이재용</th>
-                    <th>2020-12-24</th>
-                </tr>
-                <tr>
-                    <th>ㅎㅇㅎㅇ</th>
-                    <th>이재용</th>
-                    <th>2020-12-24</th>
-                </tr>
-                <tr>
-                    <th>제목입니다</th>
-                    <th>이재용</th>
-                    <th>2020-12-24</th>
-                </tr>
-                <tr>
-                    <th>하이재용이</th>
-                    <th>이재용</th>
-                    <th>2020-12-24</th>
-                </tr>
-                <tr>
-                    <th>하이재용이</th>
-                    <th>이재용</th>
-                    <th>2020-12-24</th>
-                </tr>
-                <tr>
-                    <th>하이재용이</th>
-                    <th>이재용</th>
-                    <th>2020-12-24</th>
-                </tr>
-                <tr>
-                    <th>하이재용이</th>
-                    <th>이재용</th>
-                    <th>2020-12-24</th>
-                </tr>
-                <tr>
-                    <th>하이재용이</th>
-                    <th>이재용</th>
-                    <th>2020-12-24</th>
-                </tr>
-                <tr>
-                    <th>하이재용이</th>
-                    <th>이재용</th>
-                    <th>2020-12-24</th>
-                </tr>
-                <tr>
-                    <th>하이재용이</th>
-                    <th>이재용</th>
-                    <th>2020-12-24</th>
-                </tr>
-                <tr>
-                    <th>하이재용이</th>
-                    <th>이재용</th>
-                    <th>2020-12-24</th>
-                </tr>
-                <tr>
-                    <th>하이재용이</th>
-                    <th>이재용</th>
-                    <th>2020-12-24</th>
-                </tr>
-                <tr>
-                    <th>하이재용이</th>
-                    <th>이재용</th>
-                    <th>2020-12-24</th>
-                </tr>
-                <tr>
-                    <th>하이재용이</th>
-                    <th>이재용</th>
-                    <th>2020-12-24</th>
-                </tr>
-                <tr>
-                    <th>하이재용이</th>
-                    <th>이재용</th>
-                    <th>2020-12-24</th>
-                </tr>
+            	<c:forEach items="${data}" var="item">
+            		<tr onclick="moveToDetail(${item.i_board})">
+	                    <th>${item.title}</th>
+	                    <th>${item.nm }</th>
+	                    <th>${item.r_dt }</th>
+	                </tr>
+            	</c:forEach>
             </tbody>
         </table>
 
@@ -124,6 +57,10 @@
     </div>
     
 <script>
+	function moveToDetail(i_board) {
+		location.href="/board/detail?i_board="+i_board
+	}
+
 	function moveToReg() {
 		location.href="/board/reg"
 	}

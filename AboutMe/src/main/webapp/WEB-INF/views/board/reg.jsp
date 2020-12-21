@@ -55,6 +55,7 @@
 <script>
 //id가 description인 것을 summernote 방식으로 적용하라는 의미이다.
 //높이와 넓이를 설정하지 않으면 화면이 작게 나오기때문에 설정해주어야 한다.
+// condeviewFilter = xss 방어
 $(function(){
   $("#description").summernote({
       height : 540,
@@ -72,8 +73,10 @@ function moveToList() {
 }
 
 
+// 비밀 입력창은 초기에 숨김
 $('#insScr').hide();
 
+// 비밀게시글 체크시 비밀입력창 보여줌 , 미체크시 비밀입력창 hide
 $('#scrChk').click(function() {
     if($("input:checkbox[name=scr]").is(":checked") == true) {
         $('#insScr').show();

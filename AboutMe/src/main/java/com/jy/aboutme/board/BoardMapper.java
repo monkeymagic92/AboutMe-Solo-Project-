@@ -13,5 +13,5 @@ public interface BoardMapper {
 	
 	int insReg(BoardPARAM param);
 	
-	BoardPARAM test(BoardPARAM param);
+	BoardPARAM test(BoardPARAM param);	// 테스트용 board/detail 다되면 지우면됨
 }
