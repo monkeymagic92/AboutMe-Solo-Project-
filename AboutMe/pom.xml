@@ -125,6 +125,7 @@
 		</dependency>
 	
 		<!-- Test -->
+		
 		<dependency>
 		  <groupId>org.thymeleaf</groupId>
 		  <artifactId>thymeleaf</artifactId>
@@ -136,6 +137,7 @@
 		  <artifactId>thymeleaf-spring4</artifactId>
 		  <version>3.0.11.RELEASE</version>
 		</dependency>
+		
 		
 		<dependency>
 			<groupId>junit</groupId>
@@ -198,6 +200,17 @@
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>8.0.22</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
+		<dependency>
+		    <groupId>org.mariadb.jdbc</groupId>
+		    <artifactId>mariadb-java-client</artifactId>
+		    <version>2.7.1</version>
+		</dependency>
+
+
+
+		
 		
 		<!-- 이메일 관련 -->
 		<dependency>
