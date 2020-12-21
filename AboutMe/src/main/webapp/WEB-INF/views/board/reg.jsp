@@ -30,7 +30,9 @@
 $(function(){
   $("#description").summernote({
       height : 300,
-      width : 800
+      width : 800,
+      codeviewFilter: false,
+      codeviewIframeFilter: true,
   });
 });
 </script>
