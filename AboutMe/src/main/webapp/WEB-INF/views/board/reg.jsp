@@ -77,11 +77,43 @@ function moveToList() {
 // 비밀게시글 체크시 비밀입력창 보여줌 , 미체크시 비밀입력창 hide
 $('#scrChk').click(function() {
     if($("input:checkbox[name=scrCode]").is(":checked") == true) {
+    	if(frm.pw.value.length == 0) {
+    		alert('비밀번호를 입력해 주세요')
+    		frm.pw.focus()
+    		return false;
+    	}
         frm.scr.value = 2
     } else if($("input:checkbox[name=scrCode]").is(":checked") == false) {
     	frm.scr.value = 1
     }
 })
+
+// form 유효검사
+function chk() {
+	if(frm.nm.value.length == 0) {
+		alert('이름을 입력해 주세요')
+		frm.nm.focus()
+		return false;
+	}
+	
+	if(frm.title.value.length == 0) {
+		alert('제목을 입력해 주세요')
+		frm.title.focus()
+		return false;
+	}
+	
+	if(frm.ctnt.value.length == 0) {
+		alert('내용을 입력해 주세요')
+		frm.ctnt.focus()
+		return false;
+	}
+	
+	if(frm.pw.value.length == 0) {
+		alert('비밀번호를 입력해 주세요')
+		frm.pw.focus()
+		return false;
+	}
+}
 
 
 window.onload = function() {

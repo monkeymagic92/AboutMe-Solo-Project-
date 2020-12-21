@@ -19,7 +19,7 @@
 
 	<!-- 게시글 상세페이지 -->
 	<select id="boardDetail" parameterType="BoardPARAM" resultType="BoardPARAM">
-		SELECT i_board, nm, title, ctnt, r_dt FROM t_board
+		SELECT i_board, nm, title, pw, ctnt, r_dt FROM t_board
 		WHERE i_board = #{i_board} 
 	</select>
 	
