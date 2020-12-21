@@ -16,11 +16,7 @@
 <link rel="stylesheet" href="/res/css/reg.css">
 
 <style>
-	.aa {
-		width: 800px;
-		margin: 0 auto;
-		height: 600px;
-	}
+	
 </style>
 </head>
 <body>
@@ -31,10 +27,17 @@ $(function(){
   $("#description").summernote({
       height : 300,
       width : 800,
-      codeviewFilter: false,
+      codeviewFilter: false,	// xss 방어
       codeviewIframeFilter: true,
   });
 });
+
+function moveToList() {
+    if(confirm('입력된 내용은 저장되지 않습니다 작성을 종료 하시겠습니까 ?')) {
+        location.href="/board/list"
+    }
+}
+
 </script>
 <!-- 
 	관리자 글 권한 설정하는법
@@ -47,18 +50,19 @@ $(function(){
 	loginUser != null 이라면 그냥 글쓴이로 사용하게 하면 됨 
 	
  -->
-<div class="regContainer">
+	<div class="regContainer">
+        <form id="frm" action="/board/reg" method="post" onsubmit="return chk()">
+            <input id="insTitle" type="text" name="title" placeholder="제목 입력">
+            <textarea name="ctnt" id="description"></textarea>
+            <div class="bottomBtns">
+                <button class="bottomBtn" type="submit">전송</button>
+                <button class="bottomBtn" type="button" onclick="moveToList()">나가기</button>
+            </div>
+        </form>
+    </div>
+    <div class="height">
 
-	<form id="frm" action="/board/reg" method="post" onsubmit="return chk()">
-		<input id="insTitle" type="text" name="title" placeholder="제목 입력">
-		<div class="aa">
-			<textarea name="ctnt" id="description" rows="5" cols="60" ></textarea>
-		</div>
-		<button id="subBtn" type="submit">전송</button>
-	</form>
-</div>
-
-
+    </div>
 </body>
 </html>
 
