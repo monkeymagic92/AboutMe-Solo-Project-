@@ -20,30 +20,7 @@
 </style>
 </head>
 <body>
-<script>
-//id가 description인 것을 summernote 방식으로 적용하라는 의미이다.
-//높이와 넓이를 설정하지 않으면 화면이 작게 나오기때문에 설정해주어야 한다.
-$(function(){
-  $("#description").summernote({
-      height : 530,
-      width : 800,
-      codeviewFilter: false,
-      codeviewIframeFilter: true,
-      placeholder: '내용을 입력해 주세요'
-  });
-});
 
-function moveToList() {
-    if(confirm('입력된 내용은 저장되지 않습니다 작성을 종료 하시겠습니까 ?')) {
-        location.href="/board/list"
-    }
-}
-
-window.onload = function() {
-	frm.title.focus();
-}
-
-</script>
 <!-- 
 	관리자 글 권한 설정하는법
 	
@@ -57,6 +34,12 @@ window.onload = function() {
  -->
 	<div class="regContainer">
         <form id="frm" action="/board/reg" method="post" onsubmit="return chk()">
+            <div class="nickPwChk">
+                <input id="insNick" type="text" name="nm" placeholder="작성자를 입력해 주세요">&nbsp;&nbsp;
+                <input id="insScr" type="password" name="scr" placeholder="비밀번호">
+                비밀 게시글<input id="scrChk" type="checkbox" name="scr" type="password">
+            </div>
+            <br>
             <input id="insTitle" type="text" name="title" placeholder="제목 입력">
             <textarea name="ctnt" id="description"></textarea>
             <div class="bottomBtns">
@@ -68,6 +51,43 @@ window.onload = function() {
     <div class="height">
 
     </div>
+    
+<script>
+//id가 description인 것을 summernote 방식으로 적용하라는 의미이다.
+//높이와 넓이를 설정하지 않으면 화면이 작게 나오기때문에 설정해주어야 한다.
+$(function(){
+  $("#description").summernote({
+      height : 540,
+      width : 800,
+      codeviewFilter: false,
+      codeviewIframeFilter: true,
+      placeholder: '내용을 입력해 주세요'
+  });
+});
+
+function moveToList() {
+    if(confirm('입력된 내용은 저장되지 않습니다 작성을 종료 하시겠습니까 ?')) {
+        location.href="/board/list"
+    }
+}
+
+
+$('#insScr').hide();
+
+$('#scrChk').click(function() {
+    if($("input:checkbox[name=scr]").is(":checked") == true) {
+        $('#insScr').show();
+    } else if($("input:checkbox[name=scr]").is(":checked") == false) {
+        $('#insScr').hide();
+    }
+})
+
+
+window.onload = function() {
+	frm.nm.focus();
+}
+
+</script>
 </body>
 </html>
 

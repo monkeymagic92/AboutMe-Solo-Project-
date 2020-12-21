@@ -4,7 +4,35 @@
     width: 100%;
     margin: 0 auto;
     margin-left: 520px;
-    margin-top: 60px;
+    margin-top: 90px;
+}
+
+#insNick {
+    border-radius: 5px;
+    font-size: 1.1em;
+    outline-style: none;
+    transition: 0.3s;
+}
+
+#insNick:hover {
+    border: 2px solid grey;
+    transition: 0.3s;
+    box-shadow: 0 4px 9px -5px grey;
+}
+
+#insScr {
+    width: 100px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    outline-style: none;
+    transition: 0.3s;
+    text-align: center;
+}
+
+#insScr:hover {
+    border: 2px solid grey;
+    transition: 0.3s;
+    box-shadow: 0 4px 9px -5px grey;
 }
 
 #insTitle {
@@ -24,7 +52,7 @@
 }
 
 .bottomBtns {
-    margin-left: 240px;
+    margin-left: 233px;
     margin-top: 30px;
 }
 
