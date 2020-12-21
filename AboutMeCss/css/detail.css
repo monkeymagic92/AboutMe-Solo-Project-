@@ -9,7 +9,7 @@
     margin-top: 50px;
     text-align: center;
     font-weight: bold;
-    font-size: 2.9em;
+    font-size: 2.4em;
     color: #adaaaa;
 }
 
@@ -40,7 +40,7 @@
 
 .btns {
     margin-top: 4px;
-    margin-left: 550px;
+    margin-left: 567px;
     
 }
 
@@ -80,8 +80,88 @@
     margin: 0 auto;
     margin-top: 50px;
     font-size: 1.3em;
-    border: 1px solid black;
+    color: #4a4848;
 }
+
+.cmtListBox {
+    margin-top: 140px;
+    
+}
+
+.cmtList {
+    margin: 0 auto;
+    width: 1085px;
+    background-color: #f2f2f2;
+    border-radius: 3px;
+    
+}
+.cmtFlex {
+    display: flex;
+}
+
+.cmtNick {
+    font-size: 1.3em;
+    color: #737070;   
+    font-weight: bold;
+}
+
+.cmtDate {
+    margin-top: 4px;
+    margin-left: 20px;
+    color: grey;
+    font-size: 0.95em;   
+}
+
+.cmtSel {
+    margin-top: 5px;
+    font-size: 1.2em;
+    color: #737070;   
+    margin-bottom: 14px;
+}
+
+.insCmtContainer {
+    width: 1085px;
+    height: 110px;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+
+.textZ {
+    display: flex;
+    margin-top: 10px;
+}
+
+#cmtText {
+    outline-style: none;
+}
+
+#cmtRegBtn {
+    margin-left: 8px;
+    border: 1px solid skyblue;
+    border-radius: 3px;
+    font-size: 1em;
+    color: #4a4848;
+    font-weight: bold;
+    outline-style: none;
+}
+
+#cmtRegBtn:hover {
+    cursor: pointer;
+}
+
+
+.cmtContainer {
+    margin-top: 40px;
+}
+
+.cmtDivMo {
+    margin-top: 100px;
+    margin: 0 auto;
+}
+
+
+
+
 
 .height {
     height: 500px;
