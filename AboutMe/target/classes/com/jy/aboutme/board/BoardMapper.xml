@@ -16,6 +16,25 @@
 		FROM t_board
 		ORDER BY r_dt DESC
 	</select>
+	
+	
+	
+		
+	<!-- 작성자 검색 -->
+	<!-- 여기서 하나로 묶기!! -->
+	<select id="searchNm" parameterType="BoardPARAM" resultType="BoardPARAM">
+		SELECT i_board, nm, title, ctnt, pw, scr, r_dt FROM t_board
+		WHERE nm LIKE CONCAT('%', #{search}, '%')
+	</select>
+	
+	<!-- 제목 검색 -->
+	<select id="searchTitle" parameterType="BoardPARAM" resultType="BoardPARAM">
+		SELECT i_board, nm, title, ctnt, pw, scr, r_dt FROM t_board
+		WHERE title LIKE CONCAT('%', #{search}, '%')
+	</select>
+	
+	
+	
 
 	<!-- 게시글 상세페이지 -->
 	<select id="boardDetail" parameterType="BoardPARAM" resultType="BoardPARAM">
@@ -31,7 +50,9 @@
 	</select>
 	
 	
-	<!-- 게시글 등록 -->	
+	<!-- 게시글 등록
+		 마지막에 insert 된 i_board값을 반환한다
+	 -->	
 	<insert id="insReg" parameterType="BoardPARAM">		
 		INSERT INTO t_board
 		(nm, title, ctnt, pw, scr)

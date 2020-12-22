@@ -14,7 +14,7 @@
             <h3>개발자에게 하고싶은 말을 자유롭게 작성해 주세요</h3>
         </div>
         <div class="topContainer">
-            <form id="frm" action="/board/list" method="post" onsubmit="return chk()">
+            <form id="frm" action="/board/list" method="get" onsubmit="return chk()">
                 <label>
                     제목 <input type="radio" class="searchMenu" name="searchResult" value="1" checked>
                 </label>

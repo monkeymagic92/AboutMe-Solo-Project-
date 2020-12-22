@@ -29,6 +29,15 @@ public class BoardService {
 	public BoardPARAM boardDetail(BoardPARAM param) {
 		return mapper.boardDetail(param);
 	}
+	 
+	public List<BoardPARAM> searchNm(BoardPARAM param) {
+		return mapper.searchNm(param);
+	}
+	
+	public List<BoardPARAM> searchTitle(BoardPARAM param) {
+		return mapper.searchTitle(param);
+	}
+	
 	
 	// 글등록 / 수정
 	public int insReg(BoardPARAM param) {

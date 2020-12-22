@@ -24,19 +24,37 @@ public class BoardController {
 	
 	// 개발자 문의 list
 	@RequestMapping(value="/list", method = RequestMethod.GET)
-	public String list(Model model) {
+	public String list(Model model, BoardPARAM param) {
+		System.out.println("param 값 : " + param.getSearchResult());
 		
-		model.addAttribute("data", service.boardList());
+		if(param.getSearchResult() == 0) { // 전체 글 
+			model.addAttribute("data", service.boardList());
+			
+		} else if(param.getSearchResult() == 1) { // 제목 검색
+			System.out.println("제목 검색");
+			model.addAttribute("data", service.searchTitle(param));
+		
+		} else { // 작성자 검색
+			System.out.println("내용 검색");
+			model.addAttribute("data", service.searchNm(param));
+			
+		}
+		
 		model.addAttribute("view", ViewRef.BOARD_LIST);
 		return ViewRef.DEFAULT_TEMP;
 	}
 	
+	
+	
 	// list 검색 관련 
 	@RequestMapping(value="/list", method = RequestMethod.POST)
-	public String list(Model model, BoardPARAM param) {
+	public String list(Model model, BoardPARAM param, int i) {
+			
 		
 		
-		return "redirect:/" + ViewRef.BOARD_LIST;
+		
+		model.addAttribute("view", ViewRef.BOARD_LIST);
+		return ViewRef.DEFAULT_TEMP;
 	}
 	
 	
