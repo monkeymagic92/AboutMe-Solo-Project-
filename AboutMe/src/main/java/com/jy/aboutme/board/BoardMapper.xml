@@ -39,6 +39,16 @@
 		(#{nm}, #{title}, #{ctnt}, #{pw}, #{scr})
 	</insert>
 	
+	<update id="updReg" parameterType="BoardPARAM">
+		UPDATE t_board
+		SET nm = #{nm},
+		title = #{title},
+		ctnt = #{ctnt},
+		pw = #{pw},
+		scr = #{scr}
+		WHERE i_board = #{i_board}
+	</update>
+	
 	
 	
 </mapper>

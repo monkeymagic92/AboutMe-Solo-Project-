@@ -16,7 +16,11 @@ public interface BoardMapper {
 	
 	BoardDMI selScr(BoardPARAM param);
 	
-	int insReg(BoardPARAM param);	// 글 등록 
+	int insReg(BoardPARAM param);	// 글 등록
+	
+	int updReg(BoardPARAM param);
 	
 	BoardPARAM test(BoardPARAM param);	// 테스트용 board/detail 다되면 지우면됨
+	
+	 
 }

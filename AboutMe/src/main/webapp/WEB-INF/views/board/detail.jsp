@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,8 +19,16 @@
                 <div id="userNm">${data.nm}</div>
                 <div id="date">${data.r_dt}</div>
                 <div class="btns">
-                    <button type="button" class="commonBtn" onclick="moveToReg(${data.i_board}, '${data.pw}')">수정</button>
-                    <button type="button" class="commonBtn" onclick="moveToDel(${data.i_board}, '${data.pw}')">삭제</button>
+                	<c:if test="${loginUser.nm == null}">
+                		<button type="button" class="commonBtn" onclick="moveToRegScr(${data.i_board}, '${data.pw}')">수정</button>
+                		<button type="button" class="commonBtn" onclick="moveToDelScr(${data.i_board}, '${data.pw}')">삭제</button>
+                	</c:if>
+                	<c:if test="${loginUser.nm != null}">
+                		<button type="button" class="commonBtn" onclick="moveToReg(${data.i_board})">수정</button>
+                		<button type="button" class="commonBtn" onclick="moveToDel(${data.i_board})">삭제</button>
+                	</c:if>
+                    
+                    
                 </div>
             </div>
 
@@ -34,6 +43,7 @@
 
         <div class="cmtListBox">
             <div class="cmtList">
+            
                 <div class="cmtFlex">
                     <div class="cmtNick">Test321 테스트임</div>
                     <div class="cmtDate">2020-10-10 20:34 테스트임</div>
@@ -43,7 +53,7 @@
                                          댓글 내용적기
                 </div>
                 
-                
+
 
                 <!-- 테스트 cmtList 안에 append 해야됨-->
                 <div class="cmtFlex">
@@ -52,10 +62,10 @@
                 </div>
                 <!-- 안되면 pre로 바꾸기 -->
                 <div class="cmtSel">
-                    dasdasdada
+                                        댓글 내용적기
                 </div>
+                
             </div>
-
         </div>
 
         <!-- 아작스로 댓글 입력창 만들기 -->
@@ -77,6 +87,27 @@
                 
             </div>
         </div>
+        
+        
+        
+        <div id="myModalCer" class="modal">
+	 
+			<!-- Modal content -->
+			<div class="modal-content">
+			      <h2>비밀번호를 입력해 주세요</h2>
+			    <!-- Modal body -->
+			    <div class="modal-body">
+			    	<form id="scrFrm" action="/board/detail" method="post" onsubmit="return chk()">
+			    		<input id="cerCodeIns" type="password" name="pw" placeholder="비밀번호 입력">
+			    		<input type="hidden" name="i_board" value="${data.i_board}">
+			    		<input id="submitIns" type="submit" value="확인">
+			    	</form>
+			    </div>
+			    <button type="button" class="pop_bt" onclick="close_pop()">
+						종료
+				</button>
+			</div>
+	    </div>
     </div>
 
 
@@ -93,31 +124,49 @@
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
-    
-    function moveToReg(i_board, pw) {
-		var promScr = prompt('비밀번호를 입력해 주세요')
-		
-		if(promScr == pw) {
-			location.href="/board/reg?i_board="+i_board
-					
-		} else {
-			alert('비밀번호가 틀렸습니다')
-		}
-    	
+	//일반유저가 비밀번호 틀렸을시 
+	if(${scrFalse != null}) {
+		alert('${scrFalse}')
+	}
+
+    // 관리자 수정 삭제 (비번입력안함)
+    function moveToReg(i_board) {
+		location.href="/board/reg?i_board="+i_board
     }
 
-    function moveToDel(i_board, pw) {
-		var promScr = prompt('비밀번호를 입력해 주세요')
-		
-		if(promScr == pw) {
-			location.href="/board/del?i_board="+i_board
-					
-		} else {
-			alert('비밀번호가 틀렸습니다')
-		}
-        
+    function moveToDel(i_board) {
+		location.href="/board/del?i_board="+i_board
+    }
+	// @@@@@@@@@@@@@@@@@@@@@@@@
+	
+	
+	// 일반 수정삭제 (비번입력 O)
+	function moveToRegScr(i_board, pw) {
+		scrFrm.i_board.value = i_board		
+		$('#myModalCer').show();
+		scrFrm.pw.focus()
     }
 
+    function moveToDelScr(i_board, pw) {
+    	scrFrm.i_board.value = i_board		
+		$('#myModalCer').show();
+		scrFrm.pw.focus()
+    }
+	
+	// @@@@@@@@@@@@@@@@@@@@@@@@
+	
+	
+	// 비밀번호 입력창 --------
+	$('#myModalCer').hide();
+	
+	function close_pop(flag) {
+		 $('#myModalCer').hide();
+	}
+	
+	
+	
+	
+	// 댓글
     function cmtRegBtn() {
 
     }

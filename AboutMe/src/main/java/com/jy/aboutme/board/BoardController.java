@@ -44,11 +44,12 @@ public class BoardController {
 	@RequestMapping(value="/reg", method = RequestMethod.GET)
 	public String boardReg(Model model, BoardPARAM param, HttpServletRequest request) {
 		
-		try {
+		try {	// 수정
 			int i_board = Integer.parseInt(request.getParameter("i_board"));
 			param.setI_board(i_board);
 			
-		} catch(Exception e) {
+			
+		} catch(Exception e) {  // 등록
 			
 			model.addAttribute("view", ViewRef.BOARD_REG);
 			return ViewRef.DEFAULT_TEMP;
@@ -62,11 +63,47 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/reg", method = RequestMethod.POST)
-	public String boardReg(BoardPARAM param) {
-		System.out.println("scr값 : " + param.getScr());
-		int result = service.insReg(param);
+	public String boardReg(BoardPARAM param, BoardDMI dmi, RedirectAttributes ra,
+			HttpServletRequest request) {
+		
+		System.out.println("ㅡ reg postㅡ ");
+		
+		try { // 수정
+			System.out.println("regPost 글수정");
+			int i_board = Integer.parseInt(request.getParameter("i_board"));
+			param.setI_board(i_board);
+			service.updReg(param);
+			return "redirect:/board/detail?i_board="+param.getI_board();
+			
+			
+		} catch(Exception e) { // 등록
+			System.out.println("regPost 글등록");
+			e.printStackTrace();
+			int resultIns = service.insReg(param);
+			return "redirect:/board/detail?i_board="+param.getI_board();
+		}
+		
+		
+		
+		
+		
+		/*
+		System.out.println("pw값 : " + param.getPw());
+		System.out.println("i_board 값 : " + param.getI_board());
+		
+		if(param.getI_board() == 0) {	// 글쓰기 눌렀을때
+			System.out.println("글쓰기 걸림");
+			dmi = service.selScr(param);
+			int resultIns = service.insReg(param);
+			
+		} else {	// 수정눌렀을때
+			System.out.println("수정 걸림");
+			service.updReg(param);
+			return "redirect:/" + ViewRef.BOARD_LIST;
+		}
 		
 		return "redirect:/" + ViewRef.BOARD_LIST;
+		*/
 	}
 	
 	
@@ -84,19 +121,20 @@ public class BoardController {
 	@RequestMapping(value="/detail", method = RequestMethod.POST)
 	public String boardDetail(BoardPARAM param, BoardDMI dmi,
 			RedirectAttributes ra) {
-				
+		
 		dmi = service.selScr(param);
 		
 		if(param.getPw().equals(dmi.getPw())) { // 비밀번호가 일치하다면 
 		
-			return "redirect:/board/detail?i_board="+param.getI_board();
+			return "redirect:/board/reg?i_board="+param.getI_board(); // 쿼리스트링으로 detail.get에 보냄
 			
 		} else { // 비밀번호 틀렸다면
 		
 			ra.addFlashAttribute("scrFalse", "비밀번호를 다시 입력해 주세요");
+			return "redirect:/board/detail?i_board="+param.getI_board();
 		}
 		
-		return "redirect:/" + ViewRef.BOARD_LIST;
+		
 	}
 	
 	

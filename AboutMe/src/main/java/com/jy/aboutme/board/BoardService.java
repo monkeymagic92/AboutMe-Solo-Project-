@@ -35,6 +35,10 @@ public class BoardService {
 		return mapper.insReg(param);
 	}
 	
+	public int updReg(BoardPARAM param) {
+		return mapper.updReg(param);
+	}
+	
 
 	
 	

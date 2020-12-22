@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>글등록 / 수정</title>
@@ -35,14 +36,23 @@
 	<div class="regContainer">
         <form id="frm" action="/board/reg" method="post" onsubmit="return chk()">
             <div class="nickPwChk">
-                <input id="insNick" type="text" name="nm" placeholder="작성자를 입력해 주세요" value="${data.nm}">&nbsp;&nbsp;
+            	<c:if test="${loginUser.nm == null}">
+            		<input id="insNick" type="text" name="nm" placeholder="작성자를 입력해 주세요" value="${data.nm}">&nbsp;&nbsp;
+            	</c:if>
+            	<c:if test="${loginUser.nm != null}">
+            		<input id="insNick" type="text" name="nm" placeholder="작성자를 입력해 주세요" value="관리자">&nbsp;&nbsp;
+            	</c:if>
                 <input id="insScr" type="password" name="pw" placeholder="비밀번호">
                 <input type="hidden" name="scr" value="1">
               비밀 게시글<input id="scrChk" type="checkbox" name="scrCode">
             </div>
             <br>
             <input id="insTitle" type="text" name="title" placeholder="제목 입력" value="${data.title}">
-            <textarea name="ctnt" id="description">${data.ctnt}</textarea>
+            <textarea name="ctnt" id="description" th:utext="${html}">${data.ctnt}</textarea>
+            <div>i_board 값 : ${data.i_board}</div>
+            <c:if test="${data.i_board != null}">
+            	<input type="hidden" name="i_board" value="${data.i_board}">	
+            </c:if>
             <div class="bottomBtns">
                 <button class="bottomBtn" type="submit">${data.i_board == null ? '글등록' : '글수정'}</button>
                 <button class="bottomBtn" type="button" onclick="moveToList()">나가기</button>
@@ -53,6 +63,9 @@
 
     </div>
     
+    
+    
+   
 <script>
 //id가 description인 것을 summernote 방식으로 적용하라는 의미이다.
 //높이와 넓이를 설정하지 않으면 화면이 작게 나오기때문에 설정해주어야 한다.
@@ -90,11 +103,23 @@ $('#scrChk').click(function() {
 
 // form 유효검사
 function chk() {
+	var userNm = `${loginUser.nm}`
+	
 	if(frm.nm.value.length == 0) {
 		alert('이름을 입력해 주세요')
 		frm.nm.focus()
 		return false;
 	}
+	
+	if(userNm == '') {
+		if(frm.nm.value == '관리자') {
+			alert('작성자를 관리자로 입력할수 없습니다')
+			frm.nm.value = ''
+			frm.nm.focus()
+			return false;
+		}
+	}
+	
 	
 	if(frm.title.value.length == 0) {
 		alert('제목을 입력해 주세요')
