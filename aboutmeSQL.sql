@@ -22,7 +22,7 @@ CREATE TABLE t_board(
 	ctnt LONGTEXT NOT NULL,
 	r_dt DATETIME DEFAULT NOW(),
 	pw VARCHAR(20),
-	scr VARCHAR (2),
+	scr VARCHAR (2) DEFAULT 1,
 	PRIMARY KEY(i_board)
 );
 

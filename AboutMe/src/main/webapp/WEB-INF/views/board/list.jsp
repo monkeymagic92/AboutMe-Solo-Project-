@@ -27,12 +27,7 @@
             </form>
             <button id="writeBtn" type="button" onclick="moveToReg()">글작성</button>
         </div>
-        <!-- 여기섯 지ㅏㄱ임@@@@@@@@@@@ -->
-        <!-- 여기섯 지ㅏㄱ임@@@@@@@@@@@ -->
-        <!-- 여기섯 지ㅏㄱ임@@@@@@@@@@@ -->
-        <!-- 여기섯 지ㅏㄱ임@@@@@@@@@@@ -->
-        <!-- 여기섯 지ㅏㄱ임@@@@@@@@@@@ -->
-        <!-- 여기섯 지ㅏㄱ임@@@@@@@@@@@ -->
+        
         <table cellpadding="10" cellspacing="0">
             <thead>
                 <tr>
@@ -92,18 +87,16 @@
         
         
         
-        
-        
-        
         <div id="myModalCer" class="modal">
- 
+	 
 			<!-- Modal content -->
 			<div class="modal-content">
 			      <h2>비밀번호를 입력해 주세요</h2>
 			    <!-- Modal body -->
 			    <div class="modal-body">
-			    	<form id="frm" action="/board/detail" method="post" onsubmit="return chk()">
-			    		<input id="cerCodeIns" type="password" name="scr" placeholder="비밀번호 입력">
+			    	<form id="scrFrm" action="/board/detail" method="post" onsubmit="return chk()">
+			    		<input id="cerCodeIns" type="password" name="pw" placeholder="비밀번호 입력">
+			    		<input type="hidden" name="i_board">
 			    		<input id="submitIns" type="submit" value="확인">
 			    	</form>
 			    </div>
@@ -112,43 +105,31 @@
 				</button>
 			</div>
 	    </div>
-	        
-        
-        
-        
-        
-        
-        
-        
-
     </div>
+    
+    
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>    
 <script>
+	// 일반유저가 비밀번호 틀렸을시 
 	if(${scrFalse != null}) {
 		alert('${scrFalse}')
 	}
-
-
 	var userNm = `${loginUser.nm}`
 	console.log('유저값 : ' + userNm)
 	
+	
+	// 관리자가 비밀 상세페이지 접근시
 	function moveToDetail(i_board) {
 		location.href="/board/detail?i_board="+i_board
 	}
 	
+	
+	// 일반유저가 비밀 상세페이지 접근시(비번 입력하게끔)
 	function moveToDetailScr(i_board, pw) {
-		var promScr = prompt('비밀번호를 입력해 주세요')
-		
-		if(promScr == pw) {
-			location.href="/board/detail?i_board="+i_board
-					
-		} else {
-			alert('비밀번호가 틀렸습니다')
-		}
-		
-		//$('#myModalCer').show();
+		scrFrm.i_board.value = i_board		
+		$('#myModalCer').show();
+		scrFrm.pw.focus()
 	}
-
 	
 	
 	// 비밀번호 입력창 --------
@@ -163,6 +144,8 @@
 	}
 	// 비밀번호 입력------------
 	
+	
+	myModalCer.style.display = 'none'
 </script>
 </body>
 </html>

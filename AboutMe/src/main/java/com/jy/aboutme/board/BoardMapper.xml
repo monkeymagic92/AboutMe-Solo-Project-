@@ -26,7 +26,7 @@
 	
 	<!-- 비밀번호 맞추기 (게시글) -->
 	<select id="selScr" parameterType="BoardPARAM" resultType="BoardDMI">
-		SELECT scr FROM t_board
+		SELECT pw FROM t_board
 		WHERE i_board = #{i_board}
 	</select>
 	

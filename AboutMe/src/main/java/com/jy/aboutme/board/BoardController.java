@@ -74,33 +74,31 @@ public class BoardController {
 	@RequestMapping(value="/detail", method = RequestMethod.GET)
 	public String boardDetail(BoardPARAM param, Model model) {
 		
+		System.out.println("디테 겟 board : " + param.getI_board());
 		model.addAttribute("data", service.boardDetail(param));
 		model.addAttribute("view", ViewRef.BOARD_DETAIL);
 		return ViewRef.DEFAULT_TEMP;
 	}
 	
-	/*
+	
 	@RequestMapping(value="/detail", method = RequestMethod.POST)
 	public String boardDetail(BoardPARAM param, BoardDMI dmi,
 			RedirectAttributes ra) {
-		System.out.println("param : " + param.getScr());
-		System.out.println("param : " + dmi.getScr());
-		System.out.println("i_board 값 : " + param.getI_board());
-		
+				
 		dmi = service.selScr(param);
-		System.out.println("1");
-		if(param.getScr().equals(dmi.getScr())) {
-			System.out.println("비번 맞춤");
-			return "redirect:/" + ViewRef.BOARD_DETAIL;
-		} else {
-			System.out.println("비번 틀림");
+		
+		if(param.getPw().equals(dmi.getPw())) { // 비밀번호가 일치하다면 
+		
+			return "redirect:/board/detail?i_board="+param.getI_board();
+			
+		} else { // 비밀번호 틀렸다면
+		
 			ra.addFlashAttribute("scrFalse", "비밀번호를 다시 입력해 주세요");
-			 
 		}
 		
 		return "redirect:/" + ViewRef.BOARD_LIST;
 	}
-	*/
+	
 	
 	
 	

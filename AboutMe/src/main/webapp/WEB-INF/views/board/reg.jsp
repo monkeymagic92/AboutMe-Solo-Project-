@@ -108,8 +108,8 @@ function chk() {
 		return false;
 	}
 	
-	if(frm.pw.value.length == 0) {
-		alert('비밀번호를 입력해 주세요')
+	if(frm.pw.value.length < 4) {
+		alert('비밀번호를 4자리이상 입력해 주세요')
 		frm.pw.focus()
 		return false;
 	}

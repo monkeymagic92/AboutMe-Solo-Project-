@@ -18,8 +18,8 @@
                 <div id="userNm">${data.nm}</div>
                 <div id="date">${data.r_dt}</div>
                 <div class="btns">
-                    <button type="button" class="commonBtn" onclick="moveToReg(${data.i_board})">수정</button>
-                    <button type="button" class="commonBtn" onclick="moveToDel(${data.i_board})">삭제</button>
+                    <button type="button" class="commonBtn" onclick="moveToReg(${data.i_board}, '${data.pw}')">수정</button>
+                    <button type="button" class="commonBtn" onclick="moveToDel(${data.i_board}, '${data.pw}')">삭제</button>
                 </div>
             </div>
 
@@ -94,12 +94,28 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
     
-    function moveToReg(i_board) {
-        location.href="/board/reg?i_board="+i_board
+    function moveToReg(i_board, pw) {
+		var promScr = prompt('비밀번호를 입력해 주세요')
+		
+		if(promScr == pw) {
+			location.href="/board/reg?i_board="+i_board
+					
+		} else {
+			alert('비밀번호가 틀렸습니다')
+		}
+    	
     }
 
-    function moveToDel(i_board) {
-        location.href="/board/del?i_board="+i_board
+    function moveToDel(i_board, pw) {
+		var promScr = prompt('비밀번호를 입력해 주세요')
+		
+		if(promScr == pw) {
+			location.href="/board/del?i_board="+i_board
+					
+		} else {
+			alert('비밀번호가 틀렸습니다')
+		}
+        
     }
 
     function cmtRegBtn() {

@@ -21,11 +21,8 @@ public class BoardService {
 	
 	// 게시글 비밀번호 입력
 	public BoardDMI selScr(BoardPARAM param) {
-		System.out.println("서비스 selScr");
-		System.out.println("dmi i-board : " + param.getI_board());
-		BoardDMI dmi = new BoardDMI();
-		dmi = mapper.selScr(param);
-		return dmi;
+		return mapper.selScr(param);
+		
 	}
 	
 	// 게시판 상세페에지
