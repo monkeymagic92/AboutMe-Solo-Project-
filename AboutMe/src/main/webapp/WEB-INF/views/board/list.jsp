@@ -94,7 +94,7 @@
 			      <h2>비밀번호를 입력해 주세요</h2>
 			    <!-- Modal body -->
 			    <div class="modal-body">
-			    	<form id="scrFrm" action="/board/detail" method="post" onsubmit="return chk()">
+			    	<form id="scrFrm" action="/board/list" method="post" onsubmit="return chk()">
 			    		<input id="cerCodeIns" type="password" name="pw" placeholder="비밀번호 입력">
 			    		<input type="hidden" name="i_board">
 			    		<input id="submitIns" type="submit" value="확인">

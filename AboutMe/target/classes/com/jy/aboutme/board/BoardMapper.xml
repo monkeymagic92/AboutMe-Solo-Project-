@@ -65,7 +65,7 @@
 	 
 	 
 	 
-	
+	<!-- 게시글 수정 -->
 	<update id="updReg" parameterType="BoardPARAM">
 		UPDATE t_board
 		SET nm = #{nm},
@@ -75,6 +75,11 @@
 		scr = #{scr}
 		WHERE i_board = #{i_board}
 	</update>
+	
+	<delete id="delBoard" parameterType="BoardPARAM">
+		DELETE FROM t_board
+		WHERE i_board = #{i_board}
+	</delete>
 	
 	
 	

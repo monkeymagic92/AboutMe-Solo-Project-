@@ -48,8 +48,11 @@ public class BoardService {
 		return mapper.updReg(param);
 	}
 	
-
-	
+	// 게시글 삭제
+	public int delBoard(BoardPARAM param) {
+		return mapper.delBoard(param);
+	}
+	 
 	
 	
 	

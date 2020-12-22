@@ -89,7 +89,7 @@
         </div>
         
         
-        
+        <!-- 수정 모달 -->
         <div id="myModalCer" class="modal">
 	 
 			<!-- Modal content -->
@@ -108,6 +108,7 @@
 				</button>
 			</div>
 	    </div>
+	    
     </div>
 
 
@@ -148,8 +149,8 @@
     }
 
     function moveToDelScr(i_board, pw) {
-    	scrFrm.i_board.value = i_board		
-		$('#myModalCer').show();
+    	delFrm.i_board.value = i_board		
+		$('#delModal').show();
 		scrFrm.pw.focus()
     }
 	
@@ -162,6 +163,7 @@
 	function close_pop(flag) {
 		 $('#myModalCer').hide();
 	}
+	
 	
 	
 	

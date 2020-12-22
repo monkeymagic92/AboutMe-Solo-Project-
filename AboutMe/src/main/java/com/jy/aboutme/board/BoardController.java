@@ -48,13 +48,21 @@ public class BoardController {
 	
 	// list 검색 관련 
 	@RequestMapping(value="/list", method = RequestMethod.POST)
-	public String list(Model model, BoardPARAM param, int i) {
+	public String list(Model model, BoardPARAM param, BoardDMI dmi, RedirectAttributes ra) {
+		System.out.println("list post ");
+		
+		dmi = service.selScr(param);
+		if(param.getPw().equals(dmi.getPw())) { // 비밀번호가 일치하다면 
 			
+			return "redirect:/board/detail?i_board="+param.getI_board(); // 쿼리스트링으로 detail.get에 보냄
+			
+		} else { // 비밀번호 틀렸다면
+			
+			ra.addFlashAttribute("scrFalse", "비밀번호를 다시 입력해 주세요");
+			
+		}
+		return "redirect:/" + ViewRef.BOARD_LIST;
 		
-		
-		
-		model.addAttribute("view", ViewRef.BOARD_LIST);
-		return ViewRef.DEFAULT_TEMP;
 	}
 	
 	
@@ -103,27 +111,7 @@ public class BoardController {
 			return "redirect:/board/detail?i_board="+param.getI_board();
 		}
 		
-		
-		
-		
-		
-		/*
-		System.out.println("pw값 : " + param.getPw());
-		System.out.println("i_board 값 : " + param.getI_board());
-		
-		if(param.getI_board() == 0) {	// 글쓰기 눌렀을때
-			System.out.println("글쓰기 걸림");
-			dmi = service.selScr(param);
-			int resultIns = service.insReg(param);
-			
-		} else {	// 수정눌렀을때
-			System.out.println("수정 걸림");
-			service.updReg(param);
-			return "redirect:/" + ViewRef.BOARD_LIST;
-		}
-		
-		return "redirect:/" + ViewRef.BOARD_LIST;
-		*/
+	
 	}
 	
 	
@@ -153,10 +141,19 @@ public class BoardController {
 			ra.addFlashAttribute("scrFalse", "비밀번호를 다시 입력해 주세요");
 			return "redirect:/board/detail?i_board="+param.getI_board();
 		}
-		
-		
 	}
 	
+	
+	// 게시글 삭제
+	@RequestMapping(value="/del", method = RequestMethod.GET)
+	public String boardDel(BoardPARAM param) {
+		System.out.println("삭제 board : " + param.getI_board());
+		System.out.println("입력 pw : " + param.getPw());
+		
+		int result = service.delBoard(param);
+		
+		return "redirect:/" + ViewRef.BOARD_LIST;
+	}
 	
 	
 	
@@ -179,3 +176,4 @@ public class BoardController {
 	
 	
 }
+
