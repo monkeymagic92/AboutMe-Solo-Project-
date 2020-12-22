@@ -71,6 +71,7 @@ public class BoardController {
 		try { // 수정
 			System.out.println("regPost 글수정");
 			int i_board = Integer.parseInt(request.getParameter("i_board"));
+			System.out.println("글수정 추후 에러안터졌을떄");
 			param.setI_board(i_board);
 			service.updReg(param);
 			return "redirect:/board/detail?i_board="+param.getI_board();
@@ -78,8 +79,9 @@ public class BoardController {
 			
 		} catch(Exception e) { // 등록
 			System.out.println("regPost 글등록");
-			e.printStackTrace();
-			int resultIns = service.insReg(param);
+			int i_board = service.insReg(param);
+			System.out.println("i_boarㅇ값 ; " + i_board);
+			System.out.println("i_board 값 (등록@@@) : " + param.getI_board());
 			return "redirect:/board/detail?i_board="+param.getI_board();
 		}
 		

@@ -32,12 +32,18 @@
 	
 	
 	<!-- 게시글 등록 -->	
-	<insert id="insReg" parameterType="BoardPARAM">
+	<insert id="insReg" parameterType="BoardPARAM">		
 		INSERT INTO t_board
 		(nm, title, ctnt, pw, scr)
 		VALUES
 		(#{nm}, #{title}, #{ctnt}, #{pw}, #{scr})
+		<selectKey resultType="integer" keyProperty="i_board" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
 	</insert>
+	 
+	 
+	 
 	
 	<update id="updReg" parameterType="BoardPARAM">
 		UPDATE t_board
