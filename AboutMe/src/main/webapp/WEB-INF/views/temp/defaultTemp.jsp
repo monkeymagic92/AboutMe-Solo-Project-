@@ -48,7 +48,6 @@
 
     
    	<jsp:include page="/WEB-INF/views/${view}.jsp"></jsp:include>
-	
     
     <div class="footerDiv">
 		

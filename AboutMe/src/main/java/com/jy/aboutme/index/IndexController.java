@@ -26,6 +26,7 @@ public class IndexController {
 		param = (AdminPARAM)hs.getAttribute("loginUser");
 		hs.setAttribute("ipSession", ipSession);
 		
+		
 		if(param == null) {
 			System.out.println("null 실행");
 			String agent = request.getHeader("User-Agent");

@@ -16,5 +16,9 @@
 		<typeAlias type="com.jy.aboutme.index.model.HistoryVO" alias="HistoryVO" />
 		<typeAlias type="com.jy.aboutme.index.model.HistoryDMI" alias="HistoryDMI" />
 		
+		<!-- CMT -->
+		<typeAlias type="com.jy.aboutme.cmt.model.CmtVO" alias="CmtVO" />
+		<typeAlias type="com.jy.aboutme.cmt.model.CmtPARAM" alias="CmtPARAM" />
+		
 	</typeAliases>
 </configuration>

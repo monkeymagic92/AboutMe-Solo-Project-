@@ -31,17 +31,6 @@ CREATE TABLE t_board(
 SELECT * FROM t_board;
 DROP TABLE t_board;
 
-SELECT i_board, nm, title, ctnt, pw, scr, r_dt FROM t_board
-		WHERE nm LIKE '%f%';
-		
-		SELECT i_board, nm, title, ctnt, pw, scr, r_dt FROM t_board
-		WHERE nm LIKE '%fsd%';
-
-SELECT IFNULL(MAX(i_board),0) + 1 FROM t_board;
-
-SELECT LAST_INSERT_ID();
-
-
 
 
 CREATE TABLE t_ipIndex(
@@ -74,3 +63,15 @@ SELECT * FROM t_ipIntro;
 DROP TABLE t_ipIntro;
 
 
+
+CREATE TABLE t_cmt(
+	i_cmt INT UNSIGNED AUTO_INCREMENT,
+	i_board INT UNSIGNED,
+	ctnt VARCHAR(400),
+	r_dt DATETIME DEFAULT NOW(),	
+	PRIMARY KEY(i_cmt),
+	FOREIGN KEY(i_board) REFERENCES t_board(i_board)
+);
+
+SELECT * FROM t_cmt;
+DROP TABLE t_cmt;

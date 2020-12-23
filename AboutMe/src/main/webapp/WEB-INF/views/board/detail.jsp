@@ -142,9 +142,23 @@
 
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
+	
+	//ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	댓 글 ㅡ	ㅡ	ㅡ	ㅡ	ㅡ
+	function cmtRegBtn() {
+	
+		axios.post('/cmt/cmtReg',{
+			
+		}).then(function(res) {
+			
+		})
+	}
+	
+	// ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ
+	
+
 	//일반유저가 비밀번호 틀렸을시 
 	if(${scrFalse != null}) {
 		alert('${scrFalse}')
@@ -199,10 +213,7 @@
 	
 	
 	
-	// 댓글
-    function cmtRegBtn() {
-
-    }
+	
 
 </script>
 </body>
