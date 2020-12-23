@@ -109,6 +109,28 @@
 			</div>
 	    </div>
 	    
+	    <!-- 삭제 모달 -->
+        <div id="delModal" class="modal">
+	 
+			<!-- Modal content -->
+			<div class="modal-content">
+			      <h2>비밀번호를 입력해 주세요</h2>
+			    <!-- Modal body -->
+			    <div class="modal-body">
+			    	<form id="delFrm" action="/board/del" method="get" onsubmit="return chk()">
+			    		<input id="cerCodeIns" type="password" name="delPw" placeholder="비밀번호 입력">
+			    		<input type="hidden" name="i_board_del" value="${data.i_board}">
+			    		<input id="submitIns" type="submit" value="확인">
+			    	</form>
+			    </div>
+			    <button type="button" class="pop_bt" onclick="delclose_pop()">
+						종료
+				</button>
+			</div>
+	    </div>
+	    
+	    
+	    
     </div>
 
 
@@ -149,7 +171,7 @@
     }
 
     function moveToDelScr(i_board, pw) {
-    	delFrm.i_board.value = i_board		
+    	delFrm.i_board_del.value = i_board		
 		$('#delModal').show();
 		scrFrm.pw.focus()
     }
@@ -162,6 +184,13 @@
 	
 	function close_pop(flag) {
 		 $('#myModalCer').hide();
+	}
+	
+	// 비밀번호 입력창 --------
+	$('#delModal').hide();
+	
+	function delclose_pop(flag) {
+		 $('#delModal').hide();
 	}
 	
 	

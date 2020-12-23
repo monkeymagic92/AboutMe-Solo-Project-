@@ -23,11 +23,23 @@ CREATE TABLE t_board(
 	r_dt DATETIME DEFAULT NOW(),
 	pw VARCHAR(20),
 	scr VARCHAR (2) DEFAULT 1,
+	search VARCHAR(10),
+	searchResult INT(2),
 	PRIMARY KEY(i_board)
 );
 
 SELECT * FROM t_board;
 DROP TABLE t_board;
+
+SELECT i_board, nm, title, ctnt, pw, scr, r_dt FROM t_board
+		WHERE nm LIKE '%f%';
+		
+		SELECT i_board, nm, title, ctnt, pw, scr, r_dt FROM t_board
+		WHERE nm LIKE '%fsd%';
+
+SELECT IFNULL(MAX(i_board),0) + 1 FROM t_board;
+
+SELECT LAST_INSERT_ID();
 
 
 
