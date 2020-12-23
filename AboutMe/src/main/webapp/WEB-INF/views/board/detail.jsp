@@ -68,13 +68,14 @@
 
         <!-- 아작스로 댓글 입력창 만들기 -->
         <div class="insCmtContainer">
-            <form id="frm">
+            <form id="cmtFrm" onsubmit="return chk()">
                 <div>
                     <input id="cmtIns" type="text" name="cmtNm" placeholder="닉네임">
+                    <input id="cmtPwId" type="password" name="cmtPw" placeholder="비밀번호">
                 </div>
                 <div class="textZ">
-                    <textarea id="cmtText" cols="135" rows="6" name="cmtcnt" style="resize: none;">fasd</textarea>
-                    <button type="button" id="cmtRegBtn" onclick="cmtRegBtn()">댓글 입력</button>
+                    <textarea id="cmtText" cols="135" rows="6" name="ctnt" style="resize: none;"></textarea>
+                    <button type="button" id="cmtRegBtn" onclick="cmtRegBtnCall(${data.i_board})">전송</button>
                 </div>
             </form>
         </div>
@@ -127,8 +128,6 @@
 			</div>
 	    </div>
 	    
-	    
-	    
     </div>
 
 
@@ -147,12 +146,50 @@
 <script>
 	
 	//ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	댓 글 ㅡ	ㅡ	ㅡ	ㅡ	ㅡ
-	function cmtRegBtn() {
-	
+	function cmtRegBtnCall(i_board) {
+		const ctnt = cmtFrm.ctnt.value
+		const cmtNm = cmtFrm.cmtNm.value
+		const cmtPw = cmtFrm.cmtPw.value
+		
+		if(cmtIns.value == '' || cmtIns.value.length > 9) {
+			alert('올바른 닉네임을 입력해 주세요')
+			cmtIns.focus()
+			return false;
+		}
+		
+		if(cmtText.value == '') {
+			alert('댓글을 입력해 주세요')
+			cmtText.focus()
+			return false;
+		}
+		
+		if(cmtPwId.value == '') {
+			alert('비밀번호를 입력해 주세요')
+			cmtPw.focus()
+			return false
+		}
+		
+		if(cmtPwId.value.length > 29) {
+			alert('비밀번호가 너무 깁니다')
+			cmtPw.focus()
+			return false
+		}
+		
 		axios.post('/cmt/cmtReg',{
+			ctnt : ctnt,
+			i_board : i_board,
+			cmtNm : cmtNm,
+			cmtPw : cmtPw
 			
 		}).then(function(res) {
-			
+			if(res.data == 1) {
+				cmtFrm.cmtNm.value = ''
+				cmtFrm.ctnt.value = ''
+				cmtFrm.cmtPw.value = ''
+				
+			} else {
+				alert('댓글 전송중 오류가 발생하였습니다. 잠시후 다시 시도해 주세요')
+			}
 		})
 	}
 	

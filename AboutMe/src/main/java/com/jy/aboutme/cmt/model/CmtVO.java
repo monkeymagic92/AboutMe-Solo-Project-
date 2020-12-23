@@ -3,9 +3,23 @@ package com.jy.aboutme.cmt.model;
 public class CmtVO {
 	private int i_cmt;
 	private int i_board;
+	private String cmtNm;
+	private String cmtPw;
 	private String ctnt;
 	private String r_dt;
 	
+	public String getCmtPw() {
+		return cmtPw;
+	}
+	public void setCmtPw(String cmtPw) {
+		this.cmtPw = cmtPw;
+	}
+	public String getCmtNm() {
+		return cmtNm;
+	}
+	public void setCmtNm(String cmtNm) {
+		this.cmtNm = cmtNm;
+	}
 	public int getI_cmt() {
 		return i_cmt;
 	}

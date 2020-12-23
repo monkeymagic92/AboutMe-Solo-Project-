@@ -2,7 +2,12 @@ package com.jy.aboutme.cmt;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.jy.aboutme.cmt.model.CmtPARAM;
 
 @Controller
 @RequestMapping("/cmt")
@@ -10,6 +15,16 @@ public class CmtController {
 
 	@Autowired
 	private CmtService service;
+	
+	// 댓글 등록 / 수정
+	@RequestMapping(value="/cmtReg", method=RequestMethod.POST)
+	public @ResponseBody String cmtReg(@RequestBody CmtPARAM param) {
+		 
+		System.out.println("i-board 값 ; " + param.getI_board());
+		int result = service.insCmt(param);
+		return String.valueOf(result); 
+	}
+		
 	
 	/*
 	// 댓글 뿌리기
