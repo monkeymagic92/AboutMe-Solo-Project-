@@ -148,14 +148,29 @@ public class BoardController {
 	@RequestMapping(value="/del", method = RequestMethod.GET)
 	public String boardDel(BoardPARAM param, HttpServletRequest request,
 			BoardDMI dmi, RedirectAttributes ra) {
-		int i_board_del = Integer.parseInt(request.getParameter("i_board_del"));
-		String delPw = request.getParameter("delPw");
+		System.out.println("삭제GET");
+		int i_board_del = 0;
+		String delPw = null;
 		
+		try {
+			i_board_del = Integer.parseInt(request.getParameter("i_board_del"));
+			delPw = request.getParameter("delPw");
+			
+		} catch(Exception e) {
+			
+			System.out.println("에러");
+			System.out.println("i_board값 : " + param.getI_board());
+			int result = service.delBoard(param);
+			return "redirect:/" + ViewRef.BOARD_LIST;
+		}
+		
+		System.out.println("1");
 		param.setI_board(i_board_del);
 		param.setPw(delPw);
 		
 		dmi = service.selScr(param);
 		
+		System.out.println("2");
 		if(param.getPw().equals(dmi.getPw())) { // 비밀번호가 일치하다면 
 			int result = service.delBoard(param);
 			return "redirect:/" + ViewRef.BOARD_LIST;

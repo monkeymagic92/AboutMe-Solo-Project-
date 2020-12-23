@@ -142,6 +142,29 @@
                 ㄹㄴㅇ
             </div>
         </div>
+
+
+
+        <!-- 수정 모달 -->
+        <div id="myModalCer" class="modal">
+            
+            <!-- Modal content -->
+            <div class="modal-content">
+                <h3>비밀번호를 입력해 주세요</h3>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form id="scrFrm" action="/board/detail" method="post" onsubmit="return chk()">
+                        <input id="cerCodeIns" type="password" name="pw" placeholder="비밀번호 입력">
+                        <input type="hidden" name="i_board" value="${data.i_board}">
+                        <input id="submitIns" type="submit" value="확인">
+                    </form>
+                </div>
+                <button type="button" class="pop_bt" onclick="close_pop()">
+                        종료
+                </button>
+            </div>
+        </div>
+
     </div>
 
 

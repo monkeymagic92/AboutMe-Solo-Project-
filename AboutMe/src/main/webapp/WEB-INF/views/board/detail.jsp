@@ -27,8 +27,6 @@
                 		<button type="button" class="commonBtn" onclick="moveToReg(${data.i_board})">수정</button>
                 		<button type="button" class="commonBtn" onclick="moveToDel(${data.i_board})">삭제</button>
                 	</c:if>
-                    
-                    
                 </div>
             </div>
 
@@ -158,9 +156,11 @@
     }
 
     function moveToDel(i_board) {
-		location.href="/board/del?i_board="+i_board
+    	if(confirm('삭제 하시겠습니까 ?')) {
+    		location.href="/board/del?i_board="+i_board	
+    	}
     }
-	// @@@@@@@@@@@@@@@@@@@@@@@@
+	// ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	
 	
 	
 	// 일반 수정삭제 (비번입력 O)
@@ -171,9 +171,11 @@
     }
 
     function moveToDelScr(i_board, pw) {
-    	delFrm.i_board_del.value = i_board		
-		$('#delModal').show();
-		scrFrm.pw.focus()
+    	if(confirm('삭제 하시겠습니까 ?')) {
+    		delFrm.i_board_del.value = i_board		
+    		$('#delModal').show();
+    		scrFrm.pw.focus()	
+    	}
     }
 	
 	// @@@@@@@@@@@@@@@@@@@@@@@@

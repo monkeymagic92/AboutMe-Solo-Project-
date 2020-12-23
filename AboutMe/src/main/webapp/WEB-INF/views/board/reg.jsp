@@ -40,7 +40,7 @@
             		<input id="insNick" type="text" name="nm" placeholder="작성자를 입력해 주세요" value="${data.nm}">&nbsp;&nbsp;
             	</c:if>
             	<c:if test="${loginUser.nm != null}">
-            		<input id="insNick" type="text" name="nm" placeholder="작성자를 입력해 주세요" value="관리자">&nbsp;&nbsp;
+            		<input id="insNick" type="text" name="nm" placeholder="작성자를 입력해 주세요" value="관리자" readonly>&nbsp;&nbsp;
             	</c:if>
                 <input id="insScr" type="password" name="pw" placeholder="비밀번호">
                 <input type="hidden" name="scr" value="1">
@@ -49,7 +49,7 @@
             <br>
             <input id="insTitle" type="text" name="title" placeholder="제목 입력" value="${data.title}">
             <textarea name="ctnt" id="description" th:utext="${html}">${data.ctnt}</textarea>
-            <div>i_board 값 : ${data.i_board}</div>
+            
             <c:if test="${data.i_board != null}">
             	<input type="hidden" name="i_board" value="${data.i_board}">	
             </c:if>
