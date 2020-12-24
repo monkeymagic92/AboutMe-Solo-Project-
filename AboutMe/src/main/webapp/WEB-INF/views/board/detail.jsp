@@ -40,8 +40,8 @@
         </div>        
 
         <div class="cmtListBox">
-            <div class="cmtList">
-            
+            <div id="cmtListMall" class="cmtList">
+            	 
                 <div class="cmtFlex">
                     <div class="cmtNick">Test321 테스트임</div>
                     <div class="cmtDate">2020-10-10 20:34 테스트임</div>
@@ -62,6 +62,7 @@
                 <div class="cmtSel">
                                         댓글 내용적기
                 </div>
+                 
                 
             </div>
         </div>
@@ -193,7 +194,41 @@
 		})
 	}
 	
-	// ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ
+	// 댓글 뿌리는 메소드
+	function ajaxSelCmt() {
+		
+		axios.get('/cmt/selCmt', {
+			params: {
+				i_board : `${data.i_board}`
+			}
+		}).then(function(res) {
+			refreshMenu(res.data)
+		})
+		
+	}
+	
+	// makeCmtList 함수를 계속 만들어냄
+	function refreshMenu(arr) {
+		for(let i=0; i<arr.length; i++) {
+			makeCmtList(arr[i])
+		}
+	}
+	
+	// 댓글 리스트 append
+	function makeCmtList(arr) {
+		
+		var cmtFlexDiv = document.createElement('div')
+		cmtFlexDiv.setAttribute('class', 'cmtFlex')
+		cmtListMall.append(cmtFlexDiv)
+		
+		var cmtNickDiv = document.createElement('div')
+		cmtNickDiv.setAttribute('class', 'cmtNick')
+		cmtNickDiv.append(arr.nm)
+	}
+	
+	
+	//	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ
+	
 	
 
 	//일반유저가 비밀번호 틀렸을시 

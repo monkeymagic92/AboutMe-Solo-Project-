@@ -99,14 +99,10 @@ body {
 
 
 
-
-
-
-
-
 .resumeContainer {
     margin-top: 700px;
     margin-bottom: 700px;
+    
 }
 
 .downloadresume {
@@ -117,38 +113,59 @@ body {
     margin-top: 100px;
 }
 
+.selfback {
+    padding-top: 50px;
+    padding-bottom: 310px;
+}
+
+.selfMain {
+    margin-top: 7px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
 .introH2 {
-    margin-right: 515px;
+    text-align: center;
+}
+
+.introP {
+    margin-left: 8px;
+    line-height: 30px;
+}
+
+.introPn {
+    margin: 0 auto;
+    width: 900px;
+    height: 855px;
+    text-align: start;
+    border: 2px solid grey;
+    border-radius: 12px;
+}
+
+.introPns {
+    margin: 0 auto;
+    width: 900px;
+    height: 260px;
+    text-align: start;
+    border: 2px solid grey;
+    border-radius: 12px;
 }
 
 .intro {
     margin: 0 auto;
     width: 900px;
-    height: 300px;
+    height: 380px;
     text-align: start;
     border: 2px solid grey;
     border-radius: 12px;
 }
+
+
 .height {
-    margin-top: 1000px;
-    height: 1000px;
+    
+    height: 500px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #TopBtn { display: none; }

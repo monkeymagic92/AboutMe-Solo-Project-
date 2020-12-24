@@ -67,6 +67,8 @@ DROP TABLE t_ipIntro;
 CREATE TABLE t_cmt(
 	i_cmt INT UNSIGNED AUTO_INCREMENT,
 	i_board INT UNSIGNED,
+	cmtPw VARCHAR(30),
+	cmtNm VARCHAR(10),
 	ctnt VARCHAR(400),
 	r_dt DATETIME DEFAULT NOW(),	
 	PRIMARY KEY(i_cmt),
@@ -75,3 +77,5 @@ CREATE TABLE t_cmt(
 
 SELECT * FROM t_cmt;
 DROP TABLE t_cmt;
+
+

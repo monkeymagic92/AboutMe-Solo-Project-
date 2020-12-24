@@ -1,12 +1,19 @@
 package com.jy.aboutme.cmt;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.jy.aboutme.board.model.BoardPARAM;
 import com.jy.aboutme.cmt.model.CmtPARAM;
 
 @Controller
@@ -24,7 +31,14 @@ public class CmtController {
 		int result = service.insCmt(param);
 		return String.valueOf(result); 
 	}
+	
+	// 댓글 뿌리기
+	@RequestMapping(value="/selCmt", method=RequestMethod.GET)
+	private @ResponseBody List<CmtDMI> selCmt(Model model, BoardPARAM param, HttpServletRequest request, HttpSession hs){
 		
+		return service.selCmt(param);
+	}
+	
 	
 	/*
 	// 댓글 뿌리기
