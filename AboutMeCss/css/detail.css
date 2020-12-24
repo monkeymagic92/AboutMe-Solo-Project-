@@ -161,6 +161,13 @@
     margin: 0 auto;
 }
 
+.cmtSelCount {
+    margin-left: 400px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
 .delCmtBtn {
     margin-left: 2px;
     margin-bottom: 25px;

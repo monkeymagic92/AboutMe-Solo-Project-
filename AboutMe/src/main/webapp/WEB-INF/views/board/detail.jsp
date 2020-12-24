@@ -41,6 +41,7 @@
 
         <div class="cmtListBox">
             <div id="cmtListMall" class="cmtList">
+            	
             	 <!-- 
                 <div class="cmtFlex">
                     <div class="cmtNick">Test321 테스트임</div>
@@ -279,11 +280,13 @@
 			$('#delCmtModal').show();
 			delCmtFrm.i_board.value = `${data.i_board}`
 			delCmtFrm.i_cmt.value = arr.i_cmt
+			cmtFrm.cmtPw.focus()
 		}
 		cmtListMall.append(delCmtBtn)
 	}
 	
 	ajaxSelCmt()	// 아작스 댓글 뿌리기
+	
 	//	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ
 	
 		
