@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jy.aboutme.cmt.model.CmtDMI;
 import com.jy.aboutme.cmt.model.CmtPARAM;
@@ -37,22 +38,23 @@ public class CmtController {
 		return service.selCmt(param);
 	}
 	
-	/*
-	// 댓글 등록 / 수정
-	@RequestMapping(value="/cmtDel", method=RequestMethod.POST)
-	public @ResponseBody String cmtPw(@RequestBody CmtPARAM param) {
-		System.out.println("삭제 Ib-arod ㄱ밧 : " + param.getI_board());
-		int result = service.delCmt(param);
-		
-		return String.valueOf(result);
-	}
-	*/
-	
+	// 댓글삭제 (아작스 X)
 	@RequestMapping(value="/cmtDel", method = RequestMethod.POST)
-	public String cmtDel(CmtPARAM param) {
+	public String cmtDel(CmtPARAM param, CmtDMI dmi,
+			RedirectAttributes ra) { 
 		System.out.println("i_board 삭 제 : " + param.getI_board());
 		System.out.println("i_cmt 삭제 : " + param.getI_cmt());
-		int result = service.delCmt(param);
+		System.out.println("내가 입력한 비번 : " + param.getCmtPw());
+		
+		dmi = service.selCmtPw(param);
+		System.out.println("dmi 원래 비번 : " + dmi.getCmtPw());
+		if(dmi.getCmtPw().equals(param.getCmtPw())) {
+			int result = service.delCmt(param);
+			
+		} else {
+			ra.addFlashAttribute("cmtFalse", "비밀번호를 다시 확인해 주세요");
+		}
+		
 		return "redirect:/board/detail?i_board="+param.getI_board();
 		 
 	}

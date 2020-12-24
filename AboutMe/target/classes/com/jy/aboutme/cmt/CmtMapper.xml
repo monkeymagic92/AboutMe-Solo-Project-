@@ -8,6 +8,12 @@
 		WHERE i_board = #{i_board}
 	</select>
 	
+	<!-- 댓글 삭제시 비밀번호 확인 -->
+	<select id="selCmtPw" resultType="CmtDMI" parameterType="CmtPARAM">
+		SELECT cmtPw FROM t_cmt
+		WHERE i_cmt = #{i_cmt}
+	</select>
+	
 	<!-- 댓글 등록 -->
 	<insert id="insCmt" parameterType="CmtPARAM">
 		INSERT INTO t_cmt
@@ -16,8 +22,11 @@
 		(#{i_board}, #{cmtNm}, #{ctnt}, #{cmtPw})
 	</insert>
 	
+	<!-- 댓글 삭제 -->
 	<delete id="delCmt" parameterType="CmtPARAM">
 		DELETE FROM t_cmt
 		WHERE i_cmt = #{i_cmt}
 	</delete>
+	
+	
 </mapper>

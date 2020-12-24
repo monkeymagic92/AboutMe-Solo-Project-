@@ -144,7 +144,7 @@
 			    <!-- Modal body -->
 			    <div class="modal-body">
 			    	<form id="delCmtFrm" action="/cmt/cmtDel" method="post" onsubmit="return chk()">
-			    		<input id="dleCmtPw" type="password" name="delPw" placeholder="비밀번호 입력">
+			    		<input id="dleCmtPw" type="password" name="cmtPw" placeholder="비밀번호 입력">
 			    		<input type="hidden" id="i_board" name="i_board" value="${data.i_board}">
 			    		<input type="hidden" id="i_cmtId" name="i_cmt">
 			    		<input id="submitIns" type="submit" value="확인">
@@ -173,6 +173,11 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 	
+	// 댓글 삭제시 비밀번호 틀릴 경우 
+	if(${cmtFalse != null}) {
+		alert('${cmtFalse}')
+	}
+
 	//ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	댓 글 ㅡ	ㅡ	ㅡ	ㅡ	ㅡ
 	function cmtRegBtnCall(i_board) {
 		const ctnt = cmtFrm.ctnt.value

@@ -33,6 +33,23 @@ DROP TABLE t_board;
 
 
 
+CREATE TABLE t_cmt(
+	i_cmt INT UNSIGNED AUTO_INCREMENT,
+	i_board INT UNSIGNED,
+	cmtPw VARCHAR(30),
+	cmtNm VARCHAR(10),
+	ctnt VARCHAR(400),
+	r_dt DATETIME DEFAULT NOW(),	
+	PRIMARY KEY(i_cmt, i_board),
+	FOREIGN KEY(i_board) REFERENCES t_board(i_board)
+);
+SELECT * FROM t_cmt;
+DROP TABLE t_cmt;
+
+
+
+
+
 CREATE TABLE t_ipIndex(
 	i_ip INT UNSIGNED AUTO_INCREMENT,
 	myIp VARCHAR(100),
@@ -64,19 +81,9 @@ DROP TABLE t_ipIntro;
 
 
 
-CREATE TABLE t_cmt(
-	i_cmt INT UNSIGNED AUTO_INCREMENT,
-	i_board INT UNSIGNED,
-	cmtPw VARCHAR(30),
-	cmtNm VARCHAR(10),
-	ctnt VARCHAR(400),
-	r_dt DATETIME DEFAULT NOW(),	
-	PRIMARY KEY(i_cmt, i_board),
-	FOREIGN KEY(i_board) REFERENCES t_board(i_board)
-);
 
-SELECT * FROM t_cmt;
-DROP TABLE t_cmt;
+
+
 
 DELETE FROM t_cmt
 WHERE i_board = 3;

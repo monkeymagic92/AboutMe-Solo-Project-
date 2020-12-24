@@ -12,7 +12,9 @@ public interface CmtMapper {
 
 	List<CmtDMI> selCmt(CmtPARAM param);	// 댓글 뿌리기
 	
+	CmtDMI selCmtPw(CmtPARAM param);
+	
 	int insCmt(CmtPARAM param);	// 댓글 등록
 	
-	int delCmt(CmtPARAM param);
+	int delCmt(CmtPARAM param);	// 댓글 삭제
 }

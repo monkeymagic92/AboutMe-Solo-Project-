@@ -19,6 +19,11 @@ public class CmtService {
 		return mapper.selCmt(param);
 	}
 	
+	// 댓글 삭제시 비밀번호 확인
+	public CmtDMI selCmtPw(CmtPARAM param) {
+		return mapper.selCmtPw(param);
+	}
+	
 	// 댓글 입력
 	public int insCmt(CmtPARAM param) {
 		return mapper.insCmt(param);
