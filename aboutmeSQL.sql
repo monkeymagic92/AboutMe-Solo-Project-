@@ -71,11 +71,14 @@ CREATE TABLE t_cmt(
 	cmtNm VARCHAR(10),
 	ctnt VARCHAR(400),
 	r_dt DATETIME DEFAULT NOW(),	
-	PRIMARY KEY(i_cmt),
+	PRIMARY KEY(i_cmt, i_board),
 	FOREIGN KEY(i_board) REFERENCES t_board(i_board)
 );
 
 SELECT * FROM t_cmt;
 DROP TABLE t_cmt;
+
+DELETE FROM t_cmt
+WHERE i_board = 3;
 
 

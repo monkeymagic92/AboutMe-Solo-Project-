@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.jy.aboutme.board.model.BoardPARAM;
+import com.jy.aboutme.cmt.model.CmtDMI;
 import com.jy.aboutme.cmt.model.CmtPARAM;
 
 @Controller
@@ -27,17 +27,37 @@ public class CmtController {
 	@RequestMapping(value="/cmtReg", method=RequestMethod.POST)
 	public @ResponseBody String cmtReg(@RequestBody CmtPARAM param) {
 		 
-		System.out.println("i-board 값 ; " + param.getI_board());
 		int result = service.insCmt(param);
 		return String.valueOf(result); 
 	}
 	
 	// 댓글 뿌리기
 	@RequestMapping(value="/selCmt", method=RequestMethod.GET)
-	private @ResponseBody List<CmtDMI> selCmt(Model model, BoardPARAM param, HttpServletRequest request, HttpSession hs){
-		
+	private @ResponseBody List<CmtDMI> selCmt(Model model, CmtPARAM param, HttpServletRequest request, HttpSession hs){
 		return service.selCmt(param);
 	}
+	
+	/*
+	// 댓글 등록 / 수정
+	@RequestMapping(value="/cmtDel", method=RequestMethod.POST)
+	public @ResponseBody String cmtPw(@RequestBody CmtPARAM param) {
+		System.out.println("삭제 Ib-arod ㄱ밧 : " + param.getI_board());
+		int result = service.delCmt(param);
+		
+		return String.valueOf(result);
+	}
+	*/
+	
+	@RequestMapping(value="/cmtDel", method = RequestMethod.POST)
+	public String cmtDel(CmtPARAM param) {
+		System.out.println("i_board 삭 제 : " + param.getI_board());
+		System.out.println("i_cmt 삭제 : " + param.getI_cmt());
+		int result = service.delCmt(param);
+		return "redirect:/board/detail?i_board="+param.getI_board();
+		 
+	}
+	
+	
 	
 	
 	/*

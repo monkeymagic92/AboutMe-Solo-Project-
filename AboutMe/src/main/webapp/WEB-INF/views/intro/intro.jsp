@@ -262,7 +262,7 @@ ib2.addEventListener('click', function(el) {
 ib3.addEventListener('click', function(el) {
     el.preventDefault()
     window.scrollTo({
-        top: 16500,
+        top: 16790,
         behavior: 'smooth'
     })
 })

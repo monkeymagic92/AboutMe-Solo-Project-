@@ -41,28 +41,32 @@
 
         <div class="cmtListBox">
             <div id="cmtListMall" class="cmtList">
-            	 
+            	 <!-- 
                 <div class="cmtFlex">
                     <div class="cmtNick">Test321 테스트임</div>
                     <div class="cmtDate">2020-10-10 20:34 테스트임</div>
+                    
                 </div>
-                <!-- 안되면 pre로 바꾸기 -->
+                
+                <!-- 안되면 pre로 바꾸기
                 <div class="cmtSel">
                                          댓글 내용적기
                 </div>
                 
+                <button class="delCmtBtn" onclick="delCmt()">삭제</button>
+                
 
 
-                <!-- 테스트 cmtList 안에 append 해야됨-->
+                <!-- 테스트 cmtList 안에 append 해야됨
                 <div class="cmtFlex">
                     <div class="cmtNick">Test321</div>
                     <div class="cmtDate">2020-10-10 20:34</div>
                 </div>
-                <!-- 안되면 pre로 바꾸기 -->
+                <!-- 안되면 pre로 바꾸기 
                 <div class="cmtSel">
                                         댓글 내용적기
                 </div>
-                 
+                 -->
                 
             </div>
         </div>
@@ -109,6 +113,7 @@
 			</div>
 	    </div>
 	    
+	    
 	    <!-- 삭제 모달 -->
         <div id="delModal" class="modal">
 	 
@@ -124,6 +129,28 @@
 			    	</form>
 			    </div>
 			    <button type="button" class="pop_bt" onclick="delclose_pop()">
+						종료
+				</button>
+			</div>
+	    </div>
+	    
+	    
+	    <!-- 댓글 삭제 모달 -->
+        <div id="delCmtModal" class="modal">
+	 
+			<!-- Modal content -->
+			<div class="modal-content">
+			      <h2>비밀번호를 입력해 주세요</h2>
+			    <!-- Modal body -->
+			    <div class="modal-body">
+			    	<form id="delCmtFrm" action="/cmt/cmtDel" method="post" onsubmit="return chk()">
+			    		<input id="dleCmtPw" type="password" name="delPw" placeholder="비밀번호 입력">
+			    		<input type="hidden" id="i_board" name="i_board" value="${data.i_board}">
+			    		<input type="hidden" id="i_cmtId" name="i_cmt">
+			    		<input id="submitIns" type="submit" value="확인">
+			    	</form>
+			    </div>
+			    <button type="button" class="pop_bt" onclick="delCmtclose_pop()">
 						종료
 				</button>
 			</div>
@@ -187,6 +214,8 @@
 				cmtFrm.cmtNm.value = ''
 				cmtFrm.ctnt.value = ''
 				cmtFrm.cmtPw.value = ''
+				cmtListMall.innerHTML = ''
+				ajaxSelCmt()
 				
 			} else {
 				alert('댓글 전송중 오류가 발생하였습니다. 잠시후 다시 시도해 주세요')
@@ -223,13 +252,36 @@
 		
 		var cmtNickDiv = document.createElement('div')
 		cmtNickDiv.setAttribute('class', 'cmtNick')
-		cmtNickDiv.append(arr.nm)
+		cmtNickDiv.append(arr.cmtNm)
+		cmtFlexDiv.append(cmtNickDiv)
+		
+		
+		var cmtDateDiv = document.createElement('div')
+		cmtDateDiv.setAttribute('class', 'cmtDate')
+		cmtDateDiv.append(arr.r_dt)
+		cmtFlexDiv.append(cmtDateDiv)
+		
+		var cmtSelDiv = document.createElement('div')
+		cmtSelDiv.setAttribute('class', 'cmtSel')
+		cmtSelDiv.append(arr.ctnt)
+		cmtListMall.append(cmtSelDiv)
+		
+		// 삭제기능 넣기
+		var delCmtBtn = document.createElement('button')
+		delCmtBtn.setAttribute('class', 'delCmtBtn')
+		delCmtBtn.innerText = '삭제'
+		delCmtBtn.onclick = function() {
+			$('#delCmtModal').show();
+			delCmtFrm.i_board.value = `${data.i_board}`
+			delCmtFrm.i_cmt.value = arr.i_cmt
+		}
+		cmtListMall.append(delCmtBtn)
 	}
 	
-	
+	ajaxSelCmt()	// 아작스 댓글 뿌리기
 	//	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ
 	
-	
+		
 
 	//일반유저가 비밀번호 틀렸을시 
 	if(${scrFalse != null}) {
@@ -279,6 +331,13 @@
 	
 	function delclose_pop(flag) {
 		 $('#delModal').hide();
+	}
+	
+	// 비밀번호 입력창 --------
+	$('#delCmtModal').hide();
+	
+	function delCmtclose_pop(flag) {
+		 $('#delCmtModal').hide();
 	}
 	
 	

@@ -162,7 +162,23 @@
 }
 
 
+.delCmtBtn {
+    margin-left: 2px;
+    margin-bottom: 25px;
+    border: 2px solid grey;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 55px;
+    outline-style: none;
+    transition: 0.3s;
+}
 
+.delCmtBtn:hover {
+    cursor: pointer;
+    outline-style: none;
+    transition: 0.3s;
+    box-shadow: 0 3px 3px -2px grey;
+}
 
 
 .height {

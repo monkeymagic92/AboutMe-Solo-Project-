@@ -19,6 +19,7 @@
 		<!-- CMT -->
 		<typeAlias type="com.jy.aboutme.cmt.model.CmtVO" alias="CmtVO" />
 		<typeAlias type="com.jy.aboutme.cmt.model.CmtPARAM" alias="CmtPARAM" />
+		<typeAlias type="com.jy.aboutme.cmt.model.CmtDMI" alias="CmtDMI" />
 		
 	</typeAliases>
 </configuration>

@@ -105,6 +105,8 @@
     font-weight: bold;
 }
 
+
+
 .cmtDate {
     margin-top: 4px;
     margin-left: 20px;
@@ -159,7 +161,23 @@
     margin: 0 auto;
 }
 
+.delCmtBtn {
+    margin-left: 2px;
+    margin-bottom: 25px;
+    border: 2px solid grey;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 55px;
+    outline-style: none;
+    transition: 0.3s;
+}
 
+.delCmtBtn:hover {
+    cursor: pointer;
+    outline-style: none;
+    transition: 0.3s;
+    box-shadow: 0 3px 3px -2px grey;
+}
 
 
 
@@ -228,6 +246,7 @@ h1 {
     box-shadow: 0 4px 7px -3px grey;
     font-weight: bold;
     transition: 0.2;
+    
 }
 
 #cerCodeCount {
