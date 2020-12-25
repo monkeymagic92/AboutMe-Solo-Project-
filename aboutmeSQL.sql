@@ -25,7 +25,7 @@ CREATE TABLE t_board(
 	scr VARCHAR (2) DEFAULT 1,
 	search VARCHAR(10),
 	searchResult INT(2),
-	PRIMARY KEY(i_board)
+	PRIMARY KEY(i_board) 
 );
 
 SELECT * FROM t_board;
@@ -41,9 +41,10 @@ CREATE TABLE t_cmt(
 	ctnt VARCHAR(400),
 	r_dt DATETIME DEFAULT NOW(),	
 	PRIMARY KEY(i_cmt, i_board),
-	FOREIGN KEY(i_board) REFERENCES t_board(i_board)
+	FOREIGN KEY(i_board) REFERENCES t_board(i_board) ON DELETE CASCADE
 );
 SELECT * FROM t_cmt;
+SELECT * FROM t_board;
 DROP TABLE t_cmt;
 
 
@@ -85,7 +86,5 @@ DROP TABLE t_ipIntro;
 
 
 
-DELETE FROM t_cmt
-WHERE i_board = 3;
 
 

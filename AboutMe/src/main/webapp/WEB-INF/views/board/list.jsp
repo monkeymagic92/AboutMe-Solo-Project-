@@ -28,6 +28,11 @@
             <button id="writeBtn" type="button" onclick="moveToReg()">글작성</button>
         </div>
         
+        <div class="">
+        	<div>게시글 수(${totalCount})</div>
+        	<button type="button" onclick="listMall()">전체글</button>
+        </div>
+        
         <table cellpadding="10" cellspacing="0">
             <thead>
                 <tr>
@@ -76,9 +81,30 @@
             </tbody>
         </table>
 
-        <div class="pageDiv">
-            <span id="pageSpan">1</span>
-        </div>
+        <div class="page">	       
+	        <c:if test="${pagination.curRange ne 1 }">
+	            <a href="#" onClick="fn_paging(1)">[처음]</a> 
+	        </c:if>
+	        <div class="pageNumber">
+	        <c:forEach var="pageNum" begin="${pagination.startPage }" end="${pagination.endPage }">
+	            <c:choose>
+	                <c:when test="${pageNum eq  pagination.curPage}">
+	                	
+	                    <span style="font-weight: bold; color: black;"><a href="#" onClick="fn_paging('${pageNum }')">${pageNum }</a></span>
+	                    
+	                </c:when>
+	                <c:otherwise>
+	                	
+	                    <a href="#" onClick="fn_paging('${pageNum }')">${pageNum }</a>
+	                     
+	                </c:otherwise>
+	            </c:choose>
+	        </c:forEach>
+	        </div>
+	         <c:if test="${pagination.curRange ne pagination.rangeCnt && pagination.rangeCnt > 0}">
+	            <a href="#" onClick="fn_paging('${pagination.pageCnt }')">[끝]</a> 
+	        </c:if>
+   		</div>
         
         <div class="height">
 
@@ -110,6 +136,22 @@
     
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>    
 <script>
+
+	// 전체글 버튼 눌렀을 시
+	function listMall() {
+		location.href="/board/list"
+	}
+	
+	// 검색 유효검사
+	function chk() {
+		if(frm.search.value.length == 0) {
+			alert('검색내용을 입력해 주세요')
+			return false;
+		}
+	}
+	
+	
+
 	// 일반유저가 비밀번호 틀렸을시 
 	if(${scrFalse != null}) {
 		alert('${scrFalse}')
@@ -144,6 +186,10 @@
 	}
 	// 비밀번호 입력------------
 	
+	// 페이징 값 보내기
+	function fn_paging(curPage) {
+		location.href = "/board/list?curPage="+curPage
+	}
 	
 	myModalCer.style.display = 'none'
 </script>

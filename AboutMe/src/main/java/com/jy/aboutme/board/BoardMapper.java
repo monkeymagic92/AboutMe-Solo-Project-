@@ -4,17 +4,20 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.jy.aboutme.Pagination;
 import com.jy.aboutme.board.model.BoardDMI;
 import com.jy.aboutme.board.model.BoardPARAM;
 
 @Mapper
 public interface BoardMapper {
 
-	List<BoardPARAM> boardList();	// 전체글 리스트
+	List<BoardPARAM> boardList(Pagination p);	// 전체글 리스트
 	
 	List<BoardPARAM> searchNm(BoardPARAM param);	// 작성자 검색
 	
 	List<BoardPARAM> searchTitle(BoardPARAM param); // 제목 검색
+	
+	int totalBoardCount();	// 게시글 총 개수
 	
 	
 	

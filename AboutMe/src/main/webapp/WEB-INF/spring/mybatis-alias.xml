@@ -21,5 +21,8 @@
 		<typeAlias type="com.jy.aboutme.cmt.model.CmtPARAM" alias="CmtPARAM" />
 		<typeAlias type="com.jy.aboutme.cmt.model.CmtDMI" alias="CmtDMI" />
 		
+		<!-- Pagination -->
+		<typeAlias type="com.jy.aboutme.Pagination" alias="Pagination" />
+		
 	</typeAliases>
 </configuration>

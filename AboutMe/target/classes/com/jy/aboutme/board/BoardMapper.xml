@@ -10,14 +10,21 @@
 	<!-- 테스트용@@@@@@@@@@@@@@@@@@@ -->
 
 
+
+
+
 	<!-- 게시글 전체 리스트 -->
-	<select id="boardList" resultType="BoardPARAM">
+	<select id="boardList" resultType="BoardPARAM" parameterType="Pagination">
 		SELECT i_board, nm, title, ctnt, pw, scr, r_dt
 		FROM t_board
 		ORDER BY r_dt DESC
+		limit #{startIndex}, #{pageSize}
 	</select>
 	
-	
+	<!-- 전체 글 수 -->
+	<select id="totalBoardCount" resultType="Integer">
+		SELECT COUNT(i_board) FROM t_board
+	</select>
 	
 		
 	<!-- 작성자 검색 -->

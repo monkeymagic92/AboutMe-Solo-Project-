@@ -44,10 +44,15 @@
 		
 		<!-- 집에서 DB url 연결할때 serverTimezone 에러시 config.properties파일 안에 값 추가해주기 : &amp;serverTimezone=UTC -->
 		 		 					
-		 
+		 <!-- 
 		<beans:property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/aboutme?characterEncoding=UTF-8&amp;serverTimezone=UTC "/>
 		<beans:property name="username" value="root" />
 		<beans:property name="password" value="orcl" />
+		  -->
+		  
+	  <beans:property name="jdbcUrl" value="jdbc:mysql://118.67.132.252:3306/aboutme?characterEncoding=UTF-8&amp;serverTimezone=UTC "/>
+		<beans:property name="username" value="root" />
+		<beans:property name="password" value="tkfkd121!@!" />
 		 
 		 
 		 

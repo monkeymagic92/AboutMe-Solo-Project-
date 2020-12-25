@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.jy.aboutme.Pagination;
 import com.jy.aboutme.board.model.BoardDMI;
 import com.jy.aboutme.board.model.BoardPARAM;
 
@@ -15,8 +16,13 @@ public class BoardService {
 	private BoardMapper mapper;
 	
 	// boardlist 메소드 만들기
-	public List<BoardPARAM> boardList() {
-		return mapper.boardList();
+	public List<BoardPARAM> boardList(Pagination p) {
+		return mapper.boardList(p);
+	}
+	
+	// 게시글 총 개수
+	public int totalBoardCount() {
+		return mapper.totalBoardCount();
 	}
 	
 	// 게시글 비밀번호 입력

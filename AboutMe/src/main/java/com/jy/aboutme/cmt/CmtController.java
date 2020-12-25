@@ -50,7 +50,6 @@ public class CmtController {
 		} else {
 			ra.addFlashAttribute("cmtFalse", "비밀번호를 다시 확인해 주세요");
 		}
-		
 		return "redirect:/board/detail?i_board="+param.getI_board();
 	}
 	

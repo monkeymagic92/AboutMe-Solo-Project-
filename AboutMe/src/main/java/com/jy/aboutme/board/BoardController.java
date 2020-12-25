@@ -5,10 +5,13 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.jy.aboutme.Pagination;
 import com.jy.aboutme.ViewRef;
 import com.jy.aboutme.board.model.BoardDMI;
 import com.jy.aboutme.board.model.BoardPARAM;
@@ -22,13 +25,29 @@ public class BoardController {
 	private BoardService service;
 	
 	
-	// 개발자 문의 list
+	// 게시글 전체 목록
 	@RequestMapping(value="/list", method = RequestMethod.GET)
-	public String list(Model model, BoardPARAM param) {
-		System.out.println("param 값 : " + param.getSearchResult());
+	public String boardList(@ModelAttribute("boardVO") BoardDMI dmi,
+			 @RequestParam(defaultValue="1") int curPage, BoardPARAM param,
+			 HttpServletRequest request,
+			 Model model, Pagination p) {
 		
 		if(param.getSearchResult() == 0) { // 전체 글 
-			model.addAttribute("data", service.boardList());
+			
+			// 전체리스트 개수
+	        int listCnt = service.totalBoardCount();
+	        Pagination pagination = new Pagination(listCnt, curPage);
+	        dmi.setStartIndex(pagination.getStartIndex());
+	        dmi.setCntPerPage(pagination.getPageSize());
+	        //
+	        
+	        model.addAttribute("totalCount", service.totalBoardCount());
+			model.addAttribute("data", service.boardList(pagination));
+			model.addAttribute("listCnt", listCnt);
+			model.addAttribute("pagination", pagination);
+			
+			
+			
 			
 		} else if(param.getSearchResult() == 1) { // 제목 검색
 			System.out.println("제목 검색");
@@ -46,7 +65,7 @@ public class BoardController {
 	
 	
 	
-	// list 검색 관련 
+	// list 비밀게시글 
 	@RequestMapping(value="/list", method = RequestMethod.POST)
 	public String list(Model model, BoardPARAM param, BoardDMI dmi, RedirectAttributes ra) {
 		System.out.println("list post ");
@@ -62,7 +81,6 @@ public class BoardController {
 			
 		}
 		return "redirect:/" + ViewRef.BOARD_LIST;
-		
 	}
 	
 	
@@ -155,8 +173,7 @@ public class BoardController {
 			i_board_del = Integer.parseInt(request.getParameter("i_board_del"));
 			delPw = request.getParameter("delPw");
 			
-		} catch(Exception e) {	// try에서 받아오는값이 없다면 관리자 삭제메소드 실행
-			
+		} catch(Exception e) {	// try에서 받아오는값이 없다면 '관리자' 삭제메소드 실행
 			System.out.println("에러");
 			System.out.println("i_board값 : " + param.getI_board());
 			int result = service.delBoard(param);
