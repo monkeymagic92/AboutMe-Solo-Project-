@@ -32,8 +32,9 @@ public class BoardController {
 			 HttpServletRequest request,
 			 Model model, Pagination p) {
 		
-		if(param.getSearchResult() == 0) { // 전체 글 
-			
+		
+		
+		if(param.getSearchResult() == 0) { // 전체 글
 			// 전체리스트 개수
 	        int listCnt = service.totalBoardCount();
 	        Pagination pagination = new Pagination(listCnt, curPage);
@@ -42,12 +43,9 @@ public class BoardController {
 	        //
 	        
 	        model.addAttribute("totalCount", service.totalBoardCount());
-			model.addAttribute("data", service.boardList(pagination));
 			model.addAttribute("listCnt", listCnt);
 			model.addAttribute("pagination", pagination);
-			
-			
-			
+			model.addAttribute("data", service.boardList(pagination));
 			
 		} else if(param.getSearchResult() == 1) { // 제목 검색
 			System.out.println("제목 검색");
@@ -58,6 +56,7 @@ public class BoardController {
 			model.addAttribute("data", service.searchNm(param));
 			
 		}
+		
 		
 		model.addAttribute("view", ViewRef.BOARD_LIST);
 		return ViewRef.DEFAULT_TEMP;

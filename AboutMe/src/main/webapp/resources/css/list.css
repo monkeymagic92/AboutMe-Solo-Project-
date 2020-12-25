@@ -91,6 +91,12 @@ table {
     
 }
 
+.pageBox {
+	text-align: center;
+	margin-top: 30px;
+    font-size: 1.2em;
+}
+
 .height {
     height: 300px;
 }
