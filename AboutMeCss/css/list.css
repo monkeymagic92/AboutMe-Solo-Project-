@@ -12,7 +12,7 @@
 }
 
 .topContainer {
-
+    margin-left: 6px;
     display: flex;
 }
 
@@ -26,6 +26,35 @@
 .searchBtn:hover {
     cursor:pointer;
 }
+
+#listBtn {
+    margin-left: -110px;
+    margin-top: 1px;
+    width: 90px;
+    height: 39px;
+    background-color: white;
+    outline-style: none;
+    border: 2px solid grey;
+    border-radius: 3px;
+}
+
+#listBtn:hover {
+    cursor: pointer;
+    color: grey;
+    font-weight: bold;
+}
+
+#selCount {
+    font-weight: bold;
+    font-size:1.1em;
+    color: grey;
+    margin-left: 6px;
+    margin-bottom: 10px;
+    margin-top: -6px;
+}
+
+
+
 
 
 #frm {

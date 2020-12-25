@@ -25,13 +25,13 @@
                 <!--<span id="searchIcon" class="material-icons">search</span>-->
                 <input id="searchBtn" type="submit" value="검색">
             </form>
+            <button id="listBtn" type="button" onclick="listMall()">전체글</button>
             <button id="writeBtn" type="button" onclick="moveToReg()">글작성</button>
         </div>
         
-        <div class="">
-        	<div>게시글 수(${totalCount})</div>
-        	<button type="button" onclick="listMall()">전체글</button>
-        </div>
+        
+        <div id="selCount">게시글 수(${totalCount})</div>
+        
         
         <table cellpadding="10" cellspacing="0">
             <thead>
