@@ -24,10 +24,16 @@ public class PjController {
 	}
 	
 	
-	
 	@RequestMapping("/ddmarketTag")
 	public String ddMarket(Model model) {
 		model.addAttribute("view", "/pj/ddmarketTag");
+		return ViewRef.DEFAULT_TEMP;
+	}
+	
+	
+	@RequestMapping("/aboutMeTag")
+	public String aboutMe(Model model) {
+		model.addAttribute("view", "/pj/aboutMeTag");
 		return ViewRef.DEFAULT_TEMP;
 	}
 }

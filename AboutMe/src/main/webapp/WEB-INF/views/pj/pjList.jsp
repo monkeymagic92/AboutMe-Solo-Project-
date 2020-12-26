@@ -43,6 +43,23 @@
             </ul>
         </div>
         <button id="pjBtn" onclick="hibabyTag()">상세 내용 보기</button>
+        
+        <br><br><br><br>
+
+        <div class="pjList">
+            <div class="imgItem">
+                <img id="MainPng" class="logoImg" src="/res/img/Main.png" alt="">                
+            </div>
+            <ul class="pjUl">
+                <li class="pjLi">프로젝트 명 : AboutMe (2020.12.13 ~ ing)</li>
+                <li class="pjLi">개발 도구 : MySQL, Spring Tool Suite, Apache Tomcat9, Eclips IDE</li>
+                <li class="pjLi">프로젝트 주제 : <br>
+                    나를 소개하는 이력서 사이트
+                </li>
+                <li class="pjLi">담당 분야 : Front-End, Back-End</li>
+            </ul>
+        </div>
+        <button id="pjBtn" onclick="aboutMeTag()">상세 내용 보기</button>
 
         <div class="space">
 
@@ -50,12 +67,20 @@
     </div>
     
 <script>
+
+// DDmarket 태그
 function ddmarketTag() {
     location.href="/pj/ddmarketTag"
 }
 
+// HiBaby 태그
 function hibabyTag() {
     location.href="/pj/hibabyTag"
+}
+
+// aboutMe 태그
+function aboutMeTag() {
+    location.href="/pj/aboutMeTag"
 }
 
 </script>
