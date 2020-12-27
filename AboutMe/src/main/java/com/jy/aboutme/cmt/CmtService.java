@@ -24,6 +24,11 @@ public class CmtService {
 		return mapper.selCmtPw(param);
 	}
 	
+	// 댓글 총 갯수
+	public int selCmtCount(CmtPARAM param) {
+		return mapper.selCmtCount(param);
+	}
+	
 	// 댓글 입력
 	public int insCmt(CmtPARAM param) {
 		return mapper.insCmt(param);

@@ -25,6 +25,22 @@ public class BoardService {
 		return mapper.totalBoardCount();
 	}
 	
+	
+	// 작성자 검색 수
+	public int countSearchNm(BoardPARAM param) {
+		int result = mapper.countSearchNm(param);
+		System.out.println(result);
+		return mapper.countSearchNm(param);
+	}
+	
+	
+	// 글내용 검색 수
+	public int countSearchTitle(BoardPARAM param) {
+		int result = mapper.countSearchTitle(param);
+		System.out.println(result);
+		return mapper.countSearchTitle(param);
+	}
+	
 	// 게시글 비밀번호 입력
 	public BoardDMI selScr(BoardPARAM param) {
 		return mapper.selScr(param);

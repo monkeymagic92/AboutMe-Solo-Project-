@@ -14,6 +14,12 @@
 		WHERE i_cmt = #{i_cmt}
 	</select>
 	
+	<!-- 댓글 갯수 -->
+	<select id="selCmtCount" resultType="Integer" parameterType="CmtPARAM">
+		SELECT COUNT(i_cmt) FROM t_cmt
+		WHERE i_board = #{i_board}
+	</select> 
+	
 	<!-- 댓글 등록 -->
 	<insert id="insCmt" parameterType="CmtPARAM">
 		INSERT INTO t_cmt

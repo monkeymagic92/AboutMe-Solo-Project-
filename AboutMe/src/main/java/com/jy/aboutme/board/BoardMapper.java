@@ -17,6 +17,10 @@ public interface BoardMapper {
 	
 	List<BoardPARAM> searchTitle(BoardPARAM param); // 제목 검색
 	
+	int countSearchNm(BoardPARAM param);	// 작성자 검색 총 갯수
+	
+	int countSearchTitle(BoardPARAM param); // 제목 검색 총 갯수
+	
 	int totalBoardCount();	// 게시글 총 개수
 	
 	

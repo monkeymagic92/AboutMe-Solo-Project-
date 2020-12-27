@@ -29,9 +29,43 @@
                                 
             </div>
             <p class="infoP">
+               	내용적기<br>
+               	내용적기<br>
+               	내용적기<br>
+               	내용적기<br>
+               	내용적기<br>
                	내용적기
+               	내용적기
+               	내용적기내용적기
+               	
             </p>
         </div>
+        
+        <div class="movieInfo">
+            <video src="/res/av/HiBaby/join.mp4" controls></video>
+            <div class="titleDiv">
+                <h2 id="infoH1">1. 회원 가입 (정규화)</h2>
+                <ul class="infoUl">
+                    <li class="infoLi">중복확인은 Ajax통신을 이용하였으며, 중복확인후 내용이 변경된경우 다시 체크를 하도록 구성</li>
+                    <br>
+                    <li class="infoLi">비밀번호는 salt 암호화 기법을 사용하여 회원가입후 DB에 값 저장시 난수로 저장</li><br>
+                    <li class="infoLi">아이디:영어,숫자 / 이메일:이메일형식 / 비밀번호:영어,특수문자,숫자 포함 정규화 작업</li>
+                </ul>
+            </div>
+        </div>
+        <br><br>
+        <div class="movieInfo">
+            <video src="/res/av/HiBaby/findPw.mp4" controls></video>
+            <div class="titleDiv">
+                <h1 id="infoH1">2. 비밀번호 찾기 (이메일 발송)</h1>
+                <ul class="infoUl">
+                    <li class="infoLi">JavaMailSender를 활용하여 회원가입시 입력한 이메일로 인증코드 6자리를 보내어 인증번호가 서로 일치하면 OK</li>
+                    <br>
+                    <li class="infoLi">아이디찾기 또한 위와 동일한 방식으로 일치하는 ID를 메일로 발송함</li>
+                </ul>
+            </div>
+        </div>
+        <br><br>
     </div>
 </body>
 </html>

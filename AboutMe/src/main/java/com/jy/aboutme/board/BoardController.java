@@ -43,23 +43,32 @@ public class BoardController {
 	        //
 	        
 	        model.addAttribute("totalCount", service.totalBoardCount());
-			model.addAttribute("listCnt", listCnt);
+	        model.addAttribute("listCnt", listCnt);
 			model.addAttribute("pagination", pagination);
 			model.addAttribute("data", service.boardList(pagination));
 			
+			model.addAttribute("view", ViewRef.BOARD_LIST);
+			return ViewRef.DEFAULT_TEMP;
+			
 		} else if(param.getSearchResult() == 1) { // 제목 검색
-			System.out.println("제목 검색");
+			
+			model.addAttribute("totalCount", service.countSearchTitle(param));
 			model.addAttribute("data", service.searchTitle(param));
+			model.addAttribute("view", ViewRef.BOARD_LIST);
+			return ViewRef.DEFAULT_TEMP;
 		
 		} else { // 작성자 검색
 			System.out.println("내용 검색");
-			model.addAttribute("data", service.searchNm(param));
 			
+			int result = service.countSearchNm(param);
+			System.out.println("Controller result 값 : " + result);
+			
+			model.addAttribute("totalCount", service.countSearchNm(param));
+			model.addAttribute("data", service.searchNm(param));
+			model.addAttribute("view", ViewRef.BOARD_LIST);
+			return ViewRef.DEFAULT_TEMP;
 		}
 		
-		
-		model.addAttribute("view", ViewRef.BOARD_LIST);
-		return ViewRef.DEFAULT_TEMP;
 	}
 	
 	

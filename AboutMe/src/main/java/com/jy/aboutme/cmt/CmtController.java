@@ -38,6 +38,14 @@ public class CmtController {
 		return service.selCmt(param);
 	}
 	
+	// 댓글 갯수
+	@RequestMapping(value="/selCmtCount", method=RequestMethod.GET)
+	public @ResponseBody int selCmtCount(CmtPARAM param) {
+		System.out.println("보드 페이지 값 : " + param.getI_board());
+		
+		return service.selCmtCount(param); 
+	}
+	
 	// 댓글삭제 (아작스 X)
 	@RequestMapping(value="/cmtDel", method = RequestMethod.POST)
 	public String cmtDel(CmtPARAM param, CmtDMI dmi,

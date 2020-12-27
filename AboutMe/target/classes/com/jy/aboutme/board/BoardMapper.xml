@@ -26,6 +26,22 @@
 		SELECT COUNT(i_board) FROM t_board
 	</select>
 	
+	
+	<!-- 검색 했을시 전체글수 다르기 나타내는 코드 입력하기
+	
+	 -->
+	 <!-- 작성자 검색수  -->
+	 <select id="countSearchNm" parameterType="BoardPARAM" resultType="Integer">
+	 	SELECT COUNT(i_board) FROM t_board
+	 	WHERE nm LIKE CONCAT('%', #{search}, '%')
+	 </select>
+	
+	<!-- 제목 검색 개수 -->
+	<select id="countSearchTitle" parameterType="BoardPARAM" resultType="Integer">
+		SELECT COUNT(i_board) FROM t_board
+	 	WHERE title LIKE CONCAT('%', #{search}, '%')
+	</select>
+	
 		
 	<!-- 작성자 검색 -->
 	<!-- 여기서 하나로 묶기!! -->

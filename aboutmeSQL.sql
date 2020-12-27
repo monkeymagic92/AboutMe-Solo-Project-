@@ -15,6 +15,12 @@ VALUES
 USE aboutme;
 
 
+SELECT * FROM t_board;
+
+
+
+
+
 CREATE TABLE t_board(
 	i_board INT UNSIGNED AUTO_INCREMENT,
 	nm VARCHAR(10),

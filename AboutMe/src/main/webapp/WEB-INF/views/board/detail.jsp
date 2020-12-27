@@ -88,6 +88,7 @@
 
         <!-- 댓글 -->
         <div class="cmtContainer">
+        	<div id="selCmtCount"></div>
             <div class="cmtDivMo">
                 
             </div>
@@ -180,6 +181,7 @@
 	}
 
 	//ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	댓 글 ㅡ	ㅡ	ㅡ	ㅡ	ㅡ
+	
 	function cmtRegBtnCall(i_board) {
 		const ctnt = cmtFrm.ctnt.value
 		const cmtNm = cmtFrm.cmtNm.value
