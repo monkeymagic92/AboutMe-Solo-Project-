@@ -11,6 +11,8 @@ import com.jy.aboutme.cmt.model.CmtPARAM;
 @Service
 public class CmtService {
 	
+	// 깃허브 푸시용
+	
 	@Autowired
 	private CmtMapper mapper;
 
