@@ -39,7 +39,7 @@ public class CmtController {
 	}
 	
 	// 댓글 갯수
-	@RequestMapping(value="/selCmtCount", method=RequestMethod.GET)
+	@RequestMapping(value="/selCount", method=RequestMethod.GET)
 	public @ResponseBody int selCmtCount(CmtPARAM param) {
 		System.out.println("보드 페이지 값 : " + param.getI_board());
 		

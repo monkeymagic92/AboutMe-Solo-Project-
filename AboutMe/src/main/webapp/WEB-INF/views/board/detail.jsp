@@ -40,6 +40,7 @@
         </div>        
 
         <div class="cmtListBox">
+        	<h2 class="h2-section-title" id="h2-section-title"></h2>
             <div id="cmtListMall" class="cmtList">
             	
             	 <!-- 
@@ -88,10 +89,15 @@
 
         <!-- 댓글 -->
         <div class="cmtContainer">
-        	<div id="selCmtCount"></div>
+        
+        	
+        	<div id="selCmtCount">
+        	
+        	</div>
             <div class="cmtDivMo">
-                
+            
             </div>
+            
         </div>
         
         
@@ -179,8 +185,30 @@
 	if(${cmtFalse != null}) {
 		alert('${cmtFalse}')
 	}
-
+	
 	//ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	댓 글 ㅡ	ㅡ	ㅡ	ㅡ	ㅡ
+
+	// 댓글 시작
+	var cmtList = []
+	   
+	var cmtCnt = 0;
+	
+	ajaxSelCount();
+	
+	// ajax로 댓글 수 뽑아오기
+    function ajaxSelCount() {
+    axios.get('/cmt/selCount', {
+        params: {
+          i_board: `${data.i_board}`,
+        }
+     
+     }).then(function(res) {   
+       cmtCnt = res.data;
+       var h2_section_title_cnt = document.querySelector('#h2-section-title');
+       h2_section_title_cnt.innerText = '댓글' +'(' + cmtCnt + ')';
+     })
+ }
+	
 	
 	function cmtRegBtnCall(i_board) {
 		const ctnt = cmtFrm.ctnt.value
@@ -236,13 +264,20 @@
 		
 		axios.get('/cmt/selCmt', {
 			params: {
-				i_board : `${data.i_board}`
+				i_board : `${data.i_board}`,
+				cmt_pageStart: 0,
+	            cmt_perPageNum: 5
 			}
 		}).then(function(res) {
 			refreshMenu(res.data)
 		})
 		
 	}
+	
+	// 더보기 준비
+    var cmt_pageStart = 0;
+    var limitCnt = 0;
+    var limit = 0;
 	
 	// makeCmtList 함수를 계속 만들어냄
 	function refreshMenu(arr) {

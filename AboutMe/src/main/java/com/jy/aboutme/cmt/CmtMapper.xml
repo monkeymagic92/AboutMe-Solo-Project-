@@ -6,6 +6,8 @@
 	<select id="selCmt" resultType="CmtDMI" parameterType="CmtPARAM">
 		SELECT i_cmt, cmtNm, ctnt, r_dt FROM t_cmt
 		WHERE i_board = #{i_board}
+		ORDER BY r_dt DESC
+		LIMIT #{cmt_pageStart}, #{cmt_perPageNum}
 	</select>
 	
 	<!-- 댓글 삭제시 비밀번호 확인 -->
