@@ -14,7 +14,7 @@ public class CmtService {
 	// 깃허브 푸시용
 	// 깃허브 푸시용
 	// 깃허브 푸시용
-	// 깃허브 푸시용
+	// 깃허브 푸시용222222
 	
 	@Autowired
 	private CmtMapper mapper;
