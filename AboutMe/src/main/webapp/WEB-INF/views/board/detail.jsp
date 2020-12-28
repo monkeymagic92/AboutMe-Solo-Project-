@@ -41,7 +41,9 @@
 
         <div class="cmtListBox">
         	<h2 class="h2-section-title" id="h2-section-title"></h2>
+        	
             <div id="cmtListMall" class="cmtList">
+            	
             	
             	 <!-- 
                 <div class="cmtFlex">
@@ -71,6 +73,7 @@
                  -->
                 
             </div>
+            <div id="divSelMoreCtn"></div>
         </div>
 
         <!-- 아작스로 댓글 입력창 만들기 -->
@@ -190,26 +193,142 @@
 
 	// 댓글 시작
 	var cmtList = []
-	   
 	var cmtCnt = 0;
 	
 	ajaxSelCount();
 	
+	
+	
+	
 	// ajax로 댓글 수 뽑아오기
     function ajaxSelCount() {
-    axios.get('/cmt/selCount', {
-        params: {
-          i_board: `${data.i_board}`,
-        }
-     
-     }).then(function(res) {   
-       cmtCnt = res.data;
-       var h2_section_title_cnt = document.querySelector('#h2-section-title');
-       h2_section_title_cnt.innerText = '댓글' +'(' + cmtCnt + ')';
-     })
- }
+	    axios.get('/cmt/selCount', {
+	        params: {
+	          i_board: `${data.i_board}`,
+	        }
+	     
+	     }).then(function(res) {   
+	       cmtCnt = res.data;
+	       var h2_section_title_cnt = document.querySelector('#h2-section-title');
+	       h2_section_title_cnt.innerText = '댓글' +'(' + cmtCnt + ')';
+	     })
+ 	}
 	
 	
+	// 댓글 뿌리는 메소드
+	function ajaxSelCmt() {
+		
+		axios.get('/cmt/selCmt', {
+			params: {
+				i_board : `${data.i_board}`,
+				cmt_pageStart: 0,
+	            cmt_perPageNum: 5
+			}
+		}).then(function(res) {
+			refreshMenu(res.data)
+		})
+		
+	}
+	
+	// 더보기 준비
+    var cmt_pageStart = 0;
+    var limitCnt = 0;
+    var limit = 0;
+	
+	    
+	// 댓글뿌릴때 Maper에서 limit 값 줘야됨
+    function ajaxSelMore() {
+       axios.get('/cmt/selCmt', {
+           params: {
+             i_board: `${data.i_board}`,
+               cmt_pageStart: cmt_pageStart + 5,
+               cmt_perPageNum: 5
+           }
+        
+        }).then(function(res) {   
+            cmt_pageStart += 5
+            
+            ajaxSelCount()
+           
+            refreshMenu(res.data)
+        
+            limit = Math.ceil(cmtCnt/5);
+         
+           if(limitCnt > limit-3) {
+              var divSelMoreCtn = document.querySelector("#divSelMoreCtn")
+            divSelMoreCtn.innerHTML = '';
+           }
+           
+         limitCnt++
+        
+       })
+   }
+	
+ 		
+	// makeCmtList 함수를 계속 만들어냄
+	function refreshMenu(arr) {
+		for(let i=0; i<arr.length; i++) {
+			makeCmtList(arr[i])
+		}
+		
+		/////////더보기 버튼
+		if(cmtCnt > 5) { 
+		   var divSelMoreCtn = document.querySelector("#divSelMoreCtn")
+		   
+		   divSelMoreCtn.innerHTML = '';
+		   
+		   var divSelMore =  document.createElement('div')
+		   divSelMore.setAttribute('id', 'ajaxSelMore')
+		   divSelMore.innerText = '더보기 ▼'
+		     divSelMore.onclick = function() {
+		      ajaxSelMore();
+		   }
+		   
+		   divSelMoreCtn.append(divSelMore)
+		}
+	}
+	
+	
+	
+	// 댓글 리스트 append
+	function makeCmtList(arr) {
+		
+		var cmtFlexDiv = document.createElement('div')
+		cmtFlexDiv.setAttribute('class', 'cmtFlex')
+		cmtListMall.append(cmtFlexDiv)
+		
+		var cmtNickDiv = document.createElement('div')
+		cmtNickDiv.setAttribute('class', 'cmtNick')
+		cmtNickDiv.append(arr.cmtNm)
+		cmtFlexDiv.append(cmtNickDiv)
+		
+		
+		var cmtDateDiv = document.createElement('div')
+		cmtDateDiv.setAttribute('class', 'cmtDate')
+		cmtDateDiv.append(arr.r_dt)
+		cmtFlexDiv.append(cmtDateDiv)
+		
+		var cmtSelDiv = document.createElement('div')
+		cmtSelDiv.setAttribute('class', 'cmtSel')
+		cmtSelDiv.append(arr.ctnt)
+		cmtListMall.append(cmtSelDiv)
+		
+		// 삭제기능 넣기
+		var delCmtBtn = document.createElement('button')
+		delCmtBtn.setAttribute('class', 'delCmtBtn')
+		delCmtBtn.innerText = '삭제'
+		delCmtBtn.onclick = function() {
+			$('#delCmtModal').show();
+			delCmtFrm.i_board.value = `${data.i_board}`
+			delCmtFrm.i_cmt.value = arr.i_cmt
+			cmtFrm.cmtPw.focus()
+		}
+		cmtListMall.append(delCmtBtn)
+	}
+	
+	ajaxSelCmt()	// 아작스 댓글 뿌리기
+	
+	// 댓글 입력
 	function cmtRegBtnCall(i_board) {
 		const ctnt = cmtFrm.ctnt.value
 		const cmtNm = cmtFrm.cmtNm.value
@@ -252,77 +371,15 @@
 				cmtFrm.cmtPw.value = ''
 				cmtListMall.innerHTML = ''
 				ajaxSelCmt()
+				ajaxSelCount()
+				cmt_pageStart = 0;
+	            limitCnt = 0;
 				
 			} else {
 				alert('댓글 전송중 오류가 발생하였습니다. 잠시후 다시 시도해 주세요')
 			}
 		})
 	}
-	
-	// 댓글 뿌리는 메소드
-	function ajaxSelCmt() {
-		
-		axios.get('/cmt/selCmt', {
-			params: {
-				i_board : `${data.i_board}`,
-				cmt_pageStart: 0,
-	            cmt_perPageNum: 5
-			}
-		}).then(function(res) {
-			refreshMenu(res.data)
-		})
-		
-	}
-	
-	// 더보기 준비
-    var cmt_pageStart = 0;
-    var limitCnt = 0;
-    var limit = 0;
-	
-	// makeCmtList 함수를 계속 만들어냄
-	function refreshMenu(arr) {
-		for(let i=0; i<arr.length; i++) {
-			makeCmtList(arr[i])
-		}
-	}
-	
-	// 댓글 리스트 append
-	function makeCmtList(arr) {
-		
-		var cmtFlexDiv = document.createElement('div')
-		cmtFlexDiv.setAttribute('class', 'cmtFlex')
-		cmtListMall.append(cmtFlexDiv)
-		
-		var cmtNickDiv = document.createElement('div')
-		cmtNickDiv.setAttribute('class', 'cmtNick')
-		cmtNickDiv.append(arr.cmtNm)
-		cmtFlexDiv.append(cmtNickDiv)
-		
-		
-		var cmtDateDiv = document.createElement('div')
-		cmtDateDiv.setAttribute('class', 'cmtDate')
-		cmtDateDiv.append(arr.r_dt)
-		cmtFlexDiv.append(cmtDateDiv)
-		
-		var cmtSelDiv = document.createElement('div')
-		cmtSelDiv.setAttribute('class', 'cmtSel')
-		cmtSelDiv.append(arr.ctnt)
-		cmtListMall.append(cmtSelDiv)
-		
-		// 삭제기능 넣기
-		var delCmtBtn = document.createElement('button')
-		delCmtBtn.setAttribute('class', 'delCmtBtn')
-		delCmtBtn.innerText = '삭제'
-		delCmtBtn.onclick = function() {
-			$('#delCmtModal').show();
-			delCmtFrm.i_board.value = `${data.i_board}`
-			delCmtFrm.i_cmt.value = arr.i_cmt
-			cmtFrm.cmtPw.focus()
-		}
-		cmtListMall.append(delCmtBtn)
-	}
-	
-	ajaxSelCmt()	// 아작스 댓글 뿌리기
 	
 	//	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ	ㅡ
 	

@@ -15,6 +15,8 @@ VALUES
 USE aboutme;
 
 
+
+
 SELECT * FROM t_board;
 
 
@@ -50,8 +52,8 @@ CREATE TABLE t_cmt(
 	FOREIGN KEY(i_board) REFERENCES t_board(i_board) ON DELETE CASCADE
 );
 SELECT * FROM t_cmt;
-SELECT * FROM t_board;
 DROP TABLE t_cmt;
+
 
 
 

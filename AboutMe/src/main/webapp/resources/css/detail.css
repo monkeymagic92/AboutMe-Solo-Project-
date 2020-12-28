@@ -85,6 +85,10 @@
     color: #4a4848;
 }
 
+#h2-section-title {
+	margin-left: 400px;
+}
+
 .cmtListBox {
     margin-top: 140px;
     
@@ -131,6 +135,20 @@
 .textZ {
     display: flex;
     margin-top: 10px;
+}
+
+#divSelMoreCtn {
+	width: 700px;
+	margin: 0 auto;
+	margin-top: 30px;
+	text-align: center;
+	
+}
+
+#divSelMoreCtn:hover {
+	cursor: pointer;
+	background-color: grey;
+	
 }
 
 #cmtText {
@@ -274,3 +292,4 @@ h1 {
 #cerCodeCount {
 	color: red;
 }
+

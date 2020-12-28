@@ -3,6 +3,7 @@ package com.jy.aboutme.cmt.model;
 public class CmtPARAM extends CmtVO{
 
 	private int countI_cmt;
+	
 	private int pageStart;
 	private int perPageNum;
 	private int cmt_pageStart;
