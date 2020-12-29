@@ -67,7 +67,6 @@
 
     <!--  -->
     <div id="chatViewId" class="chatView">
-    
     	<!-- -- 일반 --
     	        	 
         <div class="userChat">
@@ -117,6 +116,8 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
+	var isNewCmt = false;
+
 	//첫 실행시 채팅창은 hide
 	$('.chatCloseBtn').hide();
 	$('.chatView').hide();
@@ -140,17 +141,26 @@
 	    $('.chatIns').hide();
 	    $('.ourSite').hide();
 	    $('#messageIcon').show();
+	    isNewCmt = false;
 	    chatCtnt.focus();
 	})
+	
 	
 	
 	
     // 챗 입력
     function chatSend() {
 		
+		isNewCmt = true;
+		
 		var chatCtnt = chatFrm.chatCtnt.value
 		var userNm = `${loginUser.nm}`
 		var adminCode = '';
+		
+		if(chatCtnt == '') {
+			alert('글자를 입력해 주세요')
+			return
+		}
 		
 		console.log(userNm)
 		
@@ -158,7 +168,6 @@
 			adminCode = '2'
 				
 		} else { // 일반
-			
 			adminCode = '1'
 		}
 		
@@ -194,14 +203,22 @@
 	}
 	
 	function refreshMenu(arr) {
+		chatAlert()
+		
 		for(let i=0; i<arr.length; i++) {
 			makeChatList(arr[i])
 		}
 	}
 	
+	function chatAlert() {
+		var chatViewAlert = document.createElement('div')
+		chatViewAlert.setAttribute('class', 'chatViewAlert')
+		chatViewAlert.append('익명성이 보장되는 공간입니다')
+		chatViewId.append(chatViewAlert)
+	}
 	
 	function makeChatList(arr) {
-		console.log(arr.adminCode)
+		
 		if(arr.adminCode == '1') {
 			
 			var userChat = document.createElement('div')
@@ -234,9 +251,11 @@
 			adminDate.append(arr.r_dt)
 			
 			chatViewId.append(adminDate)
-			
 		}
 		
+		if(isNewCmt){
+	    	  document.getElementById('chatViewId').scrollTop = document.getElementById('chatViewId').scrollHeight;
+	    }
 		
 	}
 	
