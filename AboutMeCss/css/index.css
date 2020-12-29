@@ -217,6 +217,7 @@ footer {
 }
 
 .userChat {
+    font-family: 'Nanum Gothic', sans-serif;
     width: 230px;
     background-color: #f0f0f0;
     border-radius: 10px;
@@ -240,6 +241,7 @@ footer {
 }
 
 .adminChat {
+    font-family: 'Nanum Gothic', sans-serif;
     margin-left: 30px;
     width: 230px;
     background-color: #dbd7d7;
