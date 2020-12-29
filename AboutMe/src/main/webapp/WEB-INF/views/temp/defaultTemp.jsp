@@ -9,10 +9,12 @@
 <title>Index</title>
 <c:choose>
 	<c:when test="${cssResult != null}">
-		<link rel="stylesheet" href="/res/css/defaultTempDark.css">		
+		<link rel="stylesheet" href="/res/css/defaultTempDark.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</c:when>
 	<c:when test="${cssResult == null}">
-		<link rel="stylesheet" href="/res/css/defaultTemp.css">		
+		<link rel="stylesheet" href="/res/css/defaultTemp.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</c:when>
 </c:choose>
 </head>
@@ -44,6 +46,65 @@
             <span id="homeMsg">크롬(Chrome) 기준으로 작성된 홈페이지 입니다</span> 2020.12.14　이재용
         </div>
     </div>
+    
+    <!-- chatStart -->
+    <div class="message">
+        <img id="messageIcon" src="/res/img/메세지아이콘.png">
+    </div>
+
+    <div class="ourSite">
+        <div class="ourSite-1">
+            만남의 광장
+        </div>
+        
+        <div class="ourSite-2">
+            익명보장!!
+        </div>
+    </div>
+    <button class="chatCloseBtn">
+        X        
+    </button>
+
+    <!--  -->
+    <div class="chatView">
+        
+        <!-- 내용 ajax 처리하기-->
+
+        <!-- 일반 -->
+        <div id="chatViewBoxList">
+            <div class="userChat">
+                나는 유저
+                입니다.<br>
+            </div>            
+            <div class="userDate">2020.12.25 09:25AM</div>
+        </div>
+        
+        <!-- 관리자 -->
+        <div id="chatViewBoxList">
+            <div class="adminNm">관리자</div>
+            <div class="adminChat">
+                나는 관리자
+                입니다.ㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ<br>
+            </div>
+            <div class="adminDate">2020.12.25 09:25AM</div>
+        </div>
+
+
+    </div>
+    
+    <div class="chatIns">
+        <form id="chatFrm">
+            <textarea id="chatCtnt" type="text" name="chatCtnt" placeholder="메시지를 입력해 주세요."></textarea>
+
+            <!-- adminCode = 1 유저    = 2 관리자 -->
+            <input type="hidden" id="adminCode" name="adminCode" value="1">
+            <span id="sendIcon" class="material-icons" onclick="chatSend()">
+                send
+            </span>
+        </form>
+    </div>
+
+    <!-- chatEnd -->
     <!-- Header End -->
 
     
@@ -53,9 +114,44 @@
 		
     </div>
     
-    
-    
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
+	//첫 실행시 채팅창은 hide
+	$('.chatCloseBtn').hide();
+	$('.chatView').hide();
+	$('.chatIns').hide();
+	$('.ourSite').hide();
+	
+	// 메세지 아이콘 클릭시 채팅창 show
+	$('#messageIcon').click(function() {
+		$('.chatCloseBtn').show();
+	    $('.chatView').show();
+	    $('.chatIns').show();
+	    $('.ourSite').show();
+	    $('#messageIcon').hide();
+	    
+	})
+	
+	// X버튼 클릭시 닫음
+	$('.chatCloseBtn').click(function() {
+		$('.chatCloseBtn').hide();
+	    $('.chatView').hide();
+	    $('.chatIns').hide();
+	    $('.ourSite').hide();
+	    $('#messageIcon').show();
+	    chatCtnt.focus();
+	})
+	
+	
+    // 아작스 글입력 만들기
+    function chatSend() {
+        chatCtnt.value = ''
+        alert('아작스 글입력 만들기');
+    }
+
+
 	function wait() {
 		alert('서비스 준비중입니다.')
 	}
