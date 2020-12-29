@@ -2,6 +2,7 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
+	
 		<!-- board -->
 		<typeAlias type="com.jy.aboutme.board.model.BoardVO" alias="BoardVO" />
 		<typeAlias type="com.jy.aboutme.board.model.BoardPARAM" alias="BoardPARAM" />
@@ -23,6 +24,10 @@
 		
 		<!-- Pagination -->
 		<typeAlias type="com.jy.aboutme.Pagination" alias="Pagination" />
+		
+		<!-- Chat -->
+		<typeAlias type="com.jy.aboutme.chat.model.ChatVO" alias="ChatVO" />
+		<typeAlias type="com.jy.aboutme.chat.model.ChatPARAM" alias="ChatPARAM" />
 		
 	</typeAliases>
 </configuration>

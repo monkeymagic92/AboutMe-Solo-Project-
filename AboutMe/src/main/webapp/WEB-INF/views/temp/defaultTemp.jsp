@@ -54,11 +54,11 @@
 
     <div class="ourSite">
         <div class="ourSite-1">
-            만남의 광장
+           	 만남의 광장
         </div>
         
         <div class="ourSite-2">
-            익명보장!!
+          	  익명보장!!
         </div>
     </div>
     <button class="chatCloseBtn">
@@ -68,9 +68,10 @@
     <!--  -->
     <div class="chatView">
         
-        <!-- 내용 ajax 처리하기-->
+        
+        <!-- 내용 ajax 처리하기
 
-        <!-- 일반 -->
+        	 일반 
         <div id="chatViewBoxList">
             <div class="userChat">
                 나는 유저
@@ -79,7 +80,7 @@
             <div class="userDate">2020.12.25 09:25AM</div>
         </div>
         
-        <!-- 관리자 -->
+        	 관리자 
         <div id="chatViewBoxList">
             <div class="adminNm">관리자</div>
             <div class="adminChat">
@@ -88,13 +89,13 @@
             </div>
             <div class="adminDate">2020.12.25 09:25AM</div>
         </div>
-
+		-->
 
     </div>
     
     <div class="chatIns">
         <form id="chatFrm">
-            <textarea id="chatCtnt" type="text" name="chatCtnt" placeholder="메시지를 입력해 주세요."></textarea>
+            <textarea id="chatCtnt" name="chatCtnt" placeholder="메시지를 입력해 주세요."></textarea>
 
             <!-- adminCode = 1 유저    = 2 관리자 -->
             <input type="hidden" id="adminCode" name="adminCode" value="1">
@@ -115,7 +116,7 @@
     </div>
     
 
-
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 	//첫 실행시 채팅창은 hide
@@ -145,17 +146,51 @@
 	})
 	
 	
-    // 아작스 글입력 만들기
+    // 챗 입력
     function chatSend() {
-        chatCtnt.value = ''
-        alert('아작스 글입력 만들기');
+		
+		var chatCtnt = chatFrm.chatCtnt.value
+		var userNm = `${loginUser.nm}`
+		var adminCode = '';
+		
+		console.log(userNm)
+		
+		if(userNm == '관리자') { // 관리
+			alert('관리자')
+			adminCode = '2'
+				
+		} else { // 일반
+			
+			alert('일반')
+			adminCode = '1'
+			
+		}
+		
+		axios.post('/chat/insChat',{
+			
+			chatCtnt : chatCtnt,
+			adminCode : adminCode
+			
+			
+		}).then(function(res) {
+			if(res.data == 1) {
+				chatFrm.chatCtnt.value = ''
+				
+				
+			} else {
+				alert('챗 전송중 오류가 발생하였습니다. 잠시후 다시 시도해 주세요')
+			}
+		})
     }
 
 
+	
+	
+	
+	// 응원 메세지 남기는 곳
 	function wait() {
 		alert('서비스 준비중입니다.')
 	}
-
 </script>
 </body>
 </html>
