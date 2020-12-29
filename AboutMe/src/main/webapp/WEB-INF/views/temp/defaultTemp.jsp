@@ -15,6 +15,7 @@
 	<c:when test="${cssResult == null}">
 		<link rel="stylesheet" href="/res/css/defaultTemp.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
 	</c:when>
 </c:choose>
 </head>
@@ -46,8 +47,10 @@
             <span id="homeMsg">크롬(Chrome) 기준으로 작성된 홈페이지 입니다</span> 2020.12.14　이재용
         </div>
     </div>
+   
     
     <!-- chatStart -->
+    <c:if test="${cssResult == null }">
     <div class="message">
         <img id="messageIcon" src="/res/img/메세지아이콘.png">
     </div>
@@ -56,39 +59,17 @@
         <div class="ourSite-1">
            	 만남의 광장
         </div>
-        
-        <div class="ourSite-2">
-          	  익명보장!!
-        </div>
     </div>
     <button class="chatCloseBtn">
-        X        
+        <span id="exitIcon" class="material-icons">
+            exit_to_app
+        </span>        
     </button>
 
-    <!--  -->
-    <div id="chatViewId" class="chatView">
-    	<!-- -- 일반 --
-    	        	 
-        <div class="userChat">
-	              나는 유저
-	              입니다.<br>
-        </div>            
-        <div class="userDate">2020.12.25 09:25AM</div>
-        
-	        
-        	 -- 관리자 -- 
-        
-        
-        <div class="adminChat">
-           <div class="adminNm">관리자</div>
-	              나는 관리자
-	              입니다.ㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ<br>
-        </div>
-        <div class="adminDate">2020.12.25 09:25AM</div>
-        
-         -->
-         
-    </div>
+    <!-- 챗 공간 -->
+   
+    	<div id="chatViewId" class="chatView"></div>
+	    
     
     <div class="chatIns">
         <form id="chatFrm">
@@ -101,7 +82,7 @@
             </span>
         </form>
     </div>
-
+	</c:if>
     <!-- chatEnd -->
     <!-- Header End -->
 
@@ -213,7 +194,7 @@
 	function chatAlert() {
 		var chatViewAlert = document.createElement('div')
 		chatViewAlert.setAttribute('class', 'chatViewAlert')
-		chatViewAlert.append('익명성이 보장되는 공간입니다')
+		chatViewAlert.innerHTML = '익명성이 보장되는 공간입니다<br>관리자와 유저들끼리 자유로운 대화를 나누세요'
 		chatViewId.append(chatViewAlert)
 	}
 	

@@ -91,7 +91,15 @@ DROP TABLE t_ipIntro;
 
 
 
-
+CREATE TABLE t_chat(
+	i_chat INT UNSIGNED AUTO_INCREMENT,
+	chatCtnt VARCHAR(1000),
+	adminCode VARCHAR(2) DEFAULT 1,
+	r_dt DATETIME DEFAULT NOW(),
+	PRIMARY KEY(i_chat)
+);
+SELECT * FROM t_chat;
+DROP TABLE t_chat;
 
 
 
