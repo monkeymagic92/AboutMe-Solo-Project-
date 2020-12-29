@@ -1,0 +1,28 @@
+.container {
+    margin: 0 auto;
+    height: 3000px;
+}
+.x {
+    position: fixed;
+    right: 43px;
+    bottom: 415px;
+    font-size: 3em;
+    font-weight: bold;
+
+}
+
+.x:hover {
+    font-size:3.2em;
+    cursor: pointer;
+}
+
+.chatDiv {
+    text-transform: uppercase;
+    position: fixed;
+    right: 40px; bottom: 200px;
+    
+    border: 2px solid black;
+    width: 400px;
+    height: 200px;
+    overflow-y: auto;
+}

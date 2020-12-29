@@ -89,7 +89,8 @@
                 </div>
             </form>
         </div>
-
+        
+		
         <!-- 댓글 -->
         <div class="cmtContainer">
         
@@ -183,6 +184,7 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
+
 	
 	// 댓글 삭제시 비밀번호 틀릴 경우 
 	if(${cmtFalse != null}) {
@@ -196,9 +198,6 @@
 	var cmtCnt = 0;
 	
 	ajaxSelCount();
-	
-	
-	
 	
 	// ajax로 댓글 수 뽑아오기
     function ajaxSelCount() {

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">    
     <link rel="stylesheet" href="css/index.css">
     
 </head>
@@ -19,20 +20,71 @@
                 <li class="headerLi1"><a href="#" class="headerA">개발자 소개</a></li>
                 <li class="headerLi"><a href="#" class="headerA">프로젝트 소개</a></li>
                 <li class="headerLi"><a href="#" class="headerA">개발자 1:1 문의</a></li>
-                <li class="headerLi"><a href="#" class="headerA">일기</a></li>
                 <li class="headerLi"><a href="#" class="headerA">응원메세지</a></li>
             </ul>
         </div>
     </header>
 
     <div class="headerBottomDiv">
+
         <audio class="audioMp" controls autoplay="autoplay" loop>
-            <source src="sound/음악테스트01.mp3" autoplay muted type="audio/mp3">
+        
         </audio>
         <div class="dateDiv">
             <span id="homeMsg">크롬(Chrome) 기준으로 작성된 홈페이지 입니다</span> 2020.12.14　이재용
         </div>
     </div>
+
+
+
+
+
+
+
+
+    <!-- chatStart -->
+    <div class="message">
+        <img id="messageIcon" src="img/메세지아이콘.png">
+    </div>
+
+    <button class="chatCloseBtn">
+        X        
+    </button>
+
+    <!--  -->
+    <div class="chatView">
+        
+        <!-- 내용 ajax 처리하기-->
+        <div>
+            asd
+        </div>
+        <div>
+            asd
+        </div>
+        
+    </div>
+    
+    <div class="chatIns">
+        <textarea id="chatCtnt" type="text" name="chatCtnt" placeholder="메시지를 입력해 주세요."></textarea>
+        <button id="sendBtn" type="submit" onclick="chatSend()">
+            <span id="sendIcon" class="material-icons" onclick="chatSend()">
+                send
+            </span>
+        </button>
+    </div>
+
+    
+
+
+
+
+
+
+
+
+    <!-- chatEnd -->
+
+
     <!-- Header End -->
 
     <!-- Index -->
@@ -49,7 +101,6 @@
                 - 2020. 12. 14 -<br>
             </p>
         </div>
-        <button>개발자 소개 보러가기 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</button>
 
         <div class="infoURLDiv">
             <div class="infoImgDiv">
@@ -80,14 +131,43 @@
         <div class="footerDiv">
 
         </div>    
+
+        
     </div>
      <!-- Index End -->
     
 
     
    
-    
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
+// 첫 실행시 채팅창은 hide
+$('.chatCloseBtn').hide();
+$('.chatView').hide();
+$('.chatIns').hide();
+
+// 메세지 아이콘 클릭시 채팅창 show
+$('#messageIcon').click(function() {
+	$('.chatCloseBtn').show();
+    $('.chatView').show();
+    $('.chatIns').show();
+    $('#messageIcon').hide();
+})
+
+// X버튼 클릭시 닫음
+$('.chatCloseBtn').click(function() {
+	$('.chatCloseBtn').hide();
+    $('.chatView').hide();
+    $('.chatIns').hide();
+    $('#messageIcon').show();
+    chatCtnt.focus();
+})
+
+
+
+
+
+
     /* DDmarket 연결 */
     function moveToDDmarket() {
         location.href="DDmarket"
@@ -100,6 +180,10 @@
 
     function moveToIndex() {
         location.href="/"
+    }
+
+    function chatSend() {
+        alert('ㅎㅎ');
     }
 </script>
 </body>

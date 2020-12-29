@@ -23,7 +23,7 @@ public class CmtController {
 
 	@Autowired
 	private CmtService service;
-	// 깃허브 풀푸쉬 테스트
+
 	// 댓글 등록 / 수정
 	@RequestMapping(value="/cmtReg", method=RequestMethod.POST)
 	public @ResponseBody String cmtReg(@RequestBody CmtPARAM param) {
