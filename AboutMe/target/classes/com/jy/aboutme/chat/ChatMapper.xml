@@ -3,7 +3,12 @@
 <mapper namespace="com.jy.aboutme.chat.ChatMapper">
 
 
-
+	<!-- select -->
+	<select id="selChat" resultType="ChatVO">
+		SELECT i_chat, adminCode, chatCtnt, date_format(r_dt, '%Y-%c-%d %h:%i%p') AS r_dt 
+		FROM t_chat 
+		ORDER BY r_dt ASC
+	</select>
 
 
 	<!-- insert -->

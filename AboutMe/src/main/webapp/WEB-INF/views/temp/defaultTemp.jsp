@@ -66,31 +66,29 @@
     </button>
 
     <!--  -->
-    <div class="chatView">
+    <div id="chatViewId" class="chatView">
+    
+    	<!-- -- 일반 --
+    	        	 
+        <div class="userChat">
+	              나는 유저
+	              입니다.<br>
+        </div>            
+        <div class="userDate">2020.12.25 09:25AM</div>
+        
+	        
+        	 -- 관리자 -- 
         
         
-        <!-- 내용 ajax 처리하기
-
-        	 일반 
-        <div id="chatViewBoxList">
-            <div class="userChat">
-                나는 유저
-                입니다.<br>
-            </div>            
-            <div class="userDate">2020.12.25 09:25AM</div>
+        <div class="adminChat">
+           <div class="adminNm">관리자</div>
+	              나는 관리자
+	              입니다.ㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ<br>
         </div>
+        <div class="adminDate">2020.12.25 09:25AM</div>
         
-        	 관리자 
-        <div id="chatViewBoxList">
-            <div class="adminNm">관리자</div>
-            <div class="adminChat">
-                나는 관리자
-                입니다.ㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ<br>
-            </div>
-            <div class="adminDate">2020.12.25 09:25AM</div>
-        </div>
-		-->
-
+         -->
+         
     </div>
     
     <div class="chatIns">
@@ -146,6 +144,7 @@
 	})
 	
 	
+	
     // 챗 입력
     function chatSend() {
 		
@@ -156,14 +155,11 @@
 		console.log(userNm)
 		
 		if(userNm == '관리자') { // 관리
-			alert('관리자')
 			adminCode = '2'
 				
 		} else { // 일반
 			
-			alert('일반')
 			adminCode = '1'
-			
 		}
 		
 		axios.post('/chat/insChat',{
@@ -174,7 +170,10 @@
 			
 		}).then(function(res) {
 			if(res.data == 1) {
+				
 				chatFrm.chatCtnt.value = ''
+				chatViewId.innerHTML = ''
+				ajaxSelChat()
 				
 				
 			} else {
@@ -182,7 +181,66 @@
 			}
 		})
     }
-
+	
+	// 챗 뿌리는 메소드
+	function ajaxSelChat() {
+		
+		axios.get('/chat/selChat', {
+			
+		}).then(function(res) {
+		
+			refreshMenu(res.data)
+		})
+	}
+	
+	function refreshMenu(arr) {
+		for(let i=0; i<arr.length; i++) {
+			makeChatList(arr[i])
+		}
+	}
+	
+	
+	function makeChatList(arr) {
+		console.log(arr.adminCode)
+		if(arr.adminCode == '1') {
+			
+			var userChat = document.createElement('div')
+			userChat.setAttribute('class', 'userChat')
+			userChat.append(arr.chatCtnt)
+			
+			chatViewId.append(userChat)
+			
+			var userDate = document.createElement('div')
+			userDate.setAttribute('class', 'userDate')
+			userDate.append(arr.r_dt)
+			
+			chatViewId.append(userDate)
+			
+		} else {
+			var adminNm = document.createElement('div')
+			adminNm.setAttribute('class', 'adminNm')
+			adminNm.append('관리자')
+			
+			
+			var adminChat = document.createElement('div')
+			adminChat.setAttribute('class', 'adminChat')
+			
+			chatViewId.append(adminChat)
+			adminChat.append(adminNm)
+			adminChat.append(arr.chatCtnt)
+			
+			var adminDate = document.createElement('div')
+			adminDate.setAttribute('class', 'adminDate')
+			adminDate.append(arr.r_dt)
+			
+			chatViewId.append(adminDate)
+			
+		}
+		
+		
+	}
+	
+	ajaxSelChat()
 
 	
 	

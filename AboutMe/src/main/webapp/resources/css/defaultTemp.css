@@ -223,15 +223,14 @@ footer {
 .userDate {
     margin-top: -2px;
     margin-left: 100px;
+    margin-bottom: 15px;
     color: grey;
     font-size: 0.9em;
-
 }
 
 .adminNm {
-    margin-top: 15px;
     margin-bottom: 4px;
-    margin-left: 220px;
+    margin-left: 180px;
     font-weight: bold;
 }
 
@@ -252,7 +251,7 @@ footer {
     margin-left: 135px;
     color: grey;
     font-size: 0.9em;
-    margin-bottom: 30px;
+    margin-bottom: 12px;
 }
 
 /* 챗 입력 */
