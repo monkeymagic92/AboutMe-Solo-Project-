@@ -1,9 +1,8 @@
 package com.jy.aboutme.devel;
 
-import java.util.ArrayList;
-
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +15,9 @@ import com.jy.aboutme.devel.model.DevelPARAM;
 @RequestMapping("/devel")
 public class DevelController {
 
+	@Autowired
+	private DevelService service;
+	
 	// 개발일지  main 페이지
 	@RequestMapping(value="/main", method = RequestMethod.GET)
 	public String develMain(Model model) {
@@ -35,6 +37,8 @@ public class DevelController {
 		System.out.println("param3 : " + param.getCtn3());
 		System.out.println("param4 : " + param.getCtn4());
 		System.out.println("param5 : " + param.getCtn5());
+		
+		int result = service.insDevel(param);
 		
 			
 		model.addAttribute("view", ViewRef.DEVEL_MAIN);

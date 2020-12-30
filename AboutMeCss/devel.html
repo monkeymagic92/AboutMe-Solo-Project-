@@ -85,12 +85,10 @@
         formMsg.setAttribute('id', 'formMsg')
         formMsg.append(arr[textCount])
 
-        var formBr = document.createElement('br')
-
-        formDiv.append(formMsg)
+        
         formDiv.append(formIns) // 입력창
         delBtn(num,formDiv)     // 삭제버튼
-        formDiv.append(formBr)  // br
+        formDiv.append(formMsg)
         
         formDivBox.append(formDiv)  // 한셋트 완료
     }
