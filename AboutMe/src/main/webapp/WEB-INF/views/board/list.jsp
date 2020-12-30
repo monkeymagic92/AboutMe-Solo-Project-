@@ -144,6 +144,7 @@
 		location.href="/board/list"
 	}
 	
+	// 검색 유효검사
 	function searchChk() {
 		if(frm.search.value.length == 0) {
 			alert('검색내용을 입력해 주세요')
@@ -170,7 +171,6 @@
 	function moveToDetail(i_board) {
 		location.href="/board/detail?i_board="+i_board
 	}
-	
 	
 	// 일반유저가 비밀 상세페이지 접근시(비번 입력하게끔)
 	function moveToDetailScr(i_board, pw) {

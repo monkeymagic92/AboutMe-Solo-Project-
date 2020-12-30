@@ -40,6 +40,12 @@ SELECT * FROM t_board;
 DROP TABLE t_board;
 
 
+INSERT INTO t_board
+(nm, ctnt)
+VALUES
+('gkgk','ㄹㄹ');
+
+
 
 CREATE TABLE t_cmt(
 	i_cmt INT UNSIGNED AUTO_INCREMENT,
@@ -100,6 +106,26 @@ CREATE TABLE t_chat(
 );
 SELECT * FROM t_chat;
 DROP TABLE t_chat;
+
+
+CREATE TABLE t_devel(
+	i_devel INT UNSIGNED AUTO_INCREMENT,
+	ctn1 VARCHAR(150),
+	ctn2 VARCHAR(150),
+	ctn3 VARCHAR(150),
+	ctn4 VARCHAR(150),
+	ctn5 VARCHAR(150),
+	
+	ctnChk1 VARCHAR(2),
+	ctnChk2 VARCHAR(2),
+	ctnChk3 VARCHAR(2),
+	ctnChk4 VARCHAR(2),
+	ctnChk5 VARCHAR(2),
+	r_dt DATETIME DEFAULT NOW(),
+	PRIMARY KEY(i_devel)
+);
+SELECT * FROM t_devel;
+DROP TABLE t_devel;
 
 
 

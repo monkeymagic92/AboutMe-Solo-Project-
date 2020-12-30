@@ -20,7 +20,7 @@
                 <li class="headerLi1"><a href="/intro" class="headerA">개발자 소개</a></li>
                 <li class="headerLi"><a href="/pj/pjList" class="headerA">프로젝트 소개</a></li>
                 <li class="headerLi"><a href="/board/list" class="headerA">개발자 문의</a></li>
-                <li class="headerLi"><a href="#" class="headerA" onclick="wait()">응원메세지</a></li>
+                <li class="headerLi"><a href="/devel/main" class="headerA">개발 일지</a></li>
             </ul>
         </div>
     </header>

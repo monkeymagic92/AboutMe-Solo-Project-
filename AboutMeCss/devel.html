@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/devel.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="headerDiv1">
+            <br><br>
+            <div class="headerDiv2" onclick="moveToIndex()">Monkey Developer</div>
+            <div class="headerDiv3">Daily coding</div>
+            <ul class="headerUl">
+                <li class="headerLi1"><a href="#" class="headerA">개발자 소개</a></li>
+                <li class="headerLi"><a href="#" class="headerA">프로젝트 소개</a></li>
+                <li class="headerLi"><a href="#" class="headerA">개발자 1:1 문의</a></li>
+                <li class="headerLi"><a href="#" class="headerA">응원메세지</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="headerBottomDiv">
+
+        <audio class="audioMp" controls autoplay="autoplay" loop>
+        
+        </audio>
+        <div class="dateDiv">
+            <span id="homeMsg">크롬(Chrome) 기준으로 작성된 홈페이지 입니다</span> 2020.12.14　이재용
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <div class="develContainer">
+        <div class="boxDiv">
+            <button class="plusBtn" onclick="plusBtn()">+</button>
+            <form id="develFrm" action="/devel/main" method="post" onsubmit="return develChk()">
+                <div id="formDivBox">
+                    <!--
+                    <div id="formDiv">
+                        <input id="formIns" type="text" name="ctn">
+                        <button id="formMinBtn" type="button" onclick="">-</button>
+                        <br>
+                    </div>
+                    -->
+                </div>
+                <br><br>
+                <button type="submit">전송</button>
+            </form>
+        </div>
+    </div>
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    var result = 0
+    var num = 0;
+
+    function plusBtn() {
+        result++
+	    if(result > 5) {
+	        alert('경과됬음')
+	        return false;
+        }
+        num++
+
+        var formDiv = document.createElement('div')
+        formDiv.setAttribute('id','formDiv' + num + '')
+
+        var formIns = document.createElement('input')
+        formIns.setAttribute('type', 'text')
+        formIns.setAttribute('name', 'ctn' + num + '')
+                
+        var formBr = document.createElement('br')
+        
+
+        formDiv.append(formIns) // 입력창
+        delBtn(num,formDiv)     // 삭제버튼
+        formDiv.append(formBr)  // br
+        
+        formDivBox.append(formDiv)  // 한셋트 완료
+        
+
+    }
+
+    function delBtn(idResult, formDivParam) {
+        var formMinBtn = document.createElement('button')
+        formMinBtn.setAttribute('id', 'formMinBtn')
+        formMinBtn.setAttribute('type', 'button')
+        formMinBtn.innerText = '-'
+        formMinBtn.onclick = function(){
+            result--
+            $("#formDiv" + idResult + "").remove();
+            
+        }
+        
+        formDivParam.append(formMinBtn)
+    }
+    
+    
+    /*
+    var result = 0
+	var num = 0
+	
+	function plusBtn() {
+	    result++
+	    if(result > 5) {
+	        alert('경과됬음')
+	        return false;
+	    }
+	    num++
+	    console.log(num)
+	    var develInput = document.createElement('input')
+	    develInput.setAttribute('id', 'delBtn' + num + '')
+	    develInput.setAttribute('type','text')
+	    develInput.setAttribute('name', 'ctn' + num + '')
+	    
+	    develMinBtn = document.createElement('button')
+	    develMinBtn.setAttribute('type', 'button')
+	    develMinBtn.onclick = function(){
+	    	$("#delBtn" + num + "").remove();
+	    }
+	    	
+	    var develBr = document.createElement('br')
+	
+	    develForm.append(develInput)
+	    develForm.append(develMinBtn)
+	    develForm.append(develBr)
+	}   
+    */
+   
+</script>
+</body>
+</html>

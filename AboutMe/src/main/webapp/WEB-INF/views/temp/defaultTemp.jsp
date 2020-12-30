@@ -32,7 +32,7 @@
                 <li class="headerLi1"><a href="/intro" class="headerA">개발자 소개</a></li>
                 <li class="headerLi"><a href="/pj/pjList" class="headerA">프로젝트 소개</a></li>
                 <li class="headerLi"><a href="/board/list" class="headerA">개발자 문의</a></li>
-                <li class="headerLi"><a href="#" class="headerA" onclick="wait()">응원메세지</a></li>
+                <li class="headerLi"><a href="/devel/main" class="headerA">개발 일지</a></li>
             </ul>
         </div>
     </header>
@@ -162,7 +162,6 @@
 				chatFrm.chatCtnt.value = ''
 				chatViewId.innerHTML = ''
 				ajaxSelChat()
-				
 				
 			} else {
 				alert('챗 전송중 오류가 발생하였습니다. 잠시후 다시 시도해 주세요')
