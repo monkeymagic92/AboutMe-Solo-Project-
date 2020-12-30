@@ -38,6 +38,7 @@
     <div class="develContainer">
         <div class="boxDiv">
             <button class="plusBtn" onclick="plusBtn()">+</button>
+            <button class="allMinBtn" onclick="allMinBtn()">전체 삭제</button>
             <form id="develFrm" action="/devel/main" method="post" onsubmit="return develChk()">
                 <div id="formDivBox">
                     <!--
@@ -57,16 +58,19 @@
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
-    var result = 0
+    var textCount = 0
     var num = 0;
 
     function plusBtn() {
-        result++
-	    if(result > 5) {
+        ++textCount
+        
+	    if(textCount > 5) {
+            textCount = 5
 	        alert('경과됬음')
 	        return false;
         }
-        num++
+        ++num
+        
 
         var formDiv = document.createElement('div')
         formDiv.setAttribute('id','formDiv' + num + '')
@@ -76,63 +80,46 @@
         formIns.setAttribute('name', 'ctn' + num + '')
                 
         var formBr = document.createElement('br')
-        
 
         formDiv.append(formIns) // 입력창
         delBtn(num,formDiv)     // 삭제버튼
         formDiv.append(formBr)  // br
         
         formDivBox.append(formDiv)  // 한셋트 완료
-        
-
     }
 
-    function delBtn(idResult, formDivParam) {
+
+
+    // input 창 하나당 삭제버튼 1개씩
+    function delBtn(numParam, formDivParam) {
         var formMinBtn = document.createElement('button')
         formMinBtn.setAttribute('id', 'formMinBtn')
         formMinBtn.setAttribute('type', 'button')
-        formMinBtn.innerText = '-'
+        formMinBtn.innerText = ' - '
+
         formMinBtn.onclick = function(){
-            result--
-            $("#formDiv" + idResult + "").remove();
+            --textCount
+            --num
+            $("#formDiv" + numParam + "").remove();
             
         }
+        console.log('Minnum : ' + numParam)
         
         formDivParam.append(formMinBtn)
     }
     
-    
-    /*
-    var result = 0
-	var num = 0
-	
-	function plusBtn() {
-	    result++
-	    if(result > 5) {
-	        alert('경과됬음')
-	        return false;
-	    }
-	    num++
-	    console.log(num)
-	    var develInput = document.createElement('input')
-	    develInput.setAttribute('id', 'delBtn' + num + '')
-	    develInput.setAttribute('type','text')
-	    develInput.setAttribute('name', 'ctn' + num + '')
-	    
-	    develMinBtn = document.createElement('button')
-	    develMinBtn.setAttribute('type', 'button')
-	    develMinBtn.onclick = function(){
-	    	$("#delBtn" + num + "").remove();
-	    }
-	    	
-	    var develBr = document.createElement('br')
-	
-	    develForm.append(develInput)
-	    develForm.append(develMinBtn)
-	    develForm.append(develBr)
-	}   
-    */
-   
+
+
+    // 전체 삭제
+    function allMinBtn() {
+        for(var i=0; i<6; i++) {
+            $("#formDiv" + i + "").remove();
+        }
+        console.log(textCount)
+        console.log()
+        textCount = 0
+        num = 0
+    }
 </script>
 </body>
 </html>

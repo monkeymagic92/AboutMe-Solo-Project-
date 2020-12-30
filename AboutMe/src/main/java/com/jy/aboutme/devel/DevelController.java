@@ -26,7 +26,8 @@ public class DevelController {
 	
 	
 	@RequestMapping(value="/main", method = RequestMethod.POST)
-	public String develMain(DevelPARAM param, Model model, HttpServletRequest request) {
+	public String develMain(DevelPARAM param, Model model,
+			HttpServletRequest request) {
 		
 		
 		System.out.println("param1 : " + param.getCtn1());
