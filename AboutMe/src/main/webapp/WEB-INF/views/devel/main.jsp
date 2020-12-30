@@ -37,13 +37,14 @@
                     <div id="formDiv">
                         <input id="formIns" type="text" name="ctn">
                         <button id="formMinBtn" type="button" onclick="">-</button>
+                        <div id="formMsg"></div>
                         <br>
                     </div>
                     -->
                 </div>
                 
                 
-                <button type="submit">전송</button>
+                <button id="submitBtn" type="submit">전송</button>
             </form>
         </div>
     </div>
@@ -52,16 +53,16 @@
 	
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
-var textCount = 0 // 총 5개이상 못만들게
-var num = 0; // name, id 추가 value 값
+var textCount = 0
+var num = 0;
+var arr = [' ','좀더 분발해요','무난하네요','적당해요^^','무리하지마요','gg']
 
-// 
 function plusBtn() {
     ++textCount
-    console.log(textCount)
+    
     if(textCount > 5) {
         textCount = 5
-        alert('경과됬음')
+        alert('너무 무리하지 마세요!!')
         return false;
     }
     ++num
@@ -74,8 +75,13 @@ function plusBtn() {
     formIns.setAttribute('type', 'text')
     formIns.setAttribute('name', 'ctn' + num + '')
             
+    var formMsg = document.createElement('div')
+    formMsg.setAttribute('id', 'formMsg')
+    formMsg.append(arr[textCount])
+
     var formBr = document.createElement('br')
 
+    formDiv.append(formMsg)
     formDiv.append(formIns) // 입력창
     delBtn(num,formDiv)     // 삭제버튼
     formDiv.append(formBr)  // br
@@ -96,10 +102,7 @@ function delBtn(numParam, formDivParam) {
         --textCount
         --num
         $("#formDiv" + numParam + "").remove();
-        
     }
-    console.log('Minnum : ' + numParam)
-    
     formDivParam.append(formMinBtn)
 }
 
