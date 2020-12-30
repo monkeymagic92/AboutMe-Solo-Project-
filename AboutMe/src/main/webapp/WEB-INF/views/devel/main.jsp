@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,75 +50,103 @@
                 <button id="submitBtn" type="submit">전송</button>
             </form>
         </div>
+        
+        <div>
+        	<c:forEach items="${data}" var="item">
+        		<ul>
+        			<li>${item.r_dt}</li>
+        			<li>
+        				${item.ctn1}
+        				<c:if test=${data.ctnChk1 == '1'}>
+        					<input type="checkbox" >	
+        				</c:if>
+        			</li>
+        			<li>
+        				${item.ctn2}
+        			</li>
+        			<li>
+	        			${item.ctn3}
+        			</li>
+        			<li>
+        				${item.ctn4}
+        			</li>
+        			<li>
+        				${item.ctn5}
+        			</li>
+        			
+        		</ul>
+        	</c:forEach>
+        	        
+        </div>
     </div>
 	
 	
 	
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
-var textCount = 0
-var num = 0;
-var arr = [' ','좀더 분발해요','무난하네요','적당해요^^','무리하지마요','gg']
-
-function plusBtn() {
-    ++textCount
-    
-    if(textCount > 5) {
-        textCount = 5
-        alert('너무 무리하지 마세요!!')
-        return false;
-    }
-    ++num
-    
-
-    var formDiv = document.createElement('div')
-    formDiv.setAttribute('id','formDiv' + num + '')
-
-    var formIns = document.createElement('input')
-    formIns.setAttribute('type', 'text')
-    formIns.setAttribute('name', 'ctn' + num + '')
-            
-    var formMsg = document.createElement('div')
-    formMsg.setAttribute('id', 'formMsg')
-    formMsg.append(arr[textCount])
-
-    var formBr = document.createElement('br')
-
-    formDiv.append(formMsg)
-    formDiv.append(formIns) // 입력창
-    delBtn(num,formDiv)     // 삭제버튼
-    formDiv.append(formBr)  // br
-    
-    formDivBox.append(formDiv)  // 한셋트 완료
-}
-
-
-
-// input 창 하나당 삭제버튼 1개씩
-function delBtn(numParam, formDivParam) {
-    var formMinBtn = document.createElement('button')
-    formMinBtn.setAttribute('id', 'formMinBtn')
-    formMinBtn.setAttribute('type', 'button')
-    formMinBtn.innerText = ' - '
-
-    formMinBtn.onclick = function(){
-        --textCount
-        --num
-        $("#formDiv" + numParam + "").remove();
-    }
-    formDivParam.append(formMinBtn)
-}
-
-
-
-// 전체 삭제
-function allMinBtn() {
-    for(var i=0; i<6; i++) {
-        $("#formDiv" + i + "").remove();
-    }
-    textCount = 0
-    num = 0
-}
+	var textCount = 0
+	var num = 0;
+	var arr = [' ','좀더 분발해요','무난하네요','적당해요^^','무리하지마요','gg']
+	
+	function plusBtn() {
+	    ++textCount
+	    
+	    if(textCount > 5) {
+	        textCount = 5
+	        alert('너무 무리하지 마세요!!')
+	        return false;
+	    }
+	    ++num
+	    
+	
+	    var formDiv = document.createElement('div')
+	    formDiv.setAttribute('id','formDiv' + num + '')
+	
+	    var formIns = document.createElement('input')
+	    formIns.setAttribute('type', 'text')
+	    formIns.setAttribute('name', 'ctn' + num + '')
+	            
+	    var formMsg = document.createElement('div')
+	    formMsg.setAttribute('id', 'formMsg')
+	    formMsg.append(arr[textCount])
+	
+	    var formBr = document.createElement('br')
+	
+	    formDiv.append(formMsg)
+	    formDiv.append(formIns) // 입력창
+	    delBtn(num,formDiv)     // 삭제버튼
+	    formDiv.append(formBr)  // br
+	    
+	    formDivBox.append(formDiv)  // 한셋트 완료
+	}
+	
+	
+	
+	// input 창 하나당 삭제버튼 1개씩
+	function delBtn(numParam, formDivParam) {
+	    var formMinBtn = document.createElement('button')
+	    formMinBtn.setAttribute('id', 'formMinBtn')
+	    formMinBtn.setAttribute('type', 'button')
+	    formMinBtn.innerText = ' - '
+	
+	    formMinBtn.onclick = function(){
+	        --textCount
+	        --num
+	        $("#formDiv" + numParam + "").remove();
+	    }
+	    formDivParam.append(formMinBtn)
+	}
+	
+	
+	
+	// 전체 삭제
+	function allMinBtn() {
+	    for(var i=0; i<6; i++) {
+	        $("#formDiv" + i + "").remove();
+	    }
+	    textCount = 0
+	    num = 0
+	}
 </script>
 </body>
 </html>
