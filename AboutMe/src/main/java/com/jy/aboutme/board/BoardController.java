@@ -16,7 +16,6 @@ import com.jy.aboutme.ViewRef;
 import com.jy.aboutme.board.model.BoardDMI;
 import com.jy.aboutme.board.model.BoardPARAM;
 
-
 @Controller
 @RequestMapping("/board")
 public class BoardController {

@@ -14,7 +14,7 @@
             <h3>개발자에게 하고싶은 말을 자유롭게 작성해 주세요</h3>
         </div>
         <div class="topContainer">
-            <form id="frm" action="/board/list" method="get" onsubmit="return chk()">
+            <form id="frm" action="/board/list" method="get" onsubmit="return searchChk()">
                 <label>
                     제목 <input type="radio" class="searchMenu" name="searchResult" value="1" checked>
                 </label>
@@ -144,6 +144,19 @@
 		location.href="/board/list"
 	}
 	
+	function searchChk() {
+		if(frm.search.value.length == 0) {
+			alert('검색내용을 입력해 주세요')
+			frm.search.focus()
+			return false;
+		} 
+		
+		if(frm.search.value.length > 20) {
+			alert('검색내용이 너무 깁니다')
+			frm.search.focus()
+			return false;
+		}
+	}
 
 	// 일반유저가 비밀번호 틀렸을시 
 	if(${scrFalse != null}) {
