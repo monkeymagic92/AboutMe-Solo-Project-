@@ -144,15 +144,6 @@
 		location.href="/board/list"
 	}
 	
-	// 검색 유효검사
-	function chk() {
-		if(frm.search.value.length == 0) {
-			alert('검색내용을 입력해 주세요')
-			return false;
-		}
-	}
-	
-	
 
 	// 일반유저가 비밀번호 틀렸을시 
 	if(${scrFalse != null}) {

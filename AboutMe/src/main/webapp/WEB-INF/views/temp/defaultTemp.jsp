@@ -13,7 +13,9 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</c:when>
 	<c:when test="${cssResult == null}">
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<link rel="stylesheet" href="/res/css/defaultTemp.css">
+		<link rel="stylesheet" href="/res/css/chat.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
 	</c:when>
@@ -48,42 +50,38 @@
         </div>
     </div>
    
-    
-    <!-- chatStart -->
-    <c:if test="${cssResult == null }">
-    <div class="message">
-        <img id="messageIcon" src="/res/img/메세지아이콘.png">
-    </div>
-
-    <div class="ourSite">
-        <div class="ourSite-1">
-           	 만남의 광장
-        </div>
-    </div>
-    <button class="chatCloseBtn">
-        <span id="exitIcon" class="material-icons">
-            exit_to_app
-        </span>        
-    </button>
-
-    <!-- 챗 공간 -->
    
-    	<div id="chatViewId" class="chatView"></div>
+    <c:if test="${cssResult == null }">
+	    <div class="message">
+	        <img id="messageIcon" src="/res/img/메세지아이콘.png">
+	    </div>
+	
+	    <div class="ourSite">
+	        <div class="ourSite-1">
+	           	 만남의 광장
+	        </div>
+	    </div>
+	    <button class="chatCloseBtn">
+	        <span id="exitIcon" class="material-icons">
+	            exit_to_app
+	        </span>        
+	    </button>
+	   
+	    	<div id="chatViewId" class="chatView"></div>
 	    
-    
-    <div class="chatIns">
-        <form id="chatFrm">
-            <textarea id="chatCtnt" name="chatCtnt" placeholder="메시지를 입력해 주세요."></textarea>
-
-            <!-- adminCode = 1 유저    = 2 관리자 -->
-            <input type="hidden" id="adminCode" name="adminCode" value="1">
-            <span id="sendIcon" class="material-icons" onclick="chatSend()">
-                send
-            </span>
-        </form>
-    </div>
+	    <div class="chatIns">
+	        <form id="chatFrm">
+	            <textarea id="chatCtnt" name="chatCtnt" placeholder="메시지를 입력해 주세요."></textarea>
+	
+	 
+	            <input type="hidden" id="adminCode" name="adminCode" value="1">
+	            <span id="sendIcon" class="material-icons" onclick="chatSend()">
+	                send
+	            </span>
+	        </form>
+	    </div>
 	</c:if>
-    <!-- chatEnd -->
+	
     <!-- Header End -->
 
     
@@ -95,8 +93,9 @@
     
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 <script>
+	
 	var isNewCmt = false;
 
 	//첫 실행시 채팅창은 hide
@@ -125,7 +124,6 @@
 	    isNewCmt = false;
 	    chatCtnt.focus();
 	})
-	
 	
 	
 	
@@ -179,11 +177,11 @@
 			
 		}).then(function(res) {
 		
-			refreshMenu(res.data)
+			refreshMenuChat(res.data)
 		})
 	}
 	
-	function refreshMenu(arr) {
+	function refreshMenuChat(arr) {
 		chatAlert()
 		
 		for(let i=0; i<arr.length; i++) {

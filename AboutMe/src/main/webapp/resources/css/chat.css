@@ -1,0 +1,217 @@
+@charset "UTF-8";
+
+/* Chat Start */
+
+/* 챗 메세지 아이콘 */
+.message {
+    position: fixed;
+    right: 20px; top: 810px;
+}
+
+#messageIcon {
+    width: 125px;
+    height: 125px;
+}
+
+#messageIcon:hover {
+    cursor: pointer;
+}
+
+.ourSite {
+    position: fixed;
+    right: 20px; top: 333px;
+    width: 315px;
+    height: 55px;
+    text-align: center;
+    padding-top: 10px;
+    border: 2px solid grey;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color:#e6e3dc;    
+}
+
+.ourSite-1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    font-family: 'Single Day', cursive;
+    color:#787878;
+    margin-top: 5px;
+}
+
+
+/* X 버튼 */
+.chatCloseBtn {
+    position: fixed;
+    right: 19px; top: 285px;    
+    text-align: center;
+    font-weight: bold;
+    color: #111;
+    background-color: white;
+    border: none;
+    outline-style: none;
+    transition: 0.1s;
+}
+
+.chatCloseBtn:hover {
+    cursor: pointer;
+    color: grey;
+    transition: 0.1s;
+}
+
+#exitIcon {
+    font-size: 3em;
+}
+
+#exitIcon:hover {
+    font-size: 3.1em;
+}
+
+/* 스크롤 */
+::-webkit-scrollbar {
+    width: 5px;  /* 세로축 스크롤바 길이 */
+    }
+    ::-webkit-scrollbar-track {
+    background-color: lightblue;
+    }
+    ::-webkit-scrollbar-track-piece {
+    background-color: white;
+    }
+    ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: grey;
+    }
+    ::-webkit-scrollbar-button {
+    background-color: darkblue;
+    width: 20px;
+    height: 10px;
+    }
+    ::-webkit-scrollbar-button:start {
+    background-color: white; /* Top, Left 방향의 이동버튼 */
+    height: 0px;
+    }
+    ::-webkit-scrollbar-button:end {
+    background-color: white; /* Bottom, Right 방향의 이동버튼 */
+    height: 0px;
+    }
+
+/* 챗 화면 */
+.chatView {
+    position: fixed;
+    right: 20px; top: 400px;
+    padding-top: 20px;
+    padding-left: 15px;
+    border-top-style: none;
+    border: 2px solid grey;
+    width: 300px;
+    height: 412px;
+    overflow-y: auto;
+}
+
+.chatViewAlert {
+    margin-right: 10px;
+    font-size: 0.8em;
+    color: #8a8a8a;
+    text-align: center;
+    line-height: 19px;
+    margin-bottom: 25px;
+}
+
+.userChat {
+    width: 230px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 7px;
+}
+
+.userDate {
+    margin-top: -2px;
+    margin-left: 100px;
+    margin-bottom: 15px;
+    color: grey;
+    font-size: 0.9em;
+}
+
+.adminNm {
+    margin-bottom: 4px;
+    margin-left: 180px;
+    font-weight: bold;
+}
+
+.adminChat {
+    margin-left: 30px;
+    width: 230px;
+    background-color: #dbd7d7;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 7px;
+    text-align: start;
+    padding-right: 15px;
+}
+
+.adminDate {
+    margin-top: -2px;
+    margin-left: 135px;
+    color: grey;
+    font-size: 0.9em;
+    margin-bottom: 12px;
+}
+
+/* 챗 입력 */
+.chatIns {
+    position: fixed;
+    right: 62px; top: 834px; 
+}
+
+#chatCtnt {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 20px;
+    color: grey;
+    width: 255px;
+    height: 25px;
+    resize: none;
+    outline-style: none;
+    border: 2px solid grey;
+    border-right-style: none;
+    font-size:1.2em;
+    color: #111;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+}
+
+#sendBtn {
+    height: 30px;
+    outline-style: none;
+    border-top-style: none;
+    border-left-style: none;
+    border-right:1px solid grey;
+    border-bottom: 1px solid grey;
+    border-bottom-right-radius: 10px; 
+    background-color: white;
+}
+
+#sendIcon {
+    position: fixed;
+    top: 834px;
+    right: 20px;
+    color: grey;
+    font-size: 2em;
+    border: 2px solid grey;
+    border-left-style: none;
+    border-bottom-right-radius: 10px;
+    width: 60px;
+    height: 37px;
+    text-align: center;
+}
+
+#sendIcon:hover {
+    cursor: pointer;
+    color: #a3a3a3;
+}
+
+
+/* Chat End */

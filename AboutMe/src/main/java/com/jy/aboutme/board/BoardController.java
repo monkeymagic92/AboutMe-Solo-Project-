@@ -92,7 +92,9 @@ public class BoardController {
 	}
 	
 	
-	// 게시글 등록 / 수정
+	// (summerNote에 연관되어있는 부트스트랩이랑 일반 css랑 겹쳐서 css 깨짐)
+	// (DEFAULT_NOCHAT 으로 return값 날려서 챗기능 없앰)
+	// 게시글 등록 / 수정	
 	@RequestMapping(value="/reg", method = RequestMethod.GET)
 	public String boardReg(Model model, BoardPARAM param, HttpServletRequest request) {
 		
@@ -104,13 +106,13 @@ public class BoardController {
 		} catch(Exception e) {  // 등록
 			
 			model.addAttribute("view", ViewRef.BOARD_REG);
-			return ViewRef.DEFAULT_TEMP;
+			return ViewRef.DEFAULT_NOCHAT;	// summernote css랑 겹쳐서 챗 뺏음
 			
 		}
 		
 		model.addAttribute("data", service.boardDetail(param));
 		model.addAttribute("view", ViewRef.BOARD_REG);
-		return ViewRef.DEFAULT_TEMP;
+		return ViewRef.DEFAULT_NOCHAT;	// summernote css랑 겹쳐서 챗 뺏음
 		
 	}
 	
