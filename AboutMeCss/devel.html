@@ -18,7 +18,7 @@
                 <li class="headerLi1"><a href="#" class="headerA">개발자 소개</a></li>
                 <li class="headerLi"><a href="#" class="headerA">프로젝트 소개</a></li>
                 <li class="headerLi"><a href="#" class="headerA">개발자 1:1 문의</a></li>
-                <li class="headerLi"><a href="#" class="headerA">응원메세지</a></li>
+                <li class="headerLi"><a href="#" class="headerA">개발 일지</a></li>
             </ul>
         </div>
     </header>
@@ -37,15 +37,17 @@
 
     <div class="develContainer">
         <div class="boxDiv">
-            <button class="plusBtn" onclick="plusBtn()">+</button>
-            <button class="allMinBtn" onclick="allMinBtn()">전체 삭제</button>
+            <div class="btnsDiv">
+                <button class="plusBtn" onclick="plusBtn()">+</button>
+                <button class="allMinBtn" onclick="allMinBtn()">전체 삭제</button>
+            </div>
             <form id="develFrm" action="/devel/main" method="post" onsubmit="return develChk()">
                 <div id="formDivBox">
                     <!--
                     <div id="formDiv">
-                        <input id="formIns" type="text" name="ctn">
-                        <button id="formMinBtn" type="button" onclick="">-</button>
                         <div id="formMsg"></div>
+                        <input class="formIns" type="text" name="ctn">
+                        <button class="formMinBtn" type="button" onclick="">-</button>
                         <br>
                     </div>
                     -->
@@ -61,7 +63,7 @@
 <script>
     var textCount = 0
     var num = 0;
-    var arr = [' ','좀더 분발해요','무난하네요','적당해요^^','무리하지마요','gg']
+    var arr = [' ','1. 좀더 분발하세요','2.','3.','4.','5.']
 
     function plusBtn() {
         ++textCount
@@ -77,18 +79,21 @@
         var formDiv = document.createElement('div')
         formDiv.setAttribute('id','formDiv' + num + '')
 
-        var formIns = document.createElement('input')
+        // 인풋창
+        var formIns = document.createElement('input')   
+        formIns.setAttribute('class', 'formIns')
         formIns.setAttribute('type', 'text')
         formIns.setAttribute('name', 'ctn' + num + '')
                 
+        // 메세지
         var formMsg = document.createElement('div')
-        formMsg.setAttribute('id', 'formMsg')
+        formMsg.setAttribute('id', 'formMsg' + textCount + '')
+        formMsg.setAttribute('class', 'formMsg')
         formMsg.append(arr[textCount])
 
-        
+        formDiv.append(formMsg)
         formDiv.append(formIns) // 입력창
         delBtn(num,formDiv)     // 삭제버튼
-        formDiv.append(formMsg)
         
         formDivBox.append(formDiv)  // 한셋트 완료
     }
@@ -98,9 +103,9 @@
     // input 창 하나당 삭제버튼 1개씩
     function delBtn(numParam, formDivParam) {
         var formMinBtn = document.createElement('button')
-        formMinBtn.setAttribute('id', 'formMinBtn')
+        formMinBtn.setAttribute('class', 'formMinBtn')
         formMinBtn.setAttribute('type', 'button')
-        formMinBtn.innerText = ' - '
+        formMinBtn.innerText = 'ㅡ'
 
         formMinBtn.onclick = function(){
             --textCount

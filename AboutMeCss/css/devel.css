@@ -1,34 +1,109 @@
-.develContainer {
-    margin-top: 50px;
+.btnsDiv {
+    margin-top: 35px;
+    margin-left: 650px;
 }
 
-.boxDiv {
-   
-    width: 800px;
-    height: 200px;
-    margin: 0 auto;
-    
+.plusBtn {
+    font-size: 3.2em;
+    width: 70px;
+    border-radius: 10px;
+    outline-style: none;
+    color: grey;
+    border: none;
 }
 
-#formDiv {
-    display: flex;
+.plusBtn:hover {
+    cursor: pointer;
+    color: #111;
+    box-shadow: 0 7px 6px -5px grey;
+}
+
+.plusBtn:active {
+    color:#a69292;
+}
+
+.allMinBtn {
+    border: none;
+    margin-left: 40px;
+    height: 47px;
+    font-size: 1.3em;
+    border-radius: 10px;
+    outline-style: none;
+    font-weight: bold;
+    color: grey;
+}
+
+.allMinBtn:hover {
+    cursor: pointer;
+    color: #111;
+    box-shadow: 0 7px 6px -5px grey;
+}
+
+.allMinBtn:active {
+    color: #a69292;
+}
+
+.formMsg {
     margin-top: 10px;
-    margin-bottom: 10px;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
-#formIns {
-    width: 300px;
-    height: 20px;
+#formMsg1 {
+    color: red;
 }
 
-#formMinBtn {
-    margin-left: 20px;
-    width: 20px;
-    font-size: 1.1em;
+#formMsg2 {
+    color: blue;
+}
+
+#formMsg3 {
+    color: red;
+}
+
+#formMsg4 {
+    color: red;
+}
+
+#formMsg5 {
+    color: red;
+}
+
+.formIns {
+    border-radius: 3px;
+    border: 1px solid black;
+    width: 570px;
+    height: 25px;
+    font-size: 1em;
+}
+
+.formMinBtn {
+    margin-left: 15px;
+    width: 30px;
+    height: 30px;
+    color: grey;
+}
+
+.formMinBtn:hover {
+    cursor: pointer;
+    color: #111;
+    box-shadow: 0 7px 6px -5px grey;
+}
+
+
+
+#submtBtn {
+    width: 100px;
+}
+
+
+
+#develFrm{
     
+    margin-top: 20px;
+    margin-left: 650px;
 }
-
-
 
 
 

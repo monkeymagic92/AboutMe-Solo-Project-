@@ -53,31 +53,29 @@
         
         <div>
         	<c:forEach items="${data}" var="item">
-        		<ul>
-        			<li>${item.r_dt}</li>
-        			<li>
-        				${item.ctn1}
-        				<c:if test=${data.ctnChk1 == '1'}>
-        					<input type="checkbox" >	
-        				</c:if>
-        			</li>
-        			<li>
-        				${item.ctn2}
-        			</li>
-        			<li>
-	        			${item.ctn3}
-        			</li>
-        			<li>
-        				${item.ctn4}
-        			</li>
-        			<li>
-        				${item.ctn5}
-        			</li>
-        			
-        		</ul>
+        		<c:set var="i" value="${i+1}" />
+       				<ul>
+	        			<li>${item.r_dt}</li>
+	        			<li>
+	        				${item.ctn1}
+	        			</li>
+	        			<li>
+	        				${item.ctn2}
+	        			</li>
+	        			<li>
+		        			${item.ctn3}
+	        			</li>
+	        			<li>
+	        				${item.ctn4}
+	        			</li>
+	        			<li>
+	        				${item.ctn5}
+	        			</li>
+	       			</ul>
         	</c:forEach>
-        	        
         </div>
+        
+        
     </div>
 	
 	
