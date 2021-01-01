@@ -35,7 +35,7 @@ public class DevelController {
 		int result = service.insDevel(param);
 			
 		model.addAttribute("view", ViewRef.DEVEL_MAIN);
-		return ViewRef.DEFAULT_TEMP;
+		return "redirect:/" + ViewRef.DEVEL_MAIN;
 	}
 	
 }
