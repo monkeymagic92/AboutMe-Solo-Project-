@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" href="css/devel.css">
     <link rel="stylesheet" href="css/header.css">
 </head>
@@ -38,7 +40,9 @@
     <div class="develContainer">
         <div class="boxDiv">
             <div class="btnsDiv">
-                <button class="plusBtn" onclick="plusBtn()">+</button>
+                <span id="plusBtn" class="material-icons" onclick="plusBtn()">
+                    add_circle_outline
+                </span>
                 <button class="allMinBtn" onclick="allMinBtn()">전체 삭제</button>
             </div>
             <form id="develFrm" action="/devel/main" method="post" onsubmit="return develChk()">
@@ -58,12 +62,61 @@
         </div>
     </div>
 
+    <div>
+        <!-- 추가할 내용 있으면 추가하기 -->
+    </div>
+
+    <!-- forEach 돌리기 -->
+    <div class="selViewDiv">
+        <span class="selDate">2020.10.28</span>
+        <ul class="selViewUl">
+            <li class="selViewLi1">
+                1. 어쩌고저쩌고 가 나 다 라 마 바 사 아 자 차 카 타 파허
+                <span>
+                    <img class="successImg" src="img/success.jpg">
+                    <span class="successChk">
+                        완료<input class="selViewCheck" type="checkbox">
+                    </span>
+                </span>
+            </li>
+            <li>2. 어쩌고저쩌고 가 나 다 라 마 바 사 아 자 차 카 타 파허
+                <span>
+                    <img class="successImg" src="img/success.jpg">
+                    <span class="successChk">
+                        완료<input class="selViewCheck" type="checkbox">
+                    </span>
+                </span>
+            </li>
+            <li>3. 어쩌고저쩌고 가 나 다 라 마 바 사 아 자 차 카 타 파허
+                <span>
+                    <img class="successImg" src="img/success.jpg">
+                    <span class="successChk">완료<input type="checkbox"></span>
+                </span>
+            </li>
+            <li>4. 어쩌고저쩌고 가 나 다 라 마 바 사 아 자 차 카 타 파허
+                <span>
+                    <img class="successImg" src="img/success.jpg">
+                    <span class="successChk">완료<input type="checkbox"></span>
+                </span>
+            </li>
+            <li class="selViewLi5">5. 어쩌고저쩌고 가 나 다 라 마 바 사 아 자 차 카 타 파허
+                <span>
+                    <img class="successImg" src="img/success.jpg">
+                    <span class="successChk">완료<input type="checkbox"></span>
+                </span>
+            </li>
+        </ul>
+        <div class="viewBtns">
+            <button class="viewUpdBtn" type="button" onclick="#">수정</button>
+            <button class="viewUpdBtn" type="button" onclick="#">삭제</button>
+        </div>
+    </div>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
     var textCount = 0
     var num = 0;
-    var arr = [' ','1. 좀더 분발하세요','2.','3.','4.','5.']
+    var arr = [' ','1.','2.','3.','4.','5.']
 
     function plusBtn() {
         ++textCount
@@ -81,6 +134,7 @@
 
         // 인풋창
         var formIns = document.createElement('input')   
+        formIns.setAttribute('id', 'formInsId' + num + '')
         formIns.setAttribute('class', 'formIns')
         formIns.setAttribute('type', 'text')
         formIns.setAttribute('name', 'ctn' + num + '')
@@ -99,13 +153,13 @@
     }
 
 
-
+    
     // input 창 하나당 삭제버튼 1개씩
     function delBtn(numParam, formDivParam) {
-        var formMinBtn = document.createElement('button')
-        formMinBtn.setAttribute('class', 'formMinBtn')
-        formMinBtn.setAttribute('type', 'button')
-        formMinBtn.innerText = 'ㅡ'
+        var formMinBtn = document.createElement('span')
+        formMinBtn.setAttribute('id','formMinBtn')
+        formMinBtn.setAttribute('class', 'material-icons')
+        formMinBtn.innerText = 'delete'
 
         formMinBtn.onclick = function(){
             --textCount
