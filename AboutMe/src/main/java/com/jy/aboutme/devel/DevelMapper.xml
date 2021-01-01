@@ -19,4 +19,15 @@
 		VALUES
 		(#{ctn1}, #{ctn2}, #{ctn3}, #{ctn4}, #{ctn5})
 	</insert>
+	
+	<!-- update -->
+	<update id="updMain" parameterType="DevelPARAM">
+		UPDATE t_devel
+		SET ctnChk1 = #{ctnChk1},
+		ctnChk2 = #{ctnChk2},
+		ctnChk3 = #{ctnChk3},
+		ctnChk4 = #{ctnChk4},
+		ctnChk5 = #{ctnChk5}
+		WHERE i_devel = #{i_devel}
+	</update>
 </mapper>

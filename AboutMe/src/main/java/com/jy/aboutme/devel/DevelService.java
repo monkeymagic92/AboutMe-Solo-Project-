@@ -22,4 +22,8 @@ public class DevelService {
 		return mapper.insDevel(param);
 	}
 	
+	
+	public int updDevel(DevelPARAM param) {
+		return mapper.updMain(param);
+	}
 }

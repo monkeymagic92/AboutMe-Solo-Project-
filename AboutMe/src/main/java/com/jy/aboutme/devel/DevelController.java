@@ -60,6 +60,7 @@ public class DevelController {
 		System.out.println("param4 : " + param.getCtnChk4());
 		System.out.println("param5 : " + param.getCtnChk5());
 		System.out.println("-------");
+		int result = service.updDevel(param);
 		
 		return "redirect:/" + ViewRef.DEVEL_MAIN;
 	}
