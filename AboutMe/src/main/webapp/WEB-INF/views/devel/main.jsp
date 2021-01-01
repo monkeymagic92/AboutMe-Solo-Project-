@@ -8,143 +8,99 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/res/css/develMain.css">
 </head>
-<style>
-	.develContainer {
-    margin: 0 auto;
-    
-}
-
-#delBtn1 {
-   	width: 20px;
-   	height: 20px;
-   	background-color: blue;
-}
-
-.boxDiv {
-    margin-top: 100px;
-    width: 800px;
-    height: 200px;
-    margin: 0 auto;
-    
-}
-</style>
 <body>
 	<div class="develContainer">
         <div class="boxDiv">
-            <button class="plusBtn" onclick="plusBtn()">+</button>
-            <button class="allMinBtn" onclick="allMinBtn()">전체 삭제</button>
+            <div class="btnsDiv">
+                <button class="plusBtn" onclick="plusBtn()">+</button>
+                <button class="allMinBtn" onclick="allMinBtn()">전체 삭제</button>
+            </div>
             <form id="develFrm" action="/devel/main" method="post" onsubmit="return develChk()">
                 <div id="formDivBox">
                     <!--
                     <div id="formDiv">
-                        <input id="formIns" type="text" name="ctn">
-                        <button id="formMinBtn" type="button" onclick="">-</button>
                         <div id="formMsg"></div>
+                        <input class="formIns" type="text" name="ctn">
+                        <button class="formMinBtn" type="button" onclick="">-</button>
                         <br>
                     </div>
                     -->
                 </div>
-                
-                
+                <br><br>
                 <button id="submitBtn" type="submit">전송</button>
             </form>
         </div>
-        
-        <div>
-        	<c:forEach items="${data}" var="item">
-        		<c:set var="i" value="${i+1}" />
-       				<ul>
-	        			<li>${item.r_dt}</li>
-	        			<li>
-	        				${item.ctn1}
-	        			</li>
-	        			<li>
-	        				${item.ctn2}
-	        			</li>
-	        			<li>
-		        			${item.ctn3}
-	        			</li>
-	        			<li>
-	        				${item.ctn4}
-	        			</li>
-	        			<li>
-	        				${item.ctn5}
-	        			</li>
-	       			</ul>
-        	</c:forEach>
-        </div>
-        
-        
     </div>
-	
-	
+    
 	
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
-	var textCount = 0
-	var num = 0;
-	var arr = [' ','좀더 분발해요','무난하네요','적당해요^^','무리하지마요','gg']
-	
-	function plusBtn() {
-	    ++textCount
-	    
+    var textCount = 0
+    var num = 0;
+    var arr = [' ','1. 좀더 분발하세요','2.','3.','4.','5.']
+
+    function plusBtn() {
+        ++textCount
+        
 	    if(textCount > 5) {
-	        textCount = 5
+            textCount = 5
 	        alert('너무 무리하지 마세요!!')
 	        return false;
-	    }
-	    ++num
-	    
-	
-	    var formDiv = document.createElement('div')
-	    formDiv.setAttribute('id','formDiv' + num + '')
-	
-	    var formIns = document.createElement('input')
-	    formIns.setAttribute('type', 'text')
-	    formIns.setAttribute('name', 'ctn' + num + '')
-	            
-	    var formMsg = document.createElement('div')
-	    formMsg.setAttribute('id', 'formMsg')
-	    formMsg.append(arr[textCount])
-	
-	    var formBr = document.createElement('br')
-	
-	    formDiv.append(formMsg)
-	    formDiv.append(formIns) // 입력창
-	    delBtn(num,formDiv)     // 삭제버튼
-	    formDiv.append(formBr)  // br
-	    
-	    formDivBox.append(formDiv)  // 한셋트 완료
-	}
-	
-	
-	
-	// input 창 하나당 삭제버튼 1개씩
-	function delBtn(numParam, formDivParam) {
-	    var formMinBtn = document.createElement('button')
-	    formMinBtn.setAttribute('id', 'formMinBtn')
-	    formMinBtn.setAttribute('type', 'button')
-	    formMinBtn.innerText = ' - '
-	
-	    formMinBtn.onclick = function(){
-	        --textCount
-	        --num
-	        $("#formDiv" + numParam + "").remove();
-	    }
-	    formDivParam.append(formMinBtn)
-	}
-	
-	
-	
-	// 전체 삭제
-	function allMinBtn() {
-	    for(var i=0; i<6; i++) {
-	        $("#formDiv" + i + "").remove();
-	    }
-	    textCount = 0
-	    num = 0
-	}
+        }
+        ++num
+        
+
+        var formDiv = document.createElement('div')
+        formDiv.setAttribute('id','formDiv' + num + '')
+
+        // 인풋창
+        var formIns = document.createElement('input')   
+        formIns.setAttribute('class', 'formIns')
+        formIns.setAttribute('type', 'text')
+        formIns.setAttribute('name', 'ctn' + num + '')
+                
+        // 메세지
+        var formMsg = document.createElement('div')
+        formMsg.setAttribute('id', 'formMsg' + textCount + '')
+        formMsg.setAttribute('class', 'formMsg')
+        formMsg.append(arr[textCount])
+
+        formDiv.append(formMsg)
+        formDiv.append(formIns) // 입력창
+        delBtn(num,formDiv)     // 삭제버튼
+        
+        formDivBox.append(formDiv)  // 한셋트 완료
+    }
+
+
+
+    // input 창 하나당 삭제버튼 1개씩
+    function delBtn(numParam, formDivParam) {
+        var formMinBtn = document.createElement('button')
+        formMinBtn.setAttribute('class', 'formMinBtn')
+        formMinBtn.setAttribute('type', 'button')
+        formMinBtn.innerText = 'ㅡ'
+
+        formMinBtn.onclick = function(){
+            --textCount
+            --num
+            $("#formDiv" + numParam + "").remove();
+        }
+        formDivParam.append(formMinBtn)
+    }
+    
+
+
+    // 전체 삭제
+    function allMinBtn() {
+        for(var i=0; i<6; i++) {
+            $("#formDiv" + i + "").remove();
+        }
+        textCount = 0
+        num = 0
+    }
 </script>
 </body>
 </html>
