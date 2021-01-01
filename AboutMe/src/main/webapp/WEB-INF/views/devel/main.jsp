@@ -56,7 +56,12 @@
 		                    </c:if>
 		                    <span class="successChk">
 			                    <c:if test="${successCode != null}">
-			                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk1" value="2">
+			                        <c:if test="${item.ctnChk1 == null}">		                    		                    
+		                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk1" value="2">
+		                        	</c:if>
+		                        	<c:if test="${item.ctnChk1 == 2}">
+		                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk1" value="2" checked>
+		                        	</c:if>
 			                    </c:if>
 		                    </span>
 		                </span>
@@ -69,7 +74,12 @@
 		                    </c:if>
 		                    <span class="successChk">
 		                    <c:if test="${successCode != null}">
+		                        	<c:if test="${item.ctnChk2 == null}">		                    		                    
 		                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk2" value="2">
+		                        	</c:if>
+		                        	<c:if test="${item.ctnChk2 == 2}">
+		                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk2" value="2" checked>
+		                        	</c:if>
 		                    </c:if>
 		                    </span>
 		                </span>
@@ -82,7 +92,12 @@
 		                    </c:if>
 		                    <span class="successChk">
 		                    <c:if test="${successCode != null}">
+		                        	<c:if test="${item.ctnChk3 == null}">		                    		                    
 		                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk3" value="2">
+		                        	</c:if>
+		                        	<c:if test="${item.ctnChk3 == 2}">
+		                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk3" value="2" checked>
+		                        	</c:if>
 		                    </c:if>
 		                    </span>
 		                </span>
@@ -95,7 +110,12 @@
 		                    </c:if>
 		                    <span class="successChk">
 		                    <c:if test="${successCode != null}">
+		                        	<c:if test="${item.ctnChk4 == null}">		                    		                    
 		                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk4" value="2">
+		                        	</c:if>
+		                        	<c:if test="${item.ctnChk4 == 2}">
+		                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk4" value="2" checked>
+		                        	</c:if>
 		                    </c:if>
 		                    </span>
 		                </span>
@@ -108,7 +128,12 @@
 		                    </c:if>
 		                    <span class="successChk">
 		                    <c:if test="${successCode != null}">
+									<c:if test="${item.ctnChk5 == null}">		                    		                    
 		                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk5" value="2">
+		                        	</c:if>
+		                        	<c:if test="${item.ctnChk5 == 2}">
+		                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk5" value="2" checked>
+		                        	</c:if>
 		                    </c:if>
 		                    </span>
 		                </span>
@@ -140,7 +165,13 @@
 			alert('입력되지 않은 항목이 있습니다')
 			return false;
 		}
+		
+		if(develInsFrm.ctn1.value.length == 0) {
+			alert('입력되지 않은 항목이 있습니다')
+			return false;
+		}
 	}
+	
 	
 	
 	
