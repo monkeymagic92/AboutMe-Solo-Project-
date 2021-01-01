@@ -109,27 +109,31 @@
     box-shadow: 4px 4px 5px -4px grey;
 }
 
-#develFrm{
-    margin-top: 20px;
-    margin-left: 650px;
+.hrDiv {
+    width: 1000px;
+    margin-top: 50px;
+    margin-left: 500px;
 }
 
-
+#develFrm{
+    margin-top: 20px;
+    margin-left: 660px;
+}
 
 .selViewDiv {
     margin-top: 50px;
+    margin-left: -100px;
 }
 
 .selDate {
     font-size: 1.5em;
     font-weight: bold;
     color: grey;
-    margin-left: 1260px;
+    margin-left: 1370px;
 }
 
 .selViewUl {
     width: 800px;
-    margin-left: 550px;
     border: 2px solid skyblue;
     border-radius: 10px;
     list-style:none;
@@ -138,7 +142,12 @@
 }
 
 .selViewLi1 {
+    display: flex;
     margin-top: 10px;
+}
+
+.selViewSpan {
+    justify-content: end;
 }
 
 .selViewLi5 {
@@ -165,7 +174,7 @@
 
 .viewBtns {
     display: flex;
-    margin-left: 1246px;
+    margin-left: 1355px;
 }
 
 .viewUpdBtn {
@@ -184,6 +193,7 @@
     color: #111;
     box-shadow: 4px 6px 6px -5px grey;
 }
+
 
 
 

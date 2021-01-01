@@ -37,7 +37,8 @@
         </div>
     </div>
 
-    <div>
+    <div class="hrDiv">
+        <hr>
         <!-- 추가할 내용 있으면 추가하기 -->
     </div>
 
@@ -45,57 +46,84 @@
     <c:forEach items="${data}" var="item">
 	    <div class="selViewDiv">
 	        <span class="selDate">${item.r_dt}</span>
-	        <ul class="selViewUl">
-	            <li class="selViewLi1">
-	                1. ${item.ctn1}
-	                <span>
-	                    <img class="successImg" src="/res/img/success.jpg">
-	                    <span class="successChk">
-	                        완료<input class="selViewCheck" type="checkbox" name="cntChk1">
-	                    </span>
-	                </span>
-	            </li>
-	            <li>
-	            	2. ${item.ctn2}
-	                <span>
-	                    <img class="successImg" src="/res/img/success.jpg">
-	                    <span class="successChk">
-	                        완료<input class="selViewCheck" type="checkbox" name="cntChk2">
-	                    </span>
-	                </span>
-	            </li>
-	            <li>
-	            	3. ${item.ctn3}
-	                <span>
-	                    <img class="successImg" src="/res/img/success.jpg">
-	                    <span class="successChk">
-	                        완료<input class="selViewCheck" type="checkbox" name="cntChk3">
-	                    </span>
-	                </span>
-	            </li>
-	            <li>
-	            	4. ${item.ctn4}
-	                <span>
-	                    <img class="successImg" src="/res/img/success.jpg">
-	                    <span class="successChk">
-	                        완료<input class="selViewCheck" type="checkbox" name="cntChk4">
-	                    </span>
-	                </span>
-	            </li>
-	            <li>
-	            	5. ${item.ctn5}
-	                <span>
-	                    <img class="successImg" src="/res/img/success.jpg">
-	                    <span class="successChk">
-	                        완료<input class="selViewCheck" type="checkbox" name="cntChk5">
-	                    </span>
-	                </span>
-	            </li>
-	           
-	        </ul>
+	        <form id="develFrm" class="develFrmCl" action="/devel/updMain" method="post" onsubmit="return develChk()">
+		        <ul class="selViewUl">
+		            <li class="selViewLi1">
+		                1. ${item.ctn1}
+		                <span>
+		                	<c:if test="${item.ctnChk1 == 2}">
+		                    	<img class="successImg" src="/res/img/success.jpg">
+		                    </c:if>
+		                    <span class="successChk">
+			                    <c:if test="${successCode != null}">
+			                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk1" value="2">
+			                    </c:if>
+		                    </span>
+		                </span>
+		            </li>
+		            <li>
+		            	2. ${item.ctn2}
+		                <span>
+		                	<c:if test="${item.ctnChk2 == 2}">
+		                    	<img class="successImg" src="/res/img/success.jpg">
+		                    </c:if>
+		                    <span class="successChk">
+		                    <c:if test="${successCode != null}">
+		                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk2" value="2">
+		                    </c:if>
+		                    </span>
+		                </span>
+		            </li>
+		            <li>
+		            	3. ${item.ctn3}
+		                <span>
+		                	<c:if test="${item.ctnChk3 == 2}">
+		                    	<img class="successImg" src="/res/img/success.jpg">
+		                    </c:if>
+		                    <span class="successChk">
+		                    <c:if test="${successCode != null}">
+		                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk3" value="2">
+		                    </c:if>
+		                    </span>
+		                </span>
+		            </li>
+		            <li>
+		            	4. ${item.ctn4}
+		                <span>
+		                	<c:if test="${item.ctnChk4 == 2}">
+		                    	<img class="successImg" src="/res/img/success.jpg">
+		                    </c:if>
+		                    <span class="successChk">
+		                    <c:if test="${successCode != null}">
+		                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk4" value="2">
+		                    </c:if>
+		                    </span>
+		                </span>
+		            </li>
+		            <li>
+		            	5. ${item.ctn5}
+		                <span>
+		                	<c:if test="${item.ctnChk5 == 2}">
+		                    	<img class="successImg" src="/res/img/success.jpg">
+		                    </c:if>
+		                    <span class="successChk">
+		                    <c:if test="${successCode != null}">
+		                        	완료<input class="selViewCheck" type="checkbox" name="ctnChk5" value="2">
+		                    </c:if>
+		                    </span>
+		                </span>
+		            </li>
+		        </ul>
+		        <c:if test="${successCode != null}">
+		        	<button type="submit">check</button>
+		        </c:if>
+	        </form>
 	        <div class="viewBtns">
-	            <button class="viewUpdBtn" type="button" onclick="#">수정</button>
-	            <button class="viewUpdBtn" type="button" onclick="#">삭제</button>
+	        	<c:if test="${successCode == null}">
+	            	<button class="viewUpdBtn" type="button" onclick="moveToUpd(${item.i_devel})">수정</button>
+	            	<button class="viewUpdBtn" type="button" onclick="#">삭제</button>
+	            </c:if>
+	            
 	        </div>
 	    </div>
     </c:forEach>
@@ -103,6 +131,10 @@
 	
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
+	function moveToUpd(i_devel) {
+		location.href="/devel/updMain?i_devel="+i_devel
+	}
+
 	var textCount = 0
 	var num = 0;
 	var arr = [' ','1.','2.','3.','4.','5.']
