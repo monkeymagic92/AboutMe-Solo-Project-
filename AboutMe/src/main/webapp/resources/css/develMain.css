@@ -118,8 +118,13 @@
     margin-bottom: 120px;
 }
 
-#develFrm{
+#develInsFrm{
     margin-top: 20px;
+    margin-left: 660px;
+}
+
+#develViewFrm {
+	margin-top: 20px;
     margin-left: 660px;
 }
 

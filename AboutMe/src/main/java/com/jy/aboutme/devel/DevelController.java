@@ -53,12 +53,14 @@ public class DevelController {
 	public String updMainPost(DevelPARAM param, Model model) {
 		
 		System.out.println("-------");
+		System.out.println("i_devel : " + param.getI_devel());
 		System.out.println("param1 : " + param.getCtnChk1());
 		System.out.println("param2 : " + param.getCtnChk2());
 		System.out.println("param3 : " + param.getCtnChk3());
 		System.out.println("param4 : " + param.getCtnChk4());
 		System.out.println("param5 : " + param.getCtnChk5());
 		System.out.println("-------");
+		
 		return "redirect:/" + ViewRef.DEVEL_MAIN;
 	}
 	

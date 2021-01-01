@@ -19,7 +19,7 @@
                 </span>
                 <button class="allMinBtn" onclick="allMinBtn()">전체 삭제</button>
             </div>
-            <form id="develFrm" action="/devel/main" method="post" onsubmit="return develChk()">
+            <form id="develInsFrm" action="/devel/main" method="post" onsubmit="return develInsChk()">
                 <div id="formDivBox">
                 	<!-- text 입력 창 -->
                     <!--
@@ -46,7 +46,7 @@
     <c:forEach items="${data}" var="item">
 	    <div class="selViewDiv">
 	        <span class="selDate">${item.r_dt}</span>
-	        <form id="develFrm" class="develFrmCl" action="/devel/updMain" method="post" onsubmit="return develChk()">
+	        <form id="develViewFrm" class="develFrmCl" action="/devel/updMain" method="post" onsubmit="return develViewChk()">
 		        <ul class="selViewUl">
 		            <li class="selViewLi1">
 		                1. ${item.ctn1}
@@ -115,7 +115,8 @@
 		            </li>
 		        </ul>
 		        <c:if test="${successCode != null}">
-		        	<button type="submit">check</button>
+		        	<button type="submit">Success Check</button>
+		        	<input type="hidden" name="i_devel" value="${item.i_devel}">
 		        </c:if>
 	        </form>
 	        <div class="viewBtns">
@@ -123,7 +124,6 @@
 	            	<button class="viewUpdBtn" type="button" onclick="moveToUpd(${item.i_devel})">수정</button>
 	            	<button class="viewUpdBtn" type="button" onclick="#">삭제</button>
 	            </c:if>
-	            
 	        </div>
 	    </div>
     </c:forEach>
@@ -135,6 +135,18 @@
 		location.href="/devel/updMain?i_devel="+i_devel
 	}
 
+	function develInsChk() {
+		if(develInsFrm.ctn1.value == "") {
+			alert('입력되지 않은 항목이 있습니다')
+			return false;
+		}
+	}
+	
+	
+	
+	
+	
+	
 	var textCount = 0
 	var num = 0;
 	var arr = [' ','1.','2.','3.','4.','5.']
