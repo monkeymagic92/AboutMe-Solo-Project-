@@ -13,17 +13,25 @@ public class DevelService {
 	@Autowired
 	private DevelMapper mapper;
 	
+	// 값 뿌리기
 	public List<DevelPARAM> selDevel() {
 		return mapper.selDevel();
 	}
 	
-	
+	// 글 등록
 	public int insDevel(DevelPARAM param) {
 		return mapper.insDevel(param);
 	}
 	
-	
+	// 체크 수정
 	public int updDevel(DevelPARAM param) {
 		return mapper.updMain(param);
 	}
+	
+	// 글 삭제
+	public int delDevel(DevelPARAM param) {
+		return mapper.delMain(param);
+	}
+	
+	
 }

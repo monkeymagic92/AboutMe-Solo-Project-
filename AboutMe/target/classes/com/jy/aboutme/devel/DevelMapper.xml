@@ -30,4 +30,11 @@
 		ctnChk5 = #{ctnChk5}
 		WHERE i_devel = #{i_devel}
 	</update>
+	
+	<!-- 삭제 -->
+	<delete id="delMain" parameterType="DevelPARAM">
+		DELETE FROM t_devel
+		WHERE i_devel = #{i_devel}
+	</delete>
+	
 </mapper>

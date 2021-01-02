@@ -147,7 +147,7 @@
 	        <div class="viewBtns">
 	        	<c:if test="${successCode == null}">
 	            	<button class="viewUpdBtn" type="button" onclick="moveToUpd(${item.i_devel})">수정</button>
-	            	<button class="viewUpdBtn" type="button" onclick="#">삭제</button>
+	            	<button class="viewUpdBtn" type="button" onclick="moveToDel(${item.i_devel})">삭제</button>
 	            </c:if>
 	        </div>
 	    </div>
@@ -165,6 +165,13 @@
 	// 수정 
 	function moveToUpd(i_devel) {
 		location.href="/devel/updMain?i_devel="+i_devel
+	}
+	
+	// 삭제
+	function moveToDel(i_devel) {
+		if(confirm('삭제 하시겠습니까 ? ')) {
+			location.href="/devel/delMain?i_devel="+i_devel	
+		}
 	}
 
 	// 글등록 유효검사

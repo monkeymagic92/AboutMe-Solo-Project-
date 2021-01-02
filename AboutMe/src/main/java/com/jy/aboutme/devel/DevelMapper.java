@@ -14,4 +14,6 @@ public interface DevelMapper {
 	int insDevel(DevelPARAM param);	// 오늘 할일 등록하기
 	
 	int updMain(DevelPARAM param);	// 체크 박스 체크하기
+	
+	int delMain(DevelPARAM param); // 삭제
 }
