@@ -140,7 +140,7 @@
 		            </li>
 		        </ul>
 		        <c:if test="${successCode != null}">
-		        	<button type="submit">Success Check</button>
+		        	<button id="sucessChk" type="submit">Success Check</button>
 		        	<input type="hidden" name="i_devel" value="${item.i_devel}">
 		        </c:if>
 	        </form>
@@ -156,11 +156,22 @@
 	
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
+
+	// 관리자가 아닌상태에서 행위를 취할시에 return
+	if(${loginFail != null}) {
+		alert('${loginFail}')
+	}
+
+	// 수정 
 	function moveToUpd(i_devel) {
 		location.href="/devel/updMain?i_devel="+i_devel
 	}
 
+	// 글등록 유효검사
 	function develInsChk() {
+		var loginUser = `${loginUser.nm}`
+		
+			
 		if(develInsFrm.ctn1.value == "") {
 			alert('입력되지 않은 항목이 있습니다')
 			return false;
@@ -168,6 +179,11 @@
 		
 		if(develInsFrm.ctn1.value.length == 0) {
 			alert('입력되지 않은 항목이 있습니다')
+			return false;
+		}
+		
+		if(loginUser == null) {
+			alert('관리자만 접근 가능 합니다')
 			return false;
 		}
 	}

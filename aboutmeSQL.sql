@@ -111,11 +111,11 @@ CREATE TABLE t_devel(
 	ctn5 VARCHAR(150),
 	-- default 값 줘서 1이면 노체크   2면 체크  로  완료 이미지 띄우기 
 	-- 안되면 default 지우고 null값으로 체크해서 띄우기
-	ctnChk1 VARCHAR(2) DEFAULT 1,
-	ctnChk2 VARCHAR(2) DEFAULT 1,
-	ctnChk3 VARCHAR(2) DEFAULT 1,
-	ctnChk4 VARCHAR(2) DEFAULT 1,
-	ctnChk5 VARCHAR(2) DEFAULT 1,
+	ctnChk1 VARCHAR(2),
+	ctnChk2 VARCHAR(2),
+	ctnChk3 VARCHAR(2),
+	ctnChk4 VARCHAR(2),
+	ctnChk5 VARCHAR(2),
 	r_dt DATETIME DEFAULT NOW(),
 	PRIMARY KEY(i_devel)
 );

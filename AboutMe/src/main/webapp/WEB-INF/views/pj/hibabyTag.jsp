@@ -100,7 +100,7 @@
         <div class="movieInfo">
             <video src="/res/av/HiBaby/study.mp4" controls></video>
             <div class="titleDiv">
-                <h1 id="infoH1">2. 비밀번호 찾기 (실제 이메일 발송)</h1>
+                <h1 id="infoH1">5. 인터셉터 활용으로 비로그인상태 거르기</h1>
                 <ul class="infoUl">
                     <li class="infoLi"></li>
                     <br>
