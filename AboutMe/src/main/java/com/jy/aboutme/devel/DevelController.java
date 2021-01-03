@@ -42,7 +42,6 @@ public class DevelController {
 			adminParam.setI_user(i_user);
 			
 		} catch (Exception e) {
-			System.out.println("로그인 안되어있음");
 			ra.addFlashAttribute("loginFail", "관리자만 접근 가능합니다");
 			model.addAttribute("view", ViewRef.DEVEL_MAIN);
 			return "redirect:/" + ViewRef.DEVEL_MAIN;
@@ -75,7 +74,6 @@ public class DevelController {
 			adminParam.setI_user(i_user);
 			
 		} catch (Exception e) {
-			System.out.println("로그인 안되어있음");
 			ra.addFlashAttribute("loginFail", "관리자만 접근 가능합니다");
 			return "redirect:/" + ViewRef.DEVEL_MAIN;
 		}
@@ -96,14 +94,11 @@ public class DevelController {
 			adminParam.setI_user(i_user);
 			
 		} catch (Exception e) {
-			System.out.println("로그인 안되어있음");
 			ra.addFlashAttribute("loginFail", "관리자만 접근 가능합니다");
 			return "redirect:/" + ViewRef.DEVEL_MAIN;
 		}
 		
-		System.out.println("i_devel : 삭제 : " + param.getI_devel());
 		int result = service.delDevel(param);
-		
 		
 		return "redirect:/" + ViewRef.DEVEL_MAIN;
 	}

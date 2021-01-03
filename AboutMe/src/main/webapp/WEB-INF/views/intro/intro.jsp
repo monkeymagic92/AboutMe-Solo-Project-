@@ -11,7 +11,6 @@
 <body>
 	<div class="container">
         <div class="introTopDiv">
-            
             <button id="ib1" class="introBtns">소개글 보기</button>
             <button id="ib2" class="introBtns">이력서 보기</button>
             <button id="ib3" class="introBtns">자기소개 보기</button>
@@ -19,7 +18,7 @@
         
         <div class="introContainer">
             <div id="introDiv1">
-               '바보같은 도전이 세상을 뒤엎는다'<br><br>
+               '바보같은 도전이 세상을 바꾼다'<br><br>
                다들 제가 웹개발자로 길을 걷겠다고 하면 하나같이 질문합니다<br>
                "갑자기 뜬금없이 IT?"<br>
                "뭐때매 갑자기 IT쪽으로 공부하는데?"<br>

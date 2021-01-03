@@ -1,0 +1,80 @@
+body {
+    background-image: linear-gradient(to right,#fbfcf2 0%, #cfcfcf 100%, #fbfcf2 100%);    
+}
+
+.adminContainer {
+    margin-left: 850px;
+    position: relative;
+    margin-top: 230px;
+}
+
+#adminLogin {
+    font-size: 2.3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: grey;
+}
+
+#err {
+    color: red;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.frmIns {
+    width: 250px;
+    height: 27px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: grey;
+    border-radius: 6px;
+    border: 2px solid grey;
+    text-align: center;
+}
+
+.frmIns:hover {
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+#loginBtn {
+    width: 256px;
+    height: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 2px solid grey;
+}
+
+#loginBtn:hover {
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.bottomContainer {
+    margin-top: 80px;
+}
+
+#logOutBtn {
+    width: 256px;
+    height: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 2px solid grey;
+}
+
+#logOutBtn:hover {
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+#bottomMsg {
+    color: red;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+
