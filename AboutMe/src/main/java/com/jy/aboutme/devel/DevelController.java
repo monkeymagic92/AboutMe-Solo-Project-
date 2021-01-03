@@ -59,7 +59,9 @@ public class DevelController {
 	@RequestMapping(value="/updMain", method = RequestMethod.GET)
 	public String updMainGet(DevelPARAM param, Model model) {
 		
-		model.addAttribute("data",service.selDevel());
+		// 글 수정시 전체 리스트를 뿌리는게 아닌 한 화면만 뿌림
+		model.addAttribute("detailResult", "1");
+		model.addAttribute("item",service.selDetail(param));
 		model.addAttribute("successCode", "success");
 		model.addAttribute("view", ViewRef.DEVEL_MAIN);
 		return ViewRef.DEFAULT_TEMP;

@@ -18,6 +18,10 @@ public class DevelService {
 		return mapper.selDevel();
 	}
 	
+	public DevelPARAM selDetail(DevelPARAM param) {
+		return mapper.selDetail(param);
+	}
+	
 	// 글 등록
 	public int insDevel(DevelPARAM param) {
 		return mapper.insDevel(param);

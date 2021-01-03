@@ -11,6 +11,8 @@ public interface DevelMapper {
 
 	List<DevelPARAM> selDevel();	// devel main 값 뿌리기
 	
+	DevelPARAM selDetail(DevelPARAM param);	// 수정시detail 화면
+	
 	int insDevel(DevelPARAM param);	// 오늘 할일 등록하기
 	
 	int updMain(DevelPARAM param);	// 체크 박스 체크하기

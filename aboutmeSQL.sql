@@ -7,20 +7,7 @@ CREATE TABLE t_user(
 );
 SELECT * FROM t_user;
 
-INSERT INTO t_user
-(user_id, user_pw, nm)
-VALUES
-('admin', 'admin', '관리자');
-
 USE aboutme;
-
-
-
-
-SELECT * FROM t_board;
-
-
-
 
 
 CREATE TABLE t_board(
@@ -121,7 +108,6 @@ CREATE TABLE t_devel(
 );
 SELECT * FROM t_devel;
 DROP TABLE t_devel;
-
 
 
 
