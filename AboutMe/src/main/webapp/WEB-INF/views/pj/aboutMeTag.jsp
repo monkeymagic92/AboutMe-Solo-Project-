@@ -23,21 +23,16 @@
         <div>
             <div class="urlDiv">
                 <ul>
-                    <li>URL : <a id="urlA" href="http://http://118.67.132.252:8080/" target="_blank">http://http://118.67.132.252:8080/</a></li>
+                    <li>URL : <a id="urlA" href="http://118.67.132.252:8080/" target="_blank">http://118.67.132.252:8080/</a></li>
                     <li>담당 분야 : <span id="span1">Font-End, Back-End</span></li>
                 </ul>
                                 
             </div>
             <p class="infoP">
-               	내용적기<br>
-               	내용적기<br>
-               	내용적기<br>
-               	내용적기<br>
-               	내용적기<br>
-               	내용적기
-               	내용적기
-               	내용적기내용적기
-               	
+               	저의 개인프로젝트 와 팀프로젝트를 한번에 쉽게 볼수있게 나타내었으며 그외<br>
+               	저의 프로젝트 및 학습한 내용들을 기록하기 위한 사이트 입니다.<br>
+               	2020.12.14 날짜로 사이트를 제작했으며 추후 제가 실력이 상승함에 따라 계속 사이트를<br>
+               	업데이트 할 예정입니다.
             </p>
         </div>
         

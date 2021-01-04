@@ -51,13 +51,30 @@
         </div>
         
         
+        <!-- 팝업 -->
+        <div class="layerPopup">
+	        <div class="layerBox">
+	            <h1 class="title">레이어팝업 타이틀</h1>
+	            <div class="cont">
+	                <p>
+	                    lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+	                </p>
+	            </div>
+	            <a href="javascrfipt:;" class="btnClose">닫기</a>
+	            <a href="javascript:;" class="btnTodayHide">오늘 하루 보지 않기</a>
+	        </div>
+	    </div>
+	        
+        
         <div class="footerDiv">
 			<!--  공백용   -->
     	</div>
+    	
         
     </div>
     
-    
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <script>
 	/* DDmarket 연결 */
 	function moveToDDmarket() {
@@ -67,6 +84,53 @@
 	/* HiBaby 연결*/
 	function moveToHiBaby() {
 	    location.href="/pj/hibabyTag"
+	}
+	
+	/* Javascript */
+	var $layerPopup = document.querySelector('.layerPopup');
+	var $btnLayerPopupClose = document.querySelector('.layerPopup .btnClose');
+	var $btnLayerPopupTodayHide = document.querySelector('.layerPopup .btnTodayHide');
+
+	//최초 레이어팝업 노출
+	// 쿠키 유효검사 해야 됨 (내가만들었음 안하면 쿠키 되든말든 계속 창뜸)
+	if($.cookie('testCookie') == undefined){
+	    layerPopupShow();
+	}
+	
+	//레이어팝업 닫기 버튼 클릭
+	$btnLayerPopupClose.addEventListener('click', function(){
+	    layerPopupHide(0);
+	});
+
+	//레이어팝업 오늘 하루 보지 않기 버튼 클릭
+	$btnLayerPopupTodayHide.addEventListener('click', function(){
+	    layerPopupHide(1);
+	});
+
+	//레이어팝업 노출
+	function layerPopupShow(){
+	    $layerPopup.style.display = 'block'
+	}
+	
+	function layerPopupHide(state){
+	    //닫기버튼 오늘하루보지않기 버튼 무관하계 레이어팝업은 닫는다.
+	    $layerPopup.style.display = 'none'
+
+	    //오늘하루보지않기 버튼을 누른 경우
+	    if(state === 1){
+	    	//'testCookie' 이름의 쿠키가 있는지 체크한다.
+	        if($.cookie('testCookie') == undefined){
+	            //쿠키가 없는 경우 testCookie 쿠키를 추가
+	            $.cookie('testCookie', 'Y', { expires: 1, path: '/' });
+	            /**
+	                설명 :
+	                임의로 testCookie라는 이름에 Y라는 값을 넣어주었고,
+	                expires값으로 1을 주어 1일 후 쿠키가 삭제되도록 하였다.
+	                path값을 '/'로 주면 해당사이트 모든페이지에서 유효한 쿠키를 생성한다.
+	                특정페이지에서만 작동하려면 페이지 경로를 작성하면 된다.
+	            **/
+	        }        
+	    }
 	}
 </script>
 </body>
