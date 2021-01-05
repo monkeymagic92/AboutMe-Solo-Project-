@@ -18,6 +18,8 @@ public class AdminController {
 	@Autowired
 	private AdminService service;
 	
+	// ㅇㅇㅇ 테스트
+	
 	// 관리자 로그인 화면
 	@RequestMapping(value="/admin", method = RequestMethod.GET)
 	public String admin(AdminPARAM param, Model model, HttpSession hs,
