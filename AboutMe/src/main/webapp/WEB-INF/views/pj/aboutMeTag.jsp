@@ -29,38 +29,77 @@
                                 
             </div>
             <p class="infoP">
-               	저의 개인프로젝트 와 팀프로젝트를 한번에 쉽게 볼수있게 나타내었으며 그외<br>
+                저의 개인프로젝트 와 팀프로젝트를 한번에 쉽게 볼수있게 나타내었으며 그외<br>
                	저의 프로젝트 및 학습한 내용들을 기록하기 위한 사이트 입니다.<br>
-               	2020.12.14 날짜로 사이트를 제작했으며 추후 제가 실력이 상승함에 따라 계속 사이트를<br>
+               	2020.12.14 날짜로 사이트를 제작이 시작되었으며 추후 제가 실력이 상승함에 따라 계속 사이트를<br>
                	업데이트 할 예정입니다.
             </p>
         </div>
+
+        <div class="movieInfo">
+            <video src="/res/av/aboutMe/aboutMeIntro.mp4" controls></video>
+            <div class="titleDiv">
+                <h2 id="infoH1">1. 개발자 소개</h2>
+                <ul class="infoUl">
+                    <li class="infoLi">다른 페이지와 다르게 어두운 css 조성</li>
+                    <br>
+                    <li class="infoLi">개발자 소개, 이력서, 자기소개를 한눈에 볼수있는 페이지</li>
+                </ul>
+            </div>
+        </div>
+        <br><br>
+        <div class="movieInfo">
+            <video src="/res/av/aboutMe/chat.mp4" controls></video>
+            <div class="titleDiv">
+                <h2 id="infoH1">2. 만남의 광장</h2>
+                <ul class="infoUl">
+                    <li class="infoLi">ajax통신을 활용하여 익명성 대화를 할수 있는 공간</li>
+                    <br>
+                    <li class="infoLi">관리자와 일반유저끼리 좌우측 구분지어 대화</li>
+                </ul>
+            </div>
+        </div>
+        <br><br>
+        <div class="movieInfo">
+            <video src="/res/av/aboutMe/aboutMeBoard.mp4" controls></video>
+            <div class="titleDiv">
+                <h2 id="infoH1">3. 게시글 CRUD</h2>
+                <ul class="infoUl">
+                    <li class="infoLi">글 등록시 summernote 에디터를 사용</li>
+                    <br>
+                    <li class="infoLi">비로그인 사이트이므로 비밀번호를 활용하여 모든 권한을 부여</li>
+                    <br>
+                    <li class="infoLi">일반유저는 비밀번호를 입력하여 접근이 가능하지만, 관리자는 모든 게시글 접근가능</li>
+                </ul>
+            </div>
+        </div>
+        <br><br>
+        <div class="movieInfo">
+            <video src="/res/av/aboutMe/devel.mp4" controls></video>
+            <div class="titleDiv">
+                <h2 id="infoH1">4. 개발일지</h2>
+                <ul class="infoUl">
+                    <li class="infoLi">한 블럭당 총 글은 5개 등록 가능</li>
+                    <br>
+                    <li class="infoLi">앞으로 해야할 일을 등록하며, 마무리 지었을시 수정을 통해 완료를 함으로 써<br>
+                        해야할 일, 완료된 일을 구분지어 통일함
+                    </li>
+                    <br>
+                    <li class="infoLi">개발 일지 페이지는 모든권한이 관리자에게만 허락됨</li>
+                </ul>
+            </div>
+        </div>
+        <br><br>
         
-        <div class="movieInfo">
-            <video src="/res/av/HiBaby/join.mp4" controls></video>
-            <div class="titleDiv">
-                <h2 id="infoH1">1. 회원 가입 (정규화)</h2>
-                <ul class="infoUl">
-                    <li class="infoLi">중복확인은 Ajax통신을 이용하였으며, 중복확인후 내용이 변경된경우 다시 체크를 하도록 구성</li>
-                    <br>
-                    <li class="infoLi">비밀번호는 salt 암호화 기법을 사용하여 회원가입후 DB에 값 저장시 난수로 저장</li><br>
-                    <li class="infoLi">아이디:영어,숫자 / 이메일:이메일형식 / 비밀번호:영어,특수문자,숫자 포함 정규화 작업</li>
-                </ul>
-            </div>
+        <div id="end">
+            여기까지 읽어주셔서 감사합니다.
         </div>
-        <br><br>
-        <div class="movieInfo">
-            <video src="/res/av/HiBaby/findPw.mp4" controls></video>
-            <div class="titleDiv">
-                <h1 id="infoH1">2. 비밀번호 찾기 (이메일 발송)</h1>
-                <ul class="infoUl">
-                    <li class="infoLi">JavaMailSender를 활용하여 회원가입시 입력한 이메일로 인증코드 6자리를 보내어 인증번호가 서로 일치하면 OK</li>
-                    <br>
-                    <li class="infoLi">아이디찾기 또한 위와 동일한 방식으로 일치하는 ID를 메일로 발송함</li>
-                </ul>
-            </div>
+        
+        <div class="height">
+
         </div>
-        <br><br>
+        
+        
     </div>
 </body>
 </html>
