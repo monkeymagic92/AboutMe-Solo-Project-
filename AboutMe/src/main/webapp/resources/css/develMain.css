@@ -226,3 +226,11 @@
     color: #111;
     box-shadow: 4px 6px 6px -5px grey;
 }
+
+.pageNumber {
+	text-align: center;
+    margin-top: 25px;
+    font-size: 1.4em;
+    color: grey;
+    text-decoration: none;
+}
