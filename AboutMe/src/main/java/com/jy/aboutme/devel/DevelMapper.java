@@ -11,6 +11,8 @@ public interface DevelMapper {
 
 	List<DevelPARAM> selDevel();	// devel main 값 뿌리기
 	
+	int selCountDevel();	// 총 devel 갯수
+	
 	DevelPARAM selDetail(DevelPARAM param);	// 수정시detail 화면
 	
 	int insDevel(DevelPARAM param);	// 오늘 할일 등록하기

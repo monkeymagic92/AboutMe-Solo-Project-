@@ -39,7 +39,10 @@
 
     <div class="hrDiv">
         <hr>
+        <h2>일지(${selCount})</h2>
     </div>
+    
+    
     
     <!-- 수정 눌렀을시 한 화면만 나오게 -->
 	<c:if test="${detailResult != null}">

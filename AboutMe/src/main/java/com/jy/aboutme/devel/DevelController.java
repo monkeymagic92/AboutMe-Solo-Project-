@@ -27,6 +27,7 @@ public class DevelController {
 	public String develMain(Model model, DevelPARAM param) {
 		
 		model.addAttribute("data",service.selDevel());
+		model.addAttribute("selCount", service.selCountDevel());
 		model.addAttribute("view", ViewRef.DEVEL_MAIN);
 		return ViewRef.DEFAULT_TEMP;
 	}

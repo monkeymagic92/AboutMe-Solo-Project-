@@ -26,7 +26,7 @@ public class BoardController {
 	
 	// 게시글 전체 목록
 	@RequestMapping(value="/list", method = RequestMethod.GET)
-	public String boardList(@ModelAttribute("boardVO") BoardDMI dmi,
+	public String boardList(BoardDMI dmi,
 			 @RequestParam(defaultValue="1") int curPage, BoardPARAM param,
 			 HttpServletRequest request,
 			 Model model, Pagination p) {

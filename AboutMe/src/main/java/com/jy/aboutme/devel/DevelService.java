@@ -18,6 +18,13 @@ public class DevelService {
 		return mapper.selDevel();
 	}
 	
+	// 총 devel 갯수
+	public int selCountDevel() {
+		return mapper.selCountDevel();
+	}
+	
+	
+	// 수정시 detail 화면
 	public DevelPARAM selDetail(DevelPARAM param) {
 		return mapper.selDetail(param);
 	}
