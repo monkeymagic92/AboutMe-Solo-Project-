@@ -4,12 +4,13 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.jy.aboutme.Pagination;
 import com.jy.aboutme.devel.model.DevelPARAM;
 
 @Mapper
 public interface DevelMapper {
 
-	List<DevelPARAM> selDevel();	// devel main 값 뿌리기
+	List<DevelPARAM> selDevel(Pagination p);	// devel main 값 뿌리기
 	
 	int selCountDevel();	// 총 devel 갯수
 	

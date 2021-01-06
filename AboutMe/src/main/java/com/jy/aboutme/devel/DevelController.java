@@ -8,11 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.jy.aboutme.Pagination;
 import com.jy.aboutme.SecurityUtils;
 import com.jy.aboutme.ViewRef;
 import com.jy.aboutme.admin.model.AdminPARAM;
+import com.jy.aboutme.devel.model.DevelDMI;
 import com.jy.aboutme.devel.model.DevelPARAM;
 
 @Controller
@@ -24,10 +27,21 @@ public class DevelController {
 	
 	// 개발일지  main 페이지
 	@RequestMapping(value="/main", method = RequestMethod.GET)
-	public String develMain(Model model, DevelPARAM param) {
+	public String develMain(@RequestParam(defaultValue="1") int curPage,
+			Model model, DevelPARAM param, DevelDMI dmi) {
 		
-		model.addAttribute("data",service.selDevel());
-		model.addAttribute("selCount", service.selCountDevel());
+		// 전체리스트 개수
+        int listCnt = service.selCountDevel();
+        Pagination pagination = new Pagination(listCnt, curPage);
+        dmi.setStartIndex(pagination.getStartIndex());
+        dmi.setCntPerPage(pagination.getPageSize());
+        //
+		
+        model.addAttribute("selCount", service.selCountDevel());
+        model.addAttribute("listCnt", listCnt);
+        model.addAttribute("pagination", pagination);
+		model.addAttribute("data",service.selDevel(pagination));
+		
 		model.addAttribute("view", ViewRef.DEVEL_MAIN);
 		return ViewRef.DEFAULT_TEMP;
 	}

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.jy.aboutme.Pagination;
 import com.jy.aboutme.devel.model.DevelPARAM;
 
 @Service
@@ -14,8 +15,8 @@ public class DevelService {
 	private DevelMapper mapper;
 	
 	// 값 뿌리기
-	public List<DevelPARAM> selDevel() {
-		return mapper.selDevel();
+	public List<DevelPARAM> selDevel(Pagination p) {
+		return mapper.selDevel(p);
 	}
 	
 	// 총 devel 갯수

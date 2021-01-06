@@ -267,6 +267,32 @@
 		        </div>
 		    </div>
 	    </c:forEach>
+	    <div class="pageBox">
+	        <div class="page">	       
+		        <c:if test="${pagination.curRange ne 1 }">
+		            <a href="#" onClick="fn_paging(1)">[처음]</a> 
+		        </c:if>
+		        <div class="pageNumber">
+		        <c:forEach var="pageNum" begin="${pagination.startPage }" end="${pagination.endPage }">
+		            <c:choose>
+		                <c:when test="${pageNum eq  pagination.curPage}">
+		                	
+		                    <span style="font-weight: bold; color: black;"><a href="#" onClick="fn_paging('${pageNum }')">${pageNum }</a></span>
+		                    
+		                </c:when>
+		                <c:otherwise>
+		                	
+		                    <a href="#" onClick="fn_paging('${pageNum }')">${pageNum }</a>
+		                     
+		                </c:otherwise>
+		            </c:choose>
+		        </c:forEach>
+		        </div>
+		         <c:if test="${pagination.curRange ne pagination.rangeCnt && pagination.rangeCnt > 0}">
+		            <a href="#" onClick="fn_paging('${pagination.pageCnt }')">[끝]</a> 
+		        </c:if>
+	   		</div>
+	   	</div>
     </c:if>
     
 	
@@ -288,6 +314,11 @@
 		if(confirm('삭제 하시겠습니까 ? ')) {
 			location.href="/devel/delMain?i_devel="+i_devel	
 		}
+	}
+	
+	// 페이징 값 보내기
+	function fn_paging(curPage) {
+		location.href = "/devel/main?curPage="+curPage
 	}
 
 	// 글등록 유효검사

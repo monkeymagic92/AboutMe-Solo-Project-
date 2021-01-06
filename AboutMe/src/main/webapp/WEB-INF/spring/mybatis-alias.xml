@@ -29,9 +29,10 @@
 		<typeAlias type="com.jy.aboutme.chat.model.ChatVO" alias="ChatVO" />
 		<typeAlias type="com.jy.aboutme.chat.model.ChatPARAM" alias="ChatPARAM" />
 		
-		<!-- Devel -->
-		<typeAlias type="com.jy.aboutme.devel.model.DevelPARAM" alias="DevelPARAM" />
+		<!-- Devel -->		
 		<typeAlias type="com.jy.aboutme.devel.model.DevelVO" alias="DevelVO" />
+		<typeAlias type="com.jy.aboutme.devel.model.DevelPARAM" alias="DevelPARAM" />
+		<typeAlias type="com.jy.aboutme.devel.model.DevelDMI" alias="DevelDMI" />
 		
 	</typeAliases>
 </configuration>
