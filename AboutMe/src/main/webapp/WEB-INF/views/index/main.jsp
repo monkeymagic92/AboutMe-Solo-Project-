@@ -74,38 +74,13 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <script>
-//첫 실행시 채팅창은 hide
-$('.chatCloseBtn').hide();
-$('.chatView').hide();
-$('.chatIns').hide();
-$('.ourSite').hide();
 
-// 메세지 아이콘 클릭시 채팅창 show
-$('#messageIcon').click(function() {
-	$('.chatCloseBtn').show();
-    $('.chatView').show();
-    $('.chatIns').show();
-    $('.ourSite').show();
-    $('#messageIcon').hide();
-    
-})
 
-// X버튼 클릭시 닫음
-$('.chatCloseBtn').click(function() {
-	$('.chatCloseBtn').hide();
-    $('.chatView').hide();
-    $('.chatIns').hide();
-    $('.ourSite').hide();
-    $('#messageIcon').show();
-    chatCtnt.focus();
-})
     // 아작스 글입력 만들기
     function chatSend() {
         chatCtnt.value = ''
         alert('아작스 글입력 만들기 \nㄹㄹㄹ');
     }
-
-    
 
 
     /* DDmarket 연결 */

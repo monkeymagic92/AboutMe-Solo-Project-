@@ -109,6 +109,13 @@ CREATE TABLE t_devel(
 SELECT * FROM t_devel;
 DROP TABLE t_devel;
 
+SELECT COUNT(*) FROM t_devel;
+
+DELETE FROM t_devel
+WHERE i_devel = 20;
+
+
+
 
 
 

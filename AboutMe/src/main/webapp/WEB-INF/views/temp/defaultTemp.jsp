@@ -99,10 +99,11 @@
 	var isNewCmt = false;
 
 	//첫 실행시 채팅창은 hide
-	$('.chatCloseBtn').hide();
-	$('.chatView').hide();
-	$('.chatIns').hide();
-	$('.ourSite').hide();
+	$('.chatCloseBtn').show();
+	$('.chatView').show();
+	$('.chatIns').show();
+	$('.ourSite').show();
+	$('#messageIcon').hide();
 	
 	// 메세지 아이콘 클릭시 채팅창 show
 	$('#messageIcon').click(function() {
@@ -238,14 +239,7 @@
 	}
 	
 	ajaxSelChat()
-
 	
-	
-	
-	// 응원 메세지 남기는 곳
-	function wait() {
-		alert('서비스 준비중입니다.')
-	}
 </script>
 </body>
 </html>
