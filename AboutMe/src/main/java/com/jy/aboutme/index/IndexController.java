@@ -6,10 +6,14 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jy.aboutme.ViewRef;
 import com.jy.aboutme.admin.model.AdminPARAM;
+import com.jy.aboutme.chat.model.ChatPARAM;
 import com.jy.aboutme.index.model.HistoryVO;
 
 @Controller
@@ -18,6 +22,15 @@ public class IndexController {
 
 	@Autowired
 	private IndexService service;
+	
+	// 채팅창 세션을 활용하여 창 끌경우 새로고침해도 계속 창꺼짐( 반대로 켜지면 계속 켜짐 )
+	@RequestMapping(value="/chatChk", method=RequestMethod.POST)
+	public @ResponseBody void chatChk(@RequestBody ChatPARAM param,
+			HttpSession hs) {
+		
+		hs.setAttribute("chatChk", param.getChatChk());
+	}
+	
 
 	@RequestMapping("/")
 	public String index(Model model, HistoryVO vo, HttpServletRequest request,

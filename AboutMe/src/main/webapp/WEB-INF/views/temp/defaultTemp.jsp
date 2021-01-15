@@ -52,35 +52,39 @@
    
    
     <c:if test="${cssResult == null }">
-	    <div class="message">
+    	<div class="message">
 	        <img id="messageIcon" src="/res/img/메세지아이콘.png">
 	    </div>
-	
-	    <div class="ourSite">
-	        <div class="ourSite-1">
-	           	 만남의 광장
-	        </div>
-	    </div>
-	    <button class="chatCloseBtn">
-	        <span id="exitIcon" class="material-icons">
-	            exit_to_app
-	        </span>        
-	    </button>
-	   
-	    	<div id="chatViewId" class="chatView"></div>
-	    
-	    <div class="chatIns">
-	        <form id="chatFrm">
-	            <textarea id="chatCtnt" name="chatCtnt" placeholder="메시지를 입력해 주세요."></textarea>
-	
-	 
-	            <input type="hidden" id="adminCode" name="adminCode" value="1">
-	            <span id="sendIcon" class="material-icons" onclick="chatSend()">
-	                send
-	            </span>
-	        </form>
+    	<div class="chatChk">
+		    <div class="ourSite">
+		        <div class="ourSite-1">
+		           	 만남의 광장
+		        </div>
+		    </div>
+		    <button class="chatCloseBtn">
+		        <span id="exitIcon" class="material-icons">
+		            exit_to_app
+		        </span>        
+		    </button>
+		   
+		    	<div id="chatViewId" class="chatView"></div>
+		    
+		    <div class="chatIns">
+		        <form id="chatFrm">
+		            <textarea id="chatCtnt" name="chatCtnt" placeholder="메시지를 입력해 주세요."></textarea>
+		
+		 
+		            <input type="hidden" id="adminCode" name="adminCode" value="1">
+		            <span id="sendIcon" class="material-icons" onclick="chatSend()">
+		                send
+		            </span>
+		        </form>
+		    </div>
 	    </div>
 	</c:if>
+	<form id="chatTestFrm">
+		<input type="hidden" id="chatChk" name="chatChk" value="1">
+	</form>
 	
     <!-- Header End -->
 
@@ -96,15 +100,37 @@
 
 <script>
 	
-	var isNewCmt = false;
-
-	//첫 실행시 채팅창은 hide
-	$('.chatCloseBtn').show();
-	$('.chatView').show();
-	$('.chatIns').show();
-	$('.ourSite').show();
-	$('#messageIcon').hide();
+	var isNewCmt = false;	// 채팅 입력시 스크롤바 제일 하단, 마지막 글을 보여줌
 	
+	var chatValue = `${chatChk}`
+	console.log('챗 값 : ' + chatValue)
+	
+	function chatChk() {	// 채팅창 session 활용하여 지속적으로 on / off
+		var chatChk = chatTestFrm.chatChk.value
+		axios.post('/chatChk',{
+			chatChk : chatChk
+		})
+	}
+	
+    // 첫시작시 cahtValue == '' 이거임 화면띄우기 
+    // 그이후 1, 0 으로 지속적으로 on / off 
+	if(chatValue == '' || chatValue == 1) {
+		$('.chatCloseBtn').show();
+	    $('.chatView').show();
+	    $('.chatIns').show();
+	    $('.ourSite').show();
+	    $('#messageIcon').hide();
+	    
+	} else {
+		$('.chatCloseBtn').hide();
+	    $('.chatView').hide();
+	    $('.chatIns').hide();
+	    $('.ourSite').hide();
+	    $('#messageIcon').show();
+	    isNewCmt = false;
+	}
+	
+    
 	// 메세지 아이콘 클릭시 채팅창 show
 	$('#messageIcon').click(function() {
 		$('.chatCloseBtn').show();
@@ -113,17 +139,22 @@
 	    $('.ourSite').show();
 	    $('#messageIcon').hide();
 	    
+	    chatTestFrm.chatChk.value = 1
+	    chatChk()
 	})
 	
-	// X버튼 클릭시 닫음
+	// X 버튼 클릭시 닫음
 	$('.chatCloseBtn').click(function() {
 		$('.chatCloseBtn').hide();
 	    $('.chatView').hide();
 	    $('.chatIns').hide();
 	    $('.ourSite').hide();
 	    $('#messageIcon').show();
+	    
 	    isNewCmt = false;
-	    chatCtnt.focus();
+	    
+	    chatTestFrm.chatChk.value = 0
+	    chatChk()
 	})
 	
 	
@@ -239,7 +270,14 @@
 	}
 	
 	ajaxSelChat()
+
 	
+	
+	
+	// 응원 메세지 남기는 곳
+	function wait() {
+		alert('서비스 준비중입니다.')
+	}
 </script>
 </body>
 </html>

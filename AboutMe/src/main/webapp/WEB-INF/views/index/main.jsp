@@ -75,13 +75,11 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <script>
 
-
     // 아작스 글입력 만들기
     function chatSend() {
         chatCtnt.value = ''
         alert('아작스 글입력 만들기 \nㄹㄹㄹ');
     }
-
 
     /* DDmarket 연결 */
     function moveToDDmarket() {
