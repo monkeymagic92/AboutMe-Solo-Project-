@@ -7,8 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Index</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo="> <!-- favico 에러 제거 -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
 
-	
+
 <c:choose>
 	<c:when test="${cssResult != null}">
 		<link rel="stylesheet" href="/res/css/defaultTempDark.css">
@@ -106,72 +108,9 @@
     
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
 <script type="text/javascript">
-	
-	
-
 var isNewCmt = true;	// 채팅 입력시 스크롤바 제일 하단, 마지막 글을 보여줌
 // websocket Test///////
-
-chatViewId.innerHTML = ''
-
-
-//////////////////////
-$("#sendIcon").click(function() {
-	ws.sendMessage();
-	$('#chatCtnt').val('')
-});
-
-var ws = new WebSocket("ws://localhost:8080/echo");
-
-ws.onmessage = ws.onMessage;
-ws.onclose = ws.onClose;
-
-// 연결 되었을때
-ws.onopen = function() {
-	var i = 0;
-	i++
-	console.log('연결 성공a' + i)
-}
-
-// 1. 메시지 전송
-/*
-ws.onMessage = function(event) {
-	console.log(event.data+'\n')
-	console.log('1111111')
-}
-*/
-
-// 2.
-ws.sendMessage = function() {
-	console.log('sendMessage 실행')
-	ws.send($("#chatCtnt").val());
-	console.log('222222')
-	
-	
-}
-
-// 3. 서버로부터 메시지를 받았을 때
-ws.onmessage = function(event) {
-	console.log('3333333')
-	var data = event.data;
-	console.log('onMessage 실행' + data)
-	$("#chatViewId").append(data + "<br/>");
-	chatViewId.innerHTML = ''
-	if(isNewCmt){
-    	  document.getElementById('chatViewId').scrollTop = document.getElementById('chatViewId').scrollHeight;
-    }
-	ajaxSelChat()
-}	
-
-
-
-// 서버와 연결을 끊었을 때
-ws.onClose = function(evt) {
-	$("#chatViewId").append("연결 끊김");
-}
-ajaxSelChat()
 
 
 
@@ -242,7 +181,66 @@ $('.chatCloseBtn').click(function() {
 
 
 
-// 챗 입력
+
+
+//////////////////////
+$("#sendIcon").click(function() {
+	ws.sendMessage();
+	$('#chatCtnt').val('')
+});
+
+var ws = new WebSocket("ws://localhost:8080/echo");
+
+ws.onmessage = ws.onMessage;
+ws.onclose = ws.onClose;
+//chatViewId.innerHTML = ''
+
+// 연결 되었을때
+ws.onopen = function() {
+	var i = 0;
+	i++
+	console.log('연결 성공a' + i)
+}
+
+// 1. 메시지 전송
+/*
+ws.onMessage = function(event) {
+	console.log(event.data+'\n')
+	console.log('1111111')
+}
+*/
+
+// 2.
+ws.sendMessage = function() {
+	ws.send($("#chatCtnt").val());
+	console.log('222222')
+	
+	
+}
+
+// 3. 서버로부터 메시지를 받았을 때
+ws.onmessage = function(event) {
+	console.log('3333333')
+	var data = event.data;
+	$("#chatViewId").append(data + "<br/>");
+	chatViewId.innerHTML = ''
+	if(isNewCmt){
+    	  document.getElementById('chatViewId').scrollTop = document.getElementById('chatViewId').scrollHeight;
+    }
+	ajaxSelChat()
+}	
+
+ajaxSelChat() // 기본창에서 챗 뿌리기
+
+
+
+// 서버와 연결을 끊었을 때
+ws.onClose = function(evt) {
+	$("#chatViewId").append("연결 끊김");
+}
+
+
+//챗 입력
 function chatSend() {
 	isNewCmt = true;
 	
@@ -274,6 +272,7 @@ function chatSend() {
 		if(res.data == 1) {
 			
 			chatFrm.chatCtnt.value = ''
+			chatFrm.chatCtnt.focus()
 			//ajaxSelChat()
 			
 			
@@ -313,7 +312,6 @@ function chatAlert() {
 function makeChatList(arr) {
 	
 	if(arr.adminCode == '1') {	// 일반인
-		console.log('arr.adminCode : ' + arr.adminCode)
 		var userChat = document.createElement('div')
 		userChat.setAttribute('class', 'userChat')
 		userChat.append(arr.chatCtnt)
@@ -353,8 +351,6 @@ function makeChatList(arr) {
     }
 	
 }
-
-
 
 
 

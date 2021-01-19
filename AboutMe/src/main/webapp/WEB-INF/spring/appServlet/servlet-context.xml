@@ -45,10 +45,12 @@
 		<beans:property name="idleTimeout" value="3000" />
 		
 		<!-- 집에서 DB url 연결할때 serverTimezone 에러시 config.properties파일 안에 값 추가해주기 : &amp;serverTimezone=UTC -->
-		  
+		 
 		<beans:property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/aboutme?characterEncoding=UTF-8&amp;serverTimezone=UTC "/>
 		<beans:property name="username" value="root" />
 		<beans:property name="password" value="orcl" />
+		
+		
 		
 		
 		
@@ -99,7 +101,7 @@
 	<beans:bean id="echoHandler" class="com.jy.aboutme.swp.EchoHandler" />
 	
 	<websocket:handlers>
-		<websocket:mapping handler="echoHandler" path="/echo" />
+		<websocket:mapping handler="echoHandler" path="echo" />
 		<websocket:handshake-interceptors>
 			<beans:bean
 				class="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor">
