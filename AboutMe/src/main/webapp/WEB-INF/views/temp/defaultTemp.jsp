@@ -95,12 +95,12 @@
     
     <div class="footerDiv">
     
-    	<h1>웹소켓 테스트</h1>
 		<!-- socket 테스트 -->
+		<!--  
 		<input type="text" id="message" />
 		<input type="button" id="sendBtnf" value="submit"/>
 		<div id="messageArea"></div>
-		
+		-->
 		
     </div>
     
@@ -108,239 +108,261 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
 <script type="text/javascript">
-
-
-	// websocket Test///////
-	
-	//////////////////////
-	$("#sendBtnf").click(function() {
-		ws.sendMessage();
-		$('#message').val('')
-	});
-
-	var ws = new WebSocket("ws://localhost:8080/echo");
-	
-	ws.onmessage = ws.onMessage;
-	ws.onclose = ws.onClose;
-	
-	// 연결 되었을때
-	ws.onopen = function() {
-		console.log('연결 성공')
-	}
-	
-	// 메시지 전송
-	ws.onmessage = function(event) {
-		console.log(event.data+'\n')
-	}
-	
-	
-	
-	ws.sendMessage = function() {
-		console.log('sendMessage 실행')
-		ws.send($("#message").val());
-	}
-	
-	// 서버로부터 메시지를 받았을 때
-	ws.onmessage = function(event) {
-		console.log('msgㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ')
-		var data = event.data;
-		console.log('onMessage 실행' + data)
-		$("#messageArea").append(data + "<br/>");
-	}
-	
-	
-	
-	// 서버와 연결을 끊었을 때
-	ws.onClose = function(evt) {
-		
-		$("#messageArea").append("연결 끊김");
-	}
-	
-	
-	
-	////////
 	
 	
 
-	
-	var isNewCmt = false;	// 채팅 입력시 스크롤바 제일 하단, 마지막 글을 보여줌
-	
-	var chatValue = `${chatChk}`
-	console.log('챗 값 : ' + chatValue)
-	
-	function chatChk() {	// 채팅창 session 활용하여 지속적으로 on / off
-		var chatChk = chatTestFrm.chatChk.value
-		axios.post('/chatChk',{
-			chatChk : chatChk
-		})
-	}
-	
-    // 첫시작시 cahtValue == '' 이거임 화면띄우기 
-    // 그이후 1, 0 으로 지속적으로 on / off 
-	if(chatValue == '' || chatValue == 1) {
-		$('.chatCloseBtn').show();
-	    $('.chatView').show();
-	    $('.chatIns').show();
-	    $('.ourSite').show();
-	    $('#messageIcon').hide();
-	    
-	} else {
-		$('.chatCloseBtn').hide();
-	    $('.chatView').hide();
-	    $('.chatIns').hide();
-	    $('.ourSite').hide();
-	    $('#messageIcon').show();
-	    isNewCmt = false;
-	}
-	
-    
-	// 메세지 아이콘 클릭시 채팅창 show
-	$('#messageIcon').click(function() {
-		$('.chatCloseBtn').show();
-	    $('.chatView').show();
-	    $('.chatIns').show();
-	    $('.ourSite').show();
-	    $('#messageIcon').hide();
-	    
-	    chatTestFrm.chatChk.value = 1
-	    chatChk()
-	})
-	
-	// X 버튼 클릭시 닫음
-	$('.chatCloseBtn').click(function() {
-		$('.chatCloseBtn').hide();
-	    $('.chatView').hide();
-	    $('.chatIns').hide();
-	    $('.ourSite').hide();
-	    $('#messageIcon').show();
-	    
-	    isNewCmt = false;
-	    
-	    chatTestFrm.chatChk.value = 0
-	    chatChk()
-	})
+var isNewCmt = true;	// 채팅 입력시 스크롤바 제일 하단, 마지막 글을 보여줌
+// websocket Test///////
+
+chatViewId.innerHTML = ''
+
+
+//////////////////////
+$("#sendIcon").click(function() {
+	ws.sendMessage();
+	$('#chatCtnt').val('')
+});
+
+var ws = new WebSocket("ws://localhost:8080/echo");
+
+ws.onmessage = ws.onMessage;
+ws.onclose = ws.onClose;
+
+// 연결 되었을때
+ws.onopen = function() {
+	var i = 0;
+	i++
+	console.log('연결 성공a' + i)
+}
+
+// 1. 메시지 전송
+/*
+ws.onMessage = function(event) {
+	console.log(event.data+'\n')
+	console.log('1111111')
+}
+*/
+
+// 2.
+ws.sendMessage = function() {
+	console.log('sendMessage 실행')
+	ws.send($("#chatCtnt").val());
+	console.log('222222')
 	
 	
-	
-    // 챗 입력
-    function chatSend() {
-		
-		isNewCmt = true;
-		
-		var chatCtnt = chatFrm.chatCtnt.value
-		var userNm = `${loginUser.nm}`
-		var adminCode = '';
-		
-		if(chatCtnt == '') {
-			alert('글자를 입력해 주세요')
-			return
-		}
-		
-		console.log(userNm)
-		
-		if(userNm == '관리자') { // 관리
-			adminCode = '2'
-				
-		} else { // 일반
-			adminCode = '1'
-		}
-		
-		axios.post('/chat/insChat',{
-			
-			chatCtnt : chatCtnt,
-			adminCode : adminCode
-			
-			
-		}).then(function(res) {
-			if(res.data == 1) {
-				
-				chatFrm.chatCtnt.value = ''
-				chatViewId.innerHTML = ''
-				ajaxSelChat()
-				
-			} else {
-				alert('챗 전송중 오류가 발생하였습니다. 잠시후 다시 시도해 주세요')
-			}
-		})
+}
+
+// 3. 서버로부터 메시지를 받았을 때
+ws.onmessage = function(event) {
+	console.log('3333333')
+	var data = event.data;
+	console.log('onMessage 실행' + data)
+	$("#chatViewId").append(data + "<br/>");
+	chatViewId.innerHTML = ''
+	if(isNewCmt){
+    	  document.getElementById('chatViewId').scrollTop = document.getElementById('chatViewId').scrollHeight;
     }
+	ajaxSelChat()
+}	
+
+
+
+// 서버와 연결을 끊었을 때
+ws.onClose = function(evt) {
+	$("#chatViewId").append("연결 끊김");
+}
+ajaxSelChat()
+
+
+
+////////
+
+
+
+
+
+
+var chatValue = `${chatChk}`
+console.log('챗 값 : ' + chatValue)
+
+function chatChk() {	// 채팅창 session 활용하여 지속적으로 on / off
+	var chatChk = chatTestFrm.chatChk.value
+	axios.post('/chatChk',{
+		chatChk : chatChk
+	})
+}
+
+// 첫시작시 cahtValue == '' 이거임 화면띄우기 
+// 그이후 1, 0 으로 지속적으로 on / off 
+if(chatValue == '' || chatValue == 1) {
+	$('.chatCloseBtn').show();
+    $('.chatView').show();
+    $('.chatIns').show();
+    $('.ourSite').show();
+    $('#messageIcon').hide();
+    
+} else {
+	$('.chatCloseBtn').hide();
+    $('.chatView').hide();
+    $('.chatIns').hide();
+    $('.ourSite').hide();
+    $('#messageIcon').show();
+    
+}
+
+
+// 메세지 아이콘 클릭시 채팅창 show
+$('#messageIcon').click(function() {
+	$('.chatCloseBtn').show();
+    $('.chatView').show();
+    $('.chatIns').show();
+    $('.ourSite').show();
+    $('#messageIcon').hide();
+    
+    chatTestFrm.chatChk.value = 1
+    chatChk()
+	if(isNewCmt){
+    	  document.getElementById('chatViewId').scrollTop = document.getElementById('chatViewId').scrollHeight;
+    }
+})
+
+// X 버튼 클릭시 닫음
+$('.chatCloseBtn').click(function() {
+	$('.chatCloseBtn').hide();
+    $('.chatView').hide();
+    $('.chatIns').hide();
+    $('.ourSite').hide();
+    $('#messageIcon').show();
+    
+  
+    
+    chatTestFrm.chatChk.value = 0
+    chatChk()
+})
+
+
+
+// 챗 입력
+function chatSend() {
+	isNewCmt = true;
 	
-	// 챗 뿌리는 메소드
-	function ajaxSelChat() {
-		
-		axios.get('/chat/selChat', {
-			
-		}).then(function(res) {
-		
-			refreshMenuChat(res.data)
-		})
+	var chatCtnt = chatFrm.chatCtnt.value
+	var userNm = `${loginUser.nm}`
+	var adminCode = '';
+	
+	if(chatCtnt == '') {
+		alert('글자를 입력해 주세요')
+		return
 	}
 	
-	function refreshMenuChat(arr) {
-		chatAlert()
-		
-		for(let i=0; i<arr.length; i++) {
-			makeChatList(arr[i])
-		}
+	console.log(userNm)
+	
+	if(userNm == '관리자') { // 관리
+		adminCode = '2'
+			
+	} else { // 일반
+		adminCode = '1'
 	}
 	
-	function chatAlert() {
-		var chatViewAlert = document.createElement('div')
-		chatViewAlert.setAttribute('class', 'chatViewAlert')
-		chatViewAlert.innerHTML = '익명성이 보장되는 공간입니다<br>관리자와 유저들끼리 자유로운 대화를 나누세요'
-		chatViewId.append(chatViewAlert)
-	}
-	
-	function makeChatList(arr) {
+	axios.post('/chat/insChat',{
 		
-		if(arr.adminCode == '1') {
+		chatCtnt : chatCtnt,
+		adminCode : adminCode
+		
+		
+	}).then(function(res) {
+		if(res.data == 1) {
 			
-			var userChat = document.createElement('div')
-			userChat.setAttribute('class', 'userChat')
-			userChat.append(arr.chatCtnt)
+			chatFrm.chatCtnt.value = ''
+			//ajaxSelChat()
 			
-			chatViewId.append(userChat)
-			
-			var userDate = document.createElement('div')
-			userDate.setAttribute('class', 'userDate')
-			userDate.append(arr.r_dt)
-			
-			chatViewId.append(userDate)
 			
 		} else {
-			var adminNm = document.createElement('div')
-			adminNm.setAttribute('class', 'adminNm')
-			adminNm.append('관리자')
-			
-			
-			var adminChat = document.createElement('div')
-			adminChat.setAttribute('class', 'adminChat')
-			
-			chatViewId.append(adminChat)
-			adminChat.append(adminNm)
-			adminChat.append(arr.chatCtnt)
-			
-			var adminDate = document.createElement('div')
-			adminDate.setAttribute('class', 'adminDate')
-			adminDate.append(arr.r_dt)
-			
-			chatViewId.append(adminDate)
+			alert('챗 전송중 오류가 발생하였습니다. 잠시후 다시 시도해 주세요')
 		}
-		
-		if(isNewCmt){
-	    	  document.getElementById('chatViewId').scrollTop = document.getElementById('chatViewId').scrollHeight;
-	    }
-		
-	}
-	
-	ajaxSelChat()
+	})
+}
 
+// 챗 뿌리는 메소드
+function ajaxSelChat() {
 	
+	axios.get('/chat/selChat', {
+		
+	}).then(function(res) {
 	
+		refreshMenuChat(res.data)
+		
+	})
+}
+
+function refreshMenuChat(arr) {
+	chatAlert()
 	
-	// 응원 메세지 남기는 곳
-	function wait() {
-		alert('서비스 준비중입니다.')
+	for(let i=0; i<arr.length; i++) {
+		makeChatList(arr[i])
 	}
+}
+
+function chatAlert() {
+	var chatViewAlert = document.createElement('div')
+	chatViewAlert.setAttribute('class', 'chatViewAlert')
+	chatViewAlert.innerHTML = '익명성이 보장되는 공간입니다<br>관리자와 유저들끼리 자유로운 대화를 나누세요'
+	chatViewId.append(chatViewAlert)
+}
+
+function makeChatList(arr) {
+	
+	if(arr.adminCode == '1') {	// 일반인
+		console.log('arr.adminCode : ' + arr.adminCode)
+		var userChat = document.createElement('div')
+		userChat.setAttribute('class', 'userChat')
+		userChat.append(arr.chatCtnt)
+		
+		chatViewId.append(userChat)
+		
+		var userDate = document.createElement('div')
+		userDate.setAttribute('class', 'userDate')
+		userDate.append(arr.r_dt)
+		
+		chatViewId.append(userDate)
+	
+		
+	} else {	 // 관리자
+		console.log('arr.adminCode : ' + arr.adminCode)
+		var adminNm = document.createElement('div')
+		adminNm.setAttribute('class', 'adminNm')
+		adminNm.append('관리자')
+		
+		
+		var adminChat = document.createElement('div')
+		adminChat.setAttribute('class', 'adminChat')
+		
+		chatViewId.append(adminChat)
+		adminChat.append(adminNm)
+		adminChat.append(arr.chatCtnt)
+		
+		var adminDate = document.createElement('div')
+		adminDate.setAttribute('class', 'adminDate')
+		adminDate.append(arr.r_dt)
+		
+		chatViewId.append(adminDate)
+	}
+	
+	if(isNewCmt){
+    	  document.getElementById('chatViewId').scrollTop = document.getElementById('chatViewId').scrollHeight;
+    }
+	
+}
+
+
+
+
+
+
+// 응원 메세지 남기는 곳
+function wait() {
+	alert('서비스 준비중입니다.')
+}
 </script>
 </body>
 </html>
