@@ -125,6 +125,12 @@
 		</dependency>
 	
 		<!-- Test -->
+		<!-- websocket -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-websocket</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
 		
 		<dependency>
 		  <groupId>org.thymeleaf</groupId>

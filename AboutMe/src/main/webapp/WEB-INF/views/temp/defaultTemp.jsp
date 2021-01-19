@@ -7,6 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Index</title>
+
+	
 <c:choose>
 	<c:when test="${cssResult != null}">
 		<link rel="stylesheet" href="/res/css/defaultTempDark.css">
@@ -92,13 +94,74 @@
    	<jsp:include page="/WEB-INF/views/${view}.jsp"></jsp:include>
     
     <div class="footerDiv">
+    
+    	<h1>웹소켓 테스트</h1>
+		<!-- socket 테스트 -->
+		<input type="text" id="message" />
+		<input type="button" id="sendBtnf" value="submit"/>
+		<div id="messageArea"></div>
+		
 		
     </div>
     
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
+<script type="text/javascript">
 
-<script>
+
+	// websocket Test///////
+	
+	//////////////////////
+	$("#sendBtnf").click(function() {
+		ws.sendMessage();
+		$('#message').val('')
+	});
+
+	var ws = new WebSocket("ws://localhost:8080/echo");
+	
+	ws.onmessage = ws.onMessage;
+	ws.onclose = ws.onClose;
+	
+	// 연결 되었을때
+	ws.onopen = function() {
+		console.log('연결 성공')
+	}
+	
+	// 메시지 전송
+	ws.onmessage = function(event) {
+		console.log(event.data+'\n')
+	}
+	
+	
+	
+	ws.sendMessage = function() {
+		console.log('sendMessage 실행')
+		ws.send($("#message").val());
+	}
+	
+	// 서버로부터 메시지를 받았을 때
+	ws.onmessage = function(event) {
+		console.log('msgㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ')
+		var data = event.data;
+		console.log('onMessage 실행' + data)
+		$("#messageArea").append(data + "<br/>");
+	}
+	
+	
+	
+	// 서버와 연결을 끊었을 때
+	ws.onClose = function(evt) {
+		
+		$("#messageArea").append("연결 끊김");
+	}
+	
+	
+	
+	////////
+	
+	
+
 	
 	var isNewCmt = false;	// 채팅 입력시 스크롤바 제일 하단, 마지막 글을 보여줌
 	
