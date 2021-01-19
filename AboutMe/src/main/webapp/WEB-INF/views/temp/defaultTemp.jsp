@@ -110,19 +110,8 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script type="text/javascript">
 var isNewCmt = true;	// 채팅 입력시 스크롤바 제일 하단, 마지막 글을 보여줌
-// websocket Test///////
-
-
-
-////////
-
-
-
-
-
 
 var chatValue = `${chatChk}`
-console.log('챗 값 : ' + chatValue)
 
 function chatChk() {	// 채팅창 session 활용하여 지속적으로 on / off
 	var chatChk = chatTestFrm.chatChk.value
