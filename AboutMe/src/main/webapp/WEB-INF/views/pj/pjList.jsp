@@ -29,37 +29,38 @@
         <br><br><br><br><br>
         <!-- 개인 -->
         <h1 id="pjH1">개인 프로젝트</h1>
-        <div class="pjList">
-            <div class="imgItem">
-                <img class="logoImg" src="/res/img/HiBaby.jpg" alt="">                
-            </div>
-            <ul class="pjUl">
-                <li class="pjLi">프로젝트 명 : HiBaby (2020.11.21 ~ ing)</li>
-                <li class="pjLi">개발 도구 : MySQL, Spring Tool Suite, Apache Tomcat9, Eclips IDE</li>
-                <li class="pjLi">프로젝트 주제 : <br>
-                    아동을 대상으로 공부기능, 커뮤니티, 웹소켓 채팅을 활용한 프로그램
-                </li>
-                <li class="pjLi">담당 분야 : Front-End, Back-End</li>
-            </ul>
-        </div>
-        <button id="pjBtn" onclick="hibabyTag()">상세 내용 보기</button>
-        
-        <br><br><br><br>
-
+                
         <div class="pjList">
             <div class="imgItem">
                 <img id="MainPng" class="logoImg" src="/res/img/Main.png" alt="">                
             </div>
             <ul class="pjUl">
-                <li class="pjLi">프로젝트 명 : AboutMe (2020.12.13 ~ ing)</li>
+                <li class="pjLi">프로젝트 명 : AboutMe (2020.12.13 ~ 2021.1.10)</li>
                 <li class="pjLi">개발 도구 : MySQL, Spring Tool Suite, Apache Tomcat9, Eclips IDE</li>
                 <li class="pjLi">프로젝트 주제 : <br>
-                    나를 소개하는 이력서 사이트
+                    나의 소개와 동시에 일반인과 관리자의 실시간 채팅 및 접근가능 권한, 커뮤니티, 앞으로 해야될 목록을 기록하는 사이트
                 </li>
                 <li class="pjLi">담당 분야 : Front-End, Back-End</li>
             </ul>
         </div>
         <button id="pjBtn" onclick="aboutMeTag()">상세 내용 보기</button>
+        
+        <br><br><br><br>
+        
+        <div class="pjList">
+            <div class="imgItem">
+                <img class="logoImg" src="/res/img/HiBaby.jpg" alt="">                
+            </div>
+            <ul class="pjUl">
+                <li class="pjLi">프로젝트 명 : HiBaby (2020.11.21 ~ 2021.1.29)</li>
+                <li class="pjLi">개발 도구 : MySQL, Spring Tool Suite, Apache Tomcat9, Eclips IDE</li>
+                <li class="pjLi">프로젝트 주제 : <br>
+                    아동을 대상으로 공부기능, 커뮤니티, 실시간 채팅, 포인트환급, 미니게임등을 활용한 프로그램
+                </li>
+                <li class="pjLi">담당 분야 : Front-End, Back-End</li>
+            </ul>
+        </div>
+        <button id="pjBtn" onclick="hibabyTag()">상세 내용 보기</button>
 
         <div class="space">
 

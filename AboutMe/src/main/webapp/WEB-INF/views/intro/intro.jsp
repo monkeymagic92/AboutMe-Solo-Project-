@@ -45,7 +45,7 @@
                     <video class="introV" src="/res/av/theRest/한타연습.mp4" controls></video>
                     <video class="introV" src="/res/av/theRest/영타연습.mp4" controls></video>
                 </div>
-                매일 타자연습도 하며<br><br><br><br><br>
+                조금이라도 보탬이되고자 매일 타자연습을 하며<br><br><br><br><br>
                 
                 
                <img class="infoImg" src="/res/av/theRest/지식인1.png" alt=""><br>
@@ -53,7 +53,7 @@
                <img class="infoImg" src="/res/av/theRest/지식인3.png" alt=""><br>
                <img class="infoImg" src="/res/av/theRest/지식인4.png" alt=""><br><br>
                궁금한건 못참는 성격이여서 모르는것들은 바로 질문하고<br>
-               그러다 갓구글을 알고난후 폭풍검색을 하고..<br><br>
+               그러다 구글을 알고난후 폭풍검색을 하고..<br><br>
 
                 <dis class="kakaoImg1">
                     <img class="kimg" src="/res/av/theRest/카톡1.png" alt=""><br>
@@ -80,7 +80,7 @@
 
                 그런결과 저는<br><br><br>
                 <img class="infoImg" src="/res/av/theRest/출석우수상.jpg" alt=""><br>
-                출석우수상을 받고<br><br>
+                국비 수료와 신입으로서 성실함을 보여드리기 위해 출결 우수상장을 수여받고 <br><br>
                 <img class="infoImg" src="/res/av/theRest/오키질문.png" alt=""><br>
                 <img class="infoImg" src="/res/av/theRest/오키댓글.png" alt=""><br>
                 <img class="infoImg" src="/res/av/theRest/오키댓글2.png" alt=""><br>
@@ -90,7 +90,7 @@
                 9개월전 독취사에 작성했던 글에 당당하게 답변달고 왔습니다<br><br><br>
                 
                 처음에 비해 저의 스토리를 듣고난후 지금은 어떠신가요<br>
-                이제부터 시작이고 한참 깨질각오로 뛰어들었습니다<br>
+                이제부터 시작이고 한참 배울각오로 뛰어들었습니다<br>
                 하다보니 재미를 느꼈고 이 짧은 기간동안 '하면 된다' 라는 긍정의 힘을 배웠습니다<br>
 
                 지금 이 마음가짐 그대로 제인생의 후반전은 승리로 이끌어갈수 있게 필드 위를 뛰어다니겠습니다<br><br>
