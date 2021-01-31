@@ -2,6 +2,8 @@ package com.jy.aboutme.chat;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +24,11 @@ public class ChatController {
 	
 
 	@RequestMapping(value="/insChat", method=RequestMethod.POST)
-	public @ResponseBody String cmtReg(@RequestBody ChatPARAM param) {
+	public @ResponseBody String cmtReg(@RequestBody ChatPARAM param, HttpServletRequest request) {
+
+		String scriptFilter = scriptFilter(param.getChatCtnt());
+		param.setChatCtnt(scriptFilter);
+		System.out.println("paramGet값 : " + param.getChatCtnt());
 		
 		int result = service.insChat(param);
 		return String.valueOf(result); 
@@ -34,6 +40,23 @@ public class ChatController {
 	private @ResponseBody List<ChatVO> selCmt(Model model, ChatPARAM param){
 		
 		return service.selChat();
+	}
+	
+	
+	// 스크립트 필터
+	private String scriptFilter(final String ctnt) {
+		
+		String[] filters = {"<script>", "</script>"};
+		String[] filterReplaces = {"&lt;script&gt;", "&lt;/script&gt;"};
+		
+		String result = ctnt.toLowerCase();
+		System.out.println("result 값 : " + result);
+		
+		for(int i=0; i<filters.length; i++) {
+			
+			result = result.replace(filters[i], filterReplaces[i]);
+		}
+		return result;
 	}
 	
 }

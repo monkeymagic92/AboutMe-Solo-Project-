@@ -135,8 +135,7 @@ if(chatValue == '' || chatValue == 1) {
     $('.chatIns').hide();
     $('.ourSite').hide();
     $('#messageIcon').show();
-    
-}
+} 
 
 
 // 메세지 아이콘 클릭시 채팅창 show
@@ -162,17 +161,12 @@ $('.chatCloseBtn').click(function() {
     $('.ourSite').hide();
     $('#messageIcon').show();
     
-  
-    
     chatTestFrm.chatChk.value = 0
     chatChk()
 })
 
 
-
-
-
-//////////////////////
+//
 $("#sendIcon").click(function() {
 	ws.sendMessage();
 	$('#chatCtnt').val('')

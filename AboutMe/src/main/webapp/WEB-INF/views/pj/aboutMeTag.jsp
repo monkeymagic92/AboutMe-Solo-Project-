@@ -53,9 +53,11 @@
             <div class="titleDiv">
                 <h2 id="infoH1">2. 만남의 광장</h2>
                 <ul class="infoUl">
-                    <li class="infoLi">ajax통신을 활용하여 익명성 대화를 할수 있는 공간</li>
+                    <li class="infoLi">웹소켓 통신을 활용하여 관리자와 일반유저들 간에 자유로운 채팅방식</li>
                     <br>
                     <li class="infoLi">관리자와 일반유저끼리 좌우측 구분지어 대화</li>
+                    <br>
+                    <li class="infoLi">서버 session을 활용하여 채팅창을 닫았을시 다른페이지를 가도 닫힘으로 유지</li>
                 </ul>
             </div>
         </div>
