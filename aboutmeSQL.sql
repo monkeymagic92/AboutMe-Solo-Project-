@@ -7,7 +7,7 @@ CREATE TABLE t_user(
 );
 SELECT * FROM t_user;
 
-USE aboutme;
+
 
 
 CREATE TABLE t_board(

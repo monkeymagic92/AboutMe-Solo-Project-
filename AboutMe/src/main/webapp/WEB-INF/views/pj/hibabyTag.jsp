@@ -70,13 +70,56 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/HiBaby/boardAll.mp4" controls></video>
+            <video src="/res/av/HiBaby/fr.mp4" controls></video>
             <div class="titleDiv">
-                <h1 id="infoH1">3. 게시판</h1>
+                <h1 id="infoH1">3. 친구 추가</h1>
                 <ul class="infoUl">
-                    <li class="infoLi">페이징과 검색, 다중이미지 등록, 게시판CRUD</li>
+                    <li class="infoLi">유저 검색에서 원하는 친구에게 친구요청을 함</li>
                     <br>
-                    <li class="infoLi">Ajax통신을 활용한 댓글기능과 조회수 기능</li>
+                    <li class="infoLi">친구추가 요청 상태일경우 상대방의 수락이 있어야하며 이미 등록된친구는 중복친구추가 방지</li>
+                    <br>
+                    <li class="infoLi">나자신은 친구추가, 대화하기를 할수 없음</li>
+                    <br>
+                </ul>
+            </div>
+        </div>
+        <br><br>
+        <div class="movieInfo">
+            <video src="/res/av/HiBaby/HiChat.mp4" controls></video>
+            <div class="titleDiv">
+                <h1 id="infoH1">4. 1:1 채팅</h1>
+                <ul class="infoUl">
+                    <li class="infoLi">웹소켓을 활용하여 친구추가한 유저끼리 1:1 채팅</li>
+                    <br>
+                    <li class="infoLi">채팅내용은 DB에 저장되어 해당 유저와의 대화기록이 남음</li>
+                    <br>
+                    <li class="infoLi">나는 채팅창 우측 / 상대방은 좌측으로 카카오톡 채팅과 유사하게 화면 구성</li>
+                </ul>
+            </div>
+        </div>
+        <br><br>
+        <div class="movieInfo">
+            <video src="/res/av/HiBaby/study2.mp4" controls></video>
+            <div class="titleDiv">
+                <h1 id="infoH1">5. 공부 기능</h1>
+                <ul class="infoUl">
+                    <li class="infoLi">1.수학 : 난이도별로 숫자범위가 틀려지며 문제를 실행할때마다 난수값이 지정됨</li>
+                    <br>
+                    <li class="infoLi">2.영어 : 난이도별로 문제가 틀려지며, 문제가 중복되지않게 랜덤하게 10문제가 출제됨</li>
+                    <br>
+                    <li class="infoLi">난이도별로 한문제당 point획득량이 다르며, 정답확인시 오답과 문제풀이시간이 나타남</li>
+                </ul>
+            </div>
+        </div>
+        <br><br>
+        <div class="movieInfo">
+            <video src="/res/av/HiBaby/study.mp4" controls></video>
+            <div class="titleDiv">
+                <h1 id="infoH1">6. 게시판</h1>
+                <ul class="infoUl">
+                    <li class="infoLi"></li>
+                    <br>
+                    <li class="infoLi">댓글은 ajax통신을 활용하여 새로고침 없이 게시글내용의 데이터를 중복되어 뿌리지 않음</li>
                     <br>
                     <li class="infoLi">XSS 공격을 대비해 욕필터링과 script필터링을 활용하여 건전한 커뮤니티 유지</li>
                 </ul>
@@ -86,21 +129,7 @@
         <div class="movieInfo">
             <video src="/res/av/HiBaby/study.mp4" controls></video>
             <div class="titleDiv">
-                <h1 id="infoH1">4. 공부하기</h1>
-                <ul class="infoUl">
-                    <li class="infoLi">난이도선택이 가능하며 난이도별로 포인트 적립도가 다름</li>
-                    <br>
-                    <li class="infoLi">포인트보단 공부가 우선이기에 어떤문제가 틀렸는지, 몇초만에 문제를 풀었는지 에대한 정보가 나옴</li>
-                    <br>
-                    <li class="infoLi">그외 총누적포인트에 따른 계급기능, 랭킹 기능 도입중(2020.12.16 아직 미완성)</li>
-                </ul>
-            </div>
-        </div>
-        <br><br>
-        <div class="movieInfo">
-            <video src="/res/av/HiBaby/study.mp4" controls></video>
-            <div class="titleDiv">
-                <h1 id="infoH1">5. 인터셉터 활용으로 비로그인상태 거르기</h1>
+                <h1 id="infoH1">7. 프로그램 기능</h1>
                 <ul class="infoUl">
                     <li class="infoLi"></li>
                     <br>
@@ -110,6 +139,7 @@
                 </ul>
             </div>
         </div>
+        
         
         <div id="end">
             여기까지 읽어주셔서 감사합니다.

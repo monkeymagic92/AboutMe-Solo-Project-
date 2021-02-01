@@ -31,8 +31,7 @@
             <p class="infoP">
                 저의 개인프로젝트 와 팀프로젝트를 한번에 쉽게 볼수있게 나타내었으며 그외<br>
                	저의 프로젝트 및 학습한 내용들을 기록하기 위한 사이트 입니다.<br>
-               	2020.12.14 날짜로 사이트를 제작이 시작되었으며 추후 제가 실력이 상승함에 따라 계속 사이트를<br>
-               	업데이트 할 예정입니다.
+               	2020.12.14 날짜로 사이트 제작이 시작되었으며 추후 계속 사이트를 업데이트 할 예정입니다.<br>
             </p>
         </div>
 
@@ -49,15 +48,15 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/aboutMe/chat.mp4" controls></video>
+            <video src="/res/av/aboutMe/aboutMeNewChat.mp4" controls></video>
             <div class="titleDiv">
                 <h2 id="infoH1">2. 만남의 광장</h2>
                 <ul class="infoUl">
-                    <li class="infoLi">웹소켓 통신을 활용하여 관리자와 일반유저들 간에 자유로운 채팅방식</li>
+                    <li class="infoLi">웹소켓 통신을 활용하여 관리자와 일반유저들 간에 익명성 채팅</li>
                     <br>
-                    <li class="infoLi">관리자와 일반유저끼리 좌우측 구분지어 대화</li>
+                    <li class="infoLi">관리자와 일반유저간에 좌우측 구분지어 대화</li>
                     <br>
-                    <li class="infoLi">서버 session을 활용하여 채팅창을 닫았을시 다른페이지를 가도 닫힘으로 유지</li>
+                    <li class="infoLi">Http session을 활용하여 채팅창을 닫았을시 페이지 이동시에도 닫힘 유지</li>
                 </ul>
             </div>
         </div>
@@ -81,7 +80,7 @@
             <div class="titleDiv">
                 <h2 id="infoH1">4. 개발일지</h2>
                 <ul class="infoUl">
-                    <li class="infoLi">한 블럭당 총 글은 5개 등록 가능</li>
+                    <li class="infoLi">한 블럭당 글은 5개까지 등록 가능</li>
                     <br>
                     <li class="infoLi">앞으로 해야할 일을 등록하며, 마무리 지었을시 수정을 통해 완료를 함으로 써<br>
                         해야할 일, 완료된 일을 구분지어 통일함

@@ -30,6 +30,4 @@ public class ChatVO {
 	public void setR_dt(String r_dt) {
 		this.r_dt = r_dt;
 	}
-	
-	
 }
