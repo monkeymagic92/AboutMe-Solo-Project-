@@ -26,9 +26,6 @@ public class ChatController {
 	@RequestMapping(value="/insChat", method=RequestMethod.POST)
 	public @ResponseBody String cmtReg(@RequestBody ChatPARAM param, HttpServletRequest request) {
 
-		String scriptFilter = scriptFilter(param.getChatCtnt());
-		param.setChatCtnt(scriptFilter);
-		System.out.println("paramGet값 : " + param.getChatCtnt());
 		
 		int result = service.insChat(param);
 		return String.valueOf(result); 
@@ -43,20 +40,5 @@ public class ChatController {
 	}
 	
 	
-	// 스크립트 필터
-	private String scriptFilter(final String ctnt) {
-		
-		String[] filters = {"<script>", "</script>"};
-		String[] filterReplaces = {"&lt;script&gt;", "&lt;/script&gt;"};
-		
-		String result = ctnt.toLowerCase();
-		System.out.println("result 값 : " + result);
-		
-		for(int i=0; i<filters.length; i++) {
-			
-			result = result.replace(filters[i], filterReplaces[i]);
-		}
-		return result;
-	}
 	
 }

@@ -89,11 +89,11 @@
             <div class="titleDiv">
                 <h1 id="infoH1">4. 1:1 채팅</h1>
                 <ul class="infoUl">
-                    <li class="infoLi">웹소켓을 활용하여 친구추가한 유저끼리 1:1 채팅</li>
+                    <li class="infoLi">웹소켓을 활용하여 친구추가한 유저끼리 1:1 실시간 채팅</li>
                     <br>
                     <li class="infoLi">채팅내용은 DB에 저장되어 해당 유저와의 대화기록이 남음</li>
                     <br>
-                    <li class="infoLi">나는 채팅창 우측 / 상대방은 좌측으로 카카오톡 채팅과 유사하게 화면 구성</li>
+                    <li class="infoLi">나의 채팅창은 우측 / 상대방은 좌측으로 카카오톡 채팅과 유사한 화면 구성</li>
                 </ul>
             </div>
         </div>
@@ -103,11 +103,11 @@
             <div class="titleDiv">
                 <h1 id="infoH1">5. 공부 기능</h1>
                 <ul class="infoUl">
-                    <li class="infoLi">1.수학 : 난이도별로 숫자범위가 틀려지며 문제를 실행할때마다 난수값이 지정됨</li>
+                    <li class="infoLi">1.수학 : 난이도별로 숫자범위가 틀려지며 문제를 실행할때마다 난수값이 변경됨</li>
                     <br>
                     <li class="infoLi">2.영어 : 난이도별로 문제가 틀려지며, 문제가 중복되지않게 랜덤하게 10문제가 출제됨</li>
                     <br>
-                    <li class="infoLi">난이도별로 한문제당 point획득량이 다르며, 정답확인시 오답과 문제풀이시간이 나타남</li>
+                    <li class="infoLi">난이도별로 한문제당 point획득량이 다르며, 정답확인시 오답과 문제풀이시간을 나타냄</li>
                 </ul>
             </div>
         </div>
@@ -121,7 +121,7 @@
                     <br>
                     <li class="infoLi">댓글은 ajax통신을 활용하여 새로고침 없이 게시글내용의 데이터를 중복되어 뿌리지 않음</li>
                     <br>
-                    <li class="infoLi">XSS 공격을 대비해 욕필터링과 script필터링을 활용하여 건전한 커뮤니티 유지</li>
+                    <li class="infoLi">XSS 공격을 대비하여 욕필터링과 script필터링을 활용하여 건전한 커뮤니티 유지</li>
                 </ul>
             </div>
         </div>
