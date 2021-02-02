@@ -43,6 +43,8 @@
                     <li class="infoLi">다른 페이지와 다르게 어두운 css 조성</li>
                     <br>
                     <li class="infoLi">개발자 소개, 이력서, 자기소개를 한눈에 볼수있는 페이지</li>
+                    <br>
+                    <li class="infoLi">개발자 소개 페이지에서는 채팅창을 띄우지 않음</li>
                 </ul>
             </div>
         </div>
@@ -56,7 +58,7 @@
                     <br>
                     <li class="infoLi">관리자와 일반유저간에 좌우측 구분지어 대화</li>
                     <br>
-                    <li class="infoLi">Http session을 활용하여 채팅창을 닫았을시 페이지 이동시에도 닫힘 유지</li>
+                    <li class="infoLi">HttpSession을 활용하여 채팅창을 닫았을시 페이지 이동시에도 닫힘 유지</li>
                 </ul>
             </div>
         </div>
@@ -71,6 +73,8 @@
                     <li class="infoLi">비로그인 사이트이므로 비밀번호를 활용하여 모든 권한을 부여</li>
                     <br>
                     <li class="infoLi">일반유저는 비밀번호를 입력하여 접근이 가능하지만, 관리자는 모든 게시글 접근가능</li>
+                    <br>
+                    <li class="infoLi">XSS 공격을 대비하여 lucy-xss-servlet 라이브러리를 사용</li>
                 </ul>
             </div>
         </div>
