@@ -43,7 +43,7 @@
 
     <div class="headerBottomDiv">
     	<c:if test="${cssResult == null}">
-    		<audio class="audioMp" controls="controls" loop src="/res/sound/음악테스트01.mp3">
+    		<audio class="audioMp" controls="controls" src="/res/sound/음악테스트01.mp3">
            		<source src="sound/음악테스트01.mp3" type="audio/mp3">
         	</audio>
     	</c:if>

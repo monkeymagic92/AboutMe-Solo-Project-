@@ -7,7 +7,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/res/css/defaultTemp.css">
+<%-- summernote 때문에 css 겹치는 관계로 intro와 reg 페이지때문에 나눔
+	 reg 페이지가 summernote있기에 dark 테마 적용시킬수 없음
+ --%>
+<c:choose>
+	<c:when test="${cssResult != null}">
+		<link rel="stylesheet" href="/res/css/defaultTempDark.css">
+	</c:when>
+	<c:when test="${cssResult == null}">
+		<link rel="stylesheet" href="/res/css/defaultTemp.css">
+	</c:when>
+</c:choose>
+
 </head>
 <body>
 	<!-- Header -->

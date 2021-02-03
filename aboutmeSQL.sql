@@ -13,7 +13,7 @@ SELECT * FROM t_user;
 CREATE TABLE t_board(
 	i_board INT UNSIGNED AUTO_INCREMENT,
 	nm VARCHAR(10),
-	title VARCHAR(150) NOT NULL,
+	title VARCHAR(50) NOT NULL,
 	ctnt LONGTEXT NOT NULL,
 	r_dt DATETIME DEFAULT NOW(),
 	pw VARCHAR(20),
@@ -108,14 +108,6 @@ CREATE TABLE t_devel(
 );
 SELECT * FROM t_devel;
 DROP TABLE t_devel;
-
-SELECT COUNT(*) FROM t_devel;
-
-DELETE FROM t_devel
-WHERE i_devel = 20;
-
-
-
 
 
 

@@ -51,7 +51,7 @@ public class IntroController {
 		
 		model.addAttribute("cssResult", "1");
 		model.addAttribute("view", ViewRef.INTRO);
-		return ViewRef.DEFAULT_TEMP;
+		return ViewRef.DEFAULT_NOCHAT;
 	}
 	
 	

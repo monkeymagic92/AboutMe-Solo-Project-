@@ -223,4 +223,22 @@ body {
 #TopBtn.on:hover .icon-TopBtn{
     color: white;
     font-size: 60px;
-}    
+}
+
+.musicBox {
+    position: fixed;
+    top: 760px;
+    left: 1755px;
+    width: 145px;
+    transition: 0.5s;
+}
+
+.musicBox:hover {
+    position: fixed;
+    top: 760px;
+    left: 1575px;
+    width: 320px;
+    transition: 0.6s;
+    cursor: pointer;
+}
+    

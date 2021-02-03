@@ -224,3 +224,21 @@ body {
     color: white;
     font-size: 60px;
 } 
+
+
+.musicBox {
+    position: fixed;
+    top: 890px;
+    left: 1940px;
+    width: 145px;
+    transition: 0.5s;
+}
+
+.musicBox:hover {
+    position: fixed;
+    top: 890px;
+    left: 1780px;
+    width: 320px;
+    transition: 0.6s;
+    cursor: pointer;
+}

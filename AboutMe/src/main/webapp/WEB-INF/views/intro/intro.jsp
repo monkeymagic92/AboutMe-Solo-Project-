@@ -209,11 +209,14 @@
             </div>
         </div>
         <button id="TopBtn"><span class="iconify icon-TopBtn" data-inline="false" data-icon="uim:angle-double-up"></span><span class="TOP">TOP</span></button>
+        <audio id="myAudio" class="musicBox" src="/res/av/aboutMe/음원2.mp3" autoplay controls></audio>
    </div>
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 <script>
+
+document.getElementById("myAudio").volume = 0.2;
 
 let Top = document.querySelector('#TopBtn')
 let ib1 = document.querySelector('#ib1')

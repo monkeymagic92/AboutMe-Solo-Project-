@@ -111,25 +111,13 @@
                 </ul>
             </div>
         </div>
+        
         <br><br>
+        
         <div class="movieInfo">
             <video src="/res/av/HiBaby/study.mp4" controls></video>
             <div class="titleDiv">
-                <h1 id="infoH1">6. 게시판</h1>
-                <ul class="infoUl">
-                    <li class="infoLi"></li>
-                    <br>
-                    <li class="infoLi">댓글은 ajax통신을 활용하여 새로고침 없이 게시글내용의 데이터를 중복되어 뿌리지 않음</li>
-                    <br>
-                    <li class="infoLi">XSS 공격을 대비하여 욕필터링과 script필터링을 활용하여 건전한 커뮤니티 유지</li>
-                </ul>
-            </div>
-        </div>
-        <br><br>
-        <div class="movieInfo">
-            <video src="/res/av/HiBaby/study.mp4" controls></video>
-            <div class="titleDiv">
-                <h1 id="infoH1">7. 프로그램 기능</h1>
+                <h1 id="infoH1">6. 프로그램 기능</h1>
                 <ul class="infoUl">
                     <li class="infoLi"></li>
                     <br>
