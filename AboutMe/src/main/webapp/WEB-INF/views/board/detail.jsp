@@ -19,14 +19,19 @@
                 <div id="userNm">${data.nm}</div>
                 <div id="date">${data.r_dt}</div>
                 <div class="btns">
+                
+                	<%-- 일반인이 접근할경우 --%>
                 	<c:if test="${loginUser.nm == null}">
                 		<button type="button" class="commonBtn" onclick="moveToRegScr(${data.i_board}, '${data.pw}')">수정</button>
                 		<button type="button" class="commonBtn" onclick="moveToDelScr(${data.i_board}, '${data.pw}')">삭제</button>
                 	</c:if>
+                	
+                	<%-- 관리자가 접근할경우 --%>
                 	<c:if test="${loginUser.nm != null}">
                 		<button type="button" class="commonBtn" onclick="moveToReg(${data.i_board})">수정</button>
                 		<button type="button" class="commonBtn" onclick="moveToDel(${data.i_board})">삭제</button>
                 	</c:if>
+                	
                 </div>
             </div>
 
@@ -404,12 +409,26 @@
 	
 	// 일반 수정삭제 (비번입력 O)
 	function moveToRegScr(i_board, pw) {
+		var moveToNm = `${loginUser.nm}`
+		
+		if(moveToNm != userNm.value) {
+			alert('관리자글은 수정할수 없습니다')
+			return
+		}
+		
 		scrFrm.i_board.value = i_board		
 		$('#myModalCer').show();
 		scrFrm.pw.focus()
     }
 
     function moveToDelScr(i_board, pw) {
+    	
+    	var moveToNm = `${loginUser.nm}`
+   		
+   		if(moveToNm != userNm.value) {
+   			alert('관리자글은 삭제할수 없습니다')
+   			return
+   		}
     	if(confirm('삭제 하시겠습니까 ?')) {
     		delFrm.i_board_del.value = i_board		
     		$('#delModal').show();
