@@ -85,7 +85,7 @@
         <div class="insCmtContainer">
             <form id="cmtFrm" onsubmit="return chk()">
                 <div>
-                    <input id="cmtIns" type="text" name="cmtNm" placeholder="닉네임">
+                    <input id="cmtIns" type="text" name="cmtNm" placeholder="닉네임" value="${loginUser.nm}">
                     <input id="cmtPwId" type="password" name="cmtPw" placeholder="비밀번호">
                 </div>
                 <div class="textZ">
@@ -409,13 +409,6 @@
 	
 	// 일반 수정삭제 (비번입력 O)
 	function moveToRegScr(i_board, pw) {
-		var moveToNm = `${loginUser.nm}`
-		
-		if(moveToNm != userNm.value) {
-			alert('관리자글은 수정할수 없습니다')
-			return
-		}
-		
 		scrFrm.i_board.value = i_board		
 		$('#myModalCer').show();
 		scrFrm.pw.focus()
@@ -423,12 +416,6 @@
 
     function moveToDelScr(i_board, pw) {
     	
-    	var moveToNm = `${loginUser.nm}`
-   		
-   		if(moveToNm != userNm.value) {
-   			alert('관리자글은 삭제할수 없습니다')
-   			return
-   		}
     	if(confirm('삭제 하시겠습니까 ?')) {
     		delFrm.i_board_del.value = i_board		
     		$('#delModal').show();

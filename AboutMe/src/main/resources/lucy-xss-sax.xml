@@ -2,6 +2,7 @@
 <config xmlns="http://www.nhncorp.com/lucy-xss"    >
     <elementRule>
         <element name="p"/>
+        
         <element name="a" />
         <element name="abbr"/>
         <element name="acronym"/>

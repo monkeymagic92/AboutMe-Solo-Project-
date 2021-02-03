@@ -64,7 +64,7 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/aboutMe/aboutMeBoard.mp4" controls></video>
+            <video src="/res/av/aboutMe/newBoard.mp4" controls></video>
             <div class="titleDiv">
                 <h2 id="infoH1">3. 게시글 CRUD</h2>
                 <ul class="infoUl">
