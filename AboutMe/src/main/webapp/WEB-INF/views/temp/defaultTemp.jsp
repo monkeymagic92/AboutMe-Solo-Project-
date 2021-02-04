@@ -43,8 +43,8 @@
 
     <div class="headerBottomDiv">
     	<c:if test="${cssResult == null}">
-    		<audio class="audioMp" controls="controls" src="/res/sound/음악테스트01.mp3">
-           		<source src="sound/음악테스트01.mp3" type="audio/mp3">
+    		<audio id="audioMp" class="audioMp" controls="controls" src="/res/av/aboutMe/음원1.mp3" autoplay>
+           		<source src="/res/av/aboutMe/음원1.mp3" type="audio/mp3">
         	</audio>
     	</c:if>
     	
@@ -109,6 +109,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script type="text/javascript">
+
+document.getElementById("audioMp").volume = 0.2;
+
 var isNewCmt = true;	// 채팅 입력시 스크롤바 제일 하단, 마지막 글을 보여줌
 
 var chatValue = `${chatChk}`

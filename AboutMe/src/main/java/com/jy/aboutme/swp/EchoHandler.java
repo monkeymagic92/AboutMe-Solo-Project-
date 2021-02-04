@@ -80,5 +80,5 @@ public class EchoHandler extends TextWebSocketHandler {
 			result = result.replace(filters[i], filterReplaces[i]);
 		}
 		return result;
-}
+	}
 }

@@ -88,6 +88,7 @@ body {
 }
 
 .kimg {
+	width: 445px;
     height: 820px;
     border-radius: 6px;
     margin-left: 5px;
@@ -96,10 +97,6 @@ body {
 .introSpace2 {
     height: 250px;
 }
-
-
-
-
 
 .resumeContainer {
     margin-top: 700px;
@@ -184,6 +181,7 @@ body {
     width: 90px; height: 90px; background: #FFFFFF;
     cursor: pointer;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
 }
 .TOP {
     position: absolute;
@@ -193,6 +191,7 @@ body {
     font-size: 20px;
     height: 20px;
     margin-bottom: 12px;
+    transition: 0.5s;
 } 
 #TopBtn.on:hover { 
     border-radius: 70%;
@@ -206,6 +205,7 @@ body {
     width: 90px; height: 90px; background: grey;
     cursor: pointer;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
 }
 #TopBtn.on:hover .TOP {
     position: absolute;
@@ -227,7 +227,7 @@ body {
 
 .musicBox {
     position: fixed;
-    top: 760px;
+    top: 785px;
     left: 1755px;
     width: 145px;
     transition: 0.5s;
@@ -235,7 +235,7 @@ body {
 
 .musicBox:hover {
     position: fixed;
-    top: 760px;
+    top: 785px;
     left: 1575px;
     width: 320px;
     transition: 0.6s;

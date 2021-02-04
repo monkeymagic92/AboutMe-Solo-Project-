@@ -242,3 +242,11 @@ body {
     transition: 0.6s;
     cursor: pointer;
 }
+
+.musicMsg {
+    position: fixed;
+    top: 840px;
+    left: 1920px;
+    width: 145px;
+    font-size: 1.2em;
+}

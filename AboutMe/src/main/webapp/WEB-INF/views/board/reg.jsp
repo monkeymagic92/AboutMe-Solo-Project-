@@ -100,9 +100,7 @@ function chk() {
 		frm.nm.focus()
 		return false;
 	}
-	
-	
-	
+		
 	if(userNm == '') {
 		if(frm.nm.value == '관리자') {
 			alert('작성자를 관리자로 입력할수 없습니다')
@@ -119,7 +117,7 @@ function chk() {
 		return false;
 	}
 	
-	if(frm.title.value.length > 49) {
+	if(frm.title.value.length > 198) {
 		alert('제목이 너무 깁니다')
 		frm.title.focus()
 		return false;
@@ -136,6 +134,14 @@ function chk() {
 		frm.pw.focus()
 		return false;
 	}
+	
+	if(frm.pw.value.length > 29) {
+		alert('비밀번호가 너무 깁니다')
+		frm.pw.focus()
+		return false;
+	} 
+	
+	
 }
 
 
