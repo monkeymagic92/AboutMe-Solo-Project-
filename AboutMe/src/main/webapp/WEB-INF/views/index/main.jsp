@@ -36,6 +36,12 @@
                 <h3 id="infoH3">　<a class="infoA" href="https://github.com/monkeymagic92" target="_blank">바로가기</a></h3>
                 <a href="https://github.com/monkeymagic92" target="_blank"><img class="infoImg" src="/res/img/github.png" alt=""></a>
             </div>
+            
+            <div class="infoImgDiv">
+                <h1 id="infoH1">개발자 <span id="spanGithub">tistory</span></h1>
+                <h3 id="infoH3">　<a class="infoA" href="https://monkeydvl.tistory.com/" target="_blank">바로가기</a></h3>
+                <a href="https://monkeydvl.tistory.com/" target="_blank"><img class="infoImg" src="/res/img/T.png" alt=""></a>
+            </div>
 
             <div class="infoImgDiv">
                 <h1 id="infoH1">팀 프로젝트　</h1>
