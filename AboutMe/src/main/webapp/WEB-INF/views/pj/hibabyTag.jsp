@@ -34,12 +34,11 @@
                 지금으로부터 약 8개월전 아무것도 모르던 시절 파이썬을 배울때 에디터창에서 적은 코드들을<br>
                 실제 다른컴퓨터로 접속시 일반 프로그램처럼 사용하는 방법이 궁금했던 적이 있었습니다 <a href="https://kin.naver.com/qna/detail.nhn?d1id=1&dirId=10402&docId=352284673" target="_blank">관련자료</a><br>
                 그때당시 공부관련 기능들을 다른사람들도 사용할수있게 만들고싶었던 저의 작은꿈을 실천할수있게 해준 프로젝트 입니다<br><br>
+                친구와 같이 1:1채팅을 통해 서로 의사소통을 하며<br>
                 6~8세 아이들을 대상으로 난이도별로 수학,영어 공부기능이 있으며 난이도가 높을수록 문제당 포인트적립률을 높게 주어<br>
                 추후 적립된 포인트를 캐시백 개념으로 부모님께 용돈을 받을수 있는 기능을 만들었습니다<br>
                 어릴때부터 기초적인 공부와 동시에 경제관념을 세우며 그외 계급기능, 랭킹기능을 넣음으로서 더 분발할수있게 하였고<br>
                 커뮤니티 게시판에서 서로간의 일상생활을 공유하며 아이들의 또다른 세상을 만들어주는 공간입니다<br><br>
-                
-                2020.12.18 기준으로 아직 미완성 프로젝트 입니다
                 <br><br>
             </p>
         </div>
@@ -115,15 +114,13 @@
         <br><br>
         
         <div class="movieInfo">
-            <video src="/res/av/HiBaby/study.mp4" controls></video>
+            <video src="/res/av/HiBaby/program.mp4" controls></video>
             <div class="titleDiv">
                 <h1 id="infoH1">6. 프로그램 기능</h1>
                 <ul class="infoUl">
-                    <li class="infoLi"></li>
+                    <li class="infoLi">생활속 작은 기능들을 모아 여러가지 심플한 기능을 다루는 페이지</li>
                     <br>
-                    <li class="infoLi"></li>
-                    <br>
-                    <li class="infoLi"></li>
+                    <li class="infoLi">1회성 프로그램 기능이므로 따로 DB에 값들이 저장되지 않음</li>
                 </ul>
             </div>
         </div>

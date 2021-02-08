@@ -89,12 +89,12 @@
 
     /* DDmarket 연결 */
     function moveToDDmarket() {
-        location.href="DDmarket"
+        location.href="/pj/ddmarketTag"
     }
 
     /* HiBaby 연결*/
     function moveToHiBaby() {
-        location.href="HiBaby"
+        location.href="/pj/hibabyTag"
     }
 
     function moveToIndex() {
