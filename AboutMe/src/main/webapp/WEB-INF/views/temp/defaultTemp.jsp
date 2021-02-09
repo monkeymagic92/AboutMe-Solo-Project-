@@ -111,6 +111,7 @@
 <script type="text/javascript">
 
 document.getElementById("audioMp").volume = 0.2;
+var ws = new WebSocket("ws://localhost:8080/echo");
 
 var isNewCmt = true;	// 채팅 입력시 스크롤바 제일 하단, 마지막 글을 보여줌
 
@@ -169,13 +170,13 @@ $('.chatCloseBtn').click(function() {
 })
 
 
+
+
 //
 $("#sendIcon").click(function() {
 	ws.sendMessage();
 	$('#chatCtnt').val('')
 });
-
-var ws = new WebSocket("ws://localhost:8080/echo");
 
 ws.onmessage = ws.onMessage;
 ws.onclose = ws.onClose;
@@ -199,14 +200,10 @@ ws.onMessage = function(event) {
 // 2.
 ws.sendMessage = function() {
 	ws.send($("#chatCtnt").val());
-	console.log('222222')
-	
-	
 }
 
 // 3. 서버로부터 메시지를 받았을 때
 ws.onmessage = function(event) {
-	console.log('3333333')
 	var data = event.data;
 	$("#chatViewId").append(data + "<br/>");
 	chatViewId.innerHTML = ''

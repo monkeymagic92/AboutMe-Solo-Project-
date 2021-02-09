@@ -88,6 +88,9 @@ CREATE TABLE t_chat(
 SELECT * FROM t_chat;
 DROP TABLE t_chat;
 
+DELETE FROM t_chat
+WHERE i_chat = 13;
+
 
 CREATE TABLE t_devel(
 	i_devel INT UNSIGNED AUTO_INCREMENT,
