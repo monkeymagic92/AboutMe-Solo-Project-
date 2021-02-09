@@ -26,5 +26,5 @@
 　   
     
 ## 3. DB ERD
-<img src="https://user-images.githubusercontent.com/65270811/107307894-f3bb2b80-6aca-11eb-9d86-0b702fae9bad.png" width="700" height="500">
+<img src="https://user-images.githubusercontent.com/65270811/107307894-f3bb2b80-6aca-11eb-9d86-0b702fae9bad.png" width="1000" height="550">
 
