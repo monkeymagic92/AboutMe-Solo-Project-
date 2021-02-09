@@ -26,3 +26,4 @@
 　   
     
 ## 3. DB ERD
+![AboutMe_20210209_34_33](https://user-images.githubusercontent.com/65270811/107307894-f3bb2b80-6aca-11eb-9d86-0b702fae9bad.png)
