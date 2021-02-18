@@ -10,6 +10,7 @@
 <body>
 	<!-- Index -->
     <div class="container">
+    	<!-- 
         <div class="indexSpeak">
             <p class="speak">
                 '노력은 배신하지 않는다'<br><br>
@@ -22,8 +23,9 @@
                 - 2020. 12. 14 -<br>
             </p>
         </div>
+        -->
        
-
+ 
         <div class="infoURLDiv">
             <div class="infoImgDiv">
                 <h1 id="infoH1">개발자 <span id="spanBlog">블로그</span></h1>

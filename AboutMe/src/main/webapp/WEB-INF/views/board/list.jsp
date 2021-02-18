@@ -113,8 +113,6 @@
         </div>
         
         
-        
-        
         <div id="myModalCer" class="modal">
 	 
 			<!-- Modal content -->
@@ -164,7 +162,7 @@
 		alert('${scrFalse}')
 	}
 	var userNm = `${loginUser.nm}`
-	console.log('유저값 : ' + userNm)
+	
 	
 	
 	// 관리자가 비밀 상세페이지 접근시

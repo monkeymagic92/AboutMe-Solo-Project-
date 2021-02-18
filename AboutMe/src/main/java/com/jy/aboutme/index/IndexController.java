@@ -38,7 +38,7 @@ public class IndexController {
 		String ipSession = request.getRemoteAddr();
 		param = (AdminPARAM)hs.getAttribute("loginUser");
 		hs.setAttribute("ipSession", ipSession);
-		
+
 		
 		if(param == null) {
 			System.out.println("null 실행");

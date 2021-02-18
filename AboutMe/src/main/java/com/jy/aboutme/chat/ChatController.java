@@ -26,6 +26,7 @@ public class ChatController {
 
 	@RequestMapping(value="/insChat", method=RequestMethod.POST)
 	public @ResponseBody String insChat(@RequestBody ChatPARAM param, HttpServletRequest request) {
+		
 		String filterCtnt = swearWordFilter(param.getChatCtnt().toLowerCase());
 		String filterCtnt2 = scriptFilter(filterCtnt);
 		param.setChatCtnt(filterCtnt2);
@@ -45,6 +46,7 @@ public class ChatController {
 	
 	//욕 필터
 	private String swearWordFilter(final String ctnt) {
+		
 		String[] filters = CommonUtils.filter();
 		String result = ctnt;
 		for(int i=0; i<filters.length; i++) {

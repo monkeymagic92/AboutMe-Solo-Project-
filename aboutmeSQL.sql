@@ -10,6 +10,7 @@ SELECT * FROM t_user;
 
 
 
+
 CREATE TABLE t_board(
 	i_board INT UNSIGNED AUTO_INCREMENT,
 	nm VARCHAR(10),
@@ -111,6 +112,58 @@ CREATE TABLE t_devel(
 );
 SELECT * FROM t_devel;
 DROP TABLE t_devel;
+
+
+
+
+
+
+
+
+
+-- 멤버 테이블
+CREATE TABLE t_member
+(
+	i_member INT UNSIGNED AUTO_INCREMENT,
+	nm VARCHAR(30),
+	age INT(3),
+	pay INT(10),
+	PRIMARY KEY(i_member)
+);
+SELECT * FROM t_member;
+
+
+CREATE TABLE t_hobby (
+	i_hobby INT UNSIGNED AUTO_INCREMENT,
+	i_member INT(3) UNSIGNED,
+	hobby1 INT(3),	
+	hobby2 INT(3),	
+	hobby3 INT(3),	
+	FOREIGN KEY(i_member) REFERENCES t_member(i_member),
+	PRIMARY KEY(i_hobby)
+);
+SELECT * FROM t_hobby;
+
+
+CREATE TABLE t_hobbyNm ( 
+	i_hobbyNm INT UNSIGNED AUTO_INCREMENT,
+	hobbyNm VARCHAR(30),
+	PRIMARY KEY(i_hobbyNm)
+);
+SELECT * FROM t_hobbynm;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

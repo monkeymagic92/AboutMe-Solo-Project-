@@ -31,6 +31,7 @@ public class BoardController {
 			 HttpServletRequest request,
 			 Model model, Pagination p) {
 		
+		System.out.println("searchResult 값 : " + param.getSearchResult());
 		
 		
 		if(param.getSearchResult() == 0) { // 전체 글
