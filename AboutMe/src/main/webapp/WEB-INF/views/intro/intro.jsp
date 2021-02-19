@@ -234,8 +234,7 @@ window.addEventListener('scroll', function(){
 Top.addEventListener('click', function(el){
     el.preventDefault()
     window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+        top: 0
     })
 })
 
@@ -252,8 +251,7 @@ ib1.addEventListener('click', function(el) {
 ib2.addEventListener('click', function(el) {
     el.preventDefault()
     window.scrollTo({
-        top: 15500,
-        behavior: 'smooth'
+        top: 15500
     })
 })
 
@@ -262,8 +260,8 @@ ib2.addEventListener('click', function(el) {
 ib3.addEventListener('click', function(el) {
     el.preventDefault()
     window.scrollTo({
-        top: 16790,
-        behavior: 'smooth'
+        top: 16790
+        
     })
 })
 
