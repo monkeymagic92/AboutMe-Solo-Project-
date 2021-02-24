@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>Index</title>
 <link rel="icon" href="data:;base64,iVBORw0KGgo="> <!-- favico 에러 제거 -->
+<link rel="shortcut icon" type="image/x-icon" href="/res/img/Monkey.ico">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
 
 
