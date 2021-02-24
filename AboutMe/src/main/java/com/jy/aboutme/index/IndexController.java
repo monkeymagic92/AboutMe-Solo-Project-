@@ -22,8 +22,11 @@ public class IndexController {
 
 	@Autowired
 	private IndexService service;
+
 	
 	// 채팅창 세션을 활용하여 창 끌경우 새로고침해도 계속 창꺼짐( 반대로 켜지면 계속 켜짐 )
+	// chatChk값에 따라 mailIcon 또한 1 , 0에 따라 채팅창이 켜지면 (아이콘hide)
+	// 										  " " 꺼지면 (아이콘 show)
 	@RequestMapping(value="/chatChk", method=RequestMethod.POST)
 	public @ResponseBody void chatChk(@RequestBody ChatPARAM param,
 			HttpSession hs) {

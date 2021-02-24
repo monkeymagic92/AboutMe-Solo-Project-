@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="shortcut icon" type="image/x-icon" href="/res/img/Monkey.ico">
+<link rel="shortcut icon" type="image/x-icon" href="/res/img/메세지아이콘.ico">
 <%-- summernote 때문에 css 겹치는 관계로 intro와 reg 페이지때문에 나눔
 	 reg 페이지가 summernote있기에 dark 테마 적용시킬수 없음
  --%>

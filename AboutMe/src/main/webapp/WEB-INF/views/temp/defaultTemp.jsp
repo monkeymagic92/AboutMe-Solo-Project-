@@ -7,8 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Index</title>
-<link rel="icon" href="data:;base64,iVBORw0KGgo="> <!-- favico 에러 제거 -->
-<link rel="shortcut icon" type="image/x-icon" href="/res/img/Monkey.ico">
+<!-- <link rel="icon" href="data:;base64,iVBORw0KGgo=">  favico 에러 제거 -->
+<link rel="shortcut icon" type="image/x-icon" href="/res/img/메세지아이콘.ico">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
 
 
@@ -21,6 +21,7 @@
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<link rel="stylesheet" href="/res/css/defaultTemp.css">
 		<link rel="stylesheet" href="/res/css/chat.css">
+		<link rel="stylesheet" href="/res/css/mail.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
 	</c:when>
@@ -67,7 +68,7 @@
 		        </div>
 		    </div>
 		    <button class="chatCloseBtn">
-		        <span id="exitIcon" class="material-icons">
+		        <span id="exitIcon" class="material-icons" onclick="chatChk()">
 		            exit_to_app
 		        </span>        
 		    </button>
@@ -90,6 +91,16 @@
 	<form id="chatTestFrm">
 		<input type="hidden" id="chatChk" name="chatChk" value="1">
 	</form>
+	
+	
+    <img class="mailImg" src="/res/img/mail.jpg" onclick="openMail()">
+    <div class="mailContainer">
+        <form id="mailFrm">
+            <input id="mailId" type="email" name="mailId" placeholder="Enter Email">
+            <textarea id="mailText" name="mailText" placeholder="Enter Content"></textarea>
+        </form>
+        <button id="sendMail" type="button" onclick="sendMail()">Send</button>
+    </div>
 	
     <!-- Header End -->
 
@@ -118,11 +129,17 @@ var isNewCmt = true;	// 채팅 입력시 스크롤바 제일 하단, 마지막 �
 
 var chatValue = `${chatChk}`
 
+
+
+
+
+
 function chatChk() {	// 채팅창 session 활용하여 지속적으로 on / off
 	var chatChk = chatTestFrm.chatChk.value
 	axios.post('/chatChk',{
 		chatChk : chatChk
 	})
+	
 }
 
 // 첫시작시 cahtValue == '' 이거임 화면띄우기 
@@ -134,12 +151,14 @@ if(chatValue == '' || chatValue == 1) {
     $('.ourSite').show();
     $('#messageIcon').hide();
     
+    
 } else {
 	$('.chatCloseBtn').hide();
     $('.chatView').hide();
     $('.chatIns').hide();
     $('.ourSite').hide();
     $('#messageIcon').show();
+    
 } 
 
 
@@ -336,13 +355,40 @@ function makeChatList(arr) {
 	
 }
 
-
-
-
-// 응원 메세지 남기는 곳
-function wait() {
-	alert('서비스 준비중입니다.')
+// mail modal창 열기
+function openMail() {
+	$('.mailContainer').show();
 }
+
+// 메일 전송
+function sendMail() {
+
+	var email = mailFrm.mailId.value
+	var mailText = mailFrm.mailText.value
+	
+	// 이메일 정규화 
+	if (mailFrm.mailId.value.length > 0) {
+		const emailJ = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i
+		if(!emailJ.test(mailFrm.mailId.value)) {
+			alert('올바른 이메일을 입력해 주세요');
+			mailFrm.mailId.focus();
+			return false
+		}
+	}
+	
+	axios.post('/mail/mailSend',{
+		
+		email : email,
+		mailText : mailText
+	}).then(function(res) {
+		
+		if(res.data == 1) {
+			alert('이메일을 성공적으로 발송하였습니다')	
+			$('.mailContainer').hide();
+		}
+	})
+}
+
 </script>
 </body>
 </html>

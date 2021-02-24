@@ -412,3 +412,14 @@ footer {
 .introMovie:hover {
     cursor: pointer;
 }
+
+.mailContainer {
+    position: fixed;
+    top: 150px;
+    right: 10px;
+}
+
+.mailImg {
+    width: 90px;
+    height: 90px;
+}
