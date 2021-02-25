@@ -4,8 +4,8 @@
 .mailImg {
 	position: fixed;
 	left: 16px; top: 835px;
-    width: 120px;
-    height: 103px;
+    width: 130px;
+    height: 110px;
     cursor: pointer;
 }
 
@@ -18,6 +18,15 @@
     border-radius:8px;
     width: 600px;
     height: 450px;
+}
+
+#mailClo {
+	position: fixed;
+	left: 66%; top: 26%;
+	cursor: pointer;
+	font-size: 1.5em;
+	font-weight: bold;
+	
 }
 
 #mailId {

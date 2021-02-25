@@ -95,6 +95,7 @@
 	
     <img class="mailImg" src="/res/img/mail.jpg" onclick="openMail()">
     <div class="mailContainer">
+    	<span id="mailClo" onclick="mailClo()">X</span>
         <form id="mailFrm">
             <input id="mailId" type="email" name="mailId" placeholder="Enter Email">
             <textarea id="mailText" name="mailText" placeholder="Enter Content"></textarea>
@@ -376,6 +377,18 @@ function sendMail() {
 		}
 	}
 	
+	if (mailFrm.mailId.value.length == 0) {
+		alert('이메일을 입력해 주세요')
+		mailFrm.mailId.focus()
+		return false
+	}
+	
+	if (mailFrm.mailText.value.length == 0) {
+		alert('내용을 입력해 주세요')
+		mailFrm.mailText.focus()
+		return false
+	}
+	
 	axios.post('/mail/mailSend',{
 		
 		email : email,
@@ -387,6 +400,10 @@ function sendMail() {
 			$('.mailContainer').hide();
 		}
 	})
+}
+
+function mailClo() {
+	$('.mailContainer').hide();
 }
 
 </script>
