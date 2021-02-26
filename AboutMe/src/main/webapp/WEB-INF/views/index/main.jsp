@@ -66,8 +66,8 @@
                 <div class="cont">
                     <video id="stopVideo" class="introMovie" src="/res/av/aboutMe/introMovie.mp4" controls></video>
                 </div>
-                <a href="javascrfipt:;" class="btnClose">닫기</a>
-                <a href="javascript:;" class="btnTodayHide">오늘 하루 보지 않기</a>
+                <a class="btnClose">닫기</a>
+                <a class="btnTodayHide">오늘 하루 보지 않기</a>
             </div>
         </div>
 	        
