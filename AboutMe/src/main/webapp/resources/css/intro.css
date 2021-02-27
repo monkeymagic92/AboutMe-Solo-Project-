@@ -227,16 +227,16 @@ body {
 
 .musicBox {
     position: fixed;
-    top: 785px;
-    left: 1755px;
+    top: 79%;
+    right: 1%;
     width: 145px;
     transition: 0.5s;
 }
 
 .musicBox:hover {
     position: fixed;
-    top: 785px;
-    left: 1575px;
+    top: 79%;
+    right: 2%;
     width: 320px;
     transition: 0.6s;
     cursor: pointer;

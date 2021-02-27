@@ -2,7 +2,7 @@
 
 
 .mailImg {
-	position: fixed;
+	position: absolute;
 	right: 1%; top: 14%;
     width: 70px;
     height: 70px;
