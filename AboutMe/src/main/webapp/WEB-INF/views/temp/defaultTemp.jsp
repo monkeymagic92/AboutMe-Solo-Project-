@@ -93,7 +93,7 @@
 	</form>
 	
 	
-    <img class="mailImg" src="/res/img/mail.jpg" onclick="openMail()">
+    <img class="mailImg" src="/res/img/mailIcon.jpg" onclick="openMail()">
     <div class="mailContainer">
     	<span id="mailClo" onclick="mailClo()">X</span>
         <form id="mailFrm">

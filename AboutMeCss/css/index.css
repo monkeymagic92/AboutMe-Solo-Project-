@@ -423,3 +423,9 @@ footer {
     width: 90px;
     height: 90px;
 }
+
+.mailBox {
+    position: fixed;
+    top: 19%;
+    right: 3%;
+}

@@ -3,10 +3,11 @@
 
 .mailImg {
 	position: fixed;
-	left: 16px; top: 835px;
-    width: 130px;
-    height: 110px;
+	right: 1%; top: 14%;
+    width: 70px;
+    height: 70px;
     cursor: pointer;
+    border-radius: 50px;
 }
 
 .mailContainer {
