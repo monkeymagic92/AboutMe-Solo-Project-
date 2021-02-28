@@ -44,7 +44,7 @@
         </div>
 
         <div class="movieInfo">
-            <video src="/res/av/HiBaby/join.mp4" controls></video>
+            <video id="mv" src="/res/av/HiBaby/join.mp4" controls></video>
             <div class="titleDiv">
                 <h2 id="infoH1">1. 회원 가입 (정규화)</h2>
                 <ul class="infoUl">
@@ -57,7 +57,7 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/HiBaby/findPw.mp4" controls></video>
+            <video id="mv" src="/res/av/HiBaby/findPw.mp4" controls></video>
             <div class="titleDiv">
                 <h1 id="infoH1">2. 비밀번호 찾기 (이메일 발송)</h1>
                 <ul class="infoUl">
@@ -69,7 +69,7 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/HiBaby/fr.mp4" controls></video>
+            <video id="mv" src="/res/av/HiBaby/fr.mp4" controls></video>
             <div class="titleDiv">
                 <h1 id="infoH1">3. 친구 추가</h1>
                 <ul class="infoUl">
@@ -83,7 +83,7 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/HiBaby/HiChat.mp4" controls></video>
+            <video id="mv" src="/res/av/HiBaby/HiChat.mp4" controls></video>
             <div class="titleDiv">
                 <h1 id="infoH1">4. 1:1 채팅</h1>
                 <ul class="infoUl">
@@ -97,7 +97,7 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/HiBaby/study2.mp4" controls></video>
+            <video id="mv" src="/res/av/HiBaby/study2.mp4" controls></video>
             <div class="titleDiv">
                 <h1 id="infoH1">5. 공부 기능</h1>
                 <ul class="infoUl">
@@ -113,7 +113,7 @@
         <br><br>
         
         <div class="movieInfo">
-            <video src="/res/av/HiBaby/program.mp4" controls></video>
+            <video id="mv" src="/res/av/HiBaby/program.mp4" controls></video>
             <div class="titleDiv">
                 <h1 id="infoH1">6. 프로그램 기능</h1>
                 <ul class="infoUl">
@@ -134,5 +134,11 @@
         </div>
         
     </div>
+    
+    
+<script>
+
+	document.getElementById("mv").volume = 0.3;
+</script>
 </body>
 </html>

@@ -36,7 +36,7 @@
         </div>
 
         <div class="movieInfo">
-            <video src="/res/av/aboutMe/aboutMeIntro.mp4" controls></video>
+            <video id="mv" src="/res/av/aboutMe/aboutMeIntro.mp4" controls></video>
             <div class="titleDiv">
                 <h2 id="infoH1">1. 개발자 소개</h2>
                 <ul class="infoUl">
@@ -50,7 +50,7 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/aboutMe/aboutMeNewChat.mp4" controls></video>
+            <video id="mv" src="/res/av/aboutMe/aboutMeNewChat.mp4" controls></video>
             <div class="titleDiv">
                 <h2 id="infoH1">2. 만남의 광장</h2>
                 <ul class="infoUl">
@@ -64,7 +64,7 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/aboutMe/newBoard.mp4" controls></video>
+            <video id="mv" src="/res/av/aboutMe/newBoard.mp4" controls></video>
             <div class="titleDiv">
                 <h2 id="infoH1">3. 게시글 CRUD</h2>
                 <ul class="infoUl">
@@ -80,7 +80,7 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/aboutMe/devel.mp4" controls></video>
+            <video id="mv" src="/res/av/aboutMe/devel.mp4" controls></video>
             <div class="titleDiv">
                 <h2 id="infoH1">4. 개발일지</h2>
                 <ul class="infoUl">
@@ -106,5 +106,10 @@
         
         
     </div>
+    
+<script>
+	document.getElementById("mv").volume = 0.3;
+</script>
+
 </body>
 </html>

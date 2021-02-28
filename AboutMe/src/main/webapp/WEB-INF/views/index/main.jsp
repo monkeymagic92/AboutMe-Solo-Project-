@@ -62,9 +62,9 @@
         <!-- 팝업 -->
         <div id="layerPopId" class="layerPopup">
             <div class="layerBox">
-                <h1 class="title">aboutMe 소개영상</h1>
+                <h1 class="title">프로젝트 및 블로그 훑어보기</h1>
                 <div class="cont">
-                    <video id="stopVideo" class="introMovie" src="/res/av/aboutMe/introMovie.mp4" controls></video>
+                    <video id="stopVideo" class="introMovie" src="/res/av/aboutMe/allProject.mp4" controls></video>
                 </div>
                 <a class="btnClose">닫기</a>
                 <a class="btnTodayHide">오늘 하루 보지 않기</a>
@@ -83,6 +83,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <script>
 
+	document.getElementById("stopVideo").volume = 0.3;
+	
     // 아작스 글입력 만들기
     function chatSend() {
         chatCtnt.value = ''

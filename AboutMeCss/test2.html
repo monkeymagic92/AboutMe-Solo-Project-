@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/test2.css">
+</head>
+<body>
+    <div class="container">
+        <button id="btn" type="button" onclick="test()">+</button>
+        <div id="bar"></div>
+    </div>
+
+<script>
+    var bar = document.getElementById('bar')
+    var a = 20
+    
+    function test() {        
+        if( a == 100) {
+            alert('더이상 추가 X')
+            return
+        }
+        
+        a+=20;
+        bar.style="background-color: black;"
+        + "width:" + a + "px";
+
+        console.log('a : ' + a)
+    }
+
+</script>
+</body>
+</html>

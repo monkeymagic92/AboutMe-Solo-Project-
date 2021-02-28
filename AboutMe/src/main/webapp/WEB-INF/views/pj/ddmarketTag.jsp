@@ -41,7 +41,7 @@
         </div>
 
         <div class="movieInfo">
-            <video src="/res/av/DDmarket/Djoin.mp4" controls></video>
+            <video id="mv" src="/res/av/DDmarket/Djoin.mp4" controls></video>
             <div class="titleDiv">
                 <h2 id="infoH1">1. 회원 가입(정규화), 주소API</h2>
                 <ul class="infoUl">
@@ -57,7 +57,7 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/DDmarket/DfindPw.mp4" controls></video>
+            <video id="mv" src="/res/av/DDmarket/DfindPw.mp4" controls></video>
             <div class="titleDiv">
                 <h2 id="infoH1">2. 비밀번호 찾기 (실제 이메일 발송)</h2>
                 <ul class="infoUl">
@@ -69,7 +69,7 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/DDmarket/DsnsLogin.mp4" controls></video>
+            <video id="mv" src="/res/av/DDmarket/DsnsLogin.mp4" controls></video>
             <div class="titleDiv">
                 <h2 id="infoH1">3. 카카오 / 네이버 로그인</h2>
                 <ul class="infoUl">
@@ -83,7 +83,7 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/DDmarket/Dboard.mp4" controls></video>
+            <video id="mv" src="/res/av/DDmarket/Dboard.mp4" controls></video>
             <div class="titleDiv">
                 <h2 id="infoH1">4. 게시글</h2>
                 <ul class="infoUl">
@@ -97,7 +97,7 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/DDmarket/Ddeal.mp4" controls></video>
+            <video id="mv" src="/res/av/DDmarket/Ddeal.mp4" controls></video>
             <div class="titleDiv">
                 <h2 id="infoH1">5. 거래</h2>
                 <ul class="infoUl">
@@ -111,7 +111,7 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/DDmarket/DtheRest.mp4" controls></video>
+            <video id="mv" src="/res/av/DDmarket/DtheRest.mp4" controls></video>
             <div class="titleDiv">
                 <h2 id="infoH1">6. search,select</h2>
                 <ul class="infoUl">
@@ -123,7 +123,7 @@
         </div>
         <br><br>
         <div class="movieInfo">
-            <video src="/res/av/DDmarket/Dcookie.mp4" controls></video>
+            <video id="mv" src="/res/av/DDmarket/Dcookie.mp4" controls></video>
             <div class="titleDiv">
                 <h2 id="infoH1">7. 쿠키영상</h2>
                 <ul class="infoUl">
@@ -146,6 +146,9 @@
         
         
     </div>
-
+    	
+<script>
+	document.getElementById("mv").volume = 0.3;
+</script>
 </body>
 </html>
