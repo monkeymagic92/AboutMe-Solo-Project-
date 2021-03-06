@@ -34,5 +34,8 @@
 		<typeAlias type="com.jy.aboutme.devel.model.DevelPARAM" alias="DevelPARAM" />
 		<typeAlias type="com.jy.aboutme.devel.model.DevelDMI" alias="DevelDMI" />
 		
+		<!-- play -->
+		<typeAlias type="com.jy.aboutme.play.model.PlayVO" alias="PlayVO" />
+		
 	</typeAliases>
 </configuration>

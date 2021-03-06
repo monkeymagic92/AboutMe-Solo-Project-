@@ -39,6 +39,10 @@
                 <li class="headerLi"><a href="/pj/pjList" class="headerA">프로젝트 소개</a></li>
                 <li class="headerLi"><a href="/board/list" class="headerA">개발자 문의</a></li>
                 <li class="headerLi"><a href="/devel/main" class="headerA">개발 일지</a></li>
+                <%-- 심심풀이용 --%>
+                <c:if test="${loginUser != null}">
+                	<li class="headerLi"><a href="/play/main" class="headerA">Play</a></li>
+                </c:if>
             </ul>
         </div>
     </header>
@@ -74,6 +78,7 @@
 		    </button>
 		   
 		    	<div id="chatViewId" class="chatView"></div>
+		    	
 		    
 		    <div class="chatIns">
 		        <form id="chatFrm">

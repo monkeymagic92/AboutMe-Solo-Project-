@@ -8,27 +8,35 @@
     <link rel="stylesheet" href="css/test2.css">
 </head>
 <body>
-    <div class="container">
-        <button id="btn" type="button" onclick="test()">+</button>
-        <div id="bar"></div>
+    <button type="button" onclick="a()">Click</button>
+    <div id="count">
+
     </div>
 
+<script src="http://code.jquery.com/jquery-3.5.1.js"></script>
 <script>
-    var bar = document.getElementById('bar')
-    var a = 20
-    
-    function test() {        
-        if( a == 100) {
-            alert('더이상 추가 X')
+
+var time = 2;
+
+function a() {
+    setInterval(function(){
+        console.log(time)
+        
+        $("#count").text(time + '초후')
+        time--;
+
+        if( time == 0 ) {
             return
         }
-        
-        a+=20;
-        bar.style="background-color: black;"
-        + "width:" + a + "px";
 
-        console.log('a : ' + a)
-    }
+    },1000);
+}
+
+
+
+
+
+   
 
 </script>
 </body>

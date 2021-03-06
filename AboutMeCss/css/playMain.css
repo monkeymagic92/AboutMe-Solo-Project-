@@ -1,0 +1,29 @@
+.container {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+
+#title {
+    position: absolute;
+    top: 140px;
+    left: 41%;
+    width: 100%;
+    font-size: 2.2em;
+    font-weight: bold;
+    color: grey;
+}
+
+#kakoLoginBox {
+    position: absolute;
+    width: 100%;
+}
+
+#kakaoLogin {
+    position: absolute;
+    top: 250px;
+    width: 350px;
+    left: 39%;
+    border-radius: 8px;
+    cursor: pointer;
+}
