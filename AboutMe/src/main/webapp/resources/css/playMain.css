@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+.kakaoLoginBox {
+    position: relative;
+    top: 280px;
+    left: 36%;
+}
+
+#kakaoLogin {    
+    position: absolute;
+    width: 30%;
+    border-radius: 8px;
+    cursor: pointer;
+}
