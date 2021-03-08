@@ -1,7 +1,6 @@
 package com.jy.aboutme.kakaoLogin.model;
 
 public class GuestVO {
-	
 	private int i_guest;
 	private String nickname;
 	private String profile_image;
@@ -9,7 +8,42 @@ public class GuestVO {
 	private String gender;
 	private String token;
 	private String r_dt;
+	private String myIp;
+	private String ip_addr;
+	private String os;
+	private String browser;
+	private String agent;
 	
+	public String getMyIp() {
+		return myIp;
+	}
+	public void setMyIp(String myIp) {
+		this.myIp = myIp;
+	}
+	public String getIp_addr() {
+		return ip_addr;
+	}
+	public void setIp_addr(String ip_addr) {
+		this.ip_addr = ip_addr;
+	}
+	public String getOs() {
+		return os;
+	}
+	public void setOs(String os) {
+		this.os = os;
+	}
+	public String getBrowser() {
+		return browser;
+	}
+	public void setBrowser(String browser) {
+		this.browser = browser;
+	}
+	public String getAgent() {
+		return agent;
+	}
+	public void setAgent(String agent) {
+		this.agent = agent;
+	}
 	public String getToken() {
 		return token;
 	}

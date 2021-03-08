@@ -115,6 +115,28 @@ DROP TABLE t_devel;
 
 
 
+CREATE TABLE t_guest (
+	i_guest INT UNSIGNED AUTO_INCREMENT,
+	nickname VARCHAR(50),
+	profile_image VARCHAR(250),
+	email VARCHAR(50),
+	gender VARCHAR(20),
+	token VARCHAR(200),
+	myIp VARCHAR(100),
+	ip_addr VARCHAR(100),
+	os VARCHAR(20),
+	browser VARCHAR(20),
+	agent VARCHAR(500),
+	r_dt DATETIME DEFAULT NOW(),
+	PRIMARY KEY(i_guest)
+);
+
+SELECT * FROM t_guest;
+DROP TABLE t_guest;
+
+
+
+
 
 
 

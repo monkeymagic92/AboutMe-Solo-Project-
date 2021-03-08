@@ -16,8 +16,8 @@
             <img src="/res/img/kakaoLogin.png">
         </a>
     </c:if>
+    
     <c:if test="${Guest != null}">
-        <h1>로그인 성공입니다</h1>
         <div>${Guest.nickname}</div>
         <img src="${Guest.profile_image}">
         <div>${Guest.email}</div>
@@ -25,37 +25,23 @@
         <div>${Guest.token}</div>
         <input type="button" value="로그아웃" onclick="location.href='/play/logout'">
     </c:if>
+    
+    <div>	
+		<a href="javascript:sendLink()"><img
+			src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" /></a>
+		<!--
+				카카오 스토리 용 
+		<a href="javascript:shareStoryWeb()"><img
+			src="https://developers.kakao.com/sdk/js/resources/story/icon_small.png" /></a>
+		-->
+	</div>
 
 
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>	
 <script>
+
 Kakao.init('db293b45de7fc0c3fe27836706c6dba1'); // 나의 자바스크립트 key  (이그노어 암호화 해야됨 노출 X)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function sendLink() {
     Kakao.Link.sendDefault({

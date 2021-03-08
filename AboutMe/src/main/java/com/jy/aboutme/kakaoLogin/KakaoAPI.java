@@ -22,10 +22,6 @@ public class KakaoAPI {
 	// 유저 정보 받아오기
 	public GuestVO getUserInfo (String access_Token) {
 	    
-	    //    요청하는 클라이언트마다 가진 정보가 다를 수 있기에 HashMap타입으로 선언
-		
-		//HashMap<String, Object> userInfo = new HashMap<>();
-		
 		// token으로 받아온 유저 정보를 Guest객체에 담기위한 객체생성
 		GuestVO vo = new GuestVO();
 	    
@@ -57,22 +53,20 @@ public class KakaoAPI {
 	        JsonObject properties = element.getAsJsonObject().get("properties").getAsJsonObject();	// properties : 닉네임, 썸네일, 이미지 받아오기용
 	        JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();	// kakao_account :  
 	        
+	        
 	        String nickname = properties.getAsJsonObject().get("nickname").getAsString();
 	        String profile_image = properties.getAsJsonObject().get("profile_image").getAsString();
 	        String email = kakao_account.getAsJsonObject().get("email").getAsString();
 	        String gender = kakao_account.getAsJsonObject().get("gender").getAsString();
 	        
-	        /*
-	        userInfo.put("nickname", nickname);
-	        userInfo.put("profile_image", profile_image);
-	        userInfo.put("email", email);
-	        userInfo.put("gender", gender);
-	        */
 	        
 	        vo.setNickname(nickname);
 	        vo.setProfile_image(profile_image);
 	        vo.setEmail(email);
 	        vo.setGender(gender);
+	        
+	        
+	        
 	        
 	    } catch (IOException e) {
 	        e.printStackTrace();
@@ -104,7 +98,7 @@ public class KakaoAPI {
 	        }
 	        System.out.println(result);
 	    } catch (IOException e) {
-	        // TODO Auto-generated catch block
+	      
 	        e.printStackTrace();
 	    }
 	}
