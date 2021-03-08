@@ -11,35 +11,47 @@
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 </head>
 <body>
-	
-	<div class="container">
-        <div class="kakaoLoginBox">
-            <img id="kakaoLogin" src="/res/img/kakaoLogin.png" onclick="show()">
-        </div>
-    </div>
-    
-	<div>	
-		<a href="javascript:sendLink()"><img
-			src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" /></a>
-		<!--
-				카카오 스토리 용 
-		<a href="javascript:shareStoryWeb()"><img
-			src="https://developers.kakao.com/sdk/js/resources/story/icon_small.png" /></a>
-		-->
-	</div>
+	<c:if test="${userId eq null}">
+        <a href="https://kauth.kakao.com/oauth/authorize?client_id=7df9e62642f4d75b1c20fb1b0be4450d&redirect_uri=http://localhost:8080/play/login&response_type=code">
+            <img src="/res/img/kakaoLogin.png">
+        </a>
+    </c:if>
+    <c:if test="${userId ne null}">
+        <h1>로그인 성공입니다</h1>
+        <input type="button" value="로그아웃" onclick="location.href='/play/logout'">
+    </c:if>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>	
 <script>
-/*
- * 		카카오 로그인이 안되어 있을경우
- 		따로 카카오 로그인 api 필요없이 카카오측에서 자동으로 로그인창 띄워줌
- 		- 모바일은 항상 로그인 되어있으니까 바로 공유되고
- 		- 웹은 로그인창이 뜸 (로그인 되어있을경우는 안뜸)
- 		
- */
+Kakao.init('db293b45de7fc0c3fe27836706c6dba1'); // 나의 자바스크립트 key  (이그노어 암호화 해야됨 노출 X)
 
-Kakao.init('db293b45de7fc0c3fe27836706c6dba1'); // 나의 자바스크립트 key  (이그노어 암호화 해야됨 노출 X)	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function sendLink() {
     Kakao.Link.sendDefault({
         objectType: 'feed',
