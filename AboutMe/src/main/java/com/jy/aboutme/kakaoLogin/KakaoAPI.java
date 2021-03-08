@@ -83,13 +83,13 @@ public class KakaoAPI {
 	
 	
 	// 카카오 로그아웃
-	public void kakaoLogout(String access_Token) {
+	public void kakaoLogout(GuestVO vo) {
 	    String reqURL = "https://kapi.kakao.com/v1/user/logout";
 	    try {
 	        URL url = new URL(reqURL);
 	        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 	        conn.setRequestMethod("POST");
-	        conn.setRequestProperty("Authorization", "Bearer " + access_Token);
+	        conn.setRequestProperty("Authorization", "Bearer " + vo.getToken());
 	        
 	        int responseCode = conn.getResponseCode();
 	        System.out.println("responseCode : " + responseCode);

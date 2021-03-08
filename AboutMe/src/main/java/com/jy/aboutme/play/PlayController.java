@@ -50,10 +50,11 @@ public class PlayController {
 	
 	// 카카오 로그아웃
 	@RequestMapping(value="/logout")
-	public String logout(HttpSession session) {
-	    kakao.kakaoLogout((String)session.getAttribute("access_Token"));
-	    session.removeAttribute("access_Token");
-	    session.removeAttribute("userId");
+	public String logout(HttpSession session, GuestVO vo) {
+		
+	    kakao.kakaoLogout((GuestVO)session.getAttribute("Guest"));
+	    session.removeAttribute("Guest");
+	    
 	    return "redirect:/play/main";
 	}
 }
