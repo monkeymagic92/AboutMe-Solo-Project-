@@ -11,13 +11,18 @@
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 </head>
 <body>
-	<c:if test="${userId eq null}">
+	<c:if test="${Guest == null}">
         <a href="https://kauth.kakao.com/oauth/authorize?client_id=7df9e62642f4d75b1c20fb1b0be4450d&redirect_uri=http://localhost:8080/play/login&response_type=code">
             <img src="/res/img/kakaoLogin.png">
         </a>
     </c:if>
-    <c:if test="${userId ne null}">
+    <c:if test="${Guest != null}">
         <h1>로그인 성공입니다</h1>
+        <div>${Guest.nickname}</div>
+        <img src="${Guest.profile_image}">
+        <div>${Guest.email}</div>
+        <div>${Guest.gender}</div>
+        <div>${Guest.token}</div>
         <input type="button" value="로그아웃" onclick="location.href='/play/logout'">
     </c:if>
 

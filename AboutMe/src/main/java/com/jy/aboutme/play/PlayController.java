@@ -1,7 +1,5 @@
 package com.jy.aboutme.play;
 
-import java.util.HashMap;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.jy.aboutme.kakaoLogin.KakaoAPI;
+import com.jy.aboutme.kakaoLogin.model.GuestVO;
 
 @Controller
 @RequestMapping("/play")
@@ -32,18 +31,17 @@ public class PlayController {
 	
 	// 카카오 로그인
 	@RequestMapping(value="/login")
-	public String login(@RequestParam("code") String code, HttpSession session) {
+	public String login(@RequestParam("code") String code, HttpSession session,
+			GuestVO vo, Model model) {
+		
 		String access_Token = kakao.getAccessToken(code);
 		
-		HashMap<String, Object> userInfo = kakao.getUserInfo(access_Token);
-	    System.out.println("login Controller : " + userInfo);
+		vo = kakao.getUserInfo(access_Token);
 	    
 	    
-	    //    클라이언트의 이메일이 존재할 때 세션에 해당 이메일과 토큰 등록
-	    // 	   현재 test용으로 session에 박아놨는데 추후 guestPARAM에 값 넣어서 DB에 저장하기
-	    if (userInfo.get("email") != null) {
-	        session.setAttribute("userId", userInfo.get("email"));
-	        session.setAttribute("access_Token", access_Token);
+	    if (vo.getEmail() != null) {
+	    	vo.setToken(access_Token);
+	        session.setAttribute("Guest", vo);
 	    }
 		
 		return "redirect:/play/main";

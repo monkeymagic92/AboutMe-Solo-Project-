@@ -14,15 +14,21 @@ import org.springframework.stereotype.Service;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.jy.aboutme.kakaoLogin.model.GuestVO;
 
 @Service
 public class KakaoAPI {
 	
 	// 유저 정보 받아오기
-	public HashMap<String, Object> getUserInfo (String access_Token) {
+	public GuestVO getUserInfo (String access_Token) {
 	    
 	    //    요청하는 클라이언트마다 가진 정보가 다를 수 있기에 HashMap타입으로 선언
-	    HashMap<String, Object> userInfo = new HashMap<>();
+		
+		//HashMap<String, Object> userInfo = new HashMap<>();
+		
+		// token으로 받아온 유저 정보를 Guest객체에 담기위한 객체생성
+		GuestVO vo = new GuestVO();
+	    
 	    String reqURL = "https://kapi.kakao.com/v2/user/me";
 	    try {
 	        URL url = new URL(reqURL);
@@ -56,22 +62,23 @@ public class KakaoAPI {
 	        String email = kakao_account.getAsJsonObject().get("email").getAsString();
 	        String gender = kakao_account.getAsJsonObject().get("gender").getAsString();
 	        
-	        
+	        /*
 	        userInfo.put("nickname", nickname);
 	        userInfo.put("profile_image", profile_image);
 	        userInfo.put("email", email);
 	        userInfo.put("gender", gender);
+	        */
 	        
-	        
-	        System.out.println("1nick : " + nickname);
-	        
+	        vo.setNickname(nickname);
+	        vo.setProfile_image(profile_image);
+	        vo.setEmail(email);
+	        vo.setGender(gender);
 	        
 	    } catch (IOException e) {
-	        // TODO Auto-generated catch block
 	        e.printStackTrace();
 	    }
 	    
-	    return userInfo;
+	    return vo;
 	}
 	
 	
