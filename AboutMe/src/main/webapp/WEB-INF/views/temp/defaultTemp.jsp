@@ -39,10 +39,6 @@
                 <li class="headerLi"><a href="/pj/pjList" class="headerA">프로젝트 소개</a></li>
                 <li class="headerLi"><a href="/board/list" class="headerA">개발자 문의</a></li>
                 <li class="headerLi"><a href="/devel/main" class="headerA">개발 일지</a></li>
-                <%-- 심심풀이용 --%>
-                <c:if test="${loginUser != null}">
-                	<li class="headerLi"><a href="/play/main" class="headerA">Play</a></li>
-                </c:if>
             </ul>
         </div>
     </header>
@@ -129,7 +125,8 @@
 <script type="text/javascript">
 
 document.getElementById("audioMp").volume = 0.2;
-var ws = new WebSocket("ws://118.67.132.252/echo");
+//var ws = new WebSocket("ws://118.67.132.252/echo");
+var ws = new WebSocket("ws://localhost:8080/echo");
 
 var isNewCmt = true;	// 채팅 입력시 스크롤바 제일 하단, 마지막 글을 보여줌
 
