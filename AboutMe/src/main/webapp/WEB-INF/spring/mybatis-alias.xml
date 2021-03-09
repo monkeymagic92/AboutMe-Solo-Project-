@@ -34,12 +34,5 @@
 		<typeAlias type="com.jy.aboutme.devel.model.DevelPARAM" alias="DevelPARAM" />
 		<typeAlias type="com.jy.aboutme.devel.model.DevelDMI" alias="DevelDMI" />
 		
-		<!-- play -->
-		<typeAlias type="com.jy.aboutme.play.model.PlayVO" alias="PlayVO" />
-		
-		<!-- kakao -->
-		<typeAlias type="com.jy.aboutme.kakaoLogin.model.GuestVO" alias="GuestVO" />
-		<typeAlias type="com.jy.aboutme.kakaoLogin.model.GuestPARAM" alias="GuestPARAM" />
-		
 	</typeAliases>
 </configuration>
