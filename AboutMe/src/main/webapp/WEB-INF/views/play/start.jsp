@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	Start
 	<c:if test="${Guest != null}">
         <div>${Guest.nickname}</div>
         <img src="${Guest.profile_image}">

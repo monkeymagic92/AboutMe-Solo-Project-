@@ -43,10 +43,13 @@ public class PlayController {
 	public String login(@RequestParam("code") String code, HttpSession session,
 			GuestVO vo, Model model, HttpServletRequest request) {
 		
+		System.out.println("카카오 로그인1");
+		
 		String access_Token = kakao.getAccessToken(code);
+		System.out.println("1-2");
 		
 		vo = kakao.getUserInfo(access_Token);
-		
+		System.out.println("1-3");
 		String agent = request.getHeader("User-Agent");
 		String os = getOs(agent);
 		String browser = getBrowser(agent);
@@ -60,7 +63,7 @@ public class PlayController {
 	    if (vo.getEmail() != null) {	// 토큰을 이용해 정상적으로 상대 카카오 email 받아올 경우 (null 아닐때)
 	    	
 	    	String chkEmail = service.selEmail(vo);	// DB에 insert 중복방지
-	    	
+	    	System.out.println("1-4");
 	    	if(chkEmail == null) {	// null이면 db등록 및 session 설정
 	    		service.insGuest(vo);
 	    		vo.setToken(access_Token);

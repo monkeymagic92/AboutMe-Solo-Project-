@@ -12,19 +12,11 @@
 </head>
 <body>
 	<c:if test="${Guest == null}">
-        <a href="https://kauth.kakao.com/oauth/authorize?client_id=7df9e62642f4d75b1c20fb1b0be4450d&redirect_uri=http://localhost:8080/play/login&response_type=code">
+        <a href="https://kauth.kakao.com/oauth/authorize?client_id=7df9e62642f4d75b1c20fb1b0be4450d&redirect_uri=http://118.67.132.252/play/login&response_type=code">
             <img src="/res/img/kakaoLogin.png">
         </a>
     </c:if>
     
-    <c:if test="${Guest != null}">
-        <div>${Guest.nickname}</div>
-        <img src="${Guest.profile_image}">
-        <div>${Guest.email}</div>
-        <div>${Guest.gender}</div>
-        <div>${Guest.token}</div>
-        <input type="button" value="로그아웃" onclick="location.href='/play/logout'">
-    </c:if>
     
     <div>	
 		<a href="javascript:sendLink()"><img
@@ -48,8 +40,8 @@ function sendLink() {
         objectType: 'feed',
         content: {
             title: '친구 취향 맞추기',
-            description: '(서버에서 보낸값) 님의 취향을 맞춰보세요 !',
-            imageUrl: 'https://blog.kakaocdn.net/dn/0mySg/btqCUccOGVk/nQ68nZiNKoIEGNJkooELF1/img.jpg',	// img (url입력해야됨)
+            description: '${Guest.nickname}님의 취향을 맞춰보세요 !',
+            imageUrl: 'https://blog.kakaocdn.net/dn/0mySg/btqCUccOGVk/nQ68nZiNKoIEGNJkooELF1/img.jpg',	// img 
             link: {
                 mobileWebUrl: 'http://118.67.132.252/',	// 모바일에서 접속할 URL
                 webUrl: 'http://118.67.132.252/'		// 웹에서 접속할 URL

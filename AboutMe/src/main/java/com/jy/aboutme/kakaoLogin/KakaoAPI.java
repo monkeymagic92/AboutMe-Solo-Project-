@@ -54,19 +54,27 @@ public class KakaoAPI {
 	        JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();	// kakao_account :  
 	        
 	        
-	        String nickname = properties.getAsJsonObject().get("nickname").getAsString();
-	        String profile_image = properties.getAsJsonObject().get("profile_image").getAsString();
-	        String email = kakao_account.getAsJsonObject().get("email").getAsString();
-	        String gender = kakao_account.getAsJsonObject().get("gender").getAsString();
-	        
+	        /*
+	         * 		프로필 이미지 부분 에러뜸 id값도 같이 가져와보고
+	         * 							디벨로퍼 들어가서 id 체크있는지 확인하기
+	         * 		ddmarket 가서 코드 뺏기기
+	         */
+	        String nickname = "", profile_image ="", email = "", gender = "";
+	        nickname = properties.getAsJsonObject().get("nickname").getAsString();
+	        try {
+	        	profile_image = properties.getAsJsonObject().get("profile_image").getAsString();
+		        email = kakao_account.getAsJsonObject().get("email").getAsString();
+		        gender = kakao_account.getAsJsonObject().get("gender").getAsString();
+	        } catch (Exception e) {
+	        	profile_image = "";
+	        	email = "";
+	        	gender = "";
+	        }
 	        
 	        vo.setNickname(nickname);
 	        vo.setProfile_image(profile_image);
 	        vo.setEmail(email);
 	        vo.setGender(gender);
-	        
-	        
-	        
 	        
 	    } catch (IOException e) {
 	        e.printStackTrace();
@@ -112,11 +120,13 @@ public class KakaoAPI {
 	
 	// 토큰 받기
 	public String getAccessToken (String authorize_code) {
+		System.out.println("토근받기 1");
         String access_Token = "";
         String refresh_Token = "";
         String reqURL = "https://kauth.kakao.com/oauth/token";
         
         try {
+        	System.out.println("토근받기 실행 try");
             URL url = new URL(reqURL);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             
@@ -129,7 +139,8 @@ public class KakaoAPI {
             StringBuilder sb = new StringBuilder();
             sb.append("grant_type=authorization_code");
             sb.append("&client_id=7df9e62642f4d75b1c20fb1b0be4450d");	// 본인 REST API 키
-            sb.append("&redirect_uri=http://localhost:8080/play/login");		// 본인 redirect url  (카카오 디벨로퍼에 설정한 redirect url 입력)
+            //sb.append("&redirect_uri=http://localhost:8080/play/login");		// 본인 redirect url  (카카오 디벨로퍼에 설정한 redirect url 입력)
+            sb.append("&redirect_uri=http://http://118.67.132.252/play/login");		// 본인 redirect url  (카카오 디벨로퍼에 설정한 redirect url 입력)
             sb.append("&code=" + authorize_code);
             bw.write(sb.toString());
             bw.flush();
@@ -161,6 +172,7 @@ public class KakaoAPI {
             br.close();
             bw.close();
         } catch (IOException e) {
+        	System.out.println("토근받기 실행 catch");
             // TODO Auto-generated catch block
             e.printStackTrace();
         } 

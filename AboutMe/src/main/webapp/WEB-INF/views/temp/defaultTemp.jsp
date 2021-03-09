@@ -129,7 +129,7 @@
 <script type="text/javascript">
 
 document.getElementById("audioMp").volume = 0.2;
-var ws = new WebSocket("ws://localhost:8080/echo");
+var ws = new WebSocket("ws://118.67.132.252/echo");
 
 var isNewCmt = true;	// 채팅 입력시 스크롤바 제일 하단, 마지막 글을 보여줌
 
