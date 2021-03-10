@@ -19,7 +19,7 @@
 ## 2. 개발 도구
 > | DB        | Back-end           |Library                | Editor        |Server         |
 > | --------- | ------------------ |-----------------------|---------------|---------------|
-> | MySQL     | Eclips IDE         | spring-websocket      | summernote    |Apache Tomcat  |
+> | MySQL     | Eclipse IDE         | spring-websocket      | summernote    |Apache Tomcat  |
 > |           | Spring Framework(Legacy)  |lucy-xss-servlet|               |               |
 > |           | JDK 1.8            | mybatis               |               |               |
 > |           | MyBatis            | thymeleaf             |               |               |
